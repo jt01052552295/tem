@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Woodfly</title>
+<link href="./css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="./js/default.js"></script>
+<script src="./js/jquery.jqtransform.js"></script>
+<script src="./bxslider/jquery.bxslider.js"></script>
+<link href="./bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="./Selectyze/css/Selectyze.jquery.css" media="screen" />
+<script type="text/javascript" src="./Selectyze/js/Selectyze.jquery.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+<!-- 헤더 -->
+<div class="top_bar">
+	<div class="fd_page">
+		<div class="top_tab">
+			<ul>
+				<li><a href="javascript:;"><img src="./img/include/top_pl.png" alt="Plywood" /></a></li>
+				<li><a href="javascript:;"><img src="./img/include/top_pa.png" alt="Particle Board" /></a></li>
+			</ul>
+		</div>
+		<div class="top_login">
+			<ul>
+				<li><a href="javascript:;">로그아웃</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">장바구니</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">주문조회</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">마이페이지</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">고객센터</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="logo_bar">
+	<div class="fd_page">
+		<div class="logo">
+			<a href="javascript:;"><img src="./img/include/logo.png" alt="logo" /></a>
+		</div>
+		<div class="logo_btn">
+			<ul>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn1.png" alt="new" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn2.png" alt="sale" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn3.png" alt="best" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn4.png" alt="event" /></a></li>
+			</ul>
+		</div>
+		<div class="logo_search">
+			<form name="fsearchbox" method="get" action="" onsubmit="">
+            <input type="text" name="stx" id="sch_stx" maxlength="20">
+            <input type="image" src="./img/include/search_btn.png" border="0" id="sch_btn">
+            </form>
+		</div>
+	</div>
+</div>
+<div class="menu_bar">
+	<div id="menu">
+		<ul>
+			<li onmouseover=overM(this,'1') onmouseout=outM(this,'1')>
+			<span>CP</span>
+			<div id="mtype_1" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'2') onmouseout=outM(this,'2')>
+			<span>준내수</span>
+			<div id="mtype_2" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'3') onmouseout=outM(this,'3')>
+			<span>일반기타</span>
+			<div id="mtype_3" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'4') onmouseout=outM(this,'4')>
+			<span>특수</span>
+			<div id="mtype_4" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'5') onmouseout=outM(this,'5')>
+			<span>TEGO</span>
+			<div id="mtype_5" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'6') onmouseout=outM(this,'6')>
+			<span>인테리어</span>
+			<div id="mtype_6" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'7') onmouseout=outM(this,'7')>
+			<span>상품</span>
+			<div id="mtype_7" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+<!-- /헤더 -->
+<!-- 콘텐츠 -->
+<div class="fd_page">
+	
+	<div class="detail-nav">
+		<a href="#">홈</a> <span>&gt;</span>  
+		<a href="#">준내수</a> <span>&gt;</span>  
+		<a href="#">준내수</a> <span>&gt;</span>  
+		<a href="#">3x6</a>
+	</div>
+
+	<div class="detail-info">
+		<div class="detail-info-thumb">
+			<a href="#"><img src="./img/detail/product.png" alt="detail"/></a>
+		</div>
+		<div class="detail-info-dl">
+			<h1 class="title">친환경 준내수 합판</h1>
+
+			<dl class="option">
+				<dt class="first">제품코드</dt>
+				<dd class="first">AMD0500011</dd>
+				<dt class="first">등급</dt>
+				<dd class="first">1</dd>		
+				<dt class="first">판매금액</dt>
+				<dd class="amount"><div class="act">3,400 원</div></dd>
+				<dt class="blank"></dt>
+				<dd class="blank"></dd>
+				<dt>규격</dt>
+				<dd><div class="actLabel">1080*1150*8 (BB)</div></dd>
+				<dt>판매단위</dt>
+				<dd><div class="actLabel">EA</div></dd>
+				<dt>중량/길이/너비/높이</dt>
+				<dd><div class="actLabel">0 / 0 / 0 / 0</div></dd>
+
+				<dt>번들수량</dt>
+				<dd>
+					<div class="act">
+						<div class="quantity">
+							<input name="" value="1" type="text">
+							<a href="#"><img src="./img/detail/btn_basketup.png" alt="up" class="QuantityUp"></a>
+							<a href="#"><img src="./img/detail/btn_basketdown.png" alt="down" class="QuantityDown"></a>
+						</div>
+					</div>
+					<div class="act">
+						<div class="price">
+							<input type="text" name="" value="900,000" />
+						</div>
+						<div class="btns">
+							<a href="#"><img src="./img/detail/detail-del.png" alt="삭제"></a>
+						</div>
+					</div><br style="clear:both;" />
+				</dd>
+				<dt>낱개수량</dt>
+				<dd>
+					<div class="act">
+						<div class="quantity">
+							<input name="" value="1" type="text">
+							<a href="#"><img src="./img/detail/btn_basketup.png" alt="up" class="QuantityUp"></a>
+							<a href="#"><img src="./img/detail/btn_basketdown.png" alt="down" class="QuantityDown"></a>
+						</div>
+					</div>
+					<div class="act">
+						<div class="price">
+							<input type="text" name="" value="900,000" />
+						</div>
+						<div class="btns">
+							<a href="#"><img src="./img/detail/detail-del.png" alt="삭제"></a>
+						</div>
+					</div><br style="clear:both;" />
+				</dd>
+				<dt>전체수량</dt>
+				<dd>
+					<div class="act">
+						<div class="total-quantity">
+							<input name="" value="60" type="text">
+						</div>
+					</div><br style="clear:both;" />
+				</dd>
+			</dl><!-- 옵션리스트 -->
+			<div class="retail-btns">
+				<span><a href="#"><img src="./img/detail/detail-buy.png" alt="구매하기"/></a></span>
+				<span><a href="#"><img src="./img/detail/detail-cart.png" alt="장바구니"/></a></span>
+				<span><a href="#"><img src="./img/detail/detail-wish.png" alt="wish"/></a></span>
+			</div>
+		</div><!-- .detail-info-dl -->
+	</div><!-- .detail-info -->
+
+	<div class="detail-tab">
+		<ul class="tab-menu">
+			<li><a href="#">제품상세정보</a></li>
+			<li><a href="#">제품문의</a></li>
+			<li><a href="#">배송정보</a></li>
+			<li class="last"><a href="#">반품/취소/환불정보</a></li>
+		</ul>
+
+		<div class="tab-big-img">
+			<img src="./img/detail/detail-product-1.png" alt="상세이미지"/>
+		</div>
+
+		<div class="tab-small-wrap">
+			<div class="tab-small-img">
+				<img src="./img/detail/detail-product-2.png" alt="상세이미지"/>
+			</div>
+			<div class="tab-small-img">
+				<img src="./img/detail/detail-product-3.png" alt="상세이미지"/>
+			</div>
+			<div class="tab-small-img last">
+				<img src="./img/detail/detail-product-4.png" alt="상세이미지"/>
+			</div>
+		</div>
+
+		<div class="tab-form-wrap">
+			<h1 class="title">제품문의 접수</h1>
+			<div class="form">
+				<form>
+					<textarea class="txt"></textarea>
+					<input type="image" src="./img/detail/detail-form-submit.png" class="sub_btn">
+				</form>
+			</div>
+		</div>
+
+		<div class="tab-form-wrap">
+			<h1 class="title">반품/취소/환불정보</h1>
+			<div class="tab-refund-txt">
+				<h1 class="sub-title">배송안내</h1>
+
+				<pre class="sub-content">
+1. 웹 주문확정 - SAP 오더생성 단계 이후에 배차요청(배송)을 통해 진행됩니다.
+2. 배차요청은 해당 거래처의 영업담당자가 진행요청하며 배차요청이후에는 주문취소가 이루어지지 않습니다. 
+   (부득이 한 경우에는 영업담당자 및 고객센터에 문의하시기 바랍니다.
+3. 주문하신 내역은 마이페이지에서 확인하실 수 있으며 주문별, 항목별 프로세스에 따라 각각의 기능이 출력됩니다.
+				</pre>
+			</div>
+
+		</div>
+	</div><!-- .detail-tab -->
+	<div class="recommend_box">
+		<img src="./img/cart/recommend_title.png" class="recommend_title" alt="추천 제품" />
+		<div class="r_item_box">		
+			<div class="recommend_item">
+				<a href="javascript:;"><img src="./img/cart/pic_1.png" alt="추천 제품" /></a>
+				<div class="r_item_num">01</div>
+				<dl>
+					<dt>준내수 합판</dt>
+					<dd>1200 x 2400 x 12T</dd>
+					<dd>20,000원</dd>
+				</dl>
+			</div>
+			<div class="recommend_line"></div>
+			<div class="recommend_item">
+				<a href="javascript:;"><img src="./img/cart/pic_2.png" alt="추천 제품" /></a>
+				<div class="r_item_num">02</div>
+				<dl>
+					<dt>준내수 합판</dt>
+					<dd>1200 x 2400 x 12T</dd>
+					<dd>20,000원</dd>
+				</dl>
+			</div>
+			<div class="recommend_line"></div>
+			<div class="recommend_item">
+				<a href="javascript:;"><img src="./img/cart/pic_3.png" alt="추천 제품" /></a>
+				<div class="r_item_num">03</div>
+				<dl>
+					<dt>준내수 합판</dt>
+					<dd>1200 x 2400 x 12T</dd>
+					<dd>20,000원</dd>
+				</dl>
+			</div>
+		</div>
+	</div><!-- .recommend_box -->
+</div>
+<!-- /콘텐츠 -->
+<!-- 푸터 -->
+<div class="fd_page" id="fd_footer">
+	<div class="family_box">
+		<span>
+			<a href="javascript:;">이용약관</a>
+			<a href="javascript:;">자주묻는 질문</a>
+			<a href="javascript:;">개인정보취급방침</a>
+		</span>
+		<select name="family_site" id="family_site">
+		<option value="">Family Site</option>
+        <option value="">네이버</option>
+        <option value="">다음</option>
+        <option value="">구글</option>
+    </select>
+	</div>	
+</div>
+<div class="footer">
+	<div class="fd_page">
+		<img src="./img/include/logo_s.png" />
+		<span>부산광역시 사하구 다대로 627 성창기업(주) Copyright ⓒ 2014 Sungchang Enterprise Ltd. All rights reserved.</span>
+	</div>
+</div>
+<!-- /푸터 -->
+</div>
+<!-- 퀵메뉴 -->
+<div id="fixedquick" >
+	<ul>
+		<li><img src="./img/include/q_title.png" /></li>
+		<li><a href="javascript:;"><img src="./img/include/q_1.png" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_2.png" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_3.png" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_4.png" /></a></li>
+		<li><img src="./img/include/q_blank.png" /></li>
+		<li><a href="javascript:;" class="quick-up"><img src="./img/include/q_top.png" /></a></li>
+		<li><img src="./img/include/q_blank.png" /></li>
+		<li><a href="javascript:;" class="quick-down"><img src="./img/include/q_down.png" /></a></li>
+	</ul>
+</div>
+<!-- /퀵메뉴 -->
+</body>
+</html>

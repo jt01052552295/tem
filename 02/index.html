@@ -1,0 +1,48 @@
+<?php include_once('./header.html'); ?>
+
+<div class="fd-wrap">
+	<img src="./img/main.png" alt="배너" class="img-responsive"/>
+</div><!--//banner-->
+
+<div class="fd-wrap main-content-wrap">
+	<div class="fd-container type-center">
+
+		<div class="main-content-bottom">
+			<article class="notice-box">
+				<div class="notice-title"><h3>NEWS</h3></div>
+				<ul class="notice-list">
+				<?php for($i=0; $i<5; $i++):?>	
+					<li>
+						<a href="javascript:;">
+							2015년 카달로그가 나왔습니다.
+						</a>
+						<span class="notice-list-date">
+							2015-01-01				
+						</span>
+					</li>
+				<?php endfor; ?>	
+				</ul>
+			</article>
+			<article class="qmenu-box">
+				<div class="qmenu-title"><h3>QUICK MENU</h3> </div>
+				<ul class="qmenu-list">
+				<?php for($i=0; $i<5; $i++):?>	
+					<li>
+						<a href="javascript:;">
+							<span>Sample</span>
+						</a>
+					</li>
+				<?php endfor; ?>	
+				</ul>
+			</article>
+			<article class="etc-box">
+				<div class="etc-title"><h3>GLOBAL FDGROUP</h3> </div>
+				<div class="title">글로벌 기업</div>
+				<div class="content">고객에게 힘이 되고 믿음이 되는겠습니다. </div>
+			</article>
+			
+		</div>
+	</div>
+</div><!--//content-->
+
+<?php include_once('./footer.html'); ?>

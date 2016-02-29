@@ -1,0 +1,139 @@
+<?php include_once('./header.html'); ?>
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<a class="btn btn-default fd-bg-basic"> 로그인 </a>
+				<a class="btn btn-default fd-bg-basic2"> 로그인 </a>
+				<a class="btn btn-default fd-bg-basic3"> 로그인 </a>
+				<a class="btn btn-default fd-bg-basic4"> 로그인 </a>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<link rel="stylesheet" href="./mainBanner/style.css">
+<script src="./mainBanner/mb.js"></script>
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12" id="image_list_2">
+
+
+
+				<div class="clsBannerScreen">
+					<div class="images" divno="0"><a href="#" target="_top"><img src="./img/mainBanner/b_01.jpg" border="0"></a></div>
+					<div class="images" divno="1"><a href="#" target="_top"><img src="./img/mainBanner/b_02.jpg" border="0"></a></div>
+					<div class="images" divno="2"><a href="#" target="_top"><img src="./img/mainBanner/b_03.jpg" border="0"></a></div>
+					<div class="images" divno="3"><a href="#" target="_top"><img src="./img/mainBanner/b_04.jpg" border="0"></a></div>
+					<div class="images" divno="4"><a href="#" target="_top"><img src="./img/mainBanner/b_05.jpg" border="0"></a></div>
+					<div class="images" divno="5"><a href="#" target="_top"><img src="./img/mainBanner/b_06.jpg" border="0"></a></div>
+				</div>
+
+				<ul class="clsBannerButton" id="label_2">
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_1_off.jpg" border="0" oversrc="./img/mainBanner/btn_1_on.jpg" outsrc="./img/mainBanner/btn_1_off.jpg" btnno="0"></a></li>
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_2_off.jpg" border="0" oversrc="./img/mainBanner/btn_2_on.jpg" outsrc="./img/mainBanner/btn_2_off.jpg" btnno="1"></a></li>
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_3_off.jpg" border="0" oversrc="./img/mainBanner/btn_3_on.jpg" outsrc="./img/mainBanner/btn_3_off.jpg" btnno="2"></a></li>
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_4_off.jpg" border="0" oversrc="./img/mainBanner/btn_4_on.jpg" outsrc="./img/mainBanner/btn_4_off.jpg" btnno="3"></a></li>
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_5_off.jpg" border="0" oversrc="./img/mainBanner/btn_5_on.jpg" outsrc="./img/mainBanner/btn_5_off.jpg" btnno="4"></a></li>
+					<li><a href="#" target="_top"><img src="./img/mainBanner/btn_6_on.jpg" border="0" oversrc="./img/mainBanner/btn_6_on.jpg" outsrc="./img/mainBanner/btn_6_off.jpg" btnno="5"></a></li>
+				</ul>
+
+
+
+			</div><!-- #image_list_2-->
+		</div>
+	</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $('.slider4').bxSlider({
+    slideWidth: 300,
+    minSlides: 2,
+    maxSlides: 3,
+    moveSlides: 1,
+    slideMargin: 10,
+	wrapperClass: 'np-wrapper',
+	pager:false
+  });
+});
+</script>
+
+
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+
+				<div class="slider4">
+				<?php for($i=1; $i<=10; $i++):?>
+					<div class="slide">
+						<article class="main-list">
+							<div class="thumb">
+								<a href="./detail.html" class="figure-image">
+									<img src="./img/main-list.png" alt="Spaghetti-with-Tomato-Sauce" class="img-responsive">
+									<div class="figure-overlay">&nbsp;</div>
+								</a>
+								<p class="main-list-content">
+									<a href="./detail.html">
+										더블하트 PPSU 노꼭지트윈팩 240ml
+									</a>
+								</p>
+								<p class="main-list-content">
+									\12,345
+								</p>
+							</div>
+						</article>
+					</div>
+				<?php endfor; ?>
+				</div>
+
+			</div><!-- .col-xs-12 -->
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+
+				<ul class="fd_area_menu" data-tab-event="click">
+					<li><a href="#tab_01" class="selected">11111</a></li>
+					<li><a href="#tab_02" class="">22222</a></li>
+					<li><a href="#tab_03" class="">3333</a></li>
+					<li><a href="#tab_04" class="">44444</a></li>
+					<li><a href="#tab_05" class="">5555</a></li>
+					<li><a href="#tab_06" class="">6666</a></li>
+					<li><a href="#tab_07" class="">7777</a></li>
+				</ul>
+				<div id="tab_01" style="display:block;">1
+				</div>
+				<div id="tab_02" style="display:none;">2
+				</div>
+				<div id="tab_03" style="display:none;">3
+				</div>
+				<div id="tab_04" style="display:none;">4
+				</div>
+				<div id="tab_05" style="display:none;">5
+				</div>
+				<div id="tab_06" style="display:none;">6
+				</div>
+				<div id="tab_07" style="display:none;">7
+				</div>
+
+
+			</div><!-- .col-xs-12 -->
+		</div>
+	</div>
+</div>
+
+<?php include_once('./footer.html'); ?>

@@ -1,0 +1,41 @@
+<?php include_once('./header.html'); ?>
+
+
+<section class="fd_wrap fd_bg_product">
+	<div class="container"> 
+		<div class="p_title col-xs-6 col-md-12 sm_margin_top_20"><h1>연구개발</h1></div>
+		<div class="p_subtitle col-xs-6 col-md-12 sm_margin_top_20 visible-md visible-lg"><h3>samjung chemical</h3></div>
+	</div>
+</section>
+
+<section class="fd_wrap fd_tab_company_bg">
+	<div class="container fd_tab_wrap"> 
+		<div class="visible-xs visible-sm fd_tab_title">
+			<a href="javascript:;" class=""><span>연구개발</span></a>
+		</div>
+		<ul class="fd_tab_lab visible-md visible-lg " id="fd_tab" data-tab-event="click">
+			<li><a href="#tab_01" class="selected">실험실소개</a></li>
+			<li><a href="#tab_02" class="">실험실장비</a></li>
+			<li><a href="#tab_03" class="">실험실업무</a></li>
+		</ul>
+	</div>
+</section>
+
+<section class="fd_wrap">
+	<div class="container"> 
+		<article class="con_company" id="tab_01" style="display:block;">
+			<?php include_once('./lab-1.html');?>
+		</article>
+		<article class="con_company" id="tab_02" style="display:none;">
+			<?php include_once('./lab-2.html');?>
+		</article>
+		<article class="con_company" id="tab_03" style="display:none;">
+			<?php include_once('./lab-3.html');?>
+		</article>
+	</div><!-- .con_company -->
+</section>
+
+
+
+<div style="height:50px;font-size:1px;">&nbsp;</div>
+<?php include_once('./footer.html'); ?>

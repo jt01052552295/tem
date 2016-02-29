@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Woodfly</title>
+<link href="./css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="./js/default.js"></script>
+<script src="./js/jquery.jqtransform.js"></script>
+<script src="./bxslider/jquery.bxslider.js"></script>
+<link href="./bxslider/jquery.bxslider.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="./Selectyze/css/Selectyze.jquery.css" media="screen" />
+<script type="text/javascript" src="./Selectyze/js/Selectyze.jquery.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+<!-- 헤더 -->
+<div class="top_bar">
+	<div class="fd_page">
+		<div class="top_tab">
+			<ul>
+				<li><a href="javascript:;"><img src="./img/include/top_pl.png" alt="Plywood" /></a></li>
+				<li><a href="javascript:;"><img src="./img/include/top_pa.png" alt="Particle Board" /></a></li>
+			</ul>
+		</div>
+		<div class="top_login">
+			<ul>
+				<li><a href="javascript:;">로그아웃</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">장바구니</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">주문조회</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">마이페이지</a></li>
+				<li>|</li>
+				<li><a href="javascript:;">고객센터</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="logo_bar">
+	<div class="fd_page">
+		<div class="logo">
+			<a href="javascript:;"><img src="./img/include/logo.png" alt="logo" /></a>
+		</div>
+		<div class="logo_btn">
+			<ul>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn1.png" alt="new" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn2.png" alt="sale" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn3.png" alt="best" /></a></li>
+				<li><img src="./img/include/logo_blank.png" /></li>
+				<li><a href="javascript:;"><img src="./img/include/logo_btn4.png" alt="event" /></a></li>
+			</ul>
+		</div>
+		<div class="logo_search">
+			<form name="fsearchbox" method="get" action="" onsubmit="">
+            <input type="text" name="stx" id="sch_stx" maxlength="20">
+            <input type="image" src="./img/include/search_btn.png" border="0" id="sch_btn">
+            </form>
+		</div>
+	</div>
+</div>
+<div class="menu_bar">
+	<div id="menu">
+		<ul>
+			<li onmouseover=overM(this,'1') onmouseout=outM(this,'1')>
+			<span>CP</span>
+			<div id="mtype_1" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'2') onmouseout=outM(this,'2')>
+			<span>준내수</span>
+			<div id="mtype_2" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'3') onmouseout=outM(this,'3')>
+			<span>일반기타</span>
+			<div id="mtype_3" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'4') onmouseout=outM(this,'4')>
+			<span>특수</span>
+			<div id="mtype_4" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'5') onmouseout=outM(this,'5')>
+			<span>TEGO</span>
+			<div id="mtype_5" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'6') onmouseout=outM(this,'6')>
+			<span>인테리어</span>
+			<div id="mtype_6" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+			<li onmouseover=overM(this,'7') onmouseout=outM(this,'7')>
+			<span>상품</span>
+			<div id="mtype_7" class="menu_box">
+				<table cellpadding="0" cellspacing="0" border="0" class="fd_submenu">
+					<tr>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<dl>
+								<dt>CP</dt>
+								<dd><a href="">3X6</a></dd>
+								<dd><a href="">4x8</a></dd>
+							</dl>
+						</td>
+						<td>
+							<div class="menu_img">
+								<img src="./img/include/sample_pic.png" alt="item picture" />
+								<h6>1220x2400x12/15/18mm</h6>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+<!-- /헤더 -->
+<!-- 콘텐츠 -->
+<div class="fd_page">
+	<div class="cart_prog">
+		<img src="./img/cart/progress_3.png" alt="주문완료" />
+	</div>
+
+	<div class="cart_item">
+		<!-- 내용 넣는 부분 -->
+	</div>
+
+	<div class="cart_btn_box">
+		<a href="javascript:;" alt="홈으로가기"><img src="./img/order/backhome_btn.png" alt="홈으로가기" /></a>
+	</div>
+</div>
+<!-- /콘텐츠 -->
+<!-- 푸터 -->
+<div class="fd_page" id="fd_footer">
+	<div class="family_box">
+		<span>
+			<a href="javascript:;">이용약관</a>
+			<a href="javascript:;">자주묻는 질문</a>
+			<a href="javascript:;">개인정보취급방침</a>
+		</span>
+		<select name="family_site" id="family_site">
+			<option>Family Site</option>
+			<option>성창기업지주(주)</option>
+			<option>성창기업(주)</option>
+			<option>성창보드(주)</option>
+			<option>(주)리우크리에이티브</option>
+			<option>지씨테크(주)</option>
+    </select>
+	</div>	
+</div>
+<div class="footer">
+	<div class="fd_page">
+		<img src="./img/include/logo_s.png" alt="logo" />
+		<span>부산광역시 사하구 다대로 627 성창기업(주) Copyright ⓒ 2014 Sungchang Enterprise Ltd. All rights reserved.</span>
+	</div>
+</div>
+<!-- /푸터 -->
+</div>
+<!-- 퀵메뉴 -->
+<div id="fixedquick" >
+	<ul>
+		<li><img src="./img/include/q_title.png" alt="quickmenu title" /></li>
+		<li><a href="javascript:;"><img src="./img/include/q_1.png" alt="선수금결제" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_2.png" alt="배송비안내" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_3.png" alt="이벤트" /></a></li>
+		<li><a href="javascript:;"><img src="./img/include/q_4.png" alt="담당자정보" /></a></li>
+		<li><img src="./img/include/q_blank.png" alt="blank" /></li>
+		<li><a href="javascript:;" class="quick-up"><img src="./img/include/q_top.png" alt="page up" /></a></li>
+		<li><img src="./img/include/q_blank.png" /></li>
+		<li><a href="javascript:;" class="quick-down"><img src="./img/include/q_down.png" alt="page down" /></a></li>
+	</ul>
+</div>
+<!-- /퀵메뉴 -->
+</body>
+</html>

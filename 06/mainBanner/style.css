@@ -1,0 +1,6 @@
+.clsBannerScreen {overflow: hidden;position: relative;height:354px;width: 768px; border:0; cursor:pointer; clear:both;}
+.clsBannerScreen .images {position:absolute; display:none; }
+.clsBannerButton {position:absolute;width:212px; height:354px; cursor:pointer;border:0;top:0px;margin-left:768px;padding:0}
+.clsBannerButton li { line-height:0% }
+.clsBannerButton li img { line-height:0% }
+.clsBannerButton li.labelOverClass {}

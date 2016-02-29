@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*!
+ * 플로우디자인 (http://www.flowdesign.co.kr)
+ */
+/*-----------------------------------------------
+0. Reset
+1. BASIC
+2. HEADER
+3. MAIN
+4. FOOTER
+-----------------------------------------------*/
+
+/* 0. Reset */
+@import url("./reset.css");
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* 1. BASIC */
+body {font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.fd-bg-primary {background-color:#24c6b2;}
+.fd-bg-success {background-color:#5cb85c;}
+.fd-bg-info {background-color:#5bc0de;}
+.fd-bg-warning {background-color:#f0ad4e;}
+.fd-bg-danger {background-color:#d9534f;}
+
+.img-responsive {display: block;max-width: 100%;height: auto;}
+
+#wrap {position:relative;}
+
+
+ul.test li.list {float:left;width:100px;}
+ul.test li.list:first-child {color:red;}
+ul.test li.list:last-child {color:blue;}
+
+/* 2. HEADER */
+.header {  
+  position: relative;
+  background: url("../img/background.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 700px;
+}
+
+/* 3. MAIN */
+#main {
+    overflow-x: hidden;
+}
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.hsContent {
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.hsContent h2,
+.copy h2 {
+    color: #ffffff;
+    font-size: 45px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+.hsContent p {
+    width: 400px;
+    margin: 0 auto;
+    color: #b2b2b2;
+}
+.hsContent a {
+    color: #b2b2b2;
+    text-decoration: underline;
+}
+.bgBlack {
+    background-color: rgba(0,0,0,0.75);
+    padding: 3px 10px;
+}
+
+
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#slide-1 .bcg {background-image:url('../img/home_ko.jpg')}
+#slide-2 .bcg {background-image:url('../img/moments_ko.jpg')}
+#slide-3 .bcg {background-image:url('../img/calendar_ko.jpg')}
+#slide-4 .bcg {background-image:url('../img/chat_ko.jpg')}
+
+/* 3-1. SUB */
+
+
+/* 4. FOOTER */

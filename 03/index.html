@@ -1,0 +1,55 @@
+<?php include_once('./header.html'); ?>
+
+<script>
+$(document).ready(function(){
+  $('#bxslider').bxSlider({
+    auto: true,   
+    autoControls: true,
+    adaptiveHeight: true,
+    controls: false
+  });
+});
+</script>
+
+<div class="main-content-wrap">
+	<ul id="bxslider">
+        <li><img src="./img/main.jpg" alt="배너" class="img-responsive"/></li>
+        <li><img src="./img/main.jpg" alt="배너" class="img-responsive"/></li>
+        <li><img src="./img/main.jpg" alt="배너" class="img-responsive"/></li>
+        <li><img src="./img/main.jpg" alt="배너" class="img-responsive"/></li>
+    </ul>
+</div>
+
+
+<div class="rnb">
+	<article class="notice-box">
+		<div class="notice-title"><h3>뉴스&공지사항</h3> <a href="javascript:;"><span>더보기</span></a></div>
+		<ul class="notice-list">
+			
+			<?php for($i=0; $i<3; $i++):?>	
+			<li>
+				<a href="javascript:;">
+					홈페이지를 방문해 주셔서 감사합니다.
+				</a>
+			</li>
+			<?php endfor; ?>
+			
+		</ul>
+	</article>
+	<article class="right-box product">
+		<a href="javascript:;">제품소개</a>
+	</article>
+	<article class="right-box as">
+		<a href="javascript:;">A/S접수하기</a>
+	</article>
+	<article class="right-box qa">
+		<a href="javascript:;">질문과답변</a>
+	</article>
+	<article class="right-box contact">
+		<a href="javascript:;">견적문의</a>
+	</article>
+	<article class="right-box customer">
+		<a href="javascript:;">고객지원센터</a>
+	</article>
+</div>
+<?php include_once('./footer.html'); ?>

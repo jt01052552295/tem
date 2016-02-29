@@ -1,0 +1,60 @@
+@charset "utf-8";
+/*!
+ * 플로우디자인 (http://www.flowdesign.co.kr)
+ * 반응형 미디어쿼리
+ * responsive style css
+ */
+/*-----------------------------------------------
+1. 768px ~
+2. 992px ~
+3. 1200px ~
+-----------------------------------------------*/
+@media (min-width: 768px) {
+
+
+} /* 768px ~ */
+
+
+@media (min-width: 992px) {
+a.logo {margin:0;padding:33px 20px;line-height: 24px;color:#1c1c1c;text-align:center;text-transform: uppercase;display: block;}
+.fd_topNavMenu {height:90px;padding: 0;position:relative;}
+.fixedTopNav {position:fixed;top:0;width:100%;z-index: 99999;}
+.fd_topNavMenu .nav-menu {clear: both;}
+.fd_topNavMenu .nav-menu ul.nav-width {width:100%;}
+.fd_topNavMenu .nav-menu ul li.nav-li {height:90px;padding:0;margin:0;;}
+.fd_topNavMenu .nav-menu ul li.nav-li ul.nav-sub-width {width:970px;margin:0 auto;padding:0;}
+.fd_topNavMenu .nav-menu ul li.nav-li a.dropdown-toggle {display:block;overflow:hidden;position: relative;padding:33px 20px;line-height: 24px;color:#1c1c1c;font-weight:bold;}
+.fd_topNavMenu .nav-menu ul li.nav-li > a.dropdown-toggle:hover,
+.fd_topNavMenu .nav-menu ul li.nav-li > a.dropdown-toggle:focus {color: #01C0E1;border-top: 3px solid #01C0E1;padding:29px 20px 32px;}
+.fd_topNavMenu .nav-menu ul li.open a.dropdown-toggle span.nav_aspan {color:#01C0E1;}
+.fd_topNavMenu .nav-menu ul li.nav-li a.fa span {position: relative;text-indent:-9999px;display: block;overflow: hidden;}
+
+.dropdown-menu {border-top: 2px solid #01C0E1;}
+.dropdown-menu li {position:relative;}
+.dropdown-menu > li > a {padding: 8px 20px;display: block;font-size: 14px;color: #4c4c4c;text-decoration: none;}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {  color: #01C0E1;  text-decoration: none;  background-color: transparent;}
+.nav > li > a:hover,.nav > li > a:focus { color: #01C0E1; text-decoration: none;  background-color: transparent;}
+.nav .open > a,.nav .open > a:hover,.nav .open > a:focus {  background-color: transparent;  border-color: transparent;}
+
+.menu-item {position: static!important;}
+.menu-item .dropdown-menu {left: 0!important;right: 0!important;overflow: hidden;}
+.menu-item .dropdown-menu li.menu-item-list {position: relative;}
+.menu-item .dropdown-menu li.menu-item-list:before {background: rgba(0, 0, 0, .1);content: "";position: absolute;height: 1000px;width: 1px;left: 0;top: 0;}
+.menu-item .dropdown-menu li strong {padding-top: 16px;padding-bottom: 8px;display: block;}
+.menu-item .dropdown-menu li ul {padding: 0 0 6px;overflow: hidden;}
+.menu-item .dropdown-menu li ul li a {padding: 8px 0;display: block;font-size: 14px;color: #4c4c4c;text-decoration: none;}
+.menu-item .dropdown-menu li ul li a:hover {color:#01C0E1;}
+
+#fd_find {position: absolute;top:90px;width:100%;padding:10px;z-index: 1001;display: none;background: #fff;overflow: hidden; outline: none;clear:both;}
+
+
+
+
+} /* 992px ~*/
+
+@media (min-width: 1200px) {
+
+.fd_topNavMenu .nav-menu ul li.nav-li ul.nav-sub-width {width:1170px;margin:0 auto;}
+
+} /* 1200px ~ */

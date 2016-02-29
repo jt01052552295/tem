@@ -1,0 +1,88 @@
+<?php include_once('./header.html'); ?>
+
+
+<script>
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+    mode: 'fade',
+    auto: true,
+    wrapperClass: 'main-wrapper',
+    autoControls: true,
+    adaptiveHeight: false,
+  });
+});
+</script>
+<div class="fd-wrap">
+	<ul class="bxslider">
+        <li><img src="./img/main.png" alt="배너" class="img-responsive"/></li>
+        <li><img src="./img/main.png" alt="배너" class="img-responsive"/></li>
+        <li><img src="./img/main.png" alt="배너" class="img-responsive"/></li>
+    </ul>
+</div><!--//banner-->
+
+
+<div class="fd-wrap main-content-wrap">
+	<div class="fd-container type-center">
+		<div class="main-content-top">
+		<?php for($i=0; $i<7; $i++):?>
+			<article class="article">
+				<div class="thumb">
+					<a href="javascript:;">
+						<img src="./img/thumb.png" alt="Spaghetti-with-Tomato-Sauce">
+					</a>
+				</div>
+				<div class="expert">
+					<h3>SAMPLE1</h3>
+				</div>
+			</article>
+		<?php endfor; ?>
+		</div>
+		<div class="main-content-bottom">
+			<article class="notice-box">
+				<div class="notice-title"><h3>공지사항</h3> <a href="javascript:;"><span>더보기</span></a></div>
+				<ul class="notice-list">
+				<?php for($i=0; $i<4; $i++):?>	
+					<li>
+						<a href="javascript:;">
+							2015년 카달로그가 나왔습니다.
+						</a>
+						<span class="notice-list-date">
+							2015-01-01				
+						</span>
+					</li>
+				<?php endfor; ?>	
+				</ul>
+			</article>
+			<article class="catalog-box">
+				<div class="catalog-title"><h3>온라인카탈로그</h3> </div>
+				<p>
+					FDstyle제품의 <br/>
+					카달로그를 확인 하실 수 <br/>
+					있습니다.
+				</p>
+				<a href="javascript:;"><span>더보기</span></a>
+			</article>
+			<article class="pds-box">
+				<div class="pds-title"><h3>자료실</h3> </div>
+				<p>
+					FDstyle제품의 관련<br/>
+					자료를 확인및 다운받을 수 있습니다.
+					
+				</p>
+				<a href="javascript:;"><span>더보기</span></a>
+			</article>
+			<article class="customer-box">
+				<div class="customer-title"><h3>고객센터</h3> </div>
+				<p>
+					궁금하신 게 있으신가요?
+				</p>
+				<div class="tel">012.345.6789</div>
+				<div class="fax">FAX 012.345.6789</div>
+				<div class="mail">E-mail webmaster@fdstyle.co.kr</div>
+			</article>
+
+		</div>
+	</div>
+</div><!--//content-->
+
+<?php include_once('./footer.html'); ?>

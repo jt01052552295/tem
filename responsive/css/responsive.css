@@ -28,11 +28,15 @@
 @media only screen and (min-width: 768px) {
 	.container {width: 800px;margin-left: auto;margin-right: auto;}
 	.c1 {width: 60%;float:left;}
-  	.c2 {width: 40%;float:left;}
-  	.c3, .c4, .c5 {width: 33.33%;float:left;}
+  .c2 {width: 40%;float:left;}
+  .c3, .c4, .c5 {width: 33.33%;float:left;}
 }
 
 
 @media only screen and (min-width: 992px) {
+  .c1 {display:none;}
+  .c2, .c5 {width:100%;float:none;clear:both;}
+  .c3, .c4 {width:50%;float:left;}
+  
 
 }

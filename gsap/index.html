@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plugin</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+</head>
+
+<style>
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #262626;
+  font-family: 'Open Sans', sans-serif;
+  position:relative;
+  overflow: hidden;
+}
+#box {
+  background-color: #88ce02;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+ 
+.boxSmall {
+  position: absolute;
+  background-color: #70a40b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 75px;
+  z-index: 2;
+}
+ 
+.boxTiny {
+  background-color: #577a14;
+  height: 50px;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  z-index: 3;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	var box = $('#box');
+	$('#action').on('click', function(){
+		// TweenLite.to(box, 1, {left:"0", x:"0"});
+		// TweenLite.from(box, 2, {x: '-=200px', autoAlpha: 0})
+		// TweenLite.set(box, {x:'-=200px', scale:0.3});
+		// TweenLite.set(box, {x:'+=100px', scale:0.6});
+		// TweenLite.set(box, {x:'-50%', scale:1});
+		TweenLite.fromTo(box, 2, {x: '-=200px'}, {x: 150});
+	})
+});
+</script>
+<body>
+
+<div id="box">
+  <div class="boxSmall"></div>
+  <div class="boxSmall boxTiny"></div>
+</div>
+
+<div>
+	<button id="action">액션</button>
+</div>
+
+
+</body>
+</html>

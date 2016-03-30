@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Plugin</title>
+<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+</head>
+<style>
+  body, html {
+    font-family: Signika Negative, sans-serif;
+    background: #111;
+    color:#efefef;
+    height:100%;
+  }
+  .btn {
+    border: none;
+    text-align:center;
+    cursor: pointer;
+    padding: 25px 80px;
+    margin: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    background-color:rgb(38, 38, 38);
+    border: solid 1px transparent;
+    border-radius:10px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nav {
+    list-style: none;
+    position:relative;
+    width:350px;
+    margin:auto;
+    padding:0;
+    overflow:hidden;
+    background-color:#1d1d1d;
+    height:90%;
+  }
+
+  .instructions {
+    text-align:center;
+    margin-top:10px;
+    
+  }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	TweenMax.staggerFrom('.btn', 1, {scale:0.5, opacity:0, delay:0.5, ease:Elastic.easeOut, force3D:true}, 0.2);
+
+  $('.btn').click(function(){
+    TweenMax.staggerTo('.btn', 0.5, {opacity:0, y:-100, ease:Back.easeIn}, 0.1);
+  })
+
+});
+
+</script>
+<body>
+
+
+<ul class="nav">
+  <li class="btn">new game</li>
+  <li class="btn">options</li>
+  <li class="btn">credits</li>
+</ul>
+<div class="instructions">
+  click the buttons to animate out
+</div>
+
+
+</body>
+</html>

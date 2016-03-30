@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Plugin</title>
+<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+</head>
+<style>
+  body {
+    background:#1d1d1d;
+  }
+
+  h1 {
+    color: #999;
+    font-family: Arial, sans-serif;
+    font-weight:normal;
+    text-align:center;
+  }
+  .demo {
+    position:relative;
+    margin:20px auto;
+    width:620px;
+    height:28px;
+    background-color:#121212;
+    border-radius:12px;
+    overflow:hidden;
+    border:solid 4px #121212;
+  }
+
+  .circle {
+    width:20px;
+    height:20px;
+    background-color:#86cc01;
+    position:absolute;
+    border-radius:50%;
+    display:inline-block;
+    left:-20px;
+    top:4px;
+  }
+  button {
+    padding:10px;
+    margin:0 10px;
+    width:120px;
+    cursor:pointer;
+  }
+
+  .nav {
+    width:600px;
+    margin:auto;
+    text-align:center;
+  }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  var pauseBtn = $('#pause');
+  var t = new TimelineMax();
+
+  t.staggerTo('.circle', 1.5, {x:640, repeat:-1, repeatDelay:0.5, force3D:true, ease:SlowMo.ease.config(0.2, 0.5)}, 0.15);
+
+  pauseBtn.on('click', function(){
+    t.paused(!t.paused());
+    pauseBtn.html(t.paused() ? "play" : "pause");
+  });
+
+});
+
+</script>
+<body>
+
+
+<h1>Easy Animation Play / Pause Toggle</h1>
+<div class="demo">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
+
+<div class="nav">
+  <button id="pause">pause</button>
+</div>
+
+
+</body>
+</html>

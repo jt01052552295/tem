@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>parallax</title>
+<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.lazyload.js"></script>
+</head>
+<body>
+
+
+<div class="titVisual_wrap subtitimgusa">
+	<div class="titVisual_box">
+		<div class="tit_text">
+			<em>
+				<span class="hide tit_word">미</span>
+				<span class="hide tit_word">국</span>
+				<span class="hide tit_word">어</span>
+				<span class="hide tit_word">학</span>
+				<span class="hide tit_word">연</span>
+				<span class="hide tit_word">수</span>
+			</em>
+		</div>
+		<div class="sub_tit_text"><em>감자유학 어학연수의 모든 것</em></div>
+	</div>
+</div>
+
+
+
+<div class="webzine">
+	<ul class="list_box">
+		<?php for($k=0; $k<4; $k++):?>
+			<?php for($i=1; $i<4; $i++):?>
+				<li class="">
+					<div><img class="lazy" data-original="./images/model<?php echo $i?>.jpg"></div>
+					<div>
+						<h3>01. Concept</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</li>
+			<?php endfor; ?>
+		<?php endfor; ?>
+	</ul>
+</div>
+
+
+
+
+<div id="loading"><img id="loading-image" src="./images/ajax-loader.gif" alt="Loading..." /></div>
+<script type="text/javascript">   
+$(window).load(function() {     
+	$('#loading').stop().animate({opacity:0},1000,function() {
+		$(this).css({'display':'none'})
+	});
+
+	$('.tit_word').each(function(index){
+		var $_this = $(this);
+		var basic = 200;
+		var delay = basic*index;
+		$_this.stop().delay(delay).animate({opacity:1},basic);
+	});
+
+	setInterval(function(){
+		$('.tit_word').each(function(index){
+			var $_this = $(this);
+			$_this.css({'opacity':'0'});
+		});
+
+		$('.tit_word').each(function(index){
+			var $_this = $(this);
+			var basic = 200;
+			var delay = basic*index;
+			$_this.stop().delay(delay).animate({opacity:1},basic);
+		});
+	},5000);
+
+	
+
+}); 
+$(function(){
+	$("img.lazy").lazyload({
+		effect : "fadeIn"
+	});
+});
+</script>
+
+</body>
+</html>

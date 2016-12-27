@@ -17,7 +17,8 @@ a:active, a:hover {text-decoration:none}
 address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 button::-moz-focus-inner,
 input::-moz-focus-inner{border:0;padding:0;}
-
+table {border-spacing: 0;border-collapse: collapse;}
+table caption {display:none;}
 /*
 ** headings
 */
@@ -50,6 +51,7 @@ h1 img {margin:0;vertical-align:middle;}
 .align_center {text-align:center;}
 .align_right {text-align:right;}
 
+.animate_transition {-webkit-transition: all .3s ease;-moz-transition: all .3s ease;-o-transition: all .3s ease;	-ms-transition: all .3s ease;transition: all .3s ease;}
 
 /*
 ** Layout style 
@@ -90,3 +92,54 @@ h1 img {margin:0;vertical-align:middle;}
 .grid_90 {width:90%;}
 .grid_95 {width:95%;}
 .grid_100 {width:100%;}
+
+/* 
+** opacity 
+*/
+.opacity_10 {opacity: 0.1;filter: alpha(opacity=10);}
+.opacity_15 {opacity: 0.15;filter: alpha(opacity=15);}
+.opacity_20 {opacity: 0.2;filter: alpha(opacity=20);}
+.opacity_25 {opacity: 0.25;filter: alpha(opacity=25);}
+.opacity_30 {opacity: 0.3;filter: alpha(opacity=30);}
+.opacity_35 {opacity: 0.35;filter: alpha(opacity=35);}
+.opacity_40 {opacity: 0.4;filter: alpha(opacity=40);}
+.opacity_45 {opacity: 0.45;filter: alpha(opacity=45);}
+.opacity_50 {opacity: 0.5;filter: alpha(opacity=50);}
+.opacity_55 {opacity: 0.55;filter: alpha(opacity=55);}
+.opacity_60 {opacity: 0.6;filter: alpha(opacity=60);}
+.opacity_65 {opacity: 0.65;filter: alpha(opacity=65);}
+.opacity_70 {opacity: 0.7;filter: alpha(opacity=70);}
+.opacity_75 {opacity: 0.75;filter: alpha(opacity=75);}
+.opacity_80 {opacity: 0.8;filter: alpha(opacity=80);}
+.opacity_85 {opacity: 0.85;filter: alpha(opacity=85);}
+.opacity_90 {opacity: 0.9;filter: alpha(opacity=90);}
+.opacity_95 {opacity: 0.95;filter: alpha(opacity=95);}
+
+
+/* 
+** button  
+*/
+.ac_btn {
+	display: inline-block;
+	margin: 0;
+	padding: 0 47px;
+	border-radius: 0;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	background: transparent;
+	outline: 0;
+	vertical-align: middle;
+	font-size: 15px;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	height:40px;
+	line-height:40px;
+}
+.ac_btn.red,
+.ac_btn.red:link,
+.ac_btn.red:visited {color: #ffffff;background: #ce1f2c;}
+.ac_btn.red:focus,
+.ac_btn.red:hover {color: #ffffff;background: #ce1f2c;}
+.ac_btn.red:active,
+.ac_btn.red.active {color: #ffffff;background: #ce1f2c;}

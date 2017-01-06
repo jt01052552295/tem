@@ -1,5 +1,15 @@
 var MARIO = MARIO || {};
-MARIO.DEBUG = !0, MARIO.$window = $(window), MARIO.$html = $("html"), MARIO.$body = $("body"), MARIO.SCENE_LENGTH = 5, MARIO.BASE_WIDTH = 1280, MARIO.BASE_HEIGHT = 700, MARIO.BASE_RATIO = MARIO.BASE_WIDTH / MARIO.BASE_HEIGHT, MARIO.INTERVAL = 600, MARIO.CX = MARIO.BASE_WIDTH / 2, MARIO.CY = MARIO.BASE_HEIGHT / 2, MARIO.DISTANCE = -(MARIO.BASE_WIDTH + MARIO.INTERVAL), MARIO.isOpening = !1, MARIO.width = MARIO.$body.width(), MARIO.height = MARIO.$body.height(), AMP.Youtube.install(), jQuery(function(e) {
+MARIO.DEBUG = !0, 
+MARIO.$window = $(window), 
+MARIO.$html = $("html"), 
+MARIO.$body = $("body"), 
+MARIO.SCENE_LENGTH = 5, 
+MARIO.BASE_WIDTH = 1280, 
+MARIO.BASE_HEIGHT = 700, 
+MARIO.BASE_RATIO = MARIO.BASE_WIDTH / MARIO.BASE_HEIGHT, 
+MARIO.INTERVAL = 600, 
+MARIO.CX = MARIO.BASE_WIDTH / 2, 
+MARIO.CY = MARIO.BASE_HEIGHT / 2, MARIO.DISTANCE = -(MARIO.BASE_WIDTH + MARIO.INTERVAL), MARIO.isOpening = !1, MARIO.width = MARIO.$body.width(), MARIO.height = MARIO.$body.height(), AMP.Youtube.install(), jQuery(function(e) {
         new MARIO.Main
     }),
     function() {
@@ -15,7 +25,9 @@ MARIO.DEBUG = !0, MARIO.$window = $(window), MARIO.$html = $("html"), MARIO.$bod
         }
         AMP.inherits(e, AMP.BaseClass);
         var t = e.prototype;
-        e.ROOT = "../img/stage/", e.IMAGES = ["flower01.png", "flower02.png", "flower03.png", "ground.png", "pipe01.png", "pipe02.png", "pipe03.png", "item01.png", "item02.png", "item03.png", "chara01.png", "chara02.png", "chara03.png", "chara04.png", "chara05.png", "chara06.png", "chara08.png", "mario01.png", "mario02.png", "mario03.png", "kuribo01.png", "bg01.mp4", "bg01.jpg", "bg02.jpg", "bg03.jpg", "bg04.jpg"], e.PRELOAD_IMAGES = ["../img/common/sec04_modal01_bg.png", "../img/common/sec04_modal02_bg.png", "../img/common/pager_bg01.png", "../img/common/pager_dot.png"], e.COURSE_ITEMS = [{
+        e.ROOT = "../img/stage/", 
+        e.IMAGES = ["flower01.png", "flower02.png", "flower03.png", "ground.png", "pipe01.png", "pipe02.png", "pipe03.png", "item01.png", "item02.png", "item03.png", "chara01.png", "chara02.png", "chara03.png", "chara04.png", "chara05.png", "chara06.png", "chara08.png", "mario01.png", "mario02.png", "mario03.png", "kuribo01.png", "bg01.mp4", "bg01.jpg", "bg02.jpg", "bg03.jpg", "bg04.jpg"], e.PRELOAD_IMAGES = ["../img/common/sec04_modal01_bg.png", "../img/common/sec04_modal02_bg.png", "../img/common/pager_bg01.png", "../img/common/pager_dot.png"], 
+        e.COURSE_ITEMS = [{
             isReflect: !0,
             image: "flower01.png",
             point: {

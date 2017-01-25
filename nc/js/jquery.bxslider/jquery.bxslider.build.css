@@ -1,0 +1,214 @@
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.build-wrapper {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	*zoom: 1;
+}
+
+.build-wrapper img {
+	max-width: 100%;
+	display: block;
+}
+
+/** THEME
+===================================*/
+
+.build-wrapper .bx-viewport {
+	padding: 0;
+	background: #ffffff;
+	
+	/*fix other elements on the page moving (on Chrome)*/
+	-webkit-transform: translatez(0);
+	-moz-transform: translatez(0);
+    	-ms-transform: translatez(0);
+    	-o-transform: translatez(0);
+    	transform: translatez(0);
+}
+
+.build-wrapper .bx-pager,
+.build-wrapper .bx-controls-auto {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+}
+
+/* LOADER */
+
+.build-wrapper .bx-loading {
+	min-height: 50px;
+	background: url(images/bx_loader.gif) center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.build-wrapper .bx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+	padding-top: 20px;
+}
+
+.build-wrapper .bx-pager .bx-pager-item,
+.build-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.build-wrapper .bx-pager.bx-default-pager a {
+	background: #666;
+	text-indent: -9999px;
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	outline: 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.build-wrapper .bx-pager.bx-default-pager a:hover,
+.build-wrapper .bx-pager.bx-default-pager a.active {
+	background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.build-wrapper .bx-prev {
+	left: 10px;
+	background: url(images/controls.png) no-repeat 0 -32px;
+}
+
+.build-wrapper .bx-next {
+	right: 10px;
+	background: url(images/controls.png) no-repeat -43px -32px;
+}
+
+.build-wrapper .bx-prev:hover {
+	background-position: 0 0;
+}
+
+.build-wrapper .bx-next:hover {
+	background-position: -43px 0;
+}
+
+.build-wrapper .bx-controls-direction a {
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	outline: 0;
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	z-index: 9999;
+}
+
+.build-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+
+.build-wrapper .bx-controls-auto {
+	text-align: center;
+}
+
+.build-wrapper .bx-controls-auto .bx-start {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -11px no-repeat;
+	margin: 0 3px;
+}
+
+.build-wrapper .bx-controls-auto .bx-start:hover,
+.build-wrapper .bx-controls-auto .bx-start.active {
+	background-position: -86px 0;
+}
+
+.build-wrapper .bx-controls-auto .bx-stop {
+	display: block;
+	text-indent: -9999px;
+	width: 9px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -44px no-repeat;
+	margin: 0 3px;
+}
+
+.build-wrapper .bx-controls-auto .bx-stop:hover,
+.build-wrapper .bx-controls-auto .bx-stop.active {
+	background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.build-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+	text-align: left;
+	width: 80%;
+}
+
+.build-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.build-wrapper .bx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+
+.build-wrapper .bx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}
+
+#build-slider-prev {display: inline-block;overflow: hidden;position: absolute;bottom:46px;left:112px;width: 36px;height: 36px;}
+#build-slider-prev a {background: url(images/btn_main_slider_prev.jpg);display: inline-block;width: 36px;height: 36px;margin: 0;padding: 0;text-indent:-9999px;}
+#build-slider-next {display: inline-block;overflow: hidden;position: absolute;bottom:46px;left:154px;width: 36px;height: 36px;}
+#build-slider-next a {background: url(images/btn_main_slider_next.jpg);display: inline-block;width: 36px;height: 36px;margin: 0;padding: 0;text-indent:-9999px;}
+
+.slide-number {position: absolute;bottom:46px;left:27px;width:69px;height:36px;text-align:center;line-height:36px;background:#ebf9ff;color:#00a0e9;font-size:11px;}
+.build-wrapper .desc {float:left;width:393px;height:293px;padding:54px 27px 47px;}
+.build-wrapper .desc h2 {font-family: 'notokr-medium';color:#00a0e9;font-size:25px;}
+.build-wrapper .desc h3 {font-family: 'notokr-demilight';color:#3a3a3a;font-size:19px;margin-top:10px;}
+.build-wrapper .desc .title_line {width:100%;line-height:24px;display:block;border-bottom:1px solid #cbcbcb;margin-bottom:24px;}
+.build-wrapper .desc .desc_tit {font-family: 'notokr-medium';font-weight:bold;color:#3a3a3a;font-size:15px;margin-bottom:13px;}
+.build-wrapper .desc .desc_con {font-family: 'notokr-demilight';color:#717171;font-size:14px;margin-bottom:30px;}
+.build-wrapper .thumb {float:left;width:650px;height:400px;border-left:1px solid #cbcbcb;}

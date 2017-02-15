@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="subject" content="아키타임즈" />
+<title>아키타임즈</title>
+<link href="./css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="./js/jquery.es-drawermenu.js"></script>
+<script type="text/javascript" src="./js/jquery.scrollbar.js"></script>
+<script type="text/javascript" src="./js/front.js"></script>
+</head>
+<body>
+<header class="ac_wrap nav_bar">
+	<a href="javascript:;" class="nav_toggle drawer-toggle"><span class="screen_out">메뉴열기</span></a>
+	<h1><a href="javascript:;"><span class="screen_out">아키타임즈</span></a></h1>
+	<a href="javascript:;" class="search_toggle"><span class="screen_out">검색창열기</span></a>
+	<div class="nav">
+		<ul class="nav_u">
+			<li class="nav_l on">
+				<a href="#home" class="nav_a nav_news"><span>홈</span></a>
+			</li>
+			<li class="nav_l">
+				<a href="#ar" class="nav_a nav_news"><span>설계</span></a>
+			</li>
+			<li class="nav_l">
+				<a href="#co" class="nav_a nav_news"><span>시공</span></a>
+			</li>
+			<li class="nav_l">
+				<a href="#ma" class="nav_a nav_news"><span>자재</span></a>
+			</li>
+			<li class="nav_l">
+				<a href="#cl" class="nav_a nav_news"><span>건축정보</span></a>
+			</li>
+		</ul>
+
+	</div>
+</header>
+
+<nav class="drawermenu">
+	<div class="nav_top">
+		<a href="javascript:;" class="drawer_close drawer-toggle"><span class="screen_out">메뉴닫기</span></a>
+		<p>로그인 후 이용해 주세요</p>
+		<div class="login_btn_wrap">
+			<a href="" class="login_btn mgr">로그인</a>
+			<a href="" class="login_btn">회원가입</a>
+		</div>
+	</div>
+	<div class="nav_bottom">
+		<ul>
+			<li><a href="#">아이디 찾기</a></li>
+			<li><a href="#">비밀번호 찾기</a></li>
+			<li><a href="#">1:1 문의</a></li>
+			<li><a href="#">광고문의</a></li>
+		</ul>
+		<div class="nav_banner">
+			<a href="#"><img src="./img/main/nav_banner.png" class="img-responsive" alt="배너" /></a>
+		</div>
+	</div>
+</nav>
+
+<!-- <nav class="drawermenu">
+	<div class="nav_top">
+		<a href="javascript:;" class="drawer_close drawer-toggle"><span class="screen_out">메뉴닫기</span></a>
+		<div class="mem_kind">
+			자재사회원
+		</div>
+		<p>idname02 <span>님</span></p>
+		<div class="login_btn_wrap">
+			<a href="" class="logout_btn">로그아웃</a>
+		</div>
+	</div>
+	<div class="nav_bottom">
+		<ul>
+			<li><a href="#">포트폴리오 등록</a></li>
+			<li><a href="#">관심포트폴리오</a></li>
+			<li><a href="#">관심업체</a></li>
+			<li><a href="#">광고문의</a></li>
+		</ul>
+		<div class="nav_banner">
+			<a href="#"><img src="./img/main/nav_banner.png" class="img-responsive" alt="배너" /></a>
+		</div>
+	</div>
+</nav> -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.drawermenu').drawermenu({
+    speed:100,
+    position:'left'
+  });
+});
+</script>

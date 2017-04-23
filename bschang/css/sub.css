@@ -1,0 +1,206 @@
+/*-----------------------------------------------
+
+4. SUB
+4-1. sub_0101
+4-2. sub_0106
+4-3. sub_0107
+4-4. sub_0201
+4-5. sub_0202
+-----------------------------------------------*/
+
+
+/* 4. SUB */
+.sub-page {float:right;width:799px;min-height:715px;border-right:1px solid #2165ba;border-top:5px solid #5fe4e8;}
+
+.page-title-bar {width:100%;position: relative;clear:both;}
+.page-title-bar .title {float:left;padding:25px 0 25px 28px;}
+.page-title-bar .title h1 {font-size:30px;line-height:30px;font-weight:700;color:#333333;letter-spacing: -1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.page-title-bar .title p {font-size:14px;line-height:17px;font-weight:700;color:#666666;letter-spacing: -1px;padding-top:13px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.page-title-bar .nav-bread {float:right;padding:32px 17px 0 0;}
+
+.breadcrumbs {margin: 0;padding: 0;list-style: none;}
+.breadcrumbs li {margin: 0;padding: 0;display: inline;margin-left: 5px;font-size: 13px;color:#666666;font-weight: 700;}
+.breadcrumbs li a {padding-right: 5px;font-weight: normal;}
+.breadcrumbs li:after {content: '>';}
+.breadcrumbs li:last-child:after {content: '';}
+
+.page-content {padding:0px 18px 45px 18px;clear: both;}
+.page-content div#tab_1,
+.page-content div#tab_2,
+.page-content div#tab_3,
+.page-content div#tab_4,
+.page-content div#tab_5 {min-height:476px;margin-top:-30px;z-index: 1;position:relative;border:1px solid #349ed2;}
+.page-content div#tab_1 .tab-content,
+.page-content div#tab_2 .tab-content,
+.page-content div#tab_3 .tab-content,
+.page-content div#tab_4 .tab-content, 
+.page-content div#tab_5 .tab-content {padding:55px 19px;}
+
+.tab_bar {display:block;width:100%;clear:both;z-index:10;position: relative;padding-top:20px;}
+.tab_bar:after {display:block;content:".";font-size:0;visibility:hidden;clear:both;}
+.tab_bar > li {float:left;margin:0 0 -1px 0;z-index:10;}
+.tab_bar > li > a {display:block;color:#666;font-size:14px;font-weight:bold;height:50px;width:128px;line-height: 50px;text-align: center;background: url("../img/sub/tab-off.png")no-repeat;z-index:10;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.tab_bar > li:last-child > a {width:130px;background: url("../img/sub/tab-off-last.png")no-repeat;}
+.tab_bar > li > a:hover {color:#3377e4;}
+.tab_bar > li.on > a {background: url("../img/sub/tab-on.png")no-repeat;border-bottom:1px solid transparent;color:#fff;font-size:17px;font-weight:bold;height: 100px;line-height: 60px;margin-top:-20px;}
+
+.tab-content .o-list {padding-top:34px}
+.tab-content .o-list .title {font-size:14px;font-weight:700;color:#333333;letter-spacing: -1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;clear: both;}
+.tab-content .o-list .title span {font-weight:700;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.tab-content .o-list .title span.num {color:#013f8d;font-size:18px;}
+.tab-content .o-list .title span.green {color:#437500;font-size:14px;}
+.tab-content .o-list .title span.blue {color:#0175ae;font-size:14px;}
+.tab-content .o-list .sub-list {padding-left: 25px;}
+.tab-content .o-list .sub-list li {padding:15px 0;font-size: 12px;font-weight:normal;color:#333333;}
+.tab-content .o-list .sub-list li:first-child {padding:30px 0 15px;}
+.tab-content .o-list .sub-list li:last-child {padding:15px 0 30px;}
+.tab-content .o-list .sub-list li pre {font-size: 12px;color:#333333;}
+.tab-content .o-list .sub-list li pre.green {color:#437500;}
+.tab-content .o-list .sub-list li pre span.blue {color:#0175ae;font-size: 12px;font-weight:normal;font-family: Dotum,맑은 고딕,Malgun Gothic;}
+.tab-content .o-list .sub-list li span.underline { text-decoration: underline;}
+
+
+/* 4-1. sub_0101 */
+#sub_0101 div#tab_1 {background: url("../img/sub/sub0101-t1.png")no-repeat;border:none;}
+#sub_0101 div#tab_2 {background: url("../img/sub/sub0101-t2.png")no-repeat;background-position: bottom right;}
+#sub_0101 div#tab_5 {background: url("../img/sub/sub0101-t5.png")no-repeat;height:1113px;position:relative;}
+
+#sub_0101 div#tab_1 .tab-content {position:absolute;top:100px;left:100px;padding:0;}
+
+#sub_0101 div#tab_1 .tab-content h2,
+#sub_0101 div#tab_2 .tab-content h2,
+#sub_0101 div#tab_3 .tab-content h2,
+#sub_0101 div#tab_4 .tab-content h2,
+#sub_0101 div#tab_5 .tab-content h2 {font-size:16px;color:#333333;letter-spacing: -1px;font-weight: normal;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+#sub_0101 div#tab_1 .tab-content h2 span,
+#sub_0101 div#tab_2 .tab-content h2 span,
+#sub_0101 div#tab_3 .tab-content h2 span,
+#sub_0101 div#tab_4 .tab-content h2 span,
+#sub_0101 div#tab_5 .tab-content h2 span {display:inline-block;padding-left:5px;font-size:23px;font-weight: 700;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+
+#sub_0101 div#tab_1 .tab-content pre {padding-top:26px;font-size:14px;color:#333333;letter-spacing: -2px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+
+.tab-3-1 {width:516px;margin:0 auto;padding-top:50px;clear: both;}
+.tab-3-1 .left-content {width:200px;float:left;padding:0 20px 0 38px;}
+.tab-3-1 .left-content pre {font-size:10px;color:#666666;letter-spacing:-1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.tab-3-1 .right-content {width:200px;float:left;padding:0 38px 0 20px;}
+.tab-3-1 .right-content pre {font-size:10px;color:#666666;letter-spacing:-1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+
+.tab-3-2 {position:relative;width:703px;height:196px;margin:0 auto;clear: both;background: url("../img/sub/sub0101-t3.png")no-repeat;}
+.tab-3-2 h1 {color:#333333;font-size:20px;line-height:20px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.tab-3-2 p {display:block;color:#333333;font-size:15px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;letter-spacing:-1px;}
+
+.tab-3-2 h1.mice {position:absolute;left:75px;bottom:14px;}
+.tab-3-2 p.mice-p1 {position:absolute;left:75px;bottom:68px;} 
+.tab-3-2 p.mice-p2 {position:absolute;left:85px;bottom:50px;}
+.tab-3-2 h1.ict {position:absolute;left:204px;top:12px;}
+.tab-3-2 p.ict-p1 {position:absolute;left:184px;top:42px;} 
+.tab-3-2 p.ict-p2 {position:absolute;left:200px;top:59px;}
+.tab-3-2 p.ict-p3 {position:absolute;left:204px;top:77px;}
+.tab-3-2 h1.manu {position:absolute;left:318px;bottom:14px;}
+.tab-3-2 p.manu-p1 {position:absolute;left:304px;bottom:68px;} 
+.tab-3-2 p.manu-p2 {position:absolute;left:306px;bottom:50px;}
+.tab-3-2 h1.t-service {position:absolute;right:170px;top:12px;}
+.tab-3-2 p.t-service-p1 {position:absolute;right:183px;top:42px;} 
+.tab-3-2 p.t-service-p2 {position:absolute;right:179px;top:59px;}
+.tab-3-2 p.t-service-p3 {position:absolute;right:202px;top:77px;}
+.tab-3-2 h1.t-etc {position:absolute;right:80px;bottom:14px;}
+.tab-3-2 p.t-etc-p1 {position:absolute;right:71px;bottom:68px;} 
+.tab-3-2 p.t-etc-p2 {position:absolute;right:53px;bottom:50px;}
+
+.tab-3-3 {position:relative;width:703px;height:175px;margin:0 auto;clear: both;padding-top:13px;}
+.tab-3-3-side {position:relative;width:224px;float:left;}
+.tab-3-3-center {position:relative;width:255px;float:left;}
+.tab-3-3 div.thumb-image {width:61px;margin:0 auto;}
+.tab-3-3 pre.thumb-caption {font-size:10px;color:#666666;letter-spacing:-1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;width:180px; margin:0 auto;padding-top:15px;}
+
+.tab-3-4 {position:relative;width:703px;margin:0 auto;clear: both;font-size:13px;color:#fc7a00;letter-spacing:-1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+
+table {border-spacing: 0;border-collapse: collapse;}
+td, th {padding: 0;}
+.tab-4 {border:solid #6adbdf;border-width:2px 0; width:100%;margin-top:43px;}
+.tab-4 caption {display:none;}
+.tab-4 th,
+.tab-4 td {height:74px;line-height: 22px;border-bottom:1px solid #8ee8eb;padding:7px 0;}
+.tab-4 td pre {padding-left:30px;font-size:12px;color:#333333;line-height: 24px;}
+.tab-4 th {text-align: center;font-size:16px;color:#013f8d;background-color: #d4f7f8;}
+.tab-4 td {}
+.tab-4 th.last, td.last {border-bottom:none;}
+
+.pos-2012 {position:absolute;top:120px;right:9px;}
+.pos-2011 {position:absolute;top:312px;right:9px;}
+.pos-2010 {position:absolute;bottom:445px;right:9px;}
+.pos-2009 {position:absolute;bottom:228px;right:9px;}
+.pos-2008 {position:absolute;bottom:31px;right:9px;}
+.tab-5 {width:317px;}
+.tab-5 caption {display:none;}
+.tab-5 th,
+.tab-5 td {height:24px;line-height: 24px;letter-spacing: -1px;}
+.tab-5 th {font-size:14px;color:#6d6d6d;}
+.tab-5 td {font-size:12px;color:#8c8c8c;}
+
+
+/* 4-2. sub_0106 */
+.page-inner-content {border-top:1px solid #349ed2;padding:30px 19px;}
+.page-inner-content h2 {font-size:16px;color:#333333;letter-spacing: -1px;font-weight: 700;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.page-inner-content h2 span {display:inline-block;padding-left:5px;font-size:23px;font-weight: 700;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.page-inner-content .o-list {padding:34px 0 0 39px;}
+.page-inner-content .o-list .title {font-size:15px;line-height:70px;color:#333333;letter-spacing: -1px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;font-weight: 700;}
+.page-inner-content .o-list .title span.num {color:#013f8d;font-size:20px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+.page-inner-content .o-list .title a.dlc {display:block;overflow: hidden;position: relative;width: 211px;height: 61px;text-indent: -9999px;margin-left: 25px;}
+.page-inner-content .o-list .title a.dlc span {display: block;background: url("../img/sub/dlc.png") no-repeat;width: 211px;height: 61px;}
+
+.on-receive-wrap {position:relative;width:100%;margin-top: 30px;}
+.on-receive-wrap a.on-receive-dlc-btn {display:block;overflow: hidden;position:absolute;left:27%;margin-left:-50px;width: 184px;height: 70px;text-indent: -9999px;}
+.on-receive-wrap a.on-receive-dlc-btn span {display: block;background: url("../img/sub/receive-dlc-btn.png") no-repeat;width: 184px;height: 70px;}
+.on-receive-wrap a.on-receive-chk-btn {display:block;overflow: hidden;position:absolute;left:54%;margin-left:-50px;width: 184px;height: 70px;text-indent: -9999px;}
+.on-receive-wrap a.on-receive-chk-btn span {display: block;background: url("../img/sub/receive-chk-btn.png") no-repeat;width: 184px;height: 70px;}
+
+/* 4-3. sub_0107 */
+.bsc-contact {width:100%;}
+.bsc-contact caption {display:none;}
+.bsc-contact th.last,
+.bsc-contact td.last {height:115px;line-height: 22px;}
+.bsc-contact th {text-align: center;font-size:14px;color:#013f8d;}
+.bsc-contact td {font-size:12px;color:#333333;}
+.bsc-contact td pre {font-size:12px;color:#333333;}
+
+.bsc-naver-map {width:100%;height:425px;line-height:425px;text-align:center;position: relative;background-color: #dadada;}
+
+/* 4-4. sub_0201 */
+
+
+/* 4-5. sub_0202 */
+#sub_0202 .o-list {padding-top:0;}
+#sub_0202 .o-list .sub-list li {padding:15px 0 0 0;}
+#sub_0202 .o-list .sub-list li:last-child {padding:15px 0 30px;}
+
+#sub_0202 .tab-1 {width:100%;margin-top: 15px;margin:18px 6px;}
+#sub_0202 .tab-1 caption {display:none;}
+#sub_0202 .tab-1 th, 
+#sub_0202 .tab-1 td {border:1px solid #cccccc;text-align: center;}
+#sub_0202 .tab-1 thead th {background-color: #666666;color:#efefef;font-size:13px;height:34px;}
+#sub_0202 .tab-1 thead th.left {border-top: none;border-left:none;}
+#sub_0202 .tab-1 thead th.center {border-top: none;}
+#sub_0202 .tab-1 thead th.right {border-top: none;border-right:none;}
+#sub_0202 .tab-1 tbody th {border-left:none;}
+#sub_0202 .tab-1 tbody td:last-child {border-right:none;} 
+#sub_0202 .tab-1 tbody th,
+#sub_0202 .tab-1 tbody td {padding:11px 0;height:23px;}
+#sub_0202 .tab-1 tbody th {color:#555555;font-size:12px;}
+#sub_0202 .tab-1 tbody td {color:#888888;font-size:12px;}
+
+#tab_2 .o-list li {height:257px;}
+#tab_2 .o-list .sub-list-row {padding-left: 0px;clear: both;}
+#tab_2 .o-list .sub-list-row li {width:108px;height:226px;float: left;padding-top:31px;text-align: center;}
+#tab_2 .o-list .sub-list-row li.next {width:19px;height:226px;line-height:110px;float: left;text-align: center;padding-top:31px;}
+#tab_2 .o-list .sub-list-row li img {display:inline;}
+#tab_2 .o-list .sub-list-row li div.step {display: block;color:#437500;letter-spacing:-1px;font-size:15px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+#tab_2 .o-list .sub-list-row li div.step-content {display: block;color:#666666;letter-spacing:-1px;font-size:12px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+
+#tab_2 .o-list .sub-list-row2 {padding-left: 0px;clear: both;}
+#tab_2 .o-list .sub-list-row2 li {width:102px;height:226px;float: left;padding-top:31px;text-align: center;}
+#tab_2 .o-list .sub-list-row2 li.next {width:19px;height:226px;line-height:110px;float: left;text-align: center;padding-top:31px;}
+#tab_2 .o-list .sub-list-row2 li img {display:inline;}
+#tab_2 .o-list .sub-list-row2 li div.step {display: block;color:#437500;letter-spacing:-1px;font-size:15px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}
+#tab_2 .o-list .sub-list-row2 li div.step-content {display: block;color:#666666;letter-spacing:-1px;font-size:12px;font-family:'Nanum Gothic',맑은 고딕,Malgun Gothic;}

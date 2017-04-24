@@ -1,0 +1,61 @@
+<?php include_once("./header.html"); ?>
+
+<div class="wrap container">
+	
+	<div class="sub_nav">
+		<div class="box_wrap">
+			<ul class="snav">
+				<li class="snav_list"><a href="">DONG HWAN</a></li>
+				<li class="snav_list dot"></li>
+				<li class="snav_list"><a href="">회사소개</a></li>
+				<li class="snav_list dot"></li>
+				<li class="snav_list"><a href="javascript:;" class="on">연혁<div class="more">&nbsp;</div></a>
+					<ul class="toggle_snav">
+						<li><a href="">CEO인사말</a></li>
+						<li><a href="">공사지명원</a></li>
+						<li><a href="">조직도</a></li>
+						<li><a href="" class="active">연혁</a></li>
+						<li><a href="">CI소개</a></li>
+						<li><a href="">오시는길</a></li>
+						<li><a href="">협력제안</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- .sub_nav -->
+
+
+	<div class="box_wrap">
+
+		<div class="sub_title bg1">
+			<h1>연혁</h1>
+			<p>동환종합건설(주)의 연혁을 확인하실 수 있습니다.</p> 
+		</div>
+
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".history_tab[data-tab-event]").tab();
+			});
+		</script>
+
+
+		<div class="sub_content">
+			
+			<ul class="history_tab" data-tab-event="click">
+				<li class="tab_list"><a href="#history01" class="selected">2000'S</a></li>
+				<li class="tab_list"><a href="#history02" class="">1990'S</a></li>
+			</ul>
+
+			<div id="history01" style="display: block;"><img src="../img/sub/img_history2000.png" alt="2000"/></div>
+			<div id="history02" style="display: none;"><img src="../img/sub/img_history1990.png" alt="1990"/></div>
+
+		</div><!-- .sub_content -->
+	</div><!-- .box_wrap -->
+
+
+</div><!-- .container -->
+
+
+
+<?php include_once("./footer.html"); ?>

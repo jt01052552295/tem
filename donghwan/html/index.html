@@ -1,0 +1,254 @@
+<?php include_once("./header.html"); ?>
+
+<div class="wrap container">
+	<div class="box_wrap ">
+
+
+		<!-- <link rel="stylesheet" href="/js/jquery.bxslider/jquery.bxslider.build.css">
+		<script src="/js/jquery.bxslider/jquery.bxslider.build.js"></script> -->
+
+<script>
+_event=true;
+_idx = 0;
+$(function() {
+	$(".liMainR").each(function(index){
+		index++;
+		$(this).attr('data-idx', index);
+	});
+	$(".liMainR").hover(function() {
+		_num = $(this).attr('num');
+		$("#id"+_num).css({"display":"block"});
+		_event=false;
+	},function() {
+		$(".filter_smart").css({"display":"none"});
+		_event=true;
+	});
+	$(".liMainR").click(function() {
+		_num = $(this).attr('num');
+		_page = $(this).attr('data-idx');
+		$("#current_item").html(_page);
+		//$("#mainImg").fadeOut();
+		//$("#mainImg").attr('src',mainImg[_idx]);
+		//$("#mainLink").attr('href',"./?b2Type=view&strCode="+mainCode[_idx]+"&path=ing");
+		//$("#mainName").html('');
+		//$("#mainName").html(mainName[_idx]);
+		//$("#mainDate").html('');
+		//$("#mainDate").html(mainDate[_idx]);
+		//$("#mainImg").fadeIn();
+	});
+	var tot_cnt = $(".liMainR").length;
+	$("#tot_cnt").html(tot_cnt);
+});
+setInterval('mainR()', 6000);
+function mainR() {
+	if (_event) {
+	
+		$("#mainR").animate({marginTop:"-154px"},500,null,function() {
+			$(this).css("marginTop","0px").append($(this).find("> li:first"));
+			
+		});
+	}
+}
+
+</script>
+
+		<section class="main_box one">
+			<div class="main_slide">
+			
+				<div>
+					<div class="list_ingIMG">
+						<ul id="mainR">
+							<li class="liMainR"  num="1" data-idx="">
+								<img src="../img/main/img_main_slide.png"  / >
+								<div class="filter_smart" id="id1" style="display:none;">
+									<a href="#"><img src="../img/main/filter_smart.png" alt="필터" / ></a>
+									<p>수영구 광안동 근.생1</p>
+								</div>
+							</li>
+							<li class="liMainR"  num="2" data-idx="">
+								<img src="../img/main/img_main_slide.png"  / >
+								<div class="filter_smart" id="id2" style="display:none;">
+									<a href="#"><img src="../img/main/filter_smart.png" alt="필터" / ></a>
+									<p>수영구 광안동 근.생2</p>
+								</div>
+							</li>
+							<li class="liMainR"  num="3" data-idx="">
+								<img src="../img/main/img_main_slide.png"  / >
+								<div class="filter_smart" id="id3" style="display:none;">
+									<a href="#"><img src="../img/main/filter_smart.png" alt="필터" / ></a>
+									<p>수영구 광안동 근.생3</p>
+								</div>
+							</li>
+							<li class="liMainR"  num="4" data-idx="">
+								<img src="../img/main/img_main_slide.png"  / >
+								<div class="filter_smart" id="id4" style="display:none;">
+									<a href="#"><img src="../img/main/filter_smart.png" alt="필터" / ></a>
+									<p>수영구 광안동 근.생4</p>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+
+					<div class="tit_ingIMG">
+						<div>
+							<a href="javascript:;" id="mainLink" ><img src="../img/main/img_main_slide.png" alt="배너" id="mainImg" /></a>
+						</div>
+						<div><p><span id="mainName">수영구 광안동 근.생</span></br><span id="mainDate">2015.09.10~2015.09.10</span></p></div>
+						<div class="tit_paging"><strong id="current_item">1</strong> / <span id="tot_cnt">1</span></div>
+					</div>
+
+				</div>	
+			
+			
+			</div><!-- .main_slide -->
+
+			<div class="main_link">
+				<div class=""><a href="javascript:;" class="link1"><span>무료견적</span></a></div>
+				<ul>
+					<li class="inline"><a href="javascript:;" class="link2"><span>시공실적</span></a></li>
+					<li class="inline"><a href="javascript:;" class="link3"><span>고객지원</span></a></li>
+					<li class="inline last"><a href="javascript:;" class="link4"><span>오시는길</span></a></li>
+				</ul>
+			</div>
+
+
+
+
+			<link rel="stylesheet" href="/js/jquery.bxslider/jquery.bxslider.main.css">
+			<script src="/js/jquery.bxslider/jquery.bxslider.main.js"></script>
+			<div class="main_smart">
+				<div class="smart_wrap">
+					<div class="smart_tit"><h3>스마트일보</h3> </div>
+
+				
+					<div class="slider_outer_wrap">
+						<ul class="bxslider">
+							<li>
+								<div class="slide_expert">
+									<h5>수영구 광안동 근.생 신축공사</h5>
+									<p>현장관리 : 현장관리 및 공정관리</p>
+
+									<div class="slide_more">
+										<a href="javascript:;" class="btn blue">더 보기<span>더보기</span></a>
+									</div>
+								</div>
+								<div class="slide_thumb"><a href="javascript:;" ><img src="/img/main/img_slide.jpg" alt="배너" class="img-responsive"/></a></div>
+							</li>
+							<li>
+								<div class="slide_expert">
+									<h5>수영구 광안동 근.생 신축공사</h5>
+									<p>현장관리 : 현장관리 및 공정관리</p>
+
+									<div class="slide_more">
+										<a href="javascript:;" class="btn blue">더 보기<span>더보기</span></a>
+									</div>
+								</div>
+								<div class="slide_thumb"><a href="javascript:;" ><img src="/img/main/img_slide.jpg" alt="배너" class="img-responsive"/></a></div>
+							</li>
+							<li>
+								<div class="slide_expert">
+									<h5>수영구 광안동 근.생 신축공사</h5>
+									<p>현장관리 : 현장관리 및 공정관리</p>
+
+									<div class="slide_more">
+										<a href="javascript:;" class="btn blue">더 보기<span>더보기</span></a>
+									</div>
+								</div>
+								<div class="slide_thumb"><a href="javascript:;" ><img src="/img/main/img_slide.jpg" alt="배너" class="img-responsive"/></a></div>
+							</li>
+							<li>
+								<div class="slide_expert">
+									<h5>수영구 광안동 근.생 신축공사</h5>
+									<p>현장관리 : 현장관리 및 공정관리</p>
+
+									<div class="slide_more">
+										<a href="javascript:;" class="btn blue">더 보기<span>더보기</span></a>
+									</div>
+								</div>
+								<div class="slide_thumb"><a href="javascript:;" ><img src="/img/main/img_slide.jpg" alt="배너" class="img-responsive"/></a></div>
+							</li>
+							<li>
+								<div class="slide_expert">
+									<h5>수영구 광안동 근.생 신축공사</h5>
+									<p>현장관리 : 현장관리 및 공정관리</p>
+
+									<div class="slide_more">
+										<a href="javascript:;" class="btn blue">더 보기<span>더보기</span></a>
+									</div>
+								</div>
+								<div class="slide_thumb"><a href="javascript:;" ><img src="/img/main/img_slide.jpg" alt="배너" class="img-responsive"/></a></div>
+							</li>
+							
+							
+						</ul>
+					</div>
+					<span id="main-slider-prev"></span> <!-- 이전 -->
+					<span id="main-slider-next"></span> <!-- 다음 -->
+				</div>
+
+			
+			</div>
+		</section>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var obj_slide = $('.bxslider').bxSlider({
+					auto: false,
+					mode: 'fade',
+					infiniteLoop: true,
+					wrapperClass: 'main-wrapper',
+					autoControls: false,
+					adaptiveHeight: false,
+					pager:false,
+					nextSelector: '#main-slider-next',
+					prevSelector: '#main-slider-prev',
+					speed:100
+				});
+				$('#main-slider-prev a, #main-slider-next a').click(function(){
+					obj_slide.stopAuto();
+					obj_slide.startAuto();
+				});
+				$('#main-slider-stop a ').click(function(){
+					obj_slide.stopAuto();
+				});
+
+			});
+		</script>
+
+
+		<section class="main_box two">
+			<ul class="thumb_list">
+				<li class="w3 none">
+					<a href="javascript:;" class="s1_img"><span>건축진행과정</span><p>상세한 준비과정과<br/> 진행과정이 궁금하다면</p></a>
+				</li>
+				<li class="w2">
+					<a href="javascript:;" class="s2_img"><span>건축 A to Z</span><p>건축의 A부터 Z까지<br/> 필수항목</p></a>
+				</li>
+				<li class="w2">
+					<a href="javascript:;" class="s3_img"><span>건축주 공부방</span><p>건축주가 알아야 할<br/> 건축계획/설계/경적/시공자료</p></a>
+				</li>
+				<li class="w1">
+					<a href="javascript:;" class="s4_img"><span>스마트건설관리시스템</span><p>건축주의 마음을<br/> 시스템화한 건설관리</p></a>
+				</li>
+			</ul>
+		</section>
+
+		<section class="main_box three">
+			<div class="info_widget">
+				<div class="tit_box"><h3>동환종합건설</h3></div>
+				<p class="tel">051-809-5333</p>
+				<p class="desc">
+					AM 09:00 - 18:00(주말, 공휴일 제외)<br/>
+					동환종합건설에서 투명한 견적과 새로운 소식을 확인해보세요.
+				</p>
+				<div class="btn01"><a href="javascript:;" class="btn gray">고객지원<span>보러가기</span></a></div>
+				<div class="btn02"><a href="javascript:;" class="btn dark">무료견적<span>보러가기</span></a></div>
+			</div>
+		</section>
+
+	</div>
+</div>
+
+
+<?php include_once("./footer.html"); ?>

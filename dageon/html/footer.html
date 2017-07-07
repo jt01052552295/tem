@@ -1,0 +1,63 @@
+	</div> <!-- #wrapper -->
+	
+	<div class="footer">
+		<div class="inner_footer">
+			<h2 class="footer_logo">로고</h2>
+
+			<section class="footer_info">
+				<p>
+					제주시 인다8길 8 202호(아라일동, 아라다솜빌)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;대표이사 김 병 노&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;사업자등록번호 214-86-76044<br/> 
+					대표번호 <strong>064-755-6900</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;팩스번호  064-755-6901&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;이메일  dageon123@daum.net
+				</p>
+			</section>
+
+			<link rel="stylesheet" href="/js/jquery.bxslider/jquery.bxslider.notice.css">
+				<script src="/js/jquery.bxslider/jquery.bxslider.notice.js"></script>
+			<section class="footer_notice">
+				<h4 class="tit">공지사항</h4>
+				<div class="conNotice">
+					<ul class="bxslider_notice">
+						<li><a href="javascript:;">기업부설연구소 설립이 되었습니다.1</a></li>
+						<li><a href="javascript:;">기업부설연구소 설립이 되었습니다.2</a></li>
+						<li><a href="javascript:;">기업부설연구소 설립이 되었습니다.3</a></li>
+						<li><a href="javascript:;">기업부설연구소 설립이 되었습니다.4</a></li>
+					</ul>
+				</div>
+				<span id="notice-slider-prev"></span> 
+				<span id="notice-slider-next"></span> 
+			</section>
+
+			<div class="mark">스마트건설관리 시스템보유업체</div>
+		</div>
+	</div> <!-- .footer -->
+</div> <!-- #wrap -->
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var obj_slide = $('.bxslider_notice').bxSlider({
+			mode: 'vertical',
+			auto: true,
+			infiniteLoop: true,
+			minSlides: 2,
+			moveSlides:1,
+			wrapperClass: 'notice-wrapper',
+			autoControls: false,
+			adaptiveHeight: false,
+			pager:false,
+			nextSelector: '#notice-slider-next',
+			prevSelector: '#notice-slider-prev',
+			speed:100
+		});
+		$('#notice-slider-prev a, #notice-slider-next a').click(function(){
+			obj_slide.stopAuto();
+			obj_slide.startAuto();
+		});
+
+	});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="subject" content="다건종합건설(주)" />
+<title>다건종합건설(주)</title>
+<link href="/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="/js/scrollbar/jquery.mCustomScrollbar.css" />
+
+<script type="text/javascript">
+var console = window.console || { log: function() {} };
+</script>
+<script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/js/front.js"></script>
+<script src="/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5shiv.js"></script>
+<![endif]-->
+<script>
+$(function() {
+	$gnb = $(".nav_list");
+
+	$gnb.find($("a.lv1:not(active)")).parent("li").mouseenter(function(){
+		$("ul.nav_2nd").hide();
+		$("a.lv1").removeClass("active");
+		$(this).find("a.lv1").addClass("active");
+		$(this).find("a.lv1").next("ul.nav_2nd").show();
+	
+		$(this).find("a.lv1").children('.over').show();
+		$(this).find("a.lv1").children('.out').hide();
+
+	})
+
+	$gnb.find($("a.lv1:not(active)")).parent("li").mouseleave(function(){
+		$(this).find("a.lv1").removeClass("active");
+		$(this).find("a.lv1").next("ul.nav_2nd").hide();
+
+		$(this).find("a.lv1").children('.over').hide();
+		$(this).find("a.lv1").children('.out').show();
+	});
+
+});
+</script>
+
+</head>
+<body>
+
+<div id="wrap">
+	<div id="wrapper">
+		<header>
+			<div class="gnb_menu">
+				<div class="inner_gnb_menu">
+					<h1 class="logo"><a href="./">로고</a></h1>
+
+					<ul class="nav_list">
+						<li class="menu_list"><a class="lv1" href="./ceo.html"><span class="over">- 회사소개</span><span class="out">회사소개</span></a>
+							<ul class="nav_2nd">
+								<li class="menu2_list"><a href="./ceo.html">회사개요</a></li>
+								<li class="menu2_list"><a href="javascript:;">CEO인사말</a></li>
+								<li class="menu2_list"><a href="javascript:;">조직도</a></li>
+								<li class="menu2_list"><a href="javascript:;">연혁</a></li>
+								<li class="menu2_list"><a href="javascript:;">CI</a></li>
+								<li class="menu2_list"><a href="javascript:;">오시는길</a></li>
+							</ul>
+						</li>
+						<li class="menu_list"><a class="lv1" href="javascript:;"><span class="over">- 공사견적</span><span class="out">공사견적</span></a></li>
+						<li class="menu_list"><a class="lv1" href="javascript:;"><span class="over">- 고객지원</span><span class="out">고객지원</span></a>
+							<ul class="nav_2nd">
+								<li class="menu2_list"><a href="javascript:;">공지사항</a></li>
+								<li class="menu2_list"><a href="javascript:;">건축뉴스</a></li>
+								<li class="menu2_list"><a href="javascript:;">고객문의</a></li>
+							</ul>
+						</li> 
+						<li class="menu_list"><a class="lv1" href="javascript:;"><span class="over">- 공사관리</span><span class="out">공사관리</span></a>
+							<ul class="nav_2nd">
+								<li class="menu2_list"><a href="javascript:;">시공현장</a></li>
+								<li class="menu2_list"><a href="javascript:;">완료공사</a></li>
+								<li class="menu2_list"><a href="javascript:;">스마트건설관리시스템</a></li>
+							</ul>
+						</li>
+						<li class="menu_list last"><a class="lv1" href="javascript:;"><span class="over">- 사업소개</span><span class="out">사업소개</span></a>
+							<ul class="nav_2nd">
+								<li class="menu2_list"><a href="javascript:;">호텔/리조트</a></li>
+								<li class="menu2_list"><a href="javascript:;">타운하우스</a></li>
+								<li class="menu2_list"><a href="javascript:;">주택</a></li>
+							</ul>
+						</li> 
+					</ul>
+
+
+					<div class="nav_b_area">
+						<ul class="nav_b">
+							<li class="fir"><a href="javascript:;" target="_blank" class="btn basic full">공사지명원 다운받기</a></li>
+							<li class="sec"><a href="javascript:;" target="_blank" class="btn basic full">사내 인트라넷</a></li>
+							<li><a href="javascript:;" class="link">이용약관</a></li>
+							<li><a href="javascript:;" class="link">개인정보보호정책</a></li>
+							<li><a href="javascript:;" class="link">이메일주소 무단수집거부</a></li>
+						</ul>
+					</div>
+
+
+
+
+
+
+				</div>
+			</div>
+
+			<div class="gnb_member">
+				<ul class="nav_list2 ">
+					<li class="mem_list"><a href="javascript:;" title="로그인">로그인</a></li>
+					<li class="line">&nbsp;</li>
+					<li class="mem_list last"><a href="javascript:;" title="회원가입">회원가입</a></li>
+				</ul>
+				<!-- <ul class="nav_list2 ">
+					<li class="mem_list"><a href="javascript:;" title="로그인">로그아웃</a></li>
+					<li class="line">&nbsp;</li>
+					<li class="mem_list last"><a href="javascript:;" title="회원가입">마이페이지</a></li>
+				</ul> -->
+				
+
+
+				<div class="copyright">
+					<p>
+						ⓒDAGEON,<br/>All rights reserved.
+					</p>
+				</div>
+			</div>
+
+		</header>

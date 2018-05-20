@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ninja Web</title>
+<link rel="stylesheet" type="text/css" href="./css/responsive.css" />
+</head>
+<body>
+<style>
+#results li.pass {color:green;}
+#results li.fail {color:red;}
+</style>
+<ul id="results"></ul>
+
+
+<script>
+(function(){
+	var queue = [], paused = false, results;
+	
+	this.test = function test(name, fn){
+		queue.push(function(){
+			results = document.getElementById("results");
+			results = assert(true, name).appendChild(document.createElement("ul"));
+			results.className = "tttt";
+			fn();
+		});
+		runTest();
+	};
+
+	this.pause = function(){
+		paused = true;
+	};
+
+	this.resume = function(){
+		paused = false;
+		setTimeout(runTest, 1);
+	};
+
+	function runTest(){
+		if(!paused && queue.length){
+			queue.shift()();
+			if(!paused){
+				resume();
+			}
+		}
+	}
+
+	this.assert = function assert(value, desc){
+		var li = document.createElement("li");
+		li.className = value ? "pass" : "fail";
+		li.appendChild(document.createTextNode(desc));
+		results.appendChild(li);
+		if(!value){
+			li.parentNode.parentNode.className ="fail";
+		}
+		return li;
+	};
+
+	
+})();
+
+
+window.onload = function() {
+	test("Async test #1", function(){
+		pause();
+		setTimeout(function(){
+			assert(true, "first");
+			resume();
+		}, 1000);
+	});
+	test("Async test #2", function(){
+		pause();
+		setTimeout(function(){
+			assert(true, "second");
+			resume();
+		}, 1000);
+	});
+};
+
+
+</script>
+
+</body>
+</html>

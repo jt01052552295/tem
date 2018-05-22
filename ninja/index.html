@@ -9,8 +9,33 @@
 </head>
 <body>
 
+<?php
+$menus[] = array(
+	mCode => "10",
+	title => "10",
+	url => "./ninja-code/chapter-2/listing-2.4.html",
+	items => array(
+		array(title => "jsonlint"				, url => "http://jsonlint.com/"),
+		array(title => "jsonlint pro"			, url => "http://pro.jsonlint.com/"),
+		array(title => "phpMyAdmin"				, url => "http://dmonster596.cafe24.com/adm/phpMyAdmin/")
+	)
+);
 
-<dl>
+
+
+// echo "<pre>";
+// print_r($menus);
+// echo "</pre>";
+?>
+
+<?php foreach($menus as $menu){ ?>
+	<dl>
+		<dt><a href="<?php echo $menu['url']?>"> <?php echo $menu['title']?></a></dt>
+	</dl>
+<?php } ?>
+
+
+<!-- <dl>
 	<dt>테스팅, 디버깅</dt>
 	<dd><a href="./ninja-code/chapter-2/listing-2.4.html">2.4 간단 검증</a></dd>
 	<dd><a href="./ninja-code/chapter-2/listing-2.5.html">2.5 테스트 그룹</a></dd>
@@ -22,7 +47,7 @@
 	<dd><a href="./ninja-code/chapter-3/listing-3.1.html">3.1 함수 선언</a></dd>
 	<dd><a href="./ninja-code/chapter-3/listing-3.2.html">3.2 선언 종류와 방식에 따른 유효범위</a></dd>
 </dl>
-
+ -->
 
 
 

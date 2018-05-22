@@ -12,54 +12,35 @@
 <?php
 $menus['10'] = array(
 	mCode => "10",
-	title => "10",
+	title => "테스팅, 디버깅",
 	url => "./ninja-code/chapter-2/listing-2.4.html",
 	items => array(
-		array(mCode => "1010", title => "2.4 간단 검증"					, url => "./ninja-code/chapter-2/listing-2.4.html"),
+		array(mCode => "1010", title => "2.4 간단 검증"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
 		array(mCode => "1020", title => "2.5 테스트 그룹"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
 		array(mCode => "1030", title => "2.6 비동기 테스트"				, url => "./ninja-code/chapter-2/listing-2.6.html")
 	),
-	items3rd => array(
-		array(mCode => "101010", title => "2.4.1 간단검증31"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "101020", title => "2.4.2 간단검증32"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "101030", title => "2.4.3 간단검증33"				, url => "./ninja-code/chapter-2/listing-2.6.html"),
-		array(mCode => "101040", title => "2.4.4 간단검증34"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "101050", title => "2.4.5 간단검증35"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "101060", title => "2.4.6 간단검증36"				, url => "./ninja-code/chapter-2/listing-2.6.html"),
-
-		array(mCode => "103010", title => "2.4.1 간단검증31"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "103020", title => "2.4.2 간단검증32"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "103030", title => "2.4.3 간단검증33"				, url => "./ninja-code/chapter-2/listing-2.6.html"),
-		array(mCode => "103040", title => "2.4.4 간단검증34"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "103050", title => "2.4.5 간단검증35"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "103060", title => "2.4.6 간단검증36"				, url => "./ninja-code/chapter-2/listing-2.6.html")
-	)
+	// items3rd => array(
+	// 	array(mCode => "101010", title => "2.4.1 간단검증31"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
+	// 	array(mCode => "101020", title => "2.4.2 간단검증32"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
+	// 	array(mCode => "101030", title => "2.4.3 간단검증33"				, url => "./ninja-code/chapter-2/listing-2.6.html"),
+	// 	array(mCode => "101040", title => "2.4.4 간단검증34"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
+	// 	array(mCode => "101050", title => "2.4.5 간단검증35"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
+	// 	array(mCode => "101060", title => "2.4.6 간단검증36"				, url => "./ninja-code/chapter-2/listing-2.6.html")
+	// )
 );
 
 $menus['20'] = array(
 	mCode => "20",
-	title => "20",
-	url => "./ninja-code/chapter-2/listing-2.4.html",
+	title => "함수 선언과 관련한 내용들을 증명하기",
+	url => "./ninja-code/chapter-3/listing-3.1.html",
 	items => array(
-		array(mCode => "2010", title => "2.4 간단 검증"					, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "2020", title => "2.5 테스트 그룹"				, url => "./ninja-code/chapter-2/listing-2.5.html")
-	),
-	items3rd => array(
-		array(mCode => "202010", title => "2.4.1 간단검증31"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "202020", title => "2.4.2 간단검증32"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "202030", title => "2.4.3 간단검증33"				, url => "./ninja-code/chapter-2/listing-2.6.html"),
-		array(mCode => "202040", title => "2.4.4 간단검증34"				, url => "./ninja-code/chapter-2/listing-2.4.html"),
-		array(mCode => "202050", title => "2.4.5 간단검증35"				, url => "./ninja-code/chapter-2/listing-2.5.html"),
-		array(mCode => "202060", title => "2.4.6 간단검증36"				, url => "./ninja-code/chapter-2/listing-2.6.html")
+		array(mCode => "2010", title => "3.1 함수 선언"					, url => "./ninja-code/chapter-3/listing-3.1.html"),
+		array(mCode => "2020", title => "3.2 선언 종류와 방식에 따른 유효범위"	, url => "./ninja-code/chapter-3/listing-3.2.html"),
+		array(mCode => "2030", title => "3.5 apply()와 call()메서드를 사용하여 함수 콘텍스트를 제공한다"	, url => "./ninja-code/chapter-3/listing-3.5.html")
 	)
 );
 
-
-
-$cate = $_REQUEST['cate'];
-echo "<pre>";
-print_r($menus[$cate]);
-echo "</pre>";
+// 전체메뉴 출력
 ?>
 
 <?php foreach($menus as $menu){ ?>
@@ -92,6 +73,42 @@ echo "</pre>";
 	</dl>
 <?php } ?>
 
+<?php 
+// 서브메뉴 출력
+$cate = $_REQUEST['cate'];
+$menu = $menus[$cate];
+?>
+<?php if(count($menu)>0):?>
+<!-- <dl>
+	<dt><a href="<?php echo $menu['url']?>"> <?php echo $menu['title']?></a></dt>
+	<?php
+		if(count($menu['items'])>0):
+			for($i=0; $i<count($menu['items']); $i++):
+	?>
+			<dd><a href="<?php echo $menu['items'][$i]['url']?>"><?php echo $menu['items'][$i]['title']?></a>
+				<?php 
+					if(count($menu['items3rd'])>0):
+						echo "<ul>";
+						for($k=0; $k<count($menu['items3rd']); $k++):
+							if(substr($menu['items3rd'][$k]['mCode'],0,4) == $menu['items'][$i]['mCode']):
+
+				?>
+								<li><?php echo $menu['items3rd'][$k]['title']?></li>
+				<?php 
+							endif;
+						endfor;
+						echo "</ul>";
+					endif;
+				?>
+			</dd>
+	<?php
+			endfor;
+		endif;
+	?>
+</dl> -->
+<?php else: ?>
+	<!-- 메뉴없어용. -->
+<?php endif; ?>
 
 <!-- <dl>
 	<dt>테스팅, 디버깅</dt>

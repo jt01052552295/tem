@@ -1,0 +1,73 @@
+#mail_wrap	{width:600px;}
+
+/* 테이블 */
+.mail_table	{
+	border:1px solid #EFEFEF; border-collapse:collapse; margin:0;padding:0;
+	}
+.mail_title	{
+	border:1px solid #EFEFEF;
+	border-collapse:collapse; background:#FFF;
+	padding:5px;
+	font-size: 14px;
+	color : #D11920;
+	padding-left: 13px;
+	position : relative;
+}
+.mail_title:after{
+	display: block;
+	position : absolute;
+	width: 5px;
+	height: 32px;
+	background-color: #D11920;
+	content: "";top : 0px; left: 0px; 
+}
+.mail_kind	{
+	border:1px solid #EFEFEF;
+	border-collapse:collapse; text-align:center; background:#FBFBFB;
+	padding:9px 10px 9px 10px;
+	color:#333; 
+	}
+.mail_input	{
+	border:1px solid #EFEFEF;
+	border-collapse:collapse; text-align:left; background:#FFF;
+	padding:9px 0 9px 10px;
+	}
+
+
+/* input */
+.mail_table input, .mail_table textarea, .mail_table select	{
+	border:1px #BFBFBF solid;
+	}
+input[type=checkbox], input[type=radio], input[type=image] {
+	border:0; 
+	}
+.mail_submit	{
+	text-align:center;
+	padding:10px 0 10px 0;
+	}
+.mail_submit input[type="submit"]{
+	padding: 8px 20px;
+	background-color: #D11920;
+	color:#fff;
+	font-size: 16px;
+	border-radius: 3px;
+}
+/* 글자 */
+.mail_help	{
+	font-size:11px; color:#898989;
+	padding:5px 0 5px 0;
+	}
+.mail_star	{
+	font-size:12px; color:#FF8A00; font-weight:bolder;
+	}
+
+/* 광고필터 */
+.mail_checking	{
+	padding:5px 10px 5px 10px;
+	background:#FBFBFB;
+	border-right:1px solid #EFEFEF;
+	}
+.mail_checking_help	{
+	color:#ff3300;
+	padding:5px 0 5px 15px;
+	}

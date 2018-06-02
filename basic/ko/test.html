@@ -1,60 +1,54 @@
 <?php 
+include_once('./_config.php');
+include_once(KI_PATH.'/_header.php'); 
 
-
-$result['path'] = str_replace('\\', '/', dirname(__FILE__));
-$tilde_remove = preg_replace('/^\/\~[^\/]+(.*)$/', '$1', $_SERVER['SCRIPT_NAME']);
-$document_root = str_replace($tilde_remove, '', $_SERVER['SCRIPT_FILENAME']);
-$root = str_replace($document_root, '', $result['path']);
-$port = $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : '';
-$http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? 's' : '') . '://';
-$user = str_replace(str_replace($document_root, '', $_SERVER['SCRIPT_FILENAME']), '', $_SERVER['SCRIPT_NAME']);
-$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME'];
-if(isset($_SERVER['HTTP_HOST']) && preg_match('/:[0-9]+$/', $host))
-    $host = preg_replace('/:[0-9]+$/', '', $host);
-$result['url'] = $http.$host.$port.$user.$root;
-
-
-if (isset($result['url']))
-    define('KI_URL', $result['url']);
-else
-    define('KI_URL', '');
-
-
-if (isset($result['path'])) {
-    define('KI_PATH', $result['path']);
-} else {
-    define('KI_PATH', '');
-}
-
-
-// URL 은 브라우저상에서의 경로 (도메인으로 부터의)
-// define('KI_TOP_URL', $url_info['url'].'top/');
-define('KI_IMG_URL',        KI_URL.'/images');
-define('KI_CSS_URL',        KI_URL.'/css');
-define('KI_JS_URL',        KI_URL.'/js');
-
-
-echo KI_PATH."<Br>";
-echo KI_IMG_URL."<Br>";
-echo KI_JS_URL."<Br>";
-echo KI_CSS_URL."<Br>";
-
-// PATH 는 서버상에서의 절대경로
-
-
-
-unset($result);
-
-echo "<!-- pre result>";
-print_r($result);
-echo "</pre -->";
-
-/* 그누보드 게시판 메뉴 연결 */
-// if($bo_table !=""){
-// 	$code_high = $board['gr_id'];
-// 	$codename = $bo_table;
-// 	$code_sub_1 = $bo_table;
-// }
-
-
+// 탑메뉴, 하단메뉴(카피라이트), 애셋
+// 그누보드 경로 불러오기 ( 헤더 충돌 방지 )
 ?>
+
+<h1>Hello, world!</h1>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+<div class="row">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm">
+	      One of three columns
+	    </div>
+	    <div class="col-sm">
+	      One of three columns
+	    </div>
+	    <div class="col-sm">
+	      One of three columns
+	    </div>
+	     <div class="w-100"></div>
+
+		  <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+		  <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+	  </div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col">col</div>
+		<div class="col">col</div>
+		<div class="col">col</div>
+		<div class="col">col</div>
+
+	</div>
+</div>
+<?php include_once(KI_PATH.'/_footer.php'); ?>

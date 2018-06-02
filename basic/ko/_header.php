@@ -11,17 +11,17 @@
 <meta property="og:type" content="webinfodu">
 <meta property="og:title" content="<?php echo $infodu['title']?>">
 <meta property="og:description" content="<?php echo $infodu['keywords']?>">
-<meta property="og:image" content="<?php echo KI_IMG_URL.'logo.jpg'?>">
-<meta property="og:url" content="<?php echo ROOT_URL?>">
-
-<link rel="shortcut icon" href="<?=KI_URL?>images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="<?=KI_URL?>images/favicon.ico" type="image/x-icon">
-
+<meta property="og:image" content="<?php echo KI_IMG_URL.'/logo.jpg'?>">
+<meta property="og:url" content="<?php echo KI_URL?>">
 <title><?php echo $infodu['title']?></title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<link rel="stylesheet" href="./css/customBoot.css" />
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<link rel="shortcut icon" href="<?php echo KI_IMG_URL?>/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php echo KI_IMG_URL?>/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="<?php echo KI_CSS_URL?>/infodu.css">
+<link rel="stylesheet" href="<?php echo KI_CSS_URL?>/contents.css">
+<script src="<?php echo KI_JS_URL?>/jquery-1.8.3.min.js" ></script>
+<script src="<?php echo KI_JS_URL?>/front.js" ></script>
+<script src='<?=KI_JS_URL?>/flash.js'></script>
+<script src="<?=KI_JS_URL?>/openwindow.js"></script>
 </head>
 <body>

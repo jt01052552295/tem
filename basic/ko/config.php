@@ -1,9 +1,16 @@
 <?php 
 /* 기본설정 */
+$infodu['db'] = true;   // 게시판 사용시 true, 아니면 false
+if($infodu['db']):
+    if(defined('INDEX_ROOT')){
+        include_once('../board/common.php');
+    } else {
+        include_once('../../board/common.php');
+    }
+endif;
 $infodu['title'] = "기본형";
 $infodu['keywords'] = "키워드입력";
 $infodu['email'] = "";
-$infodu['db'] = false;	// 게시판 사용시 true, 아니면 false
 $infodu['device'] = "pc";
 
 ////////////////// 운영자 정보
@@ -32,7 +39,9 @@ $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_
 if(isset($_SERVER['HTTP_HOST']) && preg_match('/:[0-9]+$/', $host))
     $host = preg_replace('/:[0-9]+$/', '', $host);
 $settingURL['url'] = $http.$host.$port.$user.$root;
+$settingURL['top'] = $http.$host.$port.$user;
 
+define('ROOT_URL', $settingURL['top']);
 
 if (isset($settingURL['url']))
     define('KI_URL', $settingURL['url']);
@@ -46,16 +55,25 @@ if (isset($settingURL['path'])) {
 }
 
 // 모바일 기기 체크
-$is_mobile = false;
-$chk_mobile = preg_match('/phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry|BB10|android|sony/i', $_SERVER['HTTP_USER_AGENT']);
-if($_REQUEST['mobile']=='ok'){
-	$is_mobile = true;
-} else if ($chk_mobile){
-	$is_mobile = true;
+define('INFO_USE_MOBILE', true); 
+$infodu['is_mobile'] = false;
+if (INFO_USE_MOBILE) {
+    if ($_REQUEST['device']=='pc') {
+        $infodu['is_mobile'] = false;
+    } else if ($_REQUEST['device']=='mobile') {
+        $infodu['is_mobile'] = true;
+    } else if (isset($_SESSION['ss_chk_mobile'])) {
+        $infodu['is_mobile'] = $_SESSION['ss_chk_mobile'];
+    } else if (preg_match('/phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry|BB10|android|sony/i', $_SERVER['HTTP_USER_AGENT'])) {
+        $infodu['is_mobile'] = true;
+    } 
 } else {
-	$is_mobile = false;
+   $infodu['is_mobile'] = false;
 }
-define('KI_IS_MOBILE', $is_mobile);
+
+$_SESSION['ss_chk_mobile'] = $infodu['is_mobile'];
+define('KI_IS_MOBILE', $infodu['is_mobile']);
+
 if (KI_IS_MOBILE) {
     $settingURL['mobile_path'] = KI_PATH.'/m';
     define('KI_MOBILE_PATH', 	$settingURL['mobile_path']);
@@ -67,17 +85,8 @@ define('KI_IMG_URL',        KI_URL.'/images');
 define('KI_CSS_URL',        KI_URL.'/css');
 define('KI_JS_URL',        KI_URL.'/js');
 define('KI_FONT_URL',        KI_URL.'/font');
-// echo KI_PATH."<Br>";
-// echo KI_IMG_URL."<Br>";
-// echo KI_JS_URL."<Br>";
-// echo KI_CSS_URL."<Br>";
-// echo KI_MOBILE_PATH."<Br>";
-// echo KI_MOBILE_URL."<Br>";
 unset($settingURL);
 
-echo "<!-- pre infodu>";
-print_r($infodu);
-echo "</pre -->";
 
 
 ?>

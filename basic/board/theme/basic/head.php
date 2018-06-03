@@ -18,13 +18,15 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 if(isset($lang)){
     set_cookie("lang", $lang, 86400 * 1);
-}else{
+} else {
     $lang = get_cookie("lang");
     if($lang== ""){
         $lang = "ko";
     }
 }
 
-// echo KI_PATH."<br>";
+$chk_gnu = true;
+include_once('../../setting.php');
 include_once('../../'.$lang.'/_top.php');
+
 ?>

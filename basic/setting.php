@@ -1,14 +1,6 @@
 <?php 
 /* 기본설정 */
 $infodu = array();
-$infodu['db'] = true;   // 게시판 사용시 true, 아니면 false
-if($infodu['db']):
-    if(defined('INDEX_ROOT')){
-        include_once('../board/common.php');
-    } else {
-        include_once('../../board/common.php');
-    }
-endif;
 $infodu['title'] = "기본형";
 $infodu['keywords'] = "키워드입력";
 $infodu['email'] = "";
@@ -55,6 +47,13 @@ if (isset($settingURL['path'])) {
     define('KI_PATH', '');
 }
 
+// 언어별 경로 및 주소 설정
+define('KI_KOR_URL',  KI_URL.'/ko');
+define('KI_KOR_PATH',  KI_PATH.'/ko');
+define('KI_ENG_URL',  KI_URL.'/en');
+define('KI_ENG_PATH',  KI_PATH.'/en');
+
+
 // 모바일 기기 체크
 define('INFO_USE_MOBILE', true); 
 $infodu['is_mobile'] = false;
@@ -76,16 +75,31 @@ $_SESSION['ss_chk_mobile'] = $infodu['is_mobile'];
 define('KI_IS_MOBILE', $infodu['is_mobile']);
 
 if (KI_IS_MOBILE) {
-    $settingURL['mobile_path'] = KI_PATH.'/m';
-    define('KI_MOBILE_PATH', 	$settingURL['mobile_path']);
-    define('KI_MOBILE_URL',        KI_URL.'/m');
+    define('KI_KOR_MOBILE_PATH', 	 KI_KOR_PATH.'/m');
+    define('KI_KOR_MOBILE_URL',      KI_KOR_URL.'/m');
+    define('KI_ENG_MOBILE_PATH',     KI_ENG_PATH.'/m');
+    define('KI_ENG_MOBILE_URL',      KI_ENG_URL.'/m');
 }
 
 // URL 은 브라우저상에서의 경로 (도메인으로 부터의)
-define('KI_IMG_URL',        KI_URL.'/images');
-define('KI_CSS_URL',        KI_URL.'/css');
-define('KI_JS_URL',        KI_URL.'/js');
-define('KI_FONT_URL',        KI_URL.'/font');
+define('KI_KOR_IMG_URL',        KI_KOR_URL.'/images');
+define('KI_KOR_CSS_URL',        KI_KOR_URL.'/css');
+define('KI_KOR_JS_URL',         KI_KOR_URL.'/js');
+
+define('KI_ENG_IMG_URL',        KI_ENG_URL.'/images');
+define('KI_ENG_CSS_URL',        KI_ENG_URL.'/css');
+define('KI_ENG_JS_URL',         KI_ENG_URL.'/js');
+
+
+// 게시판 사용시 true, 아니면 false, chk_gnu는 그누보드 설정 중복 불러오기 피하기 위함.
+$infodu['db'] = true; 
+if($infodu['db'] and $chk_gnu == false):
+    include_once(KI_PATH.'/board/common.php');
+endif;
+
+//메뉴 설정
+include_once(KI_PATH.'/menu.php');
+
 unset($settingURL);
 
 

@@ -1,3 +1,8 @@
+@charset "utf-8";
+
+@import url("./reset.css");
+@import url("./infodu.css");
+
 /* 테이블 표 */
 	.table1 {border:1px solid #AAC2D5; border-collapse:collapse; margin:0;padding:0;}
 	.table1 caption {position:relative; text-align:left; width:100%; font-size:16px; color:#0056C1; font-weight:bold; padding-top:10px;padding-bottom:7px;}

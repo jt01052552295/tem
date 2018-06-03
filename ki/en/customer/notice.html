@@ -1,0 +1,14 @@
+<? include "../top/include_top.php" ?>
+
+<div>
+	<?
+		$bbs_code="admin_board";
+		$bbs_multi="notice";
+		$page="21";
+						
+		if (!$bbs){$bbs="list";}
+		include "../bbs/bbs_$bbs.php";
+	?>
+</div>
+
+<? include "../top/include_bottom.php"?>

@@ -1,0 +1,51 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.main1.css" rel="stylesheet">
+<pre class="desc">
+기본적인 메인슬라이드1
+</pre>
+
+<div class="vg_wrap">
+	<div class="vg_inner">
+		<div class="vg_title">
+			<h3>우리는 가족입니다!</h3>
+			<h2>감천참편한요양병원</h2>
+			<p>
+				의학, 한의학 협진 요양병원 / 욕창예방, 치료시스템<br/>
+				우수한 의료진과 균형 잡힌 식단 제공
+			</p>
+			<div class="main-slider-controls">
+				<span id="main-slider-prev"></span> <!-- 이전 -->
+				<span id="main-slider-next"></span> <!-- 다음 -->
+			</div>			
+		</div>
+		<ul class="main1">
+			<li style="background-image: url(./images/vg1.png);">&nbsp;</li>
+			<li style="background-image: url(./images/vg2.png);">&nbsp;</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		var mainSlider = $('.main1').bxSlider({
+			auto: true,
+			mode:'fade',
+			infiniteLoop: true,
+			wrapperClass: 'main1',
+			autoControls: false,
+			adaptiveHeight: true,
+			pager:false,
+			controls: true,
+			nextSelector: '#main-slider-prev',
+			prevSelector: '#main-slider-next',
+		});
+		$('#main-slider-prev a, #main-slider-next a').click(function(){
+			mainSlider.stopAuto();
+			mainSlider.startAuto();
+		});
+	});
+</script>
+
+
+
+<?php include_once('./footer.html'); ?>

@@ -1,0 +1,22 @@
+<?php include_once('./header.html'); ?>
+
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.css" rel="stylesheet">
+
+
+<div class="ex1">
+  <div><img src="./images/posts/one.jpg" title="Funky roots"></div>
+  <div><img src="./images/posts/two.jpg" title="The long and winding road"></div>
+  <div><img src="./images/posts/three.jpg" title="Happy tree"></div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $('.ex1').bxSlider({
+  		mode: 'fade',
+    	captions: true
+  });
+});
+</script>
+
+<?php include_once('./footer.html'); ?>

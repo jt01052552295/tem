@@ -1,0 +1,53 @@
+<?php include_once('./header.html'); ?>
+
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.ex1.css" rel="stylesheet">
+<pre class="desc">
+이미지는 센터, 세로크기 무시해버리기
+</pre>
+
+<div class="ex1">
+  <div><img src="./images/posts/one.jpg" title="Funky roots"></div>
+  <div><img src="./images/model1.jpg" title="Happy tree"></div>
+  <div><img src="./images/posts/two.jpg" title="The long and winding road"></div>
+  <div><img src="./images/posts/three.jpg" title="Happy tree"></div>
+</div>
+<script>
+$(document).ready(function(){
+  $('.ex1').bxSlider({
+  		mode: 'fade',
+  		wrapperClass: 'ex1-wrapper',
+    	captions: true,
+    	slideWidth: 800
+  });
+});
+</script>
+
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.ex2.css" rel="stylesheet">
+<pre class="desc">
+가장 기본적인
+</pre>
+
+<div class="ex2">
+  <div><img src="./images/posts/one.jpg" title="Funky roots"></div>
+  <div><img src="./images/model1.jpg" title="Happy tree"></div>
+  <div><img src="./images/posts/two.jpg" title="The long and winding road"></div>
+  <div><img src="./images/posts/three.jpg" title="Happy tree"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.ex2').bxSlider({
+  		mode: 'fade',
+  		wrapperClass: 'ex2-wrapper',
+  		slideWidth: 400
+  });
+});
+</script>
+
+
+
+
+
+
+
+<?php include_once('./footer.html'); ?>

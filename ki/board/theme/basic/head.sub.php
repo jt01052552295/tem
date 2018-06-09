@@ -45,7 +45,7 @@ if (G5_IS_MOBILE) {
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
-<title><?php echo $g5_head_title; ?></title>
+<title><?php echo $g5_head_title; ?> theme basic</title>
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/<?php echo G5_IS_MOBILE ? 'mobile' : 'default'; ?>.css?ver=<?php echo G5_CSS_VER; ?>">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
@@ -87,4 +87,7 @@ if ($is_member) { // 회원이라면 로그인 중이라는 메세지를 출력�
     echo '<div id="hd_login_msg">'.$sr_admin_msg.get_text($member['mb_nick']).'님 로그인 중 ';
     echo '<a href="'.G5_BBS_URL.'/logout.php">로그아웃</a></div>';
 }
+
+echo "1111111";
 ?>
+

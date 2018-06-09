@@ -176,7 +176,9 @@ if (isset($wr_id) && $wr_id) {
     $g5['title'] = $g5['board_title'].' '.$page.' 페이지';
 }
 
+// echo "111".G5_PATH;
 include_once(G5_PATH.'/head.sub.php');
+// echo "222";
 
 $width = $board['bo_table_width'];
 if ($width <= 100)

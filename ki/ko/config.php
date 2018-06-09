@@ -71,6 +71,9 @@ define('KI_IS_MOBILE', $infodu['is_mobile']);
 if (KI_IS_MOBILE) {
     define('KI_MOBILE_PATH',     KI_PATH.'/m');
     define('KI_MOBILE_URL',      KI_URL.'/m');
+    define('KI_IMG_MURL',        KI_MOBILE_URL.'/images');
+    define('KI_CSS_MURL',        KI_MOBILE_URL.'/css');
+    define('KI_JS_MURL',         KI_MOBILE_URL.'/js');
 }
 
 // URL 은 브라우저상에서의 경로 (도메인으로 부터의)
@@ -85,7 +88,11 @@ if($infodu['db'] and $chk_gnu == false):
     if(defined('INDEX_ROOT')){
         include_once('../board/common.php');
     } else {
-        include_once('../../board/common.php');
+        if (KI_IS_MOBILE) {
+            include_once('../../../board/common.php');
+        } else {
+            include_once('../../board/common.php');
+        }
     }
 endif;
 

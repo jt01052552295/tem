@@ -1,0 +1,96 @@
+<?php include 'head.php';?>
+<?php include_once '../../board/common.php';?>
+<style>
+.content{
+	padding : 0px;
+	float: left;
+	display: none;
+}
+</style>
+<img alt="" src="images/main_img.jpg" style="float: left; width: 100%; margin-bottom: 7px; margin-top: 0px; position: relative;">
+<div style="float: left; width: 50%;">
+	<a href="view/greenhouse.html"><img alt="" src="images/m_main_program.jpg" style="width: 95%; position : relative; margin-top : -45px;"></a>
+</div>
+<div style="float: left; width: 50%; position: relative; ">
+	<a href="community/event.html">
+		<img alt="" src="images/m_main_event.jpg">
+		
+		<div style="position : absolute; left: 10px; top: 50px; " class="notice_wrap">
+			<?php 
+			$sql = "select * from g5_write_notice order by wr_id desc limit 0, 3";
+			$notice_list = sql_query($sql);
+			while($row = sql_fetch_array($notice_list)){ ?>
+			<a style="font-size: 10pt; text-decoration:none; color: #fff; display: block;" href="<?php echo G5_BBS_URL?>/board.php?bo_table=notice&wr_id=<?php echo $row['wr_id']?>"><?php echo utf8_strcut($row['wr_subject'],25)?></a>
+			<?php }?>
+		</div>
+	</a>
+</div>
+<div style="float: left; width: 62%; position: relative;">
+	<a href="community/notice.html"><img alt="" src="images/m_main_notice.jpg" style="width: 98%; max-height: 150px; "></a>
+	
+	<div style="position : absolute; left: 20px; top: 60px; " class="notice_wrap">
+		<?php 
+		$sql = "select * from g5_write_event order by wr_id desc limit 0, 3";
+		$notice_list = sql_query($sql);
+		while($row = sql_fetch_array($notice_list)){ ?>
+		<a style="font-size: 10pt; text-decoration:none; color: #555; display: block;" href="<?php echo G5_BBS_URL?>/board.php?bo_table=event&wr_id=<?php echo $row['wr_id']?>"><?php echo utf8_strcut($row['wr_subject'],25)?></a>
+		<?php }?>
+	</div>
+	
+</div>
+<div style="float: left; width: 38%;">
+	<a href="enjoy/garden.html"><img alt="" src="images/m_main_view.jpg" style="height: 45px;"></a>
+	<a href="company/charge.html"><img alt="" src="images/m_main_time.jpg"style="height: 45px;"></a>
+	<a href="company/location.html"><img alt="" src="images/m_main_location.jpg" style="height: 45px;"></a>
+</div>
+<div style="clear: both;"></div>
+
+<?php include 'tail.php'; ?>
+
+
+
+
+<script>
+$(function(){
+	function ScaleSlider() {
+		var body_w = $(document.body).width();
+		$("#container").css("width",body_w + "px");
+		$(".main_vg_img").css("width",body_w + "px");	
+		$("#slides").css("width",body_w + "px");
+		
+		var body_h = (body_w * 470) / 640;
+		
+		$("#container").css("height",body_h + "px");
+		$(".main_vg_img").css("height",body_h + "px");	
+		$("#slides").css("height",body_h + "px");
+		
+		$(".pagination").css("top",body_h-10 - 25 + "px");
+    }
+    ScaleSlider();
+    $(window).bind("load", ScaleSlider);
+    $(window).bind("resize", ScaleSlider);
+    $(window).bind("orientationchange", ScaleSlider);
+    
+    
+	var slide =  $('#slides').slides({
+		preload: true,
+		preloadImage: 'img/loading.gif',
+		play: 5000,
+		pause: 2500,
+		hoverPause: true
+	});
+});
+
+var btn_loc;
+$(".business_btn").click(function(){
+	
+	$(".content").slideUp();
+	if(btn_loc != this){
+		$(this).next().slideDown();
+		btn_loc = this;
+	}else{
+		btn_loc = "";
+	}
+});
+
+</script>

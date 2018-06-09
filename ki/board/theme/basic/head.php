@@ -15,7 +15,6 @@ include_once(G5_LIB_PATH.'/connect.lib.php');
 include_once(G5_LIB_PATH.'/popular.lib.php');
 
 
-
 if(isset($lang)){
     set_cookie("lang", $lang, 86400 * 1);
 } else {
@@ -27,6 +26,10 @@ if(isset($lang)){
 
 $chk_gnu = true;
 include_once('../../'.$lang.'/config.php');
-include_once(KI_PATH.'/_top.php');
+if (G5_IS_MOBILE) {
+	include_once(KI_MOBILE_PATH.'/_top.php');
+} else {
+	include_once(KI_PATH.'/_top.php');
+}
 
 ?>

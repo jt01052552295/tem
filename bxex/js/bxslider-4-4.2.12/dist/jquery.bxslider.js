@@ -30,6 +30,7 @@
     responsive: true,
     slideZIndex: 50,
     wrapperClass: 'bx-wrapper',
+    viewportClass: 'bx-viewport',
 
     // TOUCH
     touchEnabled: true,
@@ -192,7 +193,7 @@
       var preloadSelector = slider.children.eq(slider.settings.startSlide); // set the default preload selector (visible)
 
       // wrap el in a wrapper
-      el.wrap('<div class="' + slider.settings.wrapperClass + '"><div class="bx-viewport"></div></div>');
+      el.wrap('<div class="' + slider.settings.wrapperClass + '"><div class="'+slider.settings.viewportClass+'"></div></div>');
       // store a namespace reference to .bx-viewport
       slider.viewport = el.parent();
 

@@ -1,0 +1,28 @@
+<?php include_once('./header.html'); ?>
+
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.responsive.css" rel="stylesheet">
+<pre class="desc">
+반응형?
+</pre>
+
+<div class="responsive">
+  <div><img src="./images/posts/one.jpg" title="Funky roots"></div>
+  <div><img src="./images/model1.jpg" title="Happy tree"></div>
+  <div><img src="./images/posts/two.jpg" title="The long and winding road"></div>
+  <div><img src="./images/posts/three.jpg" title="Happy tree"></div>
+</div>
+<script>
+$(document).ready(function(){
+	$('.responsive').bxSlider({
+		mode: 'fade',
+		wrapperClass: 'res-wrapper',
+		viewportClass: 'res-viewport',
+		captions: true,
+		slideWidth: 800
+	});
+
+});
+</script>
+
+
+<?php include_once('./footer.html'); ?>

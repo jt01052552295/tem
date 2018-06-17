@@ -1,0 +1,67 @@
+<?php include_once('./header.html'); ?>
+<script>
+;(function($){
+	var defaults = {
+		// GENERAL
+		mode: 'horizontal',
+		infiniteLoop: true,
+		speed: 500,
+		slideZIndex: 50,
+		wrapperClass: 'jt-wrapper',
+		// CALLBACKS
+		// onSliderLoad: function() { return true; },
+		// onSlideBefore: function() { return true; },
+		// onSlideAfter: function() { return true; },
+		// onSlideNext: function() { return true; },
+		// onSlidePrev: function() { return true; },
+		// onSliderResize: function() { return true; },
+		// onAutoChange: function() { return true; } //calls when auto slides starts and stops
+	};
+
+	$.fn.jtSlider = function(options) {
+		if (this.length === 0) {return this;}
+	    if (this.length > 1) {
+	      this.each(function() {
+	        $(this).jtSlider(options);
+	      });
+	      return this;
+	    }
+	    var slider = {}, el = this, windowWidth = $(window).width(), windowHeight = $(window).height();
+	    var init = function() {
+	    	slider.settings = $.extend({}, defaults, options);
+	    	//slider.settings.onSliderLoad.call(el, slider.settings.mode);
+
+	    	console.log(slider.settings)
+	    };
+
+
+	    init();
+	};
+})(jQuery);
+</script>
+
+<pre class="desc">
+슬라이드 제작
+</pre>
+
+<div class="make">
+  <div><img src="./images/posts/one.jpg" title="Funky roots"></div>
+  <div><img src="./images/model1.jpg" title="Happy tree"></div>
+  <div><img src="./images/posts/two.jpg" title="The long and winding road"></div>
+  <div><img src="./images/posts/three.jpg" title="Happy tree"></div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+	$('.make').jtSlider({
+		mode : 'fade',
+		speed : 1000
+	});
+});
+</script>
+
+
+
+
+<?php include_once('./footer.html'); ?>

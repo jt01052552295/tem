@@ -1,0 +1,89 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.carousel2.css" rel="stylesheet">
+<pre class="desc">
+기본적인 캐러셀2, 좌우버튼
+</pre>
+
+
+
+    <section class="k_wrap section3">
+        <div class="k_container type_center">
+
+                <div class="partner_inner">
+                    <div class="partner-slider-controls">
+                        <span id="partner-slider-prev"></span> <!-- 이전 -->
+                        <h3>Business</h3>
+                        <span id="partner-slider-next"></span> <!-- 다음 -->
+                    </div>
+ 
+                    <div class="partner-slider">
+                        <div>
+                            <a href="javascript:;">
+                                <img src="./images/slide_1.png"  alt="" />
+                                <div class="con">
+                                    <h4>LPR Application</h4>
+                                    <p>번호인식 기반의 모든 통합 시스템 기술 보유<br/>종합주차장 관리 시스템, 지능형 ITS통합, 불법주정차 시스템, 매연검출 시스템</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="javascript:;">
+                                <img src="./images/slide_2.png"  alt="" />
+                                <div class="con">
+                                    <h4>Image Processing</h4>
+                                    <p>수년간의 번호인식 기술과 노하우를 통한 물체인식 기술 보유<br/>차량번호인식절차, 물체인식, 지폐정사기, 영상검사 자동화</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="javascript:;">
+                                <img src="./images/slide_3.png"  alt="" />
+                                <div class="con">
+                                    <h4>LPR Application</h4>
+                                    <p>번호인식 기반의 모든 통합 시스템 기술 보유<br/>종합주차장 관리 시스템, 지능형 ITS통합, 불법주정차 시스템, 매연검출 시스템</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="javascript:;">
+                                <img src="./images/slide_4.png"  alt="" />
+                                <div class="con">
+                                    <h4>Image Processing</h4>
+                                    <p>수년간의 번호인식 기술과 노하우를 통한 물체인식 기술 보유<br/>차량번호인식절차, 물체인식, 지폐정사기, 영상검사 자동화</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                   
+                </div>
+
+        </div>
+    </section>
+
+<script>
+    $(document).ready(function(){
+        var partnerSlider = $('.partner-slider').bxSlider({
+            auto: false,
+            infiniteLoop: true,
+            slideMargin:10,
+            minSlides:2,
+            maxSlides:2,
+            moveSlides:1,
+            slideWidth:594,
+            wrapperClass: 'partner-wrapper',
+            autoControls: false,
+            adaptiveHeight: false,
+            pager:false,
+            speed:1000,
+            controls: true,
+            nextSelector: '#partner-slider-next',
+            prevSelector: '#partner-slider-prev',
+        });
+        $('#partner-slider-prev a, #partner-slider-next a').click(function(){
+            partnerSlider.stopAuto();
+            partnerSlider.startAuto();
+        });
+    });
+</script>
+
+
+<?php include_once('./footer.html'); ?>

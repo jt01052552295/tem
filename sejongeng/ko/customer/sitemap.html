@@ -1,0 +1,39 @@
+<? include "../top/include_top.php" ?>
+
+<div class="space30"></div>
+<?
+for ($i=1; $i < sizeof($order_category); $i++){
+?>
+
+	<div class="sitemap">
+		<div class="sitemap_cate"><a href="../<?=$order_category[$i]?>/<?=$page_1_html[$order_category[$i]][0]?>.html"><span class="sitemap_cate_text"><?=$cate_name[$order_category[$i]]?></span></a></div>
+		<div class="sitemap_text">
+			<ul>
+			<?
+				// 하위 메뉴시작
+				for ($j=1; $j < sizeof($page_1_name[$order_category[$i]]); $j++){
+			?>
+				<li>
+					<div><a href="../<?=$order_category[$i]?>/<?=$page_1_html[$order_category[$i]][$j]?>.html"><?=$page_1_name[$order_category[$i]][$j]?></a><div>
+				</li>
+			<?
+					}
+			?>
+
+			</ul>
+
+		</div>
+	</div>
+	
+	
+	<?php if($i == 4){?>
+	<div style="clear: both; display: block;"></div>
+	<?php }?>
+	
+
+<?
+	}
+?>
+
+
+<? include "../top/include_bottom.php"?>

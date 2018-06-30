@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<? include "top/head.php"; ?>
+<? include "top/list/order_list.php"; ?>
+<? include "top/function.php"; ?>
+
+<? include "top/admin/admin_data.php"; ?>
+<? if($site['db']){ 
+	include "../board/common.php"; 
+	include_once(G5_LIB_PATH.'/latest.lib.php');
+}?>
+
+<body>
+<div id="wrap">
+    <ul class="blind">
+        <li><a href="#contents">본문 바로가기</a></li>
+    </ul>
+
+    <div id="contents">
+        <section class="k_wrap section1">
+            <header id="header" >
+                <? include "top/menu_drop.php"; ?>
+
+            </header><!-- //header -->
+
+            <div class="vg_wrap">
+                <div class="vg_text">
+                    <h2>INNOVATION OF<br/><span>SMART CITY</span></h2>
+                    <p class="bottom">자체 개발의 안정된 하드웨어 및 사용자에 최적화 되어 있는<br/>소프트웨어 기술</p>
+                </div>
+
+                <div class="vg_movie">
+                    <a href="#" class="openMovieLayer"><img src="<?=KI_URL?>images/bg_movie.png" alt="비디오영상재생" /></a>
+                </div>
+
+
+                <div class="vg_nav">
+                    <ul>
+                        <li class="vg1"><a href="#"><img src="<?=KI_URL?>images/vg1.png" alt="A.V.I" /></a></li>
+                        <li class="vg2"><a href="#"><img src="<?=KI_URL?>images/vg2.png" alt="속도위반단속시스템" /></a></li>
+                        <li class="vg3"><a href="#"><img src="<?=KI_URL?>images/vg3.png" alt="신호위반단속시스템" /></a></li>
+                        <li class="vg4"><a href="#"><img src="<?=KI_URL?>images/vg4.png" alt="도로방법시스템" /></a></li>
+                        <li class="vg5"><a href="#"><img src="<?=KI_URL?>images/vg5.png" alt="체납차량단속시스템" /></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="videoBg">
+                <div class="videoInner" id="youtube-video" >
+                    <div class="videoClose"><a href="#" class="closeBtn"><i class="fas fa-times"></i></a></div>
+                    <iframe src="https://www.youtube.com/embed/7RE8C0O1j70" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="k_wrap section2">
+            <div class="k_container type_center innerSection2">
+                <div class="tit"><h3>ABOUT US</h3><div class="subLine"></div></div>
+                <div class="con"><p>Your 1st Partner<br/><strong>INPEG VISION</strong></p></div>
+                <div class="desc"><p>대한민국의 더 큰 내일을 설계하는 기업<br/>(주)인펙비전 입니다.</p></div>
+                <div class="bottomBtn"><a class="moreBtn">자세히보기</a></div>
+            </div>
+        </section>
+
+
+        <link href="<?=KI_URL?>js/bxslider/dist/jquery.bxslider.carousel.css?ver=<?php echo KI_TIME_YMD?>" rel="stylesheet">
+        <script src="<?=KI_URL?>js/bxslider/dist/jquery.bxslider.js"></script>
+        <section class="k_wrap section3">
+            <div class="k_container type_center">
+
+                    <div class="partner_inner">
+                        <div class="partner-slider-controls">
+                            <span id="partner-slider-prev"></span> <!-- 이전 -->
+                            <h3>Business</h3>
+                            <span id="partner-slider-next"></span> <!-- 다음 -->
+                        </div>
+     
+                        <div class="partner-slider">
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="<?=KI_URL?>images/slide1.png"  alt="" />
+                                    <div class="con">
+                                        <h4>LPR Application</h4>
+                                        <p>번호인식 기반의 모든 통합 시스템 기술 보유<br/>종합주차장 관리 시스템, 지능형 ITS통합, 불법주정차 시스템, 매연검출 시스템</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="<?=KI_URL?>images/slide2.png"  alt="" />
+                                    <div class="con">
+                                        <h4>Image Processing</h4>
+                                        <p>수년간의 번호인식 기술과 노하우를 통한 물체인식 기술 보유<br/>차량번호인식절차, 물체인식, 지폐정사기, 영상검사 자동화</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="<?=KI_URL?>images/slide1.png"  alt="" />
+                                    <div class="con">
+                                        <h4>LPR Application</h4>
+                                        <p>번호인식 기반의 모든 통합 시스템 기술 보유<br/>종합주차장 관리 시스템, 지능형 ITS통합, 불법주정차 시스템, 매연검출 시스템</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="<?=KI_URL?>images/slide2.png"  alt="" />
+                                    <div class="con">
+                                        <h4>Image Processing</h4>
+                                        <p>수년간의 번호인식 기술과 노하우를 통한 물체인식 기술 보유<br/>차량번호인식절차, 물체인식, 지폐정사기, 영상검사 자동화</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>                   
+                    </div>
+
+            </div>
+        </section>
+
+        <script>
+            $(document).ready(function(){
+                var partnerSlider = $('.partner-slider').bxSlider({
+                    auto: false,
+                    infiniteLoop: true,
+                    slideMargin:10,
+                    minSlides:2,
+                    maxSlides:2,
+                    moveSlides:1,
+                    slideWidth:594,
+                    wrapperClass: 'partner-wrapper',
+                    autoControls: false,
+                    adaptiveHeight: false,
+                    pager:false,
+                    speed:1000,
+                    controls: true,
+                    nextSelector: '#partner-slider-next',
+                    prevSelector: '#partner-slider-prev',
+                });
+                $('#partner-slider-prev a, #partner-slider-next a').click(function(){
+                    partnerSlider.stopAuto();
+                    partnerSlider.startAuto();
+                });
+            });
+        </script>
+
+
+
+        <section class="k_wrap section4">
+            <div class="k_container type_center">
+                <div class="businessInner">       
+                    <div class="business ">
+                        <div class="thumb"><img src="<?=KI_URL?>images/intro1.png"></div>
+                        <div class="desc">
+                            <div class="bar">&nbsp;</div>
+                            <h3 class="title">영상자료</h3>
+                            <p class="content">인펙비전의 영상자료를 소개합니다.<br/>생생한 모습을 보여드립니다.</p>
+                            <a href="#">자세히보기</a>
+                        </div>
+                    </div>
+                    <div class="business ">
+                        <div class="thumb"><img src="<?=KI_URL?>images/intro2.png"></div>
+                        <div class="desc">
+                            <div class="bar">&nbsp;</div>
+                            <h3 class="title">자료실</h3>
+                            <p class="content">인펙비전의 각종 자료를<br/>다운 받으실 수 있습니다.</p>
+                            <a href="#">자세히보기</a>
+                        </div>
+                    </div>
+                    <div class="business ">
+                        <div class="thumb"><img src="<?=KI_URL?>images/intro3.png"></div>
+                        <div class="desc">
+                            <div class="bar">&nbsp;</div>
+                            <h3 class="title">인증현황</h3>
+                            <p class="content">앞서가는 기술력과 노하우로<br/>현재 업계 선두를 달리고 있습니다.</p>
+                            <a href="#">자세히보기</a>
+                        </div>
+                    </div>
+                    <div class="business last">
+                        <div class="thumb"><img src="<?=KI_URL?>images/intro4.png"></div>
+                        <div class="desc">
+                            <div class="bar">&nbsp;</div>
+                            <h3 class="title">주요실적</h3>
+                            <p class="content">2,156건의 사업수행, 카메라 4,250여개<br/>이상을 설치하였습니다.</p>
+                            <a href="#">자세히보기</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="k_wrap section5">
+            <div class="k_container type_center">
+                <div class="customerInner">
+                    <div class="lt_wrap">
+                        
+                        <div class="lt">
+                            <strong class="lt_title">Notice & News</strong>
+                            <ul>
+                                <li>
+                                    <a href="#" class="lt_a">
+                                        <div class="lt_cate">NEWS</div>
+                                        <h5>주차관제 MAS (다수공급자계약) 등록 완료</h5>
+                                        <p>반갑습니다. 주차관제 MAS (다수공급자계약) 등록 완료 되었습니다. 앞으로 더욱더 발전하는 인펙비전이 되겠습... </p>
+                                        <div class="lt_date">2017.07.04</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="lt_a">
+                                        <div class="lt_cate">NEWS</div>
+                                        <h5>주차관제 MAS (다수공급자계약) 등록 완료</h5>
+                                        <p>반갑습니다. 주차관제 MAS (다수공급자계약) 등록 완료 되었습니다. 앞으로 더욱더 발전하는 인펙비전이 되겠습...</p>
+                                        <div class="lt_date">2017.07.04</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="lt_a">
+                                        <div class="lt_cate">NEWS</div>
+                                        <h5>주차관제 MAS (다수공급자계약) 등록 완료</h5>
+                                        <p>반갑습니다. 주차관제 MAS (다수공급자계약) 등록 완료 되었습니다. 앞으로 더욱더 발전하는 인펙비전이 되겠습...</p>
+                                        <div class="lt_date">2017.07.04</div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="lt_more"><a href="#"><span class="sound_only">공지사항&amp;뉴스더보기</span></a></div>
+                        </div>
+
+                    </div>
+                    <div class="customer_center">                  
+                        <h3 class="title">고객센터</h3>
+                        <p class="content">궁금한사항을 문의하세요.<br/>친절히 답변해드립니다.</p>
+                        <a href="#">자세히보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   
+
+    <footer id="footer">
+       <?php include_once "top/copyright.php"; ?>
+    </footer>
+</div>
+</body>
+</html>

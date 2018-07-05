@@ -1,0 +1,159 @@
+<? include "../top/include_top.php" ?>
+
+<div class="info">
+<h3>적용일자</h3>
+<p class="cont">
+· 2017년 3월 13일
+</p>
+</div>
+
+
+<div class="info">
+<h3>대상</h3>
+<p class="cont">
+· <span>입원환자 전체 중 의료급여 대상자</span><br />
+· 관련근거 : 보건복지부고시 제2017-40호<br />
+· 입원환자 식대 관련 고시 개정 안내
+</p>
+</div>
+
+
+
+
+
+<div class="info">
+<h3>입원환자 식대의 본인부담률은 보험 유형에 따라 달라집니다.</h3>
+<table class="table_info">
+<colgroup>
+	<col style="width:50%;">
+	<col style="width:50%;">
+</colgroup>
+<tr>
+                            <th>보험유형</th>
+                            <th>본인부담율</th>
+                          </tr>
+                          <tr>
+                            <td>건강보험</td>
+                            <td>50%(식대+가산)</td>
+                          </tr>
+						                            <tr>
+                            <td>의료급여</td>
+                            <td>20%</td>
+                          </tr>
+						                            <tr>
+                            <td>중증질환자(의료급여)</td>
+                            <td>5%</td>
+                          </tr>
+
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="info">
+<h3>우리병원에서는 산정하는 식사 종류별 가격은 다음과 같습니다.(단위:원)</h3>
+<table class="table_info">
+<colgroup>
+	<col style="width:20%;">
+	<col style="width:16%;">
+	<col style="width:16%;">
+	<col style="width:16%;">
+	<col style="width:16%;">
+	<col style="width:16%;">
+</colgroup>
+                          <tr>
+                            <th colspan="2" rowspan="2">구분</th>
+                            <th rowspan="2">변경전</th>
+                            <th colspan="3">변경후(2017.03.13)</th>
+                          </tr>
+                          <tr>
+                            <th>계</th>
+                            <th>본인부담액</th>
+                            <th>공단부담액</th>
+                          </tr>
+                          <tr>
+                            <td class="first_bg">보험</td>
+                            <td>일반식(1식)</td>
+                            <td>&nbsp;</td>
+                            <td>5,540</td>
+                            <td>2,770</td>
+                            <td>2,770</td>
+                          </tr>
+                          <tr>
+                            <td>치료식(1식)</td>
+                            <td>&nbsp;</td>
+                            <td>5,660</td>
+                            <td>2,830</td>
+                            <td>2,830</td>
+                          </tr>
+                          <tr>
+                            <td>치료식 영양관리료<br>
+                              (1일당)</td>
+                            <td>&nbsp;</td>
+                            <td>1,010</td>
+                            <td>510</td>
+                            <td>510</td>
+                          </tr>
+                          <tr>
+                            <td>경관영양유동식</td>
+                            <td>&nbsp;</td>
+                            <td>4,580</td>
+                            <td>2,290</td>
+                            <td>2,290</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="6"  class="first_bg">보호(중증)</td>
+                            <td rowspan="2">일반식(1식)</td>
+                            <td rowspan="2">3,390</td>
+                            <td rowspan="2">3,440</td>
+                            <td>680</td>
+                            <td>2,760</td>
+                          </tr>
+                          <tr>
+                            <td>(170)</td>
+                            <td>(3,270)</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2">치료식(1식)</td>
+                            <td rowspan="2">4,030</td>
+                            <td rowspan="2">4,180</td>
+                            <td>830</td>
+                            <td>3,350</td>
+                          </tr>
+                          <tr>
+                            <td>(200)</td>
+                            <td>(3,980)</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2">경관영양유동식</td>
+                            <td rowspan="2">4,030</td>
+                            <td rowspan="2">4,100</td>
+                            <td>820</td>
+                            <td>3,280</td>
+                          </tr>
+                          <tr>
+                            <td>(200)</td>
+                            <td>(3,900)</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2"  class="first_bg">비급여</td>
+                            <td>보호자식</td>
+                            <td colspan="4">5,000</td>
+                          </tr>
+                          <tr>
+                            <td>공기밥</td>
+                            <td colspan="4">1,000</td>
+                          </tr>
+</table>
+<p class="cont" style="text-align:right; margin:0; padding:0;">* 궁금한 사항은 원무과 [원내전화 11,100번]으로 문의하여 주십시오.</p>
+</div>
+
+
+
+<? include "../top/include_bottom.php"?>

@@ -1,0 +1,36 @@
+<? include "../top/include_top.php" ?>
+
+<div class="about">
+<!--
+<div class="title">어르신들의 마음속 깊은 곳에 웃음 짓게 만드는<br />병원이 되고자 노력하겠습니다.</div>
+-->
+<div style="margin-bottom:30px"><img src="images/about_top.jpg" alt=""></div>
+<p>정신적, 신체적으로 고통을 받는 환자들에게 단순한 치료가 아닌, 최고의 의료진과 물리치료(도수치료,운동치료) 팀이 정성을 다 하는 마음으로 보호자, 환자들 가까운 곳에 항시 모시고자 노력하는 병원입니다.</p>
+<p style="background:#f9f9f9; padding:30px 30px; margin-bottom:16px;">
+· 친절하고, 전문적인 교육을 받은 요양보호사가 부모님을 섬기는 마음으로 24시간 간병을 하고 있습니다.</br />
+· 저희 병원 내부 시설은 타 병원과 차별화된 편안하고, 안전한 시설로 설계되어 있음을 자랑 합니다.</br />
+· 어르신들을 위한 인지기능, 소 근육 발달과 기억력 증진을 위한 병원 내 복지 재활프로그램에 참여하실 수 있습니다.
+</p>
+<p>최고의 의료진과 쾌적한 환경, 자식 같은 마음으로 어르신이 편안하게 쉴 수 있는 참편한요양병원이 되고자 노력하겠습니다.</p>
+</div>
+
+
+
+<div class="mission">
+<h3>미션 & 비젼</h3>
+<img src="images/mission.jpg" alt="">
+</div>
+
+<div class="value">
+<h3>LOGO</h3>
+<img src="images/logo.jpg" alt="">
+</div>
+
+<div class="value">
+<h3>핵심가치</h3>
+<img src="images/value.jpg" alt="">
+</div>
+
+
+
+<? include "../top/include_bottom.php"?>

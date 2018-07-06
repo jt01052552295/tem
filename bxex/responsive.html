@@ -13,13 +13,41 @@
 </div>
 <script>
 $(document).ready(function(){
-	$('.responsive').bxSlider({
-		mode: 'fade',
-		wrapperClass: 'res-wrapper',
-		viewportClass: 'res-viewport',
-		captions: true,
-		slideWidth: 800
-	});
+
+	var settings = function() {
+
+		var settings1 = {
+			mode: 'fade',
+			wrapperClass: 'res-wrapper',
+			viewportClass: 'res-viewport',
+			captions: true,
+			slideWidth: 800
+		};
+
+		var settings2 = {
+			auto: true,
+			slideMargin:10,
+			minSlides:2,
+			maxSlides:2,
+			moveSlides:1,
+			wrapperClass: 'res-wrapper',
+			viewportClass: 'res-viewport',
+			captions: true,
+			slideWidth: 400
+		};
+
+		return ($(window).width()>640) ? settings1 : settings2;
+
+	}
+
+
+	var mySlider;
+	function tourLandingScript() {
+		mySlider.reloadSlider(settings());
+	}
+
+	mySlider = $('.responsive').bxSlider(settings());
+	$(window).resize(tourLandingScript);
 
 });
 </script>

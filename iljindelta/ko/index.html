@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<? include "top/head.php"; ?>
+<? include "top/list/order_list.php"; ?>
+<? include "top/function.php"; ?>
+
+<? include "top/admin/admin_data.php"; ?>
+<? if($site['db']){ 
+	include "../board/common.php"; 
+	include_once(G5_LIB_PATH.'/latest.lib.php');
+}?>
+
+<body>
+<div id="wrap">
+    <ul class="blind">
+        <li><a href="#contents">본문 바로가기</a></li>
+    </ul>
+
+    <div id="contents">
+
+        <header id="header" class="on">
+            <? include "top/menu_drop.php"; ?>
+        </header><!-- //header -->
+
+
+
+        <section class="k_wrap section1">
+            
+            <link rel="stylesheet" href="js/bxslider/dist/jquery.bxslider.main.css" />
+            <script src="js/bxslider/dist/jquery.bxslider.js"></script>
+            <div class="vg_wrap">
+                <div class="vg_inner">
+                    <div class="vg_title">
+                        <h4>일진델타</h4>
+                        <h2>iljin delta</h2>
+                        <p>
+                            저희 일진델타는 최고의 기술로 최상의 제품만을 고집하는<br/>금형전문업체입니다.
+                        </p>
+                        <div class="main-slider-controls">
+                            <span id="main-slider-prev"></span> <!-- 이전 -->
+                            <span id="main-slider-next"></span> <!-- 다음 -->
+                        </div>          
+                    </div>
+                    <ul class="main-slider">
+                        <li style="background-image: url(./images/vg1.jpg);">&nbsp;</li>
+                        <li style="background-image: url(./images/vg1.jpg);">&nbsp;</li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    var mainSlider = $('.main-slider').bxSlider({
+                        auto: true,
+                        mode:'fade',
+                        infiniteLoop: true,
+                        wrapperClass: 'main-wrapper',
+                        autoControls: false,
+                        adaptiveHeight: true,
+                        pager:false,
+                        speed:1000,
+                        controls: true,
+                        nextSelector: '#main-slider-prev',
+                        prevSelector: '#main-slider-next',
+                    });
+                    $('#main-slider-prev a, #main-slider-next a').click(function(){
+                        mainSlider.stopAuto();
+                        mainSlider.startAuto();
+                    });
+                });
+            </script>
+
+
+            <!-- <div class="vg_wrap">
+                <div class="vg_text">
+                    <h2>INNOVATION OF<br/><span>SMART CITY</span></h2>
+                    <p class="bottom">자체 개발의 안정된 하드웨어 및 사용자에 최적화 되어 있는<br/>소프트웨어 기술</p>
+                </div>
+
+                <div class="vg_movie">
+                    <a href="#" class="openMovieLayer"><img src="<?=KI_URL?>images/bg_movie.png" alt="비디오영상재생" /></a>
+                </div>
+
+
+                <div class="vg_nav">
+                    <ul>
+                        <li class="vg1"><a href="#"><img src="<?=KI_URL?>images/vg1.png" alt="A.V.I" /></a></li>
+                        <li class="vg2"><a href="#"><img src="<?=KI_URL?>images/vg2.png" alt="속도위반단속시스템" /></a></li>
+                        <li class="vg3"><a href="#"><img src="<?=KI_URL?>images/vg3.png" alt="신호위반단속시스템" /></a></li>
+                        <li class="vg4"><a href="#"><img src="<?=KI_URL?>images/vg4.png" alt="도로방법시스템" /></a></li>
+                        <li class="vg5"><a href="#"><img src="<?=KI_URL?>images/vg5.png" alt="체납차량단속시스템" /></a></li>
+                    </ul>
+                </div>
+            </div> -->
+
+            <!-- <div class="videoBg">
+                <div class="videoInner" id="youtube-video" >
+                    <div class="videoClose"><a href="#" class="closeBtn"><i class="fas fa-times"></i></a></div>
+                    <iframe src="https://www.youtube.com/embed/7RE8C0O1j70" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div> -->
+
+        </section>
+
+
+
+
+
+        <link href="<?=KI_URL?>js/bxslider/dist/jquery.bxslider.carousel.css?ver=<?php echo KI_TIME_YMD?>" rel="stylesheet">
+        <script src="<?=KI_URL?>js/bxslider/dist/jquery.bxslider.js"></script>
+        <section class="k_wrap section2">
+            <div class="k_container type_center">
+
+                    <div class="partner_inner">
+                        <div class="partner-slider-controls">
+                            <!-- <span id="partner-slider-prev"></span> --> <!-- 이전 -->
+                            <h3>일진델타 <strong>제품소개</strong></h3>
+                            <!-- <span id="partner-slider-next"></span> --> <!-- 다음 -->
+                        </div>
+
+                        <div class="partner-paging">
+                            <div class="pag_btn"><a href="#" data-page="page1" class="active">가전제품용 금형</a></div>
+                            <div class="pag_btn"><a href="#" data-page="page2">자동차 부품용 금형</a></div>
+                            <div class="pag_btn last"><a href="#" data-page="page3">특수금형</a></div>
+                        </div>
+     
+                        <div class="partner-slider">
+                            <div class="item page1">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide1.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>Front Cover</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page1">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide2.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page1">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide3.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page1 last">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide4.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TOP COVER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page2">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide1.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>Front Cover</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page2">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide2.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page2">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide3.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page2 last">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide4.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TOP COVER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page3">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide1.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>Front Cover</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page3">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide2.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page3">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide3.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TUB OUTER</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item page3 last">
+                                <a href="javascript:;">
+                                    <div class="thumb"><img src="<?=KI_URL?>images/slide4.png"  alt="" /></div>
+                                    <div class="con">
+                                        <h4>Home Applience Parts</h4>
+                                        <p>TOP COVER</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>     
+
+                        <div class="partner-more">
+                            <div class="btn"><a href="<?=KI_URL?>info/01.html" class="banner">자세히 보기</a></div>
+                        </div>              
+                    </div>
+
+            </div>
+        </section>
+
+        <script>
+            $(document).ready(function(){
+                $('.pag_btn a').click(function(e){
+                    e.preventDefault();
+                    var page = $(this).data('page');
+                    if(!page) return;  
+                    $('.pag_btn a').removeClass('active');
+                    $(this).addClass('active');
+                    $('.item').css({'display':'none'});
+                    $('.'+page).css({'display':'block'});
+                });
+            });
+            // $(document).ready(function(){
+            //     var partnerSlider = $('.partner-slider').bxSlider({
+            //         auto: false,
+            //         infiniteLoop: true,
+            //         slideMargin:10,
+            //         minSlides:4,
+            //         maxSlides:4,
+            //         moveSlides:1,
+            //         slideWidth:594,
+            //         wrapperClass: 'partner-wrapper',
+            //         autoControls: false,
+            //         adaptiveHeight: false,
+            //         pager:false,
+            //         speed:1000,
+            //         controls: true,
+            //         nextSelector: '#partner-slider-next',
+            //         prevSelector: '#partner-slider-prev',
+            //     });
+            //     $('#partner-slider-prev a, #partner-slider-next a').click(function(){
+            //         partnerSlider.stopAuto();
+            //         partnerSlider.startAuto();
+            //     });
+            // });
+        </script>
+
+
+
+        <section class="k_wrap section3">
+            <div class="business_wrap bg_info">
+                <div class="business_inner">
+                    
+                    
+                    <div class="inner ">
+                        
+                            <h4 class="title">회사소개</h4>
+                            <p class="content">저희 일진델타는 다변하는 미래에 대비하고 항상 노력하여<br/>세계로 뻗어가는 기술 한국의 주역이 되고자 노력하겠습니다.</p>
+                            <div class="btn"><a href="<?=KI_URL?>info/01.html" class="banner">자세히 보기</a></div>
+                        </a>
+                    </div>
+                    <div class="inner video">                    
+                            
+                            <div class="vg_movie">
+                                <h4 class="title">Company Movie</h4>
+                                <a href="#" class="openMovieLayer"><img src="<?=KI_URL?>images/bg_movie.png" alt="비디오영상재생" /></a>
+                            </div>
+                            <div class="videoBg">
+                                <div class="videoInner"  >
+                                    <div class="videoClose"><a href="#" class="closeBtn"><i class="fas fa-times"></i></a></div>
+                                    <iframe id="youtube-video" src="https://www.youtube.com/embed/WUOtCLOXgm8?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allowfullscreen allowscriptaccess></iframe>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="k_wrap section4">
+            <div class="k_container type_center">
+                <div class="mapBox">
+                    <iframe src="http://infodu.co.kr/map/iljindelta.php"></iframe>
+
+
+                    <div class="map_info">
+                        <div class="map_info_inner">
+                            <dl>
+                                <dt>Location</dt>
+                                <dd class="addr">부산광역시 강서구 화전산단5로<br/>84번길 25 (화전동)</dd>
+                                <dd class="tel">051-302-4451</dd>
+                                <dd class="fax">051-502-4450</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   
+
+    <footer id="footer">
+       <?php include_once "top/copyright.php"; ?>
+    </footer>
+</div>
+</body>
+</html>

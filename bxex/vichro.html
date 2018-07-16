@@ -1,0 +1,146 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.gallery.css" rel="stylesheet">
+<pre class="desc">
+갤러리, 썸네일 형태, 반응형
+</pre>
+
+<div class="gallery-slider-wrap">
+	<ul class="gallery-slider" >
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+		<li ><img src="./images/700x525.png" /></li>
+	</ul>
+</div>
+
+
+<div class="gallery-thumb" >
+	<span id="gallery-slider-prev"></span> 
+	<span id="gallery-slider-next"></span> 
+	
+	
+	<ul class="thumb-list" >
+		<li><a href="#none" class="thumbA" data-slide-index="0"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="1"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="2"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="3"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="4"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="5"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="6"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="7"><img src="./images/700x525.png" /></a></li>
+		<li><a href="#none" class="thumbA" data-slide-index="8"><img src="./images/700x525.png" /></a></li>
+	</ul>
+</div>
+
+<script>
+	$(document).ready(function(){
+		var gallery_slide;
+		var thumbAreaSlider;
+
+		var gallery_settings = function() {
+
+			var settingsBig = {
+				pager:false,
+				auto:false,
+				wrapperClass: 'gallery-wrapper',
+				adaptiveHeight: false,
+				autoControls: false,
+				nextSelector: "#gallery-slider-next",
+				prevSelector: "#gallery-slider-prev",
+				infiniteLoop:false,
+			};
+
+			var settingsSmall = {
+				pager:false,
+				auto:false,
+				slideWidth:375,
+				wrapperClass: 'gallery-wrapper',
+				adaptiveHeight: false,
+				autoControls: false,
+				nextSelector: "#gallery-slider-next",
+				prevSelector: "#gallery-slider-prev",
+				infiniteLoop:false,
+				onSlideBefore: function (slide, oldIndex, newIndex) {
+					var current = gallery_slide.getCurrentSlide();
+					thumbAreaSlider.goToSlide(current);
+				},
+				onSlideNext: function (slide, oldIndex, newIndex) {
+					var current = gallery_slide.getCurrentSlide();
+					thumbAreaSlider.goToSlide(current);
+				}
+			};
+
+			return ($(window).width()>640) ? settingsBig : settingsSmall;
+
+		}
+
+
+		var thumb_settings = function() {
+
+			var settingsBig = {
+				pager:false,
+				auto:false,
+				moveSlides: 1,
+				minSlides:5,
+				maxSlides:5,
+				slideWidth:190,
+				controls:false,
+				infiniteLoop:false,
+				slideMargin:10
+			};
+
+			var settingsSmall = {
+				pager:false,
+				auto:false,
+				moveSlides: 1,
+				minSlides:2,
+				maxSlides:2,
+				slideWidth:100,
+				controls:false,
+				infiniteLoop:false,
+				slideMargin:10
+			};
+
+			return ($(window).width()>640) ? settingsBig : settingsSmall;
+
+		}
+
+
+		
+		gallery_slide = $('.gallery-slider').bxSlider(gallery_settings());
+		thumbAreaSlider = $('.thumb-list').bxSlider(thumb_settings());
+
+
+		function resizeNoticeSlider() {
+			gallery_slide.reloadSlider(gallery_settings());
+			thumbAreaSlider.reloadSlider(thumb_settings());
+		}
+		
+		$(window).resize(resizeNoticeSlider);
+
+		$('#gallery-slider-prev a').click(function(e){
+			e.preventDefault();
+			thumbAreaSlider.goToPrevSlide();
+			return false;
+		});
+		$('#gallery-slider-next a').click(function(e){
+			e.preventDefault();
+			thumbAreaSlider.goToNextSlide();
+			return false;
+		});
+		$("ul.thumb-list li a.thumbA").click(function(e){
+			e.preventDefault();
+			var newIndex= parseInt($(this).attr("data-slide-index"));
+			gallery_slide.goToSlide(newIndex);
+		});
+	});
+</script>
+
+
+
+<?php include_once('./footer.html'); ?>

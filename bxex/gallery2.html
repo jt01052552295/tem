@@ -1,0 +1,103 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.gallery2.css" rel="stylesheet">
+<pre class="desc">
+기본적인 갤러리 형태
+</pre>
+
+<div class="plan_wrap">
+	
+
+	<div class="plan_inner">
+		<h5 id="ptit">3F</h5> 
+
+
+		<ul class="gallery-slider" >
+			<?php 
+				$fileName = 3;
+				for($i=0;$i<8; $i++):
+			?>
+			<li><img src="./images/slide_1.png" /></li>
+			<?php 
+				$fileName++;
+				endfor;
+			?>
+		</ul>
+
+
+		<div id="gallery-pager">
+		  <?php 
+		  	$floorName = 10;
+			for($i=7;$i>=0; $i--):
+		  ?>
+		  <a data-slide-index="<?php echo $i?>" class="thumbA" id="thumbA_<?php echo $i?>" href="javascript:;"><?php echo $floorName?>F</a>
+		 <?php 
+		 	$floorName--;
+			endfor;
+		?>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		var gallery_slide;
+		var thumbAreaSlider;
+
+		var gallery_settings = function() {
+
+			var settingsBig = {
+				mode:'fade',
+				pager:false,
+				auto:false,
+				controls:false,
+				wrapperClass: 'plan-wrapper',
+				adaptiveHeight: false,
+				autoControls: false,
+				infiniteLoop:true,
+				onSliderLoad: function(){
+					$('.thumbA').removeClass('active');
+					$('#thumbA_0').addClass('active');
+				},
+				onSlideBefore: function (slide, oldIndex, newIndex) {
+					var current = gallery_slide.getCurrentSlide();
+					$('.thumbA').removeClass('active');
+					$('#thumbA_'+current).addClass('active');
+
+					var currentText = $('#thumbA_'+current).text();
+					$('h5#ptit').text(currentText);
+
+				}
+			};
+
+
+			return ($(window).width()>640) ? settingsBig : settingsBig;
+
+		}
+
+		
+		gallery_slide = $('.gallery-slider').bxSlider(gallery_settings());
+
+
+		function resizeNoticeSlider() {
+			gallery_slide.reloadSlider(gallery_settings());
+		}
+		
+		resizeNoticeSlider();
+
+
+		$("#gallery-pager a").click(function(e){
+			e.preventDefault();
+			var newIndex= parseInt($(this).attr("data-slide-index"));
+			gallery_slide.goToSlide(newIndex);
+		});
+
+	});
+</script>
+
+
+
+<?php include_once('./footer.html'); ?>

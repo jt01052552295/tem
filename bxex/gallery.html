@@ -1,0 +1,96 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.gallery1.css" rel="stylesheet">
+<pre class="desc">
+기본적인 갤러리 형태
+</pre>
+
+
+<div class="gallery-slider-wrap">
+	<ul class="gallery-slider" >
+		<li><img src="./images/slide_1.png" /></li>
+		<li><img src="./images/slide_2.png" /></li>
+		<li><img src="./images/slide_3.png" /></li>
+		<li><img src="./images/slide_4.png" /></li>
+	</ul>
+
+	<span id="gallery-slider-prev"><a href="javascript:;"><span class="blind">이전</span></a></span> 
+	<span id="gallery-slider-next"><a href="javascript:;"><span class="blind">다음</span></a></span> 
+</div>
+
+<div id="gallery-pager">
+	<a data-slide-index="0" class="thumbA" id="thumbA_0" href="javascript:;"><img src="./images/slide_1.png" /></a>
+	<a data-slide-index="1" class="thumbA" id="thumbA_1" href="javascript:;"><img src="./images/slide_2.png" /></a>
+	<a data-slide-index="2" class="thumbA" id="thumbA_2" href="javascript:;"><img src="./images/slide_3.png" /></a>
+	<a data-slide-index="3" class="thumbA" id="thumbA_3" href="javascript:;"><img src="./images/slide_4.png" /></a>
+</div>
+
+
+<script>
+	$(document).ready(function(){
+		var gallery_slide;
+		var thumbAreaSlider;
+
+		var gallery_settings = function() {
+
+			var settingsBig = {
+				pager:false,
+				auto:false,
+				controls:false,
+				wrapperClass: 'gallery-wrapper',
+				adaptiveHeight: false,
+				autoControls: false,
+				infiniteLoop:true,
+				onSliderLoad: function(){
+					$('.thumbA').removeClass('active');
+					$('#thumbA_0').addClass('active');
+				},
+				onSlideBefore: function (slide, oldIndex, newIndex) {
+					var current = gallery_slide.getCurrentSlide();
+					$('.thumbA').removeClass('active');
+					$('#thumbA_'+current).addClass('active');
+				},
+				onSlideNext: function (slide, oldIndex, newIndex) {
+					var current = gallery_slide.getCurrentSlide();
+					$('.thumbA').removeClass('active');
+					$('#thumbA_'+current).addClass('active');
+				}
+			};
+
+
+			return ($(window).width()>640) ? settingsBig : settingsBig;
+
+		}
+
+		
+		gallery_slide = $('.gallery-slider').bxSlider(gallery_settings());
+
+
+		function resizeNoticeSlider() {
+			gallery_slide.reloadSlider(gallery_settings());
+		}
+		
+		$(window).resize(resizeNoticeSlider);
+
+
+		$('#gallery-slider-prev a').click(function(e){
+			e.preventDefault();
+			gallery_slide.goToPrevSlide();
+			return false;
+		});
+		$('#gallery-slider-next a').click(function(e){
+			e.preventDefault();
+			gallery_slide.goToNextSlide();
+			return false;
+		});
+		$("#gallery-pager a").click(function(e){
+			e.preventDefault();
+			var newIndex= parseInt($(this).attr("data-slide-index"));
+			gallery_slide.goToSlide(newIndex);
+		});
+
+	});
+</script>
+
+
+
+<?php include_once('./footer.html'); ?>

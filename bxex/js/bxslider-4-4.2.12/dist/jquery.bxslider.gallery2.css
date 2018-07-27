@@ -1,0 +1,193 @@
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+
+.blind {overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  
+}
+
+/** THEME
+===================================*/
+.plan_wrap {position:relative;width:1000px; margin:0 auto;height:648px;background: url('images/bg_plan.jpg');}
+.plan_inner {width:780px;height:531px;padding:58px 110px;clear:both;position:relative;}
+h5#ptit {color:#2477bb;font-size:60px;margin:0;font-weight:bold;line-height:1;float:left;}
+
+
+ul.gallery-slibg_planer {list-style: none;}
+/*ul.gallery-slider li {background-repeat: no-repeat;background-position: top center;background-size: cover;height:500px !important;}*/
+
+.plan-wrapper {
+  background: #fff;
+  width:574px;
+  float:right;
+  overflow: hidden;
+  border:1px solid #e5e5e5;
+  position:relative;
+}
+
+
+
+
+.plan-wrapper img {
+  max-width:100%;
+  display: block;
+}
+.plan-wrapper .bx-pager,
+.plan-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+/* LOADER */
+.plan-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+/* PAGER */
+.plan-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  position: absolute;
+  top:61%;
+  left:0;
+  z-index: 999;
+}
+.plan-wrapper .bx-pager.bx-default-pager a {
+  background: #ffffff;
+  text-indent: -9999px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+}
+.plan-wrapper .bx-pager.bx-default-pager a:hover,
+.plan-wrapper .bx-pager.bx-default-pager a.active,
+.plan-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #00b9f1;
+}
+.plan-wrapper .bx-pager-item,
+.plan-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.plan-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.plan-wrapper .bx-prev {
+  left: 10px;
+  background: url('images/controls.png') no-repeat 0 -32px;
+}
+.plan-wrapper .bx-prev:hover,
+.plan-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.plan-wrapper .bx-next {
+  right: 10px;
+  background: url('images/controls.png') no-repeat -43px -32px;
+}
+.plan-wrapper .bx-next:hover,
+.plan-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.plan-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 999;
+}
+.plan-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.plan-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.plan-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.plan-wrapper .bx-controls-auto .bx-start:hover,
+.plan-wrapper .bx-controls-auto .bx-start.active,
+.plan-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.plan-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.plan-wrapper .bx-controls-auto .bx-stop:hover,
+.plan-wrapper .bx-controls-auto .bx-stop.active,
+.plan-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.plan-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.plan-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.plan-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.plan-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+
+
+#gallery-pager {position:absolute;bottom:58px;left:110px;width:86px;}
+#gallery-pager a.thumbA {display:block;width:65px;height:34px;margin-bottom:6px;line-height:34px;text-align:center;position:relative;overflow:hidden;background:#bebebe;font-size:24px;font-weight:bold;color:#fff;}
+#gallery-pager a.thumbA.active {background: url('images/floor_on.png') no-repeat;text-align:left;padding-left:21px;}
+#gallery-pager a img {max-width:100%;}

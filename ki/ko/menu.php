@@ -1,14 +1,16 @@
 <?php
+
+$routeName = "company";
 $menus[] = array(
 	mCode => "10",
-	title => "테스팅, 디버깅1111",
-	url => "./ninja-code/chapter-2/listing-2.4.html"
+	title => "테스트10",
+	url => "/".$routeName."/first.html"
 );
 
 $menus[] = array(
 	mCode => "1010",
 	title => "테스팅, 디버깅1010",
-	url => "./ninja-code/chapter-2/listing-2.4.html"
+	url => "/".$routeName."/first.html"
 );
 
 $menus[] = array(

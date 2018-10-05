@@ -7,6 +7,5 @@
     echo "<!-- <pre infodu>\n";print_r($infodu);echo "\n</pre> -->";
     echo "<!-- <pre g5>\n";print_r($g5);echo "\n</pre> -->";g5
 ?>
-한글
 </body>
 </html>

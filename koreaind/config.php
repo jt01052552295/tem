@@ -1,8 +1,12 @@
 <?php 
+if (PHP_VERSION >= '5.1.0') {
+    //if (function_exists("date_default_timezone_set")) date_default_timezone_set("Asia/Seoul");
+    date_default_timezone_set("Asia/Seoul");
+}
 /* 기본설정 */
 $infodu = array();
-$infodu['title'] = "기본형";
-$infodu['keywords'] = "키워드입력";
+$infodu['title'] = "한국산업정보사";
+$infodu['keywords'] = "";
 $infodu['email'] = "";
 $infodu['device'] = "pc";
 
@@ -13,7 +17,7 @@ $infodu['admin']['pwd'] = "1111";
 $infodu['admin']['crypt'] = crypt($infodu['admin']['pwd'], 15);
 $infodu['admin']['company']     = "한국산업정보사"; //// 회사명을 입력해주세요
 $infodu['admin']['email']   = "checkmate99@naver.com"; /// 이메일을 입력해주세요
-$infodu['admin']['homepage']    = "kmaru"; /// 홈페이지주소를 입력해주세요
+$infodu['admin']['homepage']    = "koreaind"; /// 홈페이지주소를 입력해주세요
 
 
 // 우클릭,드레그 금지
@@ -49,7 +53,7 @@ if (isset($settingURL['path'])) {
 
 
 // 모바일 기기 체크
-define('INFO_USE_MOBILE', true); 
+define('INFO_USE_MOBILE', false); 
 $infodu['is_mobile'] = false;
 if (INFO_USE_MOBILE) {
     if ($_REQUEST['device']=='pc') {
@@ -77,27 +81,30 @@ if (KI_IS_MOBILE) {
 }
 
 // URL 은 브라우저상에서의 경로 (도메인으로 부터의)
-define('KI_IMG_URL',        KI_URL.'/images');
-define('KI_CSS_URL',        KI_URL.'/css');
-define('KI_JS_URL',         KI_URL.'/js');
+define('KI_IMG_URL',        KI_URL.'/asset/images');
+define('KI_CSS_URL',        KI_URL.'/asset/css');
+define('KI_JS_URL',         KI_URL.'/asset/js');
+
+define('KI_TIME_YMDHIS',    date('Y-m-d H:i:s', time()));
+define('KI_TIME_YMD',       str_replace( array("-",":"," "), "", KI_TIME_YMDHIS));
 
 
 // 게시판 사용시 true, 아니면 false, chk_gnu는 그누보드 설정 중복 불러오기 피하기 위함.
 $infodu['db'] = false; 
 if($infodu['db'] and $chk_gnu == false):
-    if(defined('INDEX_ROOT')){
-        include_once('../board/common.php');
-    } else {
-        if (KI_IS_MOBILE) {
-            include_once('../../../board/common.php');
-        } else {
-            include_once('../../board/common.php');
-        }
-    }
+    // if(defined('INDEX_ROOT')){
+    //     include_once('../board/common.php');
+    // } else {
+    //     if (KI_IS_MOBILE) {
+    //         include_once('../../../board/common.php');
+    //     } else {
+    //         include_once('../../board/common.php');
+    //     }
+    // }
 endif;
 
 //메뉴 설정
-include_once(KI_PATH.'/menu.php');
+include_once(KI_PATH.'/_menu.php');
 
 unset($settingURL);
 

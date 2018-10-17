@@ -1,0 +1,219 @@
+<? include "../top/include_top2.php" ?>
+
+<div class="row">
+	 <div class="col-md-12"><img src="images/logo.jpg"  alt=""></div>
+</div>
+
+<div class="row">
+	 <div class="col-md-12">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+<div class="row">
+	 <table class="board_list">
+		<colgroup>
+		<col style="width:*;"/>
+		<col style="width:*;"/>
+		</colgroup>
+			<tbody>
+				<tr>
+					<th colspan="5">Freight Collect Terms</th>
+					<th colspan="7" class="no">Freight Prepaid Terms</th>				
+				</tr>
+
+				<tr>
+					<td class="tit" style="font-size:20px;">INCOTERM</td>
+					<td class="tit2"><span style="font-size:20px;">EXW</span><br />Ex.Words<br />(Place)</td>
+					<td class="tit2"><span style="font-size:20px;">FCA</span><br />Free Carrier<br />(Place)</td>
+					<td class="tit2"><span style="font-size:20px;">FAS</span><br />Free Along Ship<br />(Port)</td>
+					<td class="tit2"><span style="font-size:20px;">FOB</span><br />Free On <br />Board<br />(Port)</td>
+					<td class="tit2"><span style="font-size:20px;">CFR</span><br />Cost and<br /> Freight<br />(Port)</td>
+					<td class="tit2"><span style="font-size:20px;">CIF</span><br />Cost.<br />Insurance and Freight<br />(port)</td>
+					<td class="tit2"><span style="font-size:20px;">CPT</span><br />Carriage Paid to <br />(Place)</td>
+					<td class="tit2"><span style="font-size:20px;">CIP</span><br />Carriage<br />&<br />Insurance Paid to<br />(Place)</td>
+					<td class="tit2"><span style="font-size:20px;">DAT</span><br />Delivered at Terminal<br />(Place/Port)</td>
+					<td class="tit2"><span style="font-size:20px;">DAP</span><br />Delivered at Place<br />(Place)</td>
+					<td class="tit2" class="no"><span style="font-size:20px;">DDP</span><br />Delivered Dury Paid<br />(Place)</td>					
+				</tr>
+
+				<tr>
+					<th colspan="12">Obligations and Charges</th>
+				</tr>
+				<tr>
+					<td class="tit">Warehouse Services</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Export Packing</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Loading at point of origin</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Origin Inland Freight</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Origin Port Charges</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Origin Forwarder Fees</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Ocean/Air Freight</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Destination Port Charges</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Customs Clearence</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Customs GST/Duties</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+				<tr>
+					<td class="tit">Delivery Cartage to Final Destination</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td>Buyer</td>
+					<td class="tit2">Seller</td>
+					<td class="tit2" class="no">Seller</td>				
+				</tr>
+
+			</tbody>
+	</table>
+
+</div>
+
+
+
+<div class="row">
+	 <div class="col-md-12">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<? include "../top/include_bottom.php"?>

@@ -1,0 +1,132 @@
+<? include "../top/include_top2.php" ?>
+
+<div class="row">
+	 <table class="board_list">
+		<colgroup>
+		<col style="width:25%*;"/>
+		<col style="width:*;"/>
+		</colgroup>
+			<tbody>
+				<tr>
+					<th>약어</th>
+					<th class="no">설명</th>				
+				</tr>
+
+				<tr>
+					<th>BAF</th>
+					<td class="no">Bunker Adjustment Factor. Bunker Surcharge라고도 한다. 연비의 상승이나 하락시 부가 할증, 할인 요금</td>					
+				</tr>
+				<tr>
+					<th>Berth Term</th>
+					<td class="no">선적지, 양륙지에서의 선적 및 하역비를 운송인이 부담하는 조건. 정기항로에서 는 거의 이 운임 조건으로 한다.</td>					
+				</tr>
+				<tr>
+					<th>B/L</th>
+					<td class="no">Bill of Lading선하증권, 선주가 화주와의 사이의 운송조건을 명시한 운송서류로, 화물을 선적했다는 것 또는 선적을 위해 인수했다는 것을 나타내는 서류로서, 지정된 항구에 서 정당한 하수인에게 화물을 인도하는 것을 약속한 유가증권.</td>					
+				</tr>
+				<tr>
+					<th>CFS</th>
+					<td class="no">Container Freight Station. CNTR 집결 또는 혼재를 행하는 시설, 혹은 LCL 화물을 가리 키는 것이기도 함.</td>					
+				</tr>
+				<tr>
+					<th>C/O</th>
+					<td class="no">원산지 증명서</td>					
+				</tr>
+				<tr>
+					<th>CAF</th>
+					<td class="no">통화 할증료</td>					
+				</tr>
+				<tr>
+					<th>CBM</th>
+					<td class="no">입방미터</td>					
+				</tr>
+				<tr>
+					<th>CCC</th>
+					<td class="no">컨테이너 청소비용</td>					
+				</tr>
+				<tr>
+					<th>CKD</th>
+					<td class="no">Complete Knock Down. 반완성품. 자동차의 해외현지 공장측 부품공급에 호칭되는 경 우가 많다</td>					
+				</tr>
+				<tr>
+					<th>CY</th>
+					<td class="no">Container Yard. 컨테이너를 반입해 창고에 놓아두거나 수도하는 시설</td>					
+				</tr>
+				<tr>
+					<th>CNTR</th>
+					<td class="no">컨테이너</td>					
+				</tr>
+				<tr>
+					<th>DOC</th>
+					<td class="no">Destination Delivery Charge. 보내진 항구에 도착된 컨테이너를 컨테이너 야드의 소정위 치까지 운반하기 위한 비용</td>					
+				</tr>
+				<tr>
+					<th>D/O</th>
+					<td class="no">화물인도지시서</td>					
+				</tr>
+				<tr>
+					<th>ETA</th>
+					<td class="no">Estimated Time of Arrival. 도착예정일</td>					
+				</tr>
+				<tr>
+					<th>ETD</th>
+					<td class="no">Estimated Time of Departure. 출발예정일</td>					
+				</tr>
+				<tr>
+					<th>FCL</th>
+					<td class="no">FULL CONTAINER LOCAD CARGO 만재 컨테이너 화물</td>					
+				</tr>
+				<tr>
+					<th>FEU</th>
+					<td class="no">Forty Foot Equivalent Units. 40 feet CNTR 환산 Flat car - 철도 차대의 일종, 컨테이너 화물운송에 도움이 된다.</td>					
+				</tr>
+				<tr>
+					<th>FMC</th>
+					<td class="no">Federal Maritime Commission. 미연방해사위원회</td>					
+				</tr>
+				<tr>
+					<th>Free Time</th>
+					<td class="no">양륙지에 대해 CFS나 CY로부터 화물을 인수할 때 보관료의 지불을 면제하는 일정기간. 이 기간을 지나면 보관료가 부과된다</td>					
+				</tr>
+				<tr>
+					<th>GRI</th>
+					<td class="no">General Rate Increase. 선사 일괄 운임 인상</td>					
+				</tr>
+				<tr>
+					<th>LC</th>
+					<td class="no">LETTER OF CREDIT 신용장 은행이 거래처의 요청으로 신용을 보증하기 위해 발행하는 증서</td>					
+				</tr>
+				<tr>
+					<th>LCL</th>
+					<td class="no">LESS THAN CONTAINER LOAD CARGO 만재 컨테이너 1개에 못미치는 소량 화물</td>					
+				</tr>
+				<tr>
+					<th>NVOCC</th>
+					<td class="no">Non-Vessel Operating Common Carrier. 자체로는 본선을 운항하지 않지만, 집하해서 수송책임을 지는 이용 운송 사업자.</td>					
+				</tr>
+				<tr>
+					<th>Ro/Ro</th>
+					<td class="no">Roll on / Roll off 의 약어로, 페리보트(큰나룻배, 연락선)처럼 배 옆, 뒤 등의 램프웨이 (ramp way, 고속도로에 출입하기 위한 연락용 경사로)에 하역할 수 있는 화물선</td>					
+				</tr>
+				<tr>
+					<th>SC</th>
+					<td class="no">Service Contract. 선사(동맹 혹은 동맹외 배)에 일정량의 화물을 보증하는 특정화주에 대 해 일정기간, 선사가 할인운임/ 서비스를 제공하는 쌍무 규약.</td>					
+				</tr>
+				<tr>
+					<th>TEU</th>
+					<td class="no">Twenty Foot Equivalent Units. 20feet 컨테이너 환산</td>					
+				</tr>
+				<tr>
+					<th>THC</th>
+					<td class="no">Terminal Handling Charrge. 터미널 내에서 발생하는 컨테이너의 취급비용에 대해서의 Surcharge. 통상 양륙지, 선적지 쌍방에서 발생한다.</td>					
+				</tr>
+				<tr>
+					<th>WFC</th>
+					<td class="no">부두 사용료</td>					
+				</tr>
+			
+			</tbody>
+	</table>
+
+</div>
+<? include "../top/include_bottom.php"?>

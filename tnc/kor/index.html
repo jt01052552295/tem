@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<? include "top/head.php"; ?>
+<? include "top/list/order_list.php"; ?>
+<? include "top/function.php"; ?>
+
+<? include "top/admin/admin_data.php"; ?>
+<? if($site['db']){ 
+	include "../board/common.php"; 
+	include_once(G5_LIB_PATH.'/latest.lib.php');
+}?>
+
+<body>
+<div id="wrap">
+
+
+   
+<header >
+    <div class="header_wrap topPosition">
+        <div class="headerBox">
+        	<div class="logo"><h1><a href="/kor"><span class="blind">티앤씨글로벌 로고</span></a></h1></div>
+            <div class="header_inner">                               
+               <?include "top/menu_drop2.php";?>
+            </div>
+            <div class="lang">
+                <a href="#"><span>영문페이지</span></a>
+            </div>
+            <div class="subMenuBg opacity_70">&nbsp;</div>
+        </div>
+
+        <div id="m_menu">
+            <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+        </div>
+        <!--모바일메뉴!-->
+        <?include "top/menu_drop_mobile.php";?>
+        
+    </div> 
+
+    <?include "top/quick.php";?>
+</header>
+
+
+
+<link rel="stylesheet" href="js/bxslider/dist/jquery.bxslider.main.css" />
+<script src="js/bxslider/dist/jquery.bxslider.js"></script>
+<section class="k_wrap">
+    <div class="vg_inner">
+        <div class="vg_title">
+            <h2><span>신뢰와</span> <span>도전</span> <span>TNC그룹의</span> <span>정신입니다</span></h2>
+            <p><span>Trust</span> <span>&</span> <span>Challenges</span></p>
+
+            <div class="main-pager">
+                <div id="bx-main-pager">
+                    <a data-slide-index='0' href='#' data-slide-link='./business/trade.html' class='active mico1'><span>Trading business 무역사업</span></a>
+                    <a data-slide-index='1' href='#' data-slide-link='./business/trade.html' class='mico2'><span>Overseas business 해외사업</span></a>
+                    <a data-slide-index='2' href='#' data-slide-link='./business/trade.html' class='mico3'><span>Logistics business 물류사업</span></a>
+                    <a data-slide-index='3' href='#' data-slide-link='./business/trade.html' class='mico4'><span>Packing business 포장사업</span></a>
+                    <a data-slide-index='4' href='#' data-slide-link='./business/trade.html' class='mico5'><span>clean-up project 방제사업</span></a>
+                </div>
+            </div>
+
+        </div>
+        <ul class="main-slider">
+            <li style="background-image: url(./images/vg.png);">&nbsp;</li>
+            <li style="background-image: url(./images/vg.png);">&nbsp;</li>
+            <li style="background-image: url(./images/vg.png);">&nbsp;</li>
+            <li style="background-image: url(./images/vg.png);">&nbsp;</li>
+            <li style="background-image: url(./images/vg.png);">&nbsp;</li>
+        </ul>
+    </div>
+</section>
+
+<script>
+    $(window).load(function() { 
+        $.fn.shuffle = function() {
+            // credits: http://bost.ocks.org/mike/shuffle/
+            var m = this.length, t, i;
+
+            while (m) {
+                i = Math.floor(Math.random() * m--);
+
+                t = this[m];
+                this[m] = this[i];
+                this[i] = t;
+            }
+
+            return this;
+        };
+        $('.vg_title h2 span').shuffle().each(function(index){
+            var $_this = $(this);
+            var basic = 300;
+            var delay = basic*index;
+            $_this.stop().delay(delay).animate({opacity:1},basic);
+        });
+        $('.vg_title p span').shuffle().each(function(index){
+            var $_this = $(this);
+            var basic = 300;
+            var delay = basic*index;
+            $_this.stop().delay(delay).animate({opacity:1},basic);
+        });
+
+        setInterval(function(){
+            $('.vg_title h2 > span, .vg_title p > span').each(function(index){
+                var $_this = $(this);
+                $_this.stop().delay(500).animate({opacity:0},500);
+            });
+
+            $('.vg_title h2 > span, .vg_title p > span').shuffle().each(function(index){
+                var $_this = $(this);
+                var basic = 200;
+                var delay = basic*index;
+                $_this.stop().delay(delay).animate({opacity:1},basic);
+            });
+        },5000);
+
+    });
+    $(document).ready(function(){
+        var mainSlider = $('.main-slider').bxSlider({
+            auto: true,
+            mode:'fade',
+            infiniteLoop: true,
+            wrapperClass: 'main-wrapper',
+            autoControls: false,
+            adaptiveHeight: true,
+            pager:true,
+            pagerCustom: '#bx-main-pager',
+            controls: false
+        });
+
+        $("#bx-main-pager a").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            var i = $(this).attr('data-slide-index');
+            var link = $(this).attr('data-slide-link');
+            mainSlider.stopAuto();
+            mainSlider.goToSlide(i);
+            mainSlider.startAuto();
+
+            location.href = link;
+
+        }); 
+    });
+</script>
+
+
+<section class="k_wrap scrollOpacity">
+    <div class="k_container type_center">
+        <div class="message_header">
+            <h4>your value chain partner</h4>
+            <p>TNC그룹은 지속적인 성장과 차별화된 고객가치를 실현하고 있습니다.</p>
+        </div>
+        <div class="message_img"><img src="./images/mcompany.png" alt=""></div>
+        <div class="message_txt">
+            <p>
+                <strong>신뢰와 도전을 통한 새로운 도약 TNC 글로벌㈜</strong><br/><br/>
+
+                물류사업부문은 해상,항공운송을 비롯하여 통관대행,내륙운송, PROJECT 화물 운송에 <br class="pc_only" />
+                대하여 풍부한 경험을 바탕으로 전 방위적인 영역에서 ONE-STOP 물류 서비스를 <br class="pc_only" />
+                제공하고, 3자물류에서는 물류비 절감과 신속함을 위한 물류 컨설팅을 통하여 최상의 <br class="pc_only" />
+                서비스를 제공하고 있습니다.<br/><br/>
+
+                포장사업부문은 30년 이상의 풍부한 경험과 기술력을 바탕으로 21세기가 요구하는 <br class="pc_only" />
+                포장기술의 혁식, 품질의 혁신을 통하여 소형 포장에서 중.대형 포장 까지 완벽한 품질, <br class="pc_only" />
+                신뢰성있는 제품만을 생산, 공급함으로써 고객의 신뢰를 쌓아가고 있습니다.<br/><br/>
+
+                방제사업부문에서는 검역은 제2의 국방이라는 말처럼 특별한 사명감과 책임의식을 <br class="pc_only" />
+                바탕으로 선박 및 수출입 화물, 목재 포장재 소독 등의 종합 방제를 시행하고 있으며 <br class="pc_only" />
+                100년 역사를 가진 일본 이케다방역㈜ 업무 제휴를 통해 선진화된 첨단 소독 기법의 <br class="pc_only" />
+                도입을 추진하고 있습니다.
+            </p>
+            <div class="message_more">
+                <a href="javascript:;"><img src="./images/message_more.png" alt=""></a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="js/bxslider/dist/jquery.bxslider.white.css" />
+<section class="k_wrap bg_section2 scrollOpacity">
+    <div class="k_container type_center">
+        <div id="txtSlider">
+            <div class="white_box">
+                <h4>Air Transportation<span>항공운송</span></h4>
+                <p>
+                    TNC 글로벌㈜은 IATA 회원사로서 전세계 120여개국 250여 GLOBAL NETWORK 구축을 통하여 고객에게 신속하고 경쟁력 있는 항공 수출/입 서비스를 제공하고 있습니다. <br class="pc_only" />
+                    FREE TRADE ZONE 에 위치하고 있는 인천공항내 보세창고, 일반화물창고 보관 서비스를 제공하여 귀사의 화물 보관, 취급이 용이합니다.
+                </p>
+
+                <ul>
+                    <li>CONSOLIDATION SERVICE</li>
+                    <li class="line"></li>
+                    <li>DOOR TO DOOR</li>
+                    <li class="line"></li>
+                    <li>AIR & SEA</li>
+                    <li class="line"></li>
+                    <li>특수화물 및<br class="pc_only" />위험물 수출입</li>
+                </ul>
+                <a href="javascript:;" class="white_box_more"><img src="./images/white_box_more.png" alt=""></a>
+            </div>
+            <div class="white_box">
+                <h4>Air Transportation<span>항공운송</span></h4>
+                <p>
+                    TNC 글로벌㈜은 IATA 회원사로서 전세계 120여개국 250여 GLOBAL NETWORK 구축을 통하여 고객에게 신속하고 경쟁력 있는 항공 수출/입 서비스를 제공하고 있습니다. <br class="pc_only" />
+                    FREE TRADE ZONE 에 위치하고 있는 인천공항내 보세창고, 일반화물창고 보관 서비스를 제공하여 귀사의 화물 보관, 취급이 용이합니다.
+                </p>
+
+                <ul>
+                    <li>CONSOLIDATION SERVICE</li>
+                    <li class="line"></li>
+                    <li>DOOR TO DOOR</li>
+                    <li class="line"></li>
+                    <li>AIR & SEA</li>
+                    <li class="line"></li>
+                    <li>특수화물 및<br class="pc_only" />위험물 수출입</li>
+                </ul>
+                <a href="javascript:;" class="white_box_more"><img src="./images/white_box_more.png" alt=""></a>
+            </div>
+            <div class="white_box">
+                <h4>Air Transportation<span>항공운송</span></h4>
+                <p>
+                    TNC 글로벌㈜은 IATA 회원사로서 전세계 120여개국 250여 GLOBAL NETWORK 구축을 통하여 고객에게 신속하고 경쟁력 있는 항공 수출/입 서비스를 제공하고 있습니다. <br class="pc_only" />
+                    FREE TRADE ZONE 에 위치하고 있는 인천공항내 보세창고, 일반화물창고 보관 서비스를 제공하여 귀사의 화물 보관, 취급이 용이합니다.
+                </p>
+
+                <ul>
+                    <li>CONSOLIDATION SERVICE</li>
+                    <li class="line"></li>
+                    <li>DOOR TO DOOR</li>
+                    <li class="line"></li>
+                    <li>AIR & SEA</li>
+                    <li class="line"></li>
+                    <li>특수화물 및<br class="pc_only" />위험물 수출입</li>
+                </ul>
+                <a href="javascript:;" class="white_box_more"><img src="./images/white_box_more.png" alt=""></a>
+            </div>
+            <div class="white_box">
+                <h4>Air Transportation<span>항공운송</span></h4>
+                <p>
+                    TNC 글로벌㈜은 IATA 회원사로서 전세계 120여개국 250여 GLOBAL NETWORK 구축을 통하여 고객에게 신속하고 경쟁력 있는 항공 수출/입 서비스를 제공하고 있습니다. <br class="pc_only" />
+                    FREE TRADE ZONE 에 위치하고 있는 인천공항내 보세창고, 일반화물창고 보관 서비스를 제공하여 귀사의 화물 보관, 취급이 용이합니다.
+                </p>
+
+                <ul>
+                    <li>CONSOLIDATION SERVICE</li>
+                    <li class="line"></li>
+                    <li>DOOR TO DOOR</li>
+                    <li class="line"></li>
+                    <li>AIR & SEA</li>
+                    <li class="line"></li>
+                    <li>특수화물 및<br class="pc_only" />위험물 수출입</li>
+                </ul>
+                <a href="javascript:;" class="white_box_more"><img src="./images/white_box_more.png" alt=""></a>
+            </div>
+            <div class="white_box">
+                <h4>Air Transportation<span>항공운송</span></h4>
+                <p>
+                    TNC 글로벌㈜은 IATA 회원사로서 전세계 120여개국 250여 GLOBAL NETWORK 구축을 통하여 고객에게 신속하고 경쟁력 있는 항공 수출/입 서비스를 제공하고 있습니다. <br class="pc_only" />
+                    FREE TRADE ZONE 에 위치하고 있는 인천공항내 보세창고, 일반화물창고 보관 서비스를 제공하여 귀사의 화물 보관, 취급이 용이합니다.
+                </p>
+
+                <ul>
+                    <li>CONSOLIDATION SERVICE</li>
+                    <li class="line"></li>
+                    <li>DOOR TO DOOR</li>
+                    <li class="line"></li>
+                    <li>AIR & SEA</li>
+                    <li class="line"></li>
+                    <li>특수화물 및<br class="pc_only" />위험물 수출입</li>
+                </ul>
+                <a href="javascript:;" class="white_box_more"><img src="./images/white_box_more.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+        var mainSlider = $('#txtSlider').bxSlider({
+            auto: true,
+            mode:'fade',
+            infiniteLoop: true,
+            wrapperClass: 'white-wrapper',
+            autoControls: false,
+            adaptiveHeight: true,
+            pager:true,
+            controls: false
+        });
+    });
+</script>
+
+
+
+<section class="k_wrap scrollOpacity" id="mainEffect3" >
+    <div class="k_container type_center product_inner">
+        <div class="product">
+            <a href="javascript:;">
+                <div class="thumb"><img src="./images/pico1.png" alt=""></div>
+                <div class="content">
+                    <h4>변화와 혁신</h4>
+                    <p>끊임없는 도전과 혁신으로 새로운 가치를 만듭니다.</p>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="javascript:;">
+                <div class="thumb"><img src="./images/pico2.png" alt=""></div>
+                <div class="content">
+                    <h4>혁신구호 생활화</h4>
+                    <p>조화와 균형으로  도전정신을 이어갑니다</p>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="javascript:;">
+                <div class="thumb"><img src="./images/pico3.png" alt=""></div>
+                <div class="content">
+                    <h4>품질 / 납기준수</h4>
+                    <p>고객가치를 기본으로 품질과 납기일을 보장합니다</p>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="javascript:;">
+                <div class="thumb"><img src="./images/pico4.png" alt=""></div>
+                <div class="content">
+                    <h4>원가 / 비용절감</h4>
+                    <p>고객사와 함께 성장을 목표로 경쟁력을 높이겠습니다</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<script>
+var currentScroll=0;
+$(window).scroll(function() {
+    var wScroll = $(this).scrollTop();   
+    currentScroll = $(this).scrollTop();
+    var activePos = $("#mainEffect3").offset().top - 1000;
+    if(wScroll >= activePos){
+        $('.product').each(function(index){
+            var index = index + 1;
+            var _d = 200 * (index)
+            $(this).delay(_d).animate({opacity:"1.0"}, _d );
+        });
+    }
+});
+</script>
+
+
+
+<div class="mapBox scrollOpacity" >
+    <iframe src="http://infodu.co.kr/map/tnc.php"></iframe>
+
+
+    <div class="map_info">
+        <div class="map_info_inner">
+            <dl class="addr">
+                <dt>Trust & Challenge <strong>TNC GROUP</strong></dt>
+                <dd>주소 : 서울특별시 영등포구 의사당대로 1길 25 하남빌딩 610호 </dd>
+            </dl>
+
+            <table class="dept">
+                <tr>
+                    <th><div class="bbox">TNC글로벌(주)</div></th>
+                    <td>
+                        무역사업부 052) 240 - 8360 <br/>
+                        해외사업부 02) 2691 - 2560 <br/>
+                        물류사업부 051) 668 - 9900 <br/>
+                        포장사업부 052) 240 - 8300   
+                    </td>
+                </tr>
+                <tr>
+                    <th><div class="bbox">글로벌방제(주)</div></th><td>TEL    052) 240 - 8370 </td>
+                </tr>
+                <tr>
+                    <th><div class="bbox">(유)에이스방제</div></th><td>TEL    052) 240 - 8350 </td>
+                </tr>
+            </table>
+
+            <div class="contact">
+                <a href="javascript:;" class="">Contact us <i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="k_wrap scrollOpacity" >
+    <div class="k_container type_center">
+        <div class="flex_table">
+            <div class="flex_table_cell">
+                <a href="javascript:;">
+                    <div class="block_wrap">
+                        <div class="img">
+                            <img class="default_img" src="./images/main_icon_solution_01_off.png" alt="" />
+                            <img class="hover_img" src="./images/main_icon_solution_01_on.png" alt="" />
+                        </div>
+                        <div class="desc">홍보동영상<span>PR video</span></div>
+                        <div class="sm_arrow"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex_table_cell">
+                <a href="javascript:;">
+                    <div class="block_wrap">
+                        <div class="img">
+                            <img class="default_img" src="./images/main_icon_solution_02_off.png" alt="" />
+                            <img class="hover_img" src="./images/main_icon_solution_02_on.png" alt="" />
+                        </div>
+                        <div class="desc">인증현황<span>Certification</span></div>
+                        <div class="sm_arrow"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="flex_table_cell">
+                <a href="javascript:;">
+                    <div class="block_wrap">
+                        <div class="img">
+                            <img class="default_img" src="./images/main_icon_solution_03_off.png" alt="" />
+                            <img class="hover_img" src="./images/main_icon_solution_03_on.png" alt="" />
+                        </div>
+                        <div class="desc">지점안내<span>Office guidance</span></div>
+                        <div class="sm_arrow"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<footer id="footer" >
+   <?php include_once "top/copyright.php"; ?>
+</footer>
+
+</div>
+</body>
+</html>

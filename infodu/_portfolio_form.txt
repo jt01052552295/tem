@@ -1,0 +1,45 @@
+
+$port_list[] = array(
+	title 		 => "333",		
+	url 		 => "",		  
+	img 		 => "",			
+	show 		 => true,
+	category_1 	 => true,			// 홍보용
+	category_2 	 => false,			// 반응형
+	category_3 	 => false,			// 기능형
+	category_4 	 => false,			// 쇼핑몰
+	category_5 	 => false 			// 모바일
+);
+$port_list[] = array(
+	title 		 => "333",		
+	url 		 => "",		  
+	img 		 => "",			
+	show 		 => true,
+	category_1 	 => true,			// 홍보용
+	category_2 	 => false,			// 반응형
+	category_3 	 => false,			// 기능형
+	category_4 	 => false,			// 쇼핑몰
+	category_5 	 => false 			// 모바일
+);
+$port_list[] = array(
+	title 		 => "333",		
+	url 		 => "",		  
+	img 		 => "",			
+	show 		 => true,
+	category_1 	 => true,			// 홍보용
+	category_2 	 => false,			// 반응형
+	category_3 	 => false,			// 기능형
+	category_4 	 => false,			// 쇼핑몰
+	category_5 	 => false 			// 모바일
+);
+$port_list[] = array(
+	title 		 => "333",		
+	url 		 => "",		  
+	img 		 => "",			
+	show 		 => true,
+	category_1 	 => true,			// 홍보용
+	category_2 	 => false,			// 반응형
+	category_3 	 => false,			// 기능형
+	category_4 	 => false,			// 쇼핑몰
+	category_5 	 => false 			// 모바일
+);

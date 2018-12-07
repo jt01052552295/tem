@@ -359,7 +359,7 @@ div#vg_sub	{height:287px; width:1200px;margin: 0 auto; text-align:left;}
 
 
 /* 사이드바 */
-div.left_wrap	{width:220px;float:left;position:relative; }
+div.left_wrap	{width:220px;float:left;position:relative;min-height: 1000px; }
 div.left_inner {position: absolute;top:-45px;left:0;width:221px;}
 div.left_top	{position:relative;width:100%;margin:0;background:#0069d2;}
 div.left_top h2 {margin:0;font-size:34px;font-weight:bold;color:#ffffff;text-align: center;padding:40px 20px;}

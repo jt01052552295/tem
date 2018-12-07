@@ -126,8 +126,8 @@ $siteMenu[] = array(
 	mCode 		=> "2030",	
 	title 		=> "PLASTIC",		
 	url 		=> $routeName."/ptfe_product.php",		  
-	pid 		=> "ptfe_product",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 
@@ -145,8 +145,8 @@ $siteMenu[] = array(
 	mCode 		=> "2040",	
 	title 		=> "METAL GASKET",		
 	url 		=> $routeName."/ringjoint2.php",		  
-	pid 		=> "ringjoint2",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 $siteMenu[] = array(mCode => "204010",	title => "Ring Joint Gasket", 			url => $routeName."/ringjoint2.php", pid => "ringjoint2", me_link => true, me_use => true);
@@ -159,8 +159,8 @@ $siteMenu[] = array(
 	mCode 		=> "2050",	
 	title 		=> "SEMI-METALLIC GASKET",		
 	url 		=> $routeName."/spiral.php",		  
-	pid 		=> "spiral",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 $siteMenu[] = array(mCode => "205010",	title => "Spiral Wound Gasket", 	url => $routeName."/spiral.php", pid => "spiral", me_link => true, me_use => true);
@@ -172,8 +172,8 @@ $siteMenu[] = array(
 	mCode 		=> "2060",	
 	title 		=> "GRAPHITE 관련품",		
 	url 		=> $routeName."/graphite_voc.php",		  
-	pid 		=> "graphite_voc",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 $siteMenu[] = array(mCode => "206010",	title => "Graphite VOC Packing", 	url => $routeName."/graphite_voc.php", pid => "graphite_voc", me_link => true, me_use => true);
@@ -185,8 +185,8 @@ $siteMenu[] = array(
 	mCode 		=> "2070",	
 	title 		=> "Rubber Sheet &amp; Gasket",		
 	url 		=> $routeName."/rubber_sheet_gasket.php",		  
-	pid 		=> "rubber_sheet_gasket",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 $siteMenu[] = array(mCode => "207010",	title => "Rubber Sheet &amp; Gasket", 		url => $routeName."/rubber_sheet_gasket.php", pid => "rubber_sheet_gasket", me_link => true, me_use => true);
@@ -207,8 +207,8 @@ $siteMenu[] = array(
 	mCode 		=> "2090",	
 	title 		=> "Insulation Textiles",		
 	url 		=> $routeName."/glass_fiber.php",		  
-	pid 		=> "glass_fiber",			
-	me_link		=> true,	
+	pid 		=> "",			
+	me_link		=> false,	
 	me_use 		=> true
 );
 
@@ -372,16 +372,20 @@ foreach ($siteMenu as $key => $val) {
 
 
 	  } else {
-		  for($i=0; $i<count($nav1st); $i++):
-			if(substr($currentMenuArr['mCode'],0,2) == $nav1st[$i]['mCode']){
-			  $breadcrumArr[] = $nav1st[$i];
-			}
-		  endfor;
-		  for($i=0; $i<count($nav2nd); $i++):
-			if(substr($currentMenuArr['mCode'],0,4) == $nav2nd[$i]['mCode']){
-			  $breadcrumArr[] = $nav2nd[$i];
-			}
-		  endfor;
+	  	  $level = strlen($currentMenuArr['mCode']) / 2;	
+	  	  //echo $level; // 1이면 1차, 2이면 2차, 3이면 3차메뉴
+
+	  	  for($i=1; $i<=$level; $i++):
+	  	  	$levelChar = substr($currentMenuArr['mCode'],0,$i*2);
+
+	  	  	  for($k=0; $k < count($siteMenu); $k++):
+				if($levelChar == $siteMenu[$k]['mCode']){
+				  $breadcrumArr[] = $siteMenu[$k];
+				}
+			  endfor;
+	  	  endfor;
+
+
 	  }
    }
 }
@@ -400,9 +404,11 @@ foreach ($navLinkArr as $key => $val) {
   }
 }
 
-echo "<!-- pre nav1st>";
-print_r($nav1st);
+echo "<!-- pre currentMenuArr>";
+print_r($currentMenuArr);
 echo "</pre -->";
 
-
+echo "<!-- pre breadcrumArr>";
+print_r($breadcrumArr);
+echo "</pre -->";
 ?>

@@ -266,15 +266,23 @@
 
                 <h2 class="title"><?php //echo get_head_title($g5['title']); ?>
                     <?php 
-                         if($breadcrumArr[1]['title']): echo $breadcrumArr[1]['title'];
-                         elseif($breadcrumArr[2]['title']): echo $breadcrumArr[2]['title'];
-                         else: 
+
+                        $level = count($breadcrumArr)-1;
+                        $titleChk = true;
+                        for($b=$level; $b>0; $b--):
+                            if($breadcrumArr[$b]['title']): 
+                                echo $breadcrumArr[$b]['title']; 
+                                $titleChk = false;
+                                break;
+                            endif;
+                        endfor;
+
+                        if ($titleChk === true) {
                             if (function_exists('get_head_title')) {
                                 echo get_head_title($g5['title']);
-                            } else {
-                                echo $breadcrumArr[0]['title'];
                             }
-                         endif;
+                        }
+
 
                     ?>
 

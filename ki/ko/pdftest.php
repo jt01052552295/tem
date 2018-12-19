@@ -63,7 +63,7 @@ class PDF extends PDF_Rotate {
 
 	function RotatedText($x, $y, $txt, $angle) {
 	    //Text rotated around its origin
-	    $this->Rotate($angle, $x, $y);
+	    // $this->Rotate($angle, $x, $y);
 	    $this->Text($x, $y, $txt);
 	    $this->Rotate(0);
 	}
@@ -71,13 +71,15 @@ class PDF extends PDF_Rotate {
 }
 
 
-$fullPathToFile = "chinmay235.pdf";// path: file name
+// $fullPathToFile = "chinmay235.pdf";// path: file name
+$fullPathToFile = "nara.pdf";// path: file name
+
 
 $pdf = new PDF();
 if (file_exists($fullPathToFile)){
 	$pdf->topName = 'model-B-20';
 	$pdf->fullPathToFile = $fullPathToFile;
-	$pdf->AddPage();
+	$pdf->AddPage('P');
 	$pdf->SetFont('Arial','',12);
 
 	if($pdf->numPages>1) {

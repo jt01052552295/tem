@@ -41,6 +41,15 @@ class PDF extends PDF_Rotate {
 	var $topName;
 	var $fullPathToFile;
 
+		const DPI = 96;
+    const MM_IN_INCH = 25.4;
+    const A4_HEIGHT = 297;
+    const A4_WIDTH = 210;
+    // tweak these values (in pixels)
+    const MAX_WIDTH = 1150;
+    const MAX_HEIGHT = 900;
+
+
 	function Header() {
 	    
 	    //Put the watermark
@@ -58,6 +67,26 @@ class PDF extends PDF_Rotate {
 	    $this->Rotate(0);
 	}
 
+	function pixelsToMM($val) {
+        return $val * self::MM_IN_INCH / self::DPI;
+    }
+    function resizeToFit($imgFilename) {
+        list($width, $height) = getimagesize($imgFilename);
+        $widthScale = self::MAX_WIDTH / $width;
+        $heightScale = self::MAX_HEIGHT / $height;
+        $scale = min($widthScale, $heightScale);
+        return array(
+            round($this->pixelsToMM($scale * $width)),
+            round($this->pixelsToMM($scale * $height))
+        );
+    }
+    function centreImage($img) {
+        list($width, $height) = $this->resizeToFit($img);
+        // you will probably want to swap the width/height
+        // around depending on the page's orientation
+        $this->Image( $img, (self::A4_HEIGHT - $width) / 2 - 8, (self::A4_WIDTH - $height) / 2,   $width,   $height        );
+    }
+
 }
 
 
@@ -72,9 +101,14 @@ $pdf->AddPage('L');
 // for ($i = 0; $i < 25; $i++){
 //     $pdf->MultiCell(0, 5, $txt, 0, 'J');
 // }
-$pdf->Image('./nara.jpg',20,20,220,180);
+//$pdf->Image('./nara.jpg',20,20,220,180);
 // $pdf->Image('http://chart.googleapis.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World', 10, 10, 200, 0, 'PNG');
 
+
+$pdf->AddPage('L');
+$pdf->centreImage('./nara.jpg');
+$pdf->SetFont('Arial', '', 12);
+$pdf->Text(26, 28, 'model-B-20');
 
 $pdf->Output(); // 브라우저에서 바로 보는거
 // $pdf->Output('F', $dir); // 파일 생성 ( 로컬에서 확인 서버에서 확인해보자 )

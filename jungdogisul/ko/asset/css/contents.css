@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+
+.row {margin-right:0;margin-left:0;}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, 
+.col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, 
+.col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, 
+.col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, 
+.col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {padding-right:0;padding-left:0;}
+
+
+
+@media all and (max-width:640px){
+
+
+}
+
+
+
+
+#gall_ul {margin: 80px 0 0;padding: 0;list-style: none;zoom: 1;}
+#gall_ul .gall_li {width:32%;float:left;margin:0 2% 2% 0;}
+#gall_ul .gall_li:nth-child(3n) {margin:0 0 2% 0;}
+
+#gall_ul .gall_li a {display:block;position:relative;}
+#gall_ul .gall_li a div.menu_thumb {overflow:hidden;}
+#gall_ul .gall_li a img {-webkit-transform: scale(1);-webkit-transition: .3s;width:100%;}
+#gall_ul .gall_li a:hover img {-webkit-transform: scale(1.1)}
+
+#gall_ul .gall_li a div.menu_info {border:1px solid #c6c6c6;padding:20px;}
+#gall_ul .gall_li a div.menu_info em {font-family:'Nanum Gothic', sans-serif;font-size:15px;color:#4b4b4b;font-style:normal;margin-bottom:10px;display: inline-block;}
+#gall_ul .gall_li a div.menu_info h4 {font-size:25px;color:#4b4b4b;font-weight:normal;}
+#gall_ul .gall_li a div.menu_info h4 small {font-family:'Nanum Gothic', sans-serif;color:#c50f00;font-size:15px;padding-left:15px;font-weight:normal;}
+
+div.menu_desc {display:none;background:transparent;color:#fff;}
+div.menu_desc div.thumb {float:left;}
+div.menu_desc div.con {float:left;padding:40px 50px}
+div.menu_desc div.con em {font-family:'Nanum Gothic', sans-serif;font-size:18px;font-style:normal;margin-bottom:10px;display: inline-block;}
+div.menu_desc div.con h4 {font-size:35px;font-weight:normal;}
+div.menu_desc div.con h4 small {font-family:'Nanum Gothic', sans-serif;color:#c50f00;font-size:18px;padding-left:15px;font-weight:normal;}
+div.menu_desc div.con div.price {font-size:35px;padding:60px 0;}
+div.menu_desc div.con p {font-size:16px;}
+
+
+#gall_ul .gall_li a span.gall_text {position:absolute;bottom:13px;right:0;background: url(../images/bg_gallery_text.png);width:185px;height:40px;line-height:40px;text-align:center;font-size:17px;font-family:'Nanum Gothic', sans-serif;color:#fff;}

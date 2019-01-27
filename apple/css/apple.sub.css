@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.theme-dark{background-color:#000;color:#ffe5db}.theme-dark h1,.theme-dark h2,.theme-dark h3,.theme-dark h4,.theme-dark h5,.theme-dark h6{color:#fff}.theme-dark a{color:#6bf}.theme-dark sup a{color:inherit}.theme-dark sup a:hover{color:#6bf}.theme-dark .badge{color:#fff}.theme-dark .badge .badge-caption{color:#ffe5db}.theme-dark a.block{color:inherit}.theme-dark a.block .block-link{color:#6bf}
+
+
+#eTrigger {position:fixed;top:50%;right:0;z-index:99999;background:red;height:1px;color:red;}
+#chkScroll {position:fixed;top:50%;right:0;z-index:99999;color:red;font-size:1.1rem;    margin: 20px 0 0;}
+
+
+main {font-size:1.4rem;min-height:10000px;}

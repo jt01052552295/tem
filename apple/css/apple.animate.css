@@ -1,0 +1,776 @@
+@charset "utf-8";
+
+/* 검색창  */
+.globalnav.searchhide .ac-gn-searchview-content {
+    -webkit-animation: ac-gn-searchview-searchhide .2s both;
+    animation: ac-gn-searchview-searchhide .2s both
+}
+
+@-webkit-keyframes ac-gn-searchview-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes ac-gn-searchview-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+
+/* 레이어배경화면  */
+
+/*
+	animation : name, delay, direction, fill-mode, 
+*/
+.globalnav.searchshow ~ #ac-gn-curtain, .globalnav.searchopen ~ #ac-gn-curtain {    display: block;}
+.globalnav.searchshow ~ #ac-gn-curtain {
+    -webkit-animation: ac-gn-curtain-show .2s both;
+    animation: ac-gn-curtain-show .2s both
+}
+
+.globalnav.searchhide ~ #ac-gn-curtain {
+    animation: ac-gn-curtain-show .2s reverse both
+}
+
+@-webkit-keyframes ac-gn-curtain-show {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes ac-gn-curtain-show {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* 장바구니 아이콘 */
+
+.globalnav.searchshow .ac-gn-bag {
+    -webkit-animation: ac-gn-bag-searchshow .3s both;
+    animation: ac-gn-bag-searchshow .3s both;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.globalnav.searchopen .ac-gn-bag {
+    visibility: hidden
+}
+
+.globalnav.searchhide .ac-gn-bag {
+    animation: ac-gn-bag-searchshow .3s reverse both;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+@-webkit-keyframes ac-gn-bag-searchshow {
+    0% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes ac-gn-bag-searchshow {
+    0% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+/* 상단네비게이션 */
+
+
+.globalnav.searchshow .ac-gn-item-menu {
+    -webkit-animation: ac-gn-item-searchshow .4s both;
+    animation: ac-gn-item-searchshow .4s both
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(2) {
+    -webkit-animation-delay: .245s;
+    animation-delay: .245s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(3) {
+    -webkit-animation-delay: .21s;
+    animation-delay: .21s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(4) {
+    -webkit-animation-delay: .175s;
+    animation-delay: .175s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(5) {
+    -webkit-animation-delay: .14s;
+    animation-delay: .14s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(6) {
+    -webkit-animation-delay: .105s;
+    animation-delay: .105s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(7) {
+    -webkit-animation-delay: .07s;
+    animation-delay: .07s
+}
+
+.globalnav.searchshow .ac-gn-item-menu:nth-child(8) {
+    -webkit-animation-delay: .035s;
+    animation-delay: .035s
+}
+
+
+
+.globalnav.searchopen .ac-gn-item-menu {
+    visibility: hidden
+}
+
+.globalnav.searchhide .ac-gn-item-menu {
+    -webkit-animation: ac-gn-item-searchhide .4s both;
+    animation: ac-gn-item-searchhide .4s both
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(2) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(3) {
+    -webkit-animation-delay: .035s;
+    animation-delay: .035s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(4) {
+    -webkit-animation-delay: .07s;
+    animation-delay: .07s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(5) {
+    -webkit-animation-delay: .105s;
+    animation-delay: .105s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(6) {
+    -webkit-animation-delay: .14s;
+    animation-delay: .14s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(7) {
+    -webkit-animation-delay: .175s;
+    animation-delay: .175s
+}
+
+.globalnav.searchhide .ac-gn-item-menu:nth-child(8) {
+    -webkit-animation-delay: .21s;
+    animation-delay: .21s
+}
+
+
+@-webkit-keyframes ac-gn-item-searchshow {
+    0% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1);
+        animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1)
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7)
+    }
+}
+
+@keyframes ac-gn-item-searchshow {
+    0% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1);
+        animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1)
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7)
+    }
+}
+
+@-webkit-keyframes ac-gn-item-searchhide {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7)
+    }
+
+    60% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1);
+        animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1)
+    }
+}
+
+@keyframes ac-gn-item-searchhide {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7)
+    }
+
+    60% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        -webkit-animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1);
+        animation-timing-function: cubic-bezier(0.2727, 0.0986, 0.8333, 1)
+    }
+}
+
+/* 검색창 닫기 */
+
+.globalnav .ac-gn-searchview-close {
+    right: 9px;
+    /*right: calc(9px + constant(safe-area-inset-right));*/
+    position: absolute;
+    z-index: 3;
+    width: 38px;
+    height: 44px;
+    top: 0;
+    opacity: 1;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-tap-highlight-color: transparent
+
+}
+
+.globalnav .ac-gn-searchview-close:hover,.globalnav .ac-gn-searchview-close:active {
+    opacity: .65
+}
+
+.globalnav.searchshow .ac-gn-searchview-close {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.globalnav.searchhide .ac-gn-searchview-close {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+
+.globalnav .ac-gn-searchview-close-left {
+    right: 12px;
+    -webkit-transform: scale3d(1, 0.65, 1);
+    transform: scale3d(1, 0.65, 1);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%
+}
+
+.globalnav.searchshow .ac-gn-searchview-close-left {
+    -webkit-animation: ac-gn-searchview-close-left-searchshow .3s both;
+    animation: ac-gn-searchview-close-left-searchshow .3s both
+}
+
+.globalnav.searchopen .ac-gn-searchview-close-left {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.globalnav.searchhide .ac-gn-searchview-close-left {
+    -webkit-animation: ac-gn-searchview-close-left-searchhide .3s both;
+    animation: ac-gn-searchview-close-left-searchhide .3s both
+}
+
+.globalnav .ac-gn-searchview-close-right {
+    left: 12px;
+    -webkit-transform: scale3d(1, 0.65, 1);
+    transform: scale3d(1, 0.65, 1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%
+}
+
+.globalnav.searchshow .ac-gn-searchview-close-right {
+    -webkit-animation: ac-gn-searchview-close-right-searchshow .3s both;
+    animation: ac-gn-searchview-close-right-searchshow .3s both
+}
+
+.globalnav.searchopen .ac-gn-searchview-close-right {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.globalnav.searchhide .ac-gn-searchview-close-right {
+    -webkit-animation: ac-gn-searchview-close-right-searchhide .3s both;
+    animation: ac-gn-searchview-close-right-searchhide .3s both
+}
+
+
+@-webkit-keyframes ac-gn-searchview-close-left-searchshow {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+}
+
+@keyframes ac-gn-searchview-close-left-searchshow {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+}
+
+@-webkit-keyframes ac-gn-searchview-close-left-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1)
+    }
+}
+
+@keyframes ac-gn-searchview-close-left-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1)
+    }
+}
+
+@-webkit-keyframes ac-gn-searchview-close-right-searchshow {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+}
+
+@keyframes ac-gn-searchview-close-right-searchshow {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+}
+
+@-webkit-keyframes ac-gn-searchview-close-right-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1)
+    }
+}
+
+@keyframes ac-gn-searchview-close-right-searchhide {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 0.65, 1);
+        transform: scale3d(1, 0.65, 1)
+    }
+}
+
+
+/* 검색입력창 */
+.globalnav.searchshow .ac-gn-searchform {
+    -webkit-animation: ac-gn-searchform-fade 0.4s 0.4s both;
+    animation: ac-gn-searchform-fade 0.4s 0.4s both
+}
+.globalnav.searchshow .ac-gn-searchform-wrapper {
+    -webkit-animation: ac-gn-searchform-slide 0.4s 0.4s both;
+    animation: ac-gn-searchform-slide 0.4s 0.4s both
+}
+
+@-webkit-keyframes ac-gn-searchform-slide {
+    0% {
+        -webkit-transform: translate3d(100px, 0, 0);
+        transform: translate3d(100px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.12, 0.87, 0.15, 1);
+        animation-timing-function: cubic-bezier(0.12, 0.87, 0.15, 1)
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes ac-gn-searchform-slide {
+    0% {
+        -webkit-transform: translate3d(100px, 0, 0);
+        transform: translate3d(100px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.12, 0.87, 0.15, 1);
+        animation-timing-function: cubic-bezier(0.12, 0.87, 0.15, 1)
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@-webkit-keyframes ac-gn-searchform-fade {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: cubic-bezier(0.67, 0, 0.33, 1);
+        animation-timing-function: cubic-bezier(0.67, 0, 0.33, 1)
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes ac-gn-searchform-fade {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: cubic-bezier(0.67, 0, 0.33, 1);
+        animation-timing-function: cubic-bezier(0.67, 0, 0.33, 1)
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/**/
+
+
+.globalnav.searchshow .ac-gn-searchresults {
+    -webkit-animation: ac-gn-searchresults-show .2s .2s both;
+    animation: ac-gn-searchresults-show .2s .2s both
+}
+@-webkit-keyframes ac-gn-searchresults-show {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes ac-gn-searchresults-show {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+
+
+.globalnav .ac-gn-searchresults-animated {
+    -webkit-animation: ac-gn-searchresults-items-show 0.4s both;
+    animation: ac-gn-searchresults-items-show 0.4s both
+}
+
+.globalnav.searchhide .ac-gn-searchresults-animated {
+    -webkit-animation: none;
+    animation: none
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(1) {
+    -webkit-animation-delay: .22s;
+    animation-delay: .22s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(2) {
+    -webkit-animation-delay: .24s;
+    animation-delay: .24s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(3) {
+    -webkit-animation-delay: .26s;
+    animation-delay: .26s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(4) {
+    -webkit-animation-delay: .28s;
+    animation-delay: .28s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(5) {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(6) {
+    -webkit-animation-delay: .32s;
+    animation-delay: .32s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(7) {
+    -webkit-animation-delay: .34s;
+    animation-delay: .34s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(8) {
+    -webkit-animation-delay: .36s;
+    animation-delay: .36s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(9) {
+    -webkit-animation-delay: .38s;
+    animation-delay: .38s
+}
+
+.globalnav .ac-gn-searchresults-animated:nth-child(10) {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s
+}
+
+.globalnav .ac-gn-searchresults-animated.ac-gn-searchresults-header {
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s
+}
+
+@-webkit-keyframes ac-gn-searchresults-items-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes ac-gn-searchresults-items-show {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+
+
+
+@-webkit-keyframes ac-gn-header-slideup-searchshow {
+    0% {
+        -webkit-transform: none;
+        transform: none
+    }
+
+    100% {
+        -webkit-transform: translateY(-32px);
+        transform: translateY(-32px)
+    }
+}
+
+@keyframes ac-gn-header-slideup-searchshow {
+    0% {
+        -webkit-transform: none;
+        transform: none
+    }
+
+    100% {
+        -webkit-transform: translateY(-32px);
+        transform: translateY(-32px)
+    }
+}
+
+
+
+@-webkit-keyframes ac-gn-searchresults-show-small {
+    0% {
+        -webkit-transform: translateY(-44px);
+        transform: translateY(-44px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1
+    }
+}
+
+@keyframes ac-gn-searchresults-show-small {
+    0% {
+        -webkit-transform: translateY(-44px);
+        transform: translateY(-44px);
+        opacity: 0
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes chapternav-slidein {
+    0% {
+        opacity: 0
+    }
+
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes chapternav-slidein {
+    0% {
+        opacity: 0
+    }
+
+    1% {
+        -webkit-transform: translateX(160px);
+        transform: translateX(160px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}

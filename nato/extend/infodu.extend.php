@@ -20,7 +20,7 @@ if(in_array($url_pieces[1], $status_lang)){
 } else if (isset($_SESSION['ss_lang'])){
 	define('G5_LANG',     get_session('ss_lang'));
 } else {
-	define('G5_LANG',     'kor');
+	define('G5_LANG',     'ko');
 	set_session('ss_lang', G5_LANG);
 }
 

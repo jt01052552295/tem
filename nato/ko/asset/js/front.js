@@ -11,9 +11,9 @@
 		}).get(),
 		maxHeight = Math.max.apply(null, heights);
 
-		 $('.gnb_list li.nav1').hover(
+		 $('#gnbnav').hover(
 		 	function(){
-				$(this).find('a.menu_link').addClass('on');
+				// $(this).find('a.menu_link').addClass('on');
 				$('header').addClass('bg');
 				if($('header').find('.header_wrap').hasClass('topPosition')){
 					//$('header').find('.header_wrap').addClass('active');
@@ -22,7 +22,7 @@
 		 		$topNavBg.stop().show().animate({height:maxHeight},_menuShowSpeed);
 		 		$topNavSub.stop().show().animate({opacity:'1.0', height:maxHeight},_menuShowSpeed);
 		 	}, function(){
-				$(this).find('a.menu_link').removeClass('on');
+				// $(this).find('a.menu_link').removeClass('on');
 				$('header').removeClass('bg');
 				if($('header').find('.header_wrap').hasClass('topPosition')){
 					//$('header').find('.header_wrap').removeClass('active');

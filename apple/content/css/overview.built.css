@@ -1345,7 +1345,8 @@ html.js.no-reduced-motion.aow .ribbon.ribbon-hide .ribbon-wrapper {
 }
 
 .section-display {
-    --hardware-spacing-2up:24px;--hardware-spacing-3up:44px;--hardware-scale-factor:.22;margin-bottom: 200px
+    --hardware-spacing-2up:24px;--hardware-spacing-3up:44px;--hardware-scale-factor:.22;margin-bottom: 200px;
+    background: transparent;
 }
 
 @media only screen and (max-width: 1068px), (max-height: 845px) {

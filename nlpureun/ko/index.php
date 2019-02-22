@@ -123,8 +123,9 @@ include_once(G5_LANG_PATH.'/_top.php');
 <section class="k_wrap " id="intro_section">
     <div class="introInner">
             <div class="intro_title">
-                <h4 data-aos="fade-down" data-aos-offset="120"><?php echo $infodu['lang']['index']['main'][2]?></h4>
-                <p data-aos="fade-down" data-aos-offset="120"><?php echo $infodu['lang']['index']['main'][3]?></p>
+                <!-- <h4 data-aos="fade-down" data-aos-offset="120"><?php echo $infodu['lang']['index']['main'][2]?></h4> -->
+                <h4 id="test"><?php echo $infodu['lang']['index']['main'][2]?></h4>
+                <p><?php echo $infodu['lang']['index']['main'][3]?></p>
             </div>
 
             <div class="intro">
@@ -177,27 +178,30 @@ include_once(G5_LANG_PATH.'/_top.php');
 
 
     elements.forEach(function(element) {
-      console.info(elements)
-      window.addEventListener("scroll", runOnScroll);
+      //console.info(elements)
+      //window.addEventListener("scroll", runOnScroll);
     });
 
 
     $(window).scroll(function() {
-        var target = $("#intro_section").offset().top 
-        var currentTop = $(window).scrollTop();
+        var i = window.innerHeight;
+        var currentTop = i + (window.pageYOffset * 1)
+        var basic_offset = 120;
+        var target = 0;
 
+        var e = document.querySelector("#test");
 
-        //console.info(currentTop, window.innerHeight)
+        for (var t = 0, n = 0; e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop); ) {
+            t += e.offsetLeft - ("BODY" != e.tagName ? e.scrollLeft : 0),
+            n += e.offsetTop - ("BODY" != e.tagName ? e.scrollTop : 0),
+            e = e.offsetParent;
+        }
 
-        // var wScroll1 = $(this).scrollTop();   
-        // var activeMainEffect = $("#product_section").offset().top - 1000;
-        // if(wScroll1 >= activeMainEffect){
-        //     $('#product_section .msg_effect').each(function(index){
-        //         var index = index + 1;
-        //         var _d = 100 * (index)
-        //         $(this).delay(_d).animate({opacity:"1.0"}, _d );
-        //     });
-        // }
+        var targetElm = document.querySelector("#test");
+
+        target = n + basic_offset;
+        currentTop > target ? targetElm.classList.add("aos-animate") : targetElm.classList.remove("aos-animate");
+
     });
 </script>
 
@@ -249,13 +253,13 @@ include_once(G5_LANG_PATH.'/_top.php');
     <div class="k_container type_center">
            <div class="businessInner">       
                 <div class="business_title">
-                    <h4 data-aos="fade-down" data-aos-duration="500"><?php echo $infodu['lang']['index']['main'][16]?></h4>
-                    <p data-aos="fade-down" data-aos-duration="500"><?php echo $infodu['lang']['index']['main'][17]?></p>
+                    <h4 ><?php echo $infodu['lang']['index']['main'][16]?></h4>
+                    <p ><?php echo $infodu['lang']['index']['main'][17]?></p>
                 </div>
-                <div class="business aos-init aos-animate" data-aos="fade-down" data-aos-duration="500">
+                <div class="business " >
                     <a href="#" class="tran-animate"><span><?php echo $infodu['lang']['index']['main'][18]?></span><span class="white_arrow"></span></a>
                 </div>
-                <div class="business aos-init aos-animate" data-aos="fade-down" data-aos-duration="500">
+                <div class="business " >
                     <a href="#" class="tran-animate"><span><?php echo $infodu['lang']['index']['main'][19]?></span><span class="white_arrow"></span></a>
                 </div>
              

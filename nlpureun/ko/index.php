@@ -113,19 +113,17 @@ include_once(G5_LANG_PATH.'/_top.php');
 </script>
 
 
-<link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/aos/aos.css?ver=<?php echo G5_CSS_VER?>" />
+<!-- <link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/aos/aos.css?ver=<?php echo G5_CSS_VER?>" />
 <script src="<?php echo G5_LANG_JS_URL?>/aos/aos.js"></script>
-<script src="<?php echo G5_LANG_JS_URL?>/aos/aos2.js"></script>
 <script>
   AOS.init();
 </script>
-
+ -->
 <section class="k_wrap " id="intro_section">
     <div class="introInner">
             <div class="intro_title">
-                <!-- <h4 data-aos="fade-down" data-aos-offset="120"><?php echo $infodu['lang']['index']['main'][2]?></h4> -->
-                <h4 id="test"><?php echo $infodu['lang']['index']['main'][2]?></h4>
-                <p><?php echo $infodu['lang']['index']['main'][3]?></p>
+                <h4 data-sos="fade-down" ><?php echo $infodu['lang']['index']['main'][2]?></h4>
+                <p data-sos="fade-down" ><?php echo $infodu['lang']['index']['main'][3]?></p>
             </div>
 
             <div class="intro">
@@ -167,21 +165,9 @@ include_once(G5_LANG_PATH.'/_top.php');
     </div>
 </section>
 
-
+<link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/aos/aos2.css?ver=<?php echo G5_CSS_VER?>" />
+<script src="<?php echo G5_LANG_JS_URL?>/aos/aos2.js"></script>
 <script>
-    var runOnScroll =  function(evt) {
-      //console.log(evt.target);
-    };
-
-    var elements = document.querySelectorAll("[data-aos]");
-    elements = Array.prototype.slice.call(elements);
-
-
-    elements.forEach(function(element) {
-      //console.info(elements)
-      //window.addEventListener("scroll", runOnScroll);
-    });
-
 
     $(window).scroll(function() {
         var i = window.innerHeight;
@@ -189,18 +175,19 @@ include_once(G5_LANG_PATH.'/_top.php');
         var basic_offset = 120;
         var target = 0;
 
-        var e = document.querySelector("#test");
+        // var e = document.querySelector("#test");
 
-        for (var t = 0, n = 0; e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop); ) {
-            t += e.offsetLeft - ("BODY" != e.tagName ? e.scrollLeft : 0),
-            n += e.offsetTop - ("BODY" != e.tagName ? e.scrollTop : 0),
-            e = e.offsetParent;
-        }
+        // for (var t = 0, n = 0; e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop); ) {
+        //     t += e.offsetLeft - ("BODY" != e.tagName ? e.scrollLeft : 0),
+        //     n += e.offsetTop - ("BODY" != e.tagName ? e.scrollTop : 0),
+        //     e = e.offsetParent;
+        //     //console.info(e)
+        // }
 
-        var targetElm = document.querySelector("#test");
+        // var targetElm = document.querySelector("#test");
 
-        target = n + basic_offset;
-        currentTop > target ? targetElm.classList.add("aos-animate") : targetElm.classList.remove("aos-animate");
+        // target = n + basic_offset;
+        // currentTop > target ? targetElm.classList.add("aos-animate") : targetElm.classList.remove("aos-animate");
 
     });
 </script>

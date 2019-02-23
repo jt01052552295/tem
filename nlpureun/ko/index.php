@@ -10,6 +10,11 @@ if (G5_IS_MOBILE) {
 include_once(G5_LANG_PATH.'/_header.php'); 
 include_once(G5_LANG_PATH.'/_top.php'); 
 ?>
+<link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/aos/aos.css?ver=<?php echo G5_CSS_VER?>" />
+<script src="<?php echo G5_LANG_JS_URL?>/aos/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 
 <link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/bxslider/dist/jquery.bxslider.main.css?ver=<?php echo G5_CSS_VER?>" />
@@ -25,8 +30,8 @@ include_once(G5_LANG_PATH.'/_top.php');
 
         <div class="vg_title" id="title1">
             <h2>
-                <div class="vg_tit_box "><div class="nanum_pen"><?php echo $infodu['lang']['index']['main'][0]?></div></div>
-                <div class="vg_tit_box "><div class=""><?php echo $infodu['lang']['index']['main'][1]?></div></div>
+                <div class="vg_tit_box " data-sos="fade-down" ><div class="nanum_pen"><?php echo $infodu['lang']['index']['main'][0]?></div></div>
+                <div class="vg_tit_box " data-sos="fade-down"><div class=""><?php echo $infodu['lang']['index']['main'][1]?></div></div>
             </h2>
             <span id="main-slider-prev"></span> <!-- 이전 -->
             <span id="main-slider-next"></span> <!-- 다음 --> 
@@ -113,17 +118,12 @@ include_once(G5_LANG_PATH.'/_top.php');
 </script>
 
 
-<!-- <link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/aos/aos.css?ver=<?php echo G5_CSS_VER?>" />
-<script src="<?php echo G5_LANG_JS_URL?>/aos/aos.js"></script>
-<script>
-  AOS.init();
-</script>
- -->
+
 <section class="k_wrap " id="intro_section">
     <div class="introInner">
             <div class="intro_title">
-                <h4 data-sos="fade-down" ><?php echo $infodu['lang']['index']['main'][2]?></h4>
-                <p data-sos="fade-down" ><?php echo $infodu['lang']['index']['main'][3]?></p>
+                <h4  data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][2]?></h4>
+                <p  data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][3]?></p>
             </div>
 
             <div class="intro">
@@ -197,11 +197,11 @@ include_once(G5_LANG_PATH.'/_top.php');
 <section class="k_wrap " id="etc_section">
     <div class="k_container type_center etcInner">
             <div class="etc_title">
-                <h4><?php echo $infodu['lang']['index']['main'][8]?></h4>
-                <p><?php echo $infodu['lang']['index']['main'][9]?></p>
+                <h4 data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][8]?></h4>
+                <p data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][9]?></p>
             </div>
 
-            <div class="etc_center tran-animate">
+            <div class="etc_center tran-animate" >
                 <a href="#">     
                     <div class="bg"><img src="<?php echo G5_LANG_IMG_URL?>/etc01.jpg" title="" ></div>
                     <div class="con">      
@@ -210,7 +210,7 @@ include_once(G5_LANG_PATH.'/_top.php');
                     </div>
                 </a>
             </div>
-            <div class="etc_center tran-animate">  
+            <div class="etc_center tran-animate" >  
                  
                 <a href="#">                     
                     <div class="bg"><img src="<?php echo G5_LANG_IMG_URL?>/etc02.jpg" title="" ></div>
@@ -220,7 +220,7 @@ include_once(G5_LANG_PATH.'/_top.php');
                     </div>
                 </a>
             </div>
-            <div class="etc_center tran-animate"> 
+            <div class="etc_center tran-animate" > 
                  
                 <a href="#">                  
                     <div class="bg"><img src="<?php echo G5_LANG_IMG_URL?>/etc03.jpg" title="" ></div>
@@ -240,8 +240,8 @@ include_once(G5_LANG_PATH.'/_top.php');
     <div class="k_container type_center">
            <div class="businessInner">       
                 <div class="business_title">
-                    <h4 ><?php echo $infodu['lang']['index']['main'][16]?></h4>
-                    <p ><?php echo $infodu['lang']['index']['main'][17]?></p>
+                    <h4 data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][16]?></h4>
+                    <p data-sos="fade-down"><?php echo $infodu['lang']['index']['main'][17]?></p>
                 </div>
                 <div class="business " >
                     <a href="#" class="tran-animate"><span><?php echo $infodu['lang']['index']['main'][18]?></span><span class="white_arrow"></span></a>
@@ -261,8 +261,8 @@ include_once(G5_LANG_PATH.'/_top.php');
 <section class="k_wrap" id="lt_section">
     <div class="k_container type_center">
 
-        <div class="lt">              
-            <h4 class="title">공지사항</h4>
+        <div class="lt" data-sos="fade-down">              
+            <h4 class="title" >공지사항</h4>
             <ul class="lt_list">
                 <?php for($i=0; $i<4; $i++):?>
                 <li>
@@ -282,7 +282,7 @@ include_once(G5_LANG_PATH.'/_top.php');
                 </a>
             </div>
         </div>
-        <div class="lt">              
+        <div class="lt" data-sos="fade-down">              
             <h4 class="title">늘푸른 소식지</h4>
             <ul class="lt_list">
                 <?php for($i=0; $i<4; $i++):?>

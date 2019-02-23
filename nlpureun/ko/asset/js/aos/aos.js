@@ -480,11 +480,14 @@
         });
         var n = function(e, t, n) {
             var o = e.node.getAttribute("data-aos-once");
+            //console.error('aos', t, e.position)
             t > e.position ? e.node.classList.add("aos-animate") : "undefined" != typeof o && ("false" === o || !n && "true" !== o) && e.node.classList.remove("aos-animate")
         }
           , o = function(e, t) {
             var o = window.pageYOffset
               , i = window.innerHeight;
+
+              //console.error(o,i)
             e.forEach(function(e, r) {
                 n(e, i + o, t)
             })
@@ -504,12 +507,13 @@
         var i = n(12)
           , r = o(i)
           , a = function(e, t) {
+
             return e.forEach(function(e, n) {
                 e.node.classList.add("aos-init"),
-                e.position = (0,
-                r.default)(e.node, t.offset)
+                e.position = (0,r.default)(e.node, t.offset)
             }),
             e
+            
         };
         t.default = a
     }

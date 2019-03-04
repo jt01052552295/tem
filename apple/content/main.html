@@ -199,8 +199,8 @@
 
 	<main id="main" class="main" role="main" data-page-type="overview">
 		<section class="section section-hero" data-component-list="OverviewHero" data-anim-scroll-group data-anim-tween='{"start": "5% - 0vh", "cssClass":"show-body-copy"}' data-analytics-section-engagement="name:hero">
-			<div class="ribbon ribbon-hide" data-analytics-activitymap-region-id="ribbon">
-				<div class="ribbon-wrapper">
+			<div class="ribbon" data-sos="example-anim1">
+				<div class="ribbon-wrapper" data-sos="example-anim2">
 					<div class="ribbon-content typography-body-reduced">
 						<p>
 							지금부터 한정된 기간 동안, 사용하던 iPhone&nbsp;7&nbsp;Plus를 Apple&nbsp;Store에서 보상&nbsp;판매하면 <span aria-label="iPhone X S" role="text">iPhone X<span class="small-caps">S</span></span>를 107만&nbsp;원부터 구입할&nbsp;수&nbsp;있습니다.*
@@ -212,15 +212,15 @@
 			<div class="section-content">
 				<figure class="hero-lockup">
 					<div class="inline-video-media">
-						<div class="hero-animation-top-device frame-active">
+						<!-- <div class="hero-animation-top-device frame-active">
 							<div class="band-reflection"></div>
 						</div>
 						<div class="hero-animation-bottom-device">
 							<div class="device"></div>
 							<div class="gradient-mask gradient-mask-horizontal"></div>
 							<div class="gradient-mask gradient-mask-right"></div>
-						</div>
-						<video aria-label="iPhone XS 소개 애니메이션." muted></video>
+						</div> -->
+						<video aria-label="iPhone XS 소개 애니메이션." muted autoplay src="./images/mov/1.mp4"></video>
 					</div>
 				</figure>
 				<div class="copy">
@@ -228,8 +228,8 @@
 						<h1 class="logotype" aria-label="iPhone X S"><span class="visuallyhidden">iPhone XS</span></h1>
 						<p class="tagline typography-overview-hero-headline large-9 small-12 large-centered">보다 큰<br>세상으로의 초대.</p>
 					</div>
-					<div id="trigger1" class="spacer s0"></div>
-					<div id="animate1">
+					
+					<div id="" data-sos="example-anim3">
 						<p  class="intro typography-overview-intro large-12 medium-10 small-12 medium-centered">두 가지 크기로 만나는 Super&nbsp;Retina. 그중 한 대에는 iPhone 사상 가장 거대한 디스플레이가 탑재되었죠. 여기에 더욱 빨라진 Face&nbsp;ID, 스마트폰 사상 가장 스마트하고 강력한&nbsp;칩, 그리고 ‘심도&nbsp;제어’ 기능까지 갖춘 혁신적인 듀얼 카메라 시스템. 당신이 사랑하는 iPhone의 모든 장점을 극대화시킨 모습, 바로&nbsp;<span role="text" aria-label="iPhone X S">iPhone&nbsp;X<span class="small-caps">S</span></span>입니다.</p>
 						<a href="/kr/apple-events/september-2018/" data-analytics-title="watch the keynote" data-analytics-region="learn more" class="icon-wrapper cta cta-1 no-messaging typography-overview-cta-elevated"><span class="icon-copy">키노트 시청하기</span><span class="icon icon-after icon icon-after icon-playcircle"></span></a>
 						<br class="small">
@@ -254,19 +254,18 @@
 							<h2 class="inline">Super&nbsp;Retina. 크게 보다, 보다 크게 보다.</h2>
 							<p>iPhone&nbsp;X<span class="small-caps">S</span>만을 위해 제작된 OLED&nbsp;디스플레이는 업계 최고 수준의&nbsp;색상&nbsp;정확도와 HDR, 진정한 블랙을&nbsp;선보입니다.<span id="trigger3"></span> 그리고 iPhone&nbsp;X<span class="small-caps">S</span>&nbsp;Max에는 iPhone 사상 가장 커다란 디스플레이가 탑재되었죠.</p>
 						</div>
-						<a href="/kr/iphone-xs/display/" data-analytics-title="learn more about display" data-analytics-region="learn more" class="icon-wrapper pill-button"><span class="icon-copy"><span class="visuallyhidden">디스플레이에 대해 </span>더 알아보기</span></a> </div>
-					<div id="animate2" class="manifesto-shadow"></div>
-					<div id="trigger2" class="spacer s0"></div>
+						<a href="#" data-analytics-title="learn more about display" data-analytics-region="learn more" class="icon-wrapper pill-button"><span class="icon-copy"><span class="visuallyhidden">디스플레이에 대해 </span>더 알아보기</span></a> </div>
+					<div class="manifesto-shadow" data-sos="example-anim4" data-sos-offset="900"></div>
 				</div>
 			</div>
 			<div class="sticky-container" role="group" aria-labelledby="compare-header-headline" tabindex="0">
-				<div class="sticky-item">
+				<div class="sticky-item temp" >
 					<div class="compare">
-						<div class="compare-header">
+						<div class="compare-header" id="animate8">
 							<h2 class="compare-header-headline typography-overview-compare-headline anim-transform-opacity" id="compare-header-headline">전면 화면이 만드는 전면적인 차이.</h2>
 						</div>
 						<div class="hardware-aligner">
-							<div class="iphone8-models">
+							<div class="iphone8-models" >
 								<div class="hardware">
 									<div id="display-compare-gallery" class="gallery anim-transform-opacity" data-ac-gallery-fade>
 										<div id="display-compare-gallery-item-1" class="gallery-item hardware-aligner" data-ac-gallery-item data-analytics-gallery-item-id="iphone 8 plus">
@@ -276,7 +275,7 @@
 											<figure class="hardware-image-iphone8" data-progressive-image></figure>
 										</div>
 									</div>
-									<div class="tabnav hardware-label typography-overview-compare-label anim-opacity" id="display-compare-text">
+									<div id="animate9" class="tabnav hardware-label typography-overview-compare-label anim-opacity" id="display-compare-text">
 										<ul role="tablist" class="tabnav-items">
 											<li role="presentation" class="tabnav-item">
 												<a href="#display-compare-gallery-item-1" id="display-compare-gallery-item-1-trigger" data-ac-gallery-trigger="display-compare-gallery-item-1" class="tabnav-link current" tabindex="-1">iPhone&nbsp;8&nbsp;Plus</a>
@@ -294,33 +293,33 @@
 								<div class="scaling-hardware">
 									<figure class="scaling-hardware-image anim-transform-opacity" id="animate3"></figure>
 								</div>
-								<div class="sliding-hardware hardware-aligner anim-transform" id="animate4">
-									<div class="hardware hardware-iphonexsmax">
-										<div class="hardware-anim-container hardware-aligner anim-transform">
-											<figure class="glass grid-image glass-display-iphonexsmax hardware-image anim-transform" data-progressive-image>
+								<div class="sliding-hardware hardware-aligner anim-transform" >
+									<div class="hardware hardware-iphonexsmax" >
+										<div class="hardware-anim-container hardware-aligner anim-transform animateTran4" id="animate4">
+											<figure class="glass grid-image glass-display-iphonexsmax hardware-image anim-transform animateTran4_1" data-progressive-image id="animate4_1">
 												<div class="glass-frame"></div>
 												<div class="glass-screen">
 													<figure class="photo-preview"></figure>
 												</div>
 											</figure>
 										</div>
-										<span class="hardware-label typography-overview-compare-label anim-transform-opacity">iPhone&nbsp;X<span class="small-caps">S</span>&nbsp;Max</span>
-										<div class="hardware-badge typography-overview-compare-badge anim-transform-opacity" role="group" tabindex="-1">
+										<span id="animate6" class="animateTran6 hardware-label typography-overview-compare-label anim-transform-opacity">iPhone&nbsp;X<span class="small-caps">S</span>&nbsp;Max</span>
+										<div id="animate7" class="animateTran7 hardware-badge typography-overview-compare-badge anim-transform-opacity" role="group" tabindex="-1">
 											<p class="hardware-badge-top">iPhone&nbsp;X<span class="small-caps">S</span>&nbsp;Max</p>
 											<p class="hardware-badge-bottom"><span role="text" aria-label="6.5형 디스플레이">6.5형&nbsp;디스플레이</span><sup><a href="#footnote-1" class="footnote">1</a></sup></p>
 										</div>
 									</div>
-									<div class="hardware hardware-iphonexs">
-										<div class="hardware-anim-container hardware-aligner anim-transform">
-											<figure class="glass grid-image glass-display-iphonexs hardware-image anim-transform" data-progressive-image>
+									<div class="hardware hardware-iphonexs" >
+										<div class="hardware-anim-container hardware-aligner anim-transform animateTran4" id="animate5">
+											<figure class="glass grid-image glass-display-iphonexs hardware-image anim-transform animateTran4_1" data-progressive-image id="animate5_1">
 												<div class="glass-frame"></div>
 												<div class="glass-screen">
 													<figure class="photo-preview"></figure>
 												</div>
 											</figure>
 										</div>
-										<span class="hardware-label typography-overview-compare-label anim-transform-opacity">iPhone&nbsp;X<span class="small-caps">S</span></span>
-										<div class="hardware-badge typography-overview-compare-badge anim-transform-opacity" role="group" tabindex="-1">
+										<span id="animate6_1" class="animateTran6 hardware-label typography-overview-compare-label anim-transform-opacity">iPhone&nbsp;X<span class="small-caps">S</span></span>
+										<div id="animate7_1" class="animateTran7 hardware-badge typography-overview-compare-badge anim-transform-opacity" role="group" tabindex="-1">
 											<p class="hardware-badge-top">iPhone&nbsp;X<span class="small-caps">S</span></p>
 											<p class="hardware-badge-bottom"><span role="text" aria-label="5.8형 디스플레이">5.8형&nbsp;디스플레이</span><sup><a href="#footnote-1" class="footnote">1</a></sup></p>
 										</div>
@@ -383,13 +382,14 @@
 					<div class="hardware-wrapper">
 						<div class="section-content">
 							<div class="row">
-								<div class="figure-wrapper figure-wrapper-left" data-anim-classname-0='{"start":"-100vh","end":"100vh","relativeTo":".section-materials .sticky-wrapper", "cssClass":"will-change", "toggle": true, "breakpointmask":"ML", "disabledWhen":"no-materials-enhanced"}' data-anim-tween-0='{"start":"0px","end":"30%","relativeTo":".section-materials .sticky-wrapper", "x":[0,"-25%"],"opacity": [1, 0], "scale": [1, 0.99], "breakpointmask":"ML", "ease":0.3, "disabledWhen":"no-materials-enhanced"}'>
+
+								<div class="figure-wrapper figure-wrapper-left" data-sos="example-anim5" data-sos-offset="600">
 									<figure class="left" data-progressive-image></figure>
 								</div>
 								<div class="figure-wrapper figure-wrapper-center">
 									<figure class="center" data-progressive-image></figure>
 								</div>
-								<div class="figure-wrapper figure-wrapper-right" data-anim-classname-0='{"start":"-100vh","end":"100vh","relativeTo":".section-materials .sticky-wrapper", "cssClass":"will-change", "toggle": true, "breakpointmask":"ML", "disabledWhen":"no-materials-enhanced"}' data-anim-tween-0='{"start":"0px","end":"30%","relativeTo":".section-materials .sticky-wrapper", "x":[0,"25%"],"opacity": [1, 0], "scale": [1, 0.99], "breakpointmask":"ML", "ease":0.3, "disabledWhen":"no-materials-enhanced"}'>
+								<div class="figure-wrapper figure-wrapper-right" data-sos="example-anim6" data-sos-offset="600">
 									<figure class="right" data-progressive-image></figure>
 								</div>
 							</div>
@@ -398,20 +398,20 @@
 				</div>
 				<div class="enhanced-wrapper">
 					<div class="section-content">
-						<div class="copy-wrapper">
-							<div class="row row-logical copy" data-anim-classname-0='{"start":"-160vh","end":"100vh","relativeTo":".section-materials .copy-wrapper", "cssClass":"will-change", "toggle": true, "breakpointMask":"ML", "disa0bledWhen":"no-materials-enhanced"}' data-anim-tween-0='{"start":"-60vh","end":"0vh", "y":["60vh","25%"],"relativeTo":".copy-wrapper", "breakpointMask":"ML","disabledWhen":"no-materials-enhanced", "easeFunction":"easeOutCubic", "ease": 0.2}'>
+						<div class="copy-wrapper"> 
+							<div class="row row-logical copy">
 								<div class="column large-4 small-12 copy-0">
 									<h3 class="subsection-headline typography-overview-intro-reduced large-show-inline">수술 도구급 고강도 스테인리스 스틸.</h3>
 									<p class="typography-overview-intro-reduced large-show-inline">전체&nbsp;구조의 핵심이 되는 세 가지 마감의 측면 밴드에는 정밀 가공한 Apple&nbsp;제작 특수&nbsp;합금이 사용되었습니다.</p>
 								</div>
 							</div>
-							<div class="row row-logical copy" data-anim-classname-0='{"start":"-130vh","end":"100vh","relativeTo":".section-materials .copy-wrapper", "cssClass":"will-change", "toggle": true, "breakpointMask":"ML", "disa0bledWhen":"no-materials-enhanced"}' data-anim-tween-0='{"start":"-30vh","end":"0vh", "y":["30vh",0],"relativeTo":".copy-wrapper", "breakpointMask":"ML","disabledWhen":"no-materials-enhanced", "easeFunction":"easeOutCubic", "ease": 0.2}'>
+							<div class="row row-logical copy">
 								<div class="column large-4 large-offset-8 small-12 small-offset-0 copy-1">
 									<h3 class="subsection-headline typography-overview-intro-reduced large-show-inline">무선 충전.</h3>
 									<p class="typography-overview-intro-reduced large-show-inline">iPhone&nbsp;X<span class="small-caps">S</span>의 뒷면은 전도성&nbsp;글래스로 이루어져 무선&nbsp;충전이 가능합니다.<sup><a href="#footnote-3" class="footnote">3</a></sup> 게다가 iPhone&nbsp;X에 비해 충전 속도도 훨씬 빨라졌죠.</p>
 								</div>
 							</div>
-							<div class="row row-logical copy" data-anim-classname-0='{"start":"-120vh","end":"100vh","relativeTo":".section-materials .copy-wrapper", "cssClass":"will-change", "toggle": true, "breakpointMask":"ML", "disa0bledWhen":"no-materials-enhanced"}' data-anim-tween-0='{"start":"-20vh","end":"0vh", "y":["20vh","-25%"],"relativeTo":".copy-wrapper", "breakpointMask":"ML","disabledWhen":"no-materials-enhanced", "easeFunction":"easeOutCubic", "ease": 0.2}'>
+							<div class="row row-logical copy">
 								<div class="column large-4 small-12 copy-2">
 									<h3 class="subsection-headline typography-overview-intro-reduced large-show-inline">PVD 컬러 프로세스.</h3>
 									<p class="typography-overview-intro-reduced large-show-inline">골드 및 스페이스 그레이 마감의 스테인리스 스틸 밴드 제작에는 물리&nbsp;증착법(PVD)이라는 첨단&nbsp;공정을 적용했습니다. 글래스와 아름답게 어우러지는 색상 및 반사율을 구현하기 위함이죠.</p>
@@ -425,79 +425,20 @@
 		<section class="section section-face-id" data-component-list="ProgressiveImageLoader" data-anim-scroll-group data-analytics-section-engagement="name:face-id">
 			<div class="section-content">
 				<div class="manifesto-wrapper">
-					<div class="anim-opacity large-12 medium-11 small-12" data-anim-tween='{ "start": "100rh - 50vh", "end": "100rh - 30vh", "relativeTo": ".section-face-id .manifesto-wrapper", "opacity": [0.999, 0.5], "ease": 1 }'>
+					<div class="anim-opacity large-12 medium-11 small-12" id="trigger4" data-anim-tween='{ "start": "100rh - 50vh", "end": "100rh - 30vh", "relativeTo": ".section-face-id .manifesto-wrapper", "opacity": [0.999, 0.5], "ease": 1 }'>
 						<div class="masked-copy texture-3 manifesto typography-overview-headline-elevated" data-progressive-image>
 							<h2 class="inline">첨단 Face&nbsp;ID.</h2>
 							<p>당신의 얼굴이 당신의 암호일 때, 보안은 한결 간편해집니다. 눈길&nbsp;한&nbsp;번이면 iPhone&nbsp;잠금&nbsp;해제도, 앱과&nbsp;계정&nbsp;등에 로그인도 가능하니까요. 지금까지 스마트폰에 탑재된 안면 인증 기술 중 가장 안전한 Face&nbsp;ID. 이제 속도까지 훨씬 빨라졌죠.</p>
 						</div>
-						<a href="/kr/iphone-xs/face-id/" data-analytics-title="learn more about face id" data-analytics-region="learn more" class="icon-wrapper pill-button"><span class="icon-copy"><span class="visuallyhidden">Face ID에 대해 </span>더 알아보기</span></a> </div>
-					<div class="manifesto-shadow" data-progressive-image data-anim-tween-1='{
-						"start": "100rh - 70vh",
-						"end": "100rh - 20vh",
-						"relativeTo": ".section-face-id .manifesto-wrapper",
-						"opacity": [0.0, 0.999],
-						"easeFunction": "easeInOutSin",
-						"ease": 0.05,
-						"disabledWhen":"no-faceid-enhanced"
-					}' data-anim-tween-2='{
-						"start": "100rh - 70vh",
-						"end": "100rh - 20rh",
-						"relativeTo": ".section-face-id .manifesto-wrapper",
-						"y": [500, 0],
-						"easeFunction": "easeInOutSin",
-						"ease": 0.05,
-						"disabledWhen":"no-faceid-enhanced"
-					}'></div>
+						<a href="#" data-analytics-title="learn more about face id" data-analytics-region="learn more" class="icon-wrapper pill-button"><span class="icon-copy"><span class="visuallyhidden">Face ID에 대해 </span>더 알아보기</span></a> </div>
+					<div class="manifesto-shadow" data-progressive-image id="animate10"></div>
 				</div>
 				<div class="faceid-sticky-container">
-					<div class="sticky-aligner" data-anim-classname-1='{
-						"start":"130rh",
-						"relativeTo":".section-face-id .manifesto-wrapper",
-						"cssClass":"chip-transition-prep",
-						"toggle": true,
-						"disabledWhen":"no-faceid-enhanced"
-					}'>
-						<div class="faceid-device-zoom" data-anim-tween-1='{
-							"start":"100rh - 75vh",
-							"end":"100rh - 35vh",
-							"relativeTo":".section-face-id .manifesto-wrapper",
-							"y":["15vh","0"],
-							"easeFunction":"easeInOutQuart",
-							"ease": 0.05,
-							"disabledWhen":"no-faceid-enhanced"
-						}' data-anim-tween-2='{
-							"start":"100rh - 75vh",
-							"end":"100rh - 10vh",
-							"relativeTo":".section-face-id .manifesto-wrapper",
-							"scale":[0.77,1],
-							"easeFunction":"easeInOutQuart",
-							"ease": 0.05,
-							"disabledWhen":"no-faceid-enhanced"
-						}' data-anim-event-1='{
-							"event":"inline-video-load",
-							"start":"100rh - 200vh",
-							"end":"100rh + 160vh",
-							"relativeTo":".section-face-id .manifesto-wrapper"
-						}' data-anim-event-2='{
-							"event":"inline-video-play",
-							"start":"100rh - 55vh",
-							"end":"100rh",
-							"relativeTo":".section-face-id .manifesto-wrapper"
-						}'>
+					<div class="sticky-aligner chip-transition-prep">
+						<div class="faceid-device-zoom" id="animate11">
 							<div class="faceid-device" data-component-list="ImageToCanvasGrid">
 									<div class="device-screen">
-										<div class="anim-screen-toggle" data-anim-classname-1='{
-										"start":"100rh - 55vh",
-										"relativeTo":".section-face-id .manifesto-wrapper",
-										"cssClass":"active",
-										"toggle": true
-										}' data-anim-classname-2='{
-											"start":"100rh - 100vh",
-											"end":"100rh",
-											"relativeTo":".section-face-id .manifesto-wrapper",
-											"cssClass":"will-change",
-											"toggle": true
-										}'>
+										<div class="anim-screen-toggle will-change active">
 										<div class="inline-video-media" data-component-list="OverviewFaceIdVideo">
 											<video data-source-locale="kr" data-source-name="notifications" aria-label="홈 화면 잠금 해제 및 알림 확장 애니메이션." muted playsinline></video>
 											<div class="inline-video-frame-static" data-progressive-image></div>
@@ -514,7 +455,7 @@
 		</section>
 		<section class="section section-a12-bionic" data-component-list="ProgressiveImageLoader" data-anim-scroll-group data-analytics-section-engagement="name:a12-bionic">
 			<div class="sticky-container chip-grid-container">
-				<div class="chip-grid sticky" data-component-list="ChipGridGL" data-chip-grid-config='{"assetContainer":".chip-grid-asset-container", "screenImage1":".chip-grid-asset-container .screen-image-1", "screenImage2":".chip-grid-asset-container .screen-image-2", "gridImage1":".chip-grid-asset-container .grid-image-1", "textOverlay":".chip-grid-asset-container .text-overlay"}'></div>
+				<div class="chip-grid sticky" data-component-list="ChipGridGL" data-chip-grid-config='{"assetContainer":".chip-grid-asset-container", "screenImage1":".chip-grid-asset-container .screen-image-1", "screenImage2":".chip-grid-asset-container .screen-image-2", "gridImage1":".chip-grid-asset-container .grid-image-1", "textOverlay":".chip-grid-asset-container .text-overlay"}'><canvas width="1164" height="969" style="width: 1164px; height: 969px;"></canvas></div>
 				<div class="chip-grid-asset-container">
 					<figure class="screen-image-1"></figure>
 					<figure class="screen-image-2"></figure>
@@ -536,53 +477,53 @@
 				<div class="sticky">
 					<div class="section-content">
 						<div class="flex-center">
-							<div class="chip-details" data-component-list="ChipGridDetailsKeyframeCreator">
+							<div class="chip-details" data-sos="example-anim7" data-component-list="ChipGridDetailsKeyframeCreator">
 								<div class="chip">
-									<figure class="chip-background" data-progressive-image></figure>
+									<figure class="chip-background" data-sos="example-anim8" data-progressive-image></figure>
 									<div class="components-grid">
-										<figure class="chip-background-glow" data-progressive-image></figure>
-										<figure data-order="1" class="chip-component chip-component-4" data-progressive-image></figure>
-										<figure data-order="2" class="chip-component chip-component-7" data-progressive-image></figure>
-										<figure data-order="3" class="chip-component chip-component-5" data-progressive-image></figure>
-										<figure data-order="4" class="chip-component chip-component-3" data-progressive-image></figure>
-										<figure data-order="5" class="chip-component chip-component-1" data-progressive-image></figure>
-										<figure data-order="7" class="chip-component chip-component-8" data-progressive-image></figure>
-										<figure data-order="6" class="chip-component chip-component-9" data-progressive-image></figure>
-										<figure data-order="8" class="chip-component chip-component-6" data-progressive-image></figure>
-										<figure data-order="9" class="chip-component chip-component-2" data-progressive-image></figure>
+										<figure class="chip-background-glow" data-sos="example-anim8_0" data-progressive-image></figure>
+										<figure data-sos="example-anim8_1" class="chip-component chip-component-4" data-progressive-image></figure>
+										<figure data-sos="example-anim8_2" class="chip-component chip-component-7" data-progressive-image></figure>
+										<figure data-sos="example-anim8_3" class="chip-component chip-component-5" data-progressive-image></figure>
+										<figure data-sos="example-anim8_4" class="chip-component chip-component-3" data-progressive-image></figure>
+										<figure data-sos="example-anim8_5" class="chip-component chip-component-1" data-progressive-image></figure>
+										<figure data-sos="example-anim8_6" class="chip-component chip-component-8" data-progressive-image></figure>
+										<figure data-sos="example-anim8_7" class="chip-component chip-component-9" data-progressive-image></figure>
+										<figure data-sos="example-anim8_8" class="chip-component chip-component-6" data-progressive-image></figure>
+										<figure data-sos="example-anim8_9" class="chip-component chip-component-2" data-progressive-image></figure>
 										<figure class="chip-headline-background-shadow" data-progressive-image></figure>
 										<h3 class="chip-headline typography-overview-chip-headline">A12 Bionic</h3>
 									</div>
 								</div>
 								<div class="column column-first">
-									<div class="row row-badge top" data-order="1">
+									<div class="row row-badge top" data-sos="example-anim9_1" data-order="1">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">최대</span><span class="badge-value">50% 더&nbsp;빠른</span><span class="badge-caption">그래픽 성능<sup><a href="#footnote-4" class="footnote">4</a></sup></span></div>
 										</figure>
 									</div>
-									<div class="row row-badge middle" data-order="2">
+									<div class="row row-badge middle" data-sos="example-anim9_2" data-order="2">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">최대</span><span class="badge-value">15% 더&nbsp;빠른</span><span class="badge-caption">성능 코어<sup><a href="#footnote-4" class="footnote">4</a></sup></span></div>
 										</figure>
 									</div>
-									<div class="row row-badge bottom" data-order="3">
+									<div class="row row-badge bottom" data-sos="example-anim9_3" data-order="3">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">최대</span><span class="badge-value">50% 더&nbsp;적은</span><span class="badge-caption">효율 코어 소비 전력<sup><a href="#footnote-4" class="footnote">4</a></sup></span></div>
 										</figure>
 									</div>
 								</div>
 								<div class="column column-last">
-									<div class="row row-badge top" data-order="4">
+									<div class="row row-badge top" data-sos="example-anim9_6" data-order="4">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">8코어</span><span class="badge-value">Neural Engine</span></div>
 										</figure>
 									</div>
-									<div class="row row-badge middle" data-order="5">
+									<div class="row row-badge middle" data-sos="example-anim9_5" data-order="5">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">향상된</span><span class="badge-value">이미지&nbsp;신호 프로세서</span></div>
 										</figure>
 									</div>
-									<div class="row row-badge bottom" data-order="6">
+									<div class="row row-badge bottom" data-sos="example-anim9_4" data-order="6">
 										<figure class="badge">
 											<div class="badge-content"><span class="badge-caption">첨단</span><span class="badge-value">성능 컨트롤러</span></div>
 										</figure>
@@ -632,8 +573,8 @@
 		</section>
 		<section class="section section-cameras" data-component-list="ProgressiveImageLoader OverviewTrueDepthComponent" data-anim-scroll-group="Cameras">
 			<div class="hero-container sticky-container" data-analytics-section-engagement="name:cameras-hero">
-				<figure class="image-hero sticky-item" data-anim-tween='{"relativeTo":".section-cameras .hero-container", "start":"15rh", "end":"30rh", "opacity":[1, 0.35], "disabledWhen":["reduced-motion","no-sticky"]}' data-progressive-image></figure>
-				<div class="section-content">
+				<figure id="animate12" class="image-hero sticky-item" data-anim-tween='{"relativeTo":".section-cameras .hero-container", "start":"15rh", "end":"30rh", "opacity":[1, 0.35], "disabledWhen":["reduced-motion","no-sticky"]}' data-progressive-image></figure>
+				<div class="section-content" id="trigger5">
 					<div class="manifesto-wrapper large-12">
 						<div>
 							<div class="masked-copy texture-5 manifesto typography-overview-headline-elevated" data-progressive-image>
@@ -644,14 +585,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="features-content sticky-container gradient-background" data-analytics-section-engagement="name:cameras-features">
-				<div class="sticky-item">
-					<div class="image-container" data-anim-tween-1='{"relativeTo":".section-cameras .copy-container", "start":"0rh - 100vh", "end":"67rh", "scale":[1.0, 0.32], "y":["-474px", "50vh - (50% * 0.32) + 22px"], "breakpointMask":"L", "disabledWhen":["reduced-motion","static-interaction"], "ease":0.75}' data-anim-tween-2='{"relativeTo":".section-cameras .copy-container", "start":"0rh - 100vh", "end":"67rh", "scale":[1.0, 0.353], "y":["-335px", "50vh - (50% * 0.353) + 22px"], "breakpointMask":"M", "disabledWhen":["reduced-motion","static-interaction"], "ease":0.75}' data-anim-tween-3='{"relativeTo":".section-cameras .copy-container", "start":"0rh - 115vh", "end":"67rh", "scale":[1.0, 0.584], "y":["-203px", "50vh - (50% * 0.584) + 24px"], "breakpointMask":"S", "disabledWhen":["reduced-motion","static-interaction"], "ease":0.75}'>
-						<figure class="image-feature image-smart-hdr" data-anim-classname='{"relativeTo":".section-cameras .copy-container", "start":"0rh - 250vh", "end":"12rh", "cssClass":"show", "toggle":true, "disabledWhen":["reduced-motion","static-interaction"]}' data-progressive-image></figure>
-						<figure class="image-feature image-low-light" data-anim-classname='{"relativeTo":".section-cameras .copy-container", "start":"12rh", "end":"38rh", "cssClass":"show", "toggle":true, "disabledWhen":["reduced-motion","static-interaction"]}' data-progressive-image></figure>
-						<figure class="image-feature image-bokeh" data-anim-classname='{"relativeTo":".section-cameras .copy-container", "start":"38rh", "end":"61rh", "cssClass":"show", "toggle":true, "disabledWhen":["reduced-motion","static-interaction"]}' data-progressive-image></figure>
-						<figure class="image-feature image-depth-control" data-anim-classname='{"relativeTo":".section-cameras .copy-container", "start":"61rh", "end":"100rh + 100rh", "cssClass":"show", "toggle":true, "disabledWhen":["reduced-motion","static-interaction"]}' data-progressive-image></figure>
-						<figure class="video-depth-control hardware-wrapper" data-anim-tween='{"relativeTo":".section-cameras .copy-container", "start":"62rh", "end":"67rh", "opacity":[0, 1.0], "disabledWhen":["reduced-motion","static-interaction"], "ease":0.8}'>
+			<div class="features-content sticky-container gradient-background" id="trigger6" data-analytics-section-engagement="name:cameras-features">
+				<div class="sticky-item" >
+					<div class="image-container" id="animate13">
+						<figure class="image-feature image-smart-hdr show" data-progressive-image></figure>
+						<figure class="image-feature image-low-light" data-progressive-image></figure>
+						<figure class="image-feature image-bokeh" data-progressive-image></figure>
+						<figure class="image-feature image-depth-control" data-progressive-image></figure>
+						<figure class="video-depth-control hardware-wrapper" id="animate13_1">
 							<div class="hardware-screen" data-progressive-image>
 								<div class="inline-video-media" data-component-list="OverviewDepthControlVideo">
 									<video data-source-locale="kr" data-source-name="depth-control" muted playsinline></video>
@@ -701,7 +642,7 @@
 				</div>
 				<div class="hardware-placeholder"></div>
 			</div>
-			<div class="section-content true-depth-content sticky-container row" data-analytics-section-engagement="name:cameras-specs">
+			<div class="section-content true-depth-content sticky-container row device-cropped" id="trigger7" data-analytics-section-engagement="name:cameras-specs">
 				<div class="true-depth-copy-content column">
 					<div class="true-depth-copy-container back row">
 						<figure class="static-hardware image-hardware-back" data-progressive-image></figure>
@@ -775,11 +716,11 @@
 				<div class="true-depth-hardware-container column">
 					<div class="sticky-item">
 						<div class="crop">
-							<figure class="image-hardware image-hardware-back" data-anim-tween='{ "start": "-100vh", "end": "25rh", "scale": [1, 0.71], "x": ["-1%", 0], "ease": 0.5, "easeFunction": "easeInOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-tween-1='{ "start": "-100vh", "end": "-50vh", "opacity": [0.5, 0.99], "ease": 0.5, "easeFunction": "easeOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-classname='{ "start": "-200vh", "end": "150vh", "cssClass": "transform", "toggle": true, "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"] }' data-progressive-image>
+							<figure class="image-hardware image-hardware-back transform" id="animate14_1" data-progressive-image>
 							</figure>
-							<figure class="image-hardware image-hardware-reflection" data-anim-tween='{ "start": "8rh", "end": "25rh", "opacity": [0.01, 0.99], "ease": 0.5, "easeFunction": "easeInOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-classname='{ "start": "-200vh", "end": "150vh", "cssClass": "transform", "toggle": true, "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"] }' data-progressive-image></figure>
-							<figure class="image-hardware image-hardware-front" data-anim-tween='{ "start": "-2rh", "end": "25rh", "x": ["25%", 0], "ease": 0.5, "easeFunction": "easeOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-tween-1='{ "start": "-2rh", "end": "4rh", "opacity": [0.01, 0.99], "ease": 0.9, "easeFunction": "easeOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-classname='{ "start": "-200vh", "end": "150vh", "cssClass": "transform", "toggle": true, "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"] }' data-progressive-image>
-								<figure class="image-hardware image-hardware-front-reflection" data-anim-tween='{ "start": "8rh", "end": "25rh", "opacity": [0.01, 0.99], "ease": 0.5, "easeFunction": "easeInOutQuad", "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"], "relativeTo": ".section-cameras .true-depth-copy-content" }' data-anim-classname='{ "start": "-200vh", "end": "150vh", "cssClass": "transform", "toggle": true, "breakpointMask": "MLX", "disabledWhen": ["static-interaction", "reduced-motion"] }' data-progressive-image>
+							<figure class="image-hardware image-hardware-reflection transform" id="animate14_2"  data-progressive-image></figure>
+							<figure class="image-hardware image-hardware-front transform" id="animate14_3"  data-progressive-image>
+								<figure class="image-hardware image-hardware-front-reflection transform" id="animate14_4"  data-progressive-image>
 								</figure>
 						</div>
 					</div>

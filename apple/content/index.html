@@ -1,6 +1,6 @@
 
-<!DOCTYPE html>
-<html class="css-mask" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KR" lang="ko-KR" dir="ltr" prefix="og: http://ogp.me/ns#">
+<!DOCTYPE html> 
+<html class="css-mask materials-enhanced faceid-enhanced" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko-KR" lang="ko-KR" dir="ltr" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="utf-8" />
 	<link rel="canonical" href="https://www.apple.com/kr/iphone-xs/" />
@@ -12,6 +12,11 @@
 	<link rel="stylesheet" href="./css/main.built.css" type="text/css" />
 	<link rel="stylesheet" href="./css/overview.built.css" type="text/css" />
 	<link rel="stylesheet" href="./css/overview.built.kr.css" type="text/css" />
+
+	<link rel="stylesheet" href="./js/aos/aos2.css?ver=1" type="text/css" />
+	<link rel="stylesheet" href="./js/aos/aos_add.css?ver=1" type="text/css" />
+	
+
 	<title>iPhone XS - Apple (KR)</title>
 	<meta name="Description" content="iPhone XS에서 만나는 전체 화면 디자인, 두 가지 사이즈의 Super Retina 디스플레이, TrueDepth 카메라, Face ID, 듀얼 카메라 시스템, 그리고 A12 Bionic 칩."  />
 	<meta property="og:image" content="https://www.apple.com/v/iphone-xs/d/images/meta/og_overview.png?201901310204" />
@@ -33,6 +38,7 @@
 	<script src="./js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./js/jquery-migrate-git.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./js/apple.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/aos/aos2.js?ver=1" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="page-overview ac-gn-current-iphone theme-dark" data-word-join>
 	
@@ -48,29 +54,92 @@
 <script src="./js/ScrollMagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
 
 <script>
+
 var controller = new ScrollMagic.Controller();
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger1"})
-			.setTween("#animate1", 2, {opacity:1}) // trigger a TweenMax.to tween
-			.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-			.addTo(controller);
-/*
-var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2"})
-			.setTween("#animate2", 2, {opacity:1, transform: 'translate(0,0)'}) // trigger a TweenMax.to tween
-			.addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
-			.addTo(controller);
 
-
+//TweenLite.to("#element", 2, {xPercent:-50, yPercent:-50, x:100, y:200}); 
 var tween3 = new TimelineMax()
-			.add(TweenMax.to("#animate3", 2, {opacity:1, display:'block', transform: 'translate(0px, 0px) scale(0.22, 0.22)'}))
+			.add(TweenMax.to("#animate3", 2, {opacity:1, x:0, y:0, scale:0.22}))
 			.add(TweenMax.to("#animate3", 1, {display:'none'}))
+			.add(TweenMax.to("#display-compare-gallery", 0.5, {scale:1, opacity:1}))
+			.add(TweenMax.to(".animateTran7", 0.5, {opacity:1, x:0}))
+			.add(TweenMax.to(".animateTran4", 0.5, {x:12,opacity:1}))
+			.add(TweenMax.to(".animateTran4_1", 0.5, {x:-12}))
+			.add(TweenMax.to(".animateTran7", 0.5, {opacity:0}))
+			.add(TweenMax.to(".animateTran6", 1, {opacity:1, x:0}))
+			.add(TweenMax.to(".photo-preview", 1, {opacity:1}))
+			.add(TweenMax.to("#animate8", 1, {opacity:1, y:0}))
+			.add(TweenMax.to("#animate9", 1, {opacity:1}))
 
-var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration:"100%"})
+var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration:"150%"})
 			.setTween(tween3) // trigger a TweenMax.to tween
-			.addIndicators({name: "3 (duration: 100%)"}) // add indicators (requires plugin)
-			.addTo(controller);
-*/
+			.addIndicators({name: "3 (duration: 150%)"}) // add indicators (requires plugin)
+			.addTo(controller)
+			.on("enter leave", function(e){
+				var type = e.type;
+			})
 
 
+var tween4 = new TimelineMax()
+			.add(TweenMax.to("#trigger4", 0.5, {opacity:0.5}))
+			.add(TweenMax.to("#animate10", 0.5, {opacity:1,y:0}))
+			.add(TweenMax.to("#animate11", 1, {x:0,y:0, scale:1}))
+
+
+var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger4", duration:"110%"})
+			.setTween(tween4) 
+			.addIndicators({name: "4 (duration: 110%)"})
+			.addTo(controller)
+
+var tween5 = new TimelineMax()
+			.add(TweenMax.to("#animate12", 0.5, {opacity:0.35}))
+
+var scene5 = new ScrollMagic.Scene({triggerElement: "#trigger5", duration:"200"})
+			.setTween(tween5) 
+			.addIndicators({name: "5 (duration: 200)"})
+			.addTo(controller)
+
+var mouseTopPerc = 0
+function getMousePos(){
+	mouseTopPerc = $('#trigger6').outerHeight(true);
+	return (mouseTopPerc)
+}
+
+var tween6 = new TimelineMax()
+			.add(TweenMax.to("#animate13", 1, {y:145,scale:0.32}))
+			.add(TweenMax.to("#animate13_1", 0.8, {opacity:1,delay:1}))
+
+var scene6 = new ScrollMagic.Scene({triggerElement: "#trigger6", duration:getMousePos})
+			.setTween(tween6) 
+			.addIndicators({name: "6 (duration: trigger6)"})
+			.addTo(controller)
+			.on("progress", function(e){
+				var progress = e.progress.toFixed(2)*100
+				if(progress <= 33){
+					$('.image-feature').removeClass('show')
+					$('.image-smart-hdr').addClass('show')
+				} else if(progress > 33 && progress <= 53){
+					$('.image-feature').removeClass('show')
+					$('.image-low-light').addClass('show')
+				} else if(progress > 53 && progress <= 70){
+					$('.image-feature').removeClass('show');
+					$('.image-bokeh').addClass('show');
+				} else if(progress > 70 ){
+					$('.image-feature').removeClass('show')
+					$('.image-depth-control').addClass('show')
+				}
+			})
+
+var tween7 = new TimelineMax()
+			.add(TweenMax.to("#animate14_1", 1, {x:0,scale:0.7,opacity:1}))
+			.add(TweenMax.to("#animate14_2", 1, {opacity:1}))
+			.add(TweenMax.to("#animate14_3", 1, {x:0,opacity:1}))
+			.add(TweenMax.to("#animate14_4", 1, {opacity:1}))
+
+var scene7 = new ScrollMagic.Scene({triggerElement: "#trigger7", duration:"100%"})
+			.setTween(tween7) 
+			.addIndicators({name: "7 (duration: 100%)"})
+			.addTo(controller)
 
 
 </script>

@@ -132,9 +132,10 @@ var scene6 = new ScrollMagic.Scene({triggerElement: "#trigger6", duration:getMou
 
 var tween7 = new TimelineMax()
 			.add(TweenMax.to("#animate14_1", 1, {x:0,scale:0.7,opacity:1}))
-			.add(TweenMax.to("#animate14_2", 1, {opacity:1}))
 			.add(TweenMax.to("#animate14_3", 1, {x:0,opacity:1}))
 			.add(TweenMax.to("#animate14_4", 1, {opacity:1}))
+			.add(TweenMax.to("#animate14_2", 1, {opacity:1}))
+			
 
 var scene7 = new ScrollMagic.Scene({triggerElement: "#trigger7", duration:"100%"})
 			.setTween(tween7) 

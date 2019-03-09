@@ -198,7 +198,7 @@
 	<label id="ac-ln-curtain" for="ac-ln-menustate"></label>
 
 	<main id="main" class="main" role="main" data-page-type="overview">
-		<section class="section section-hero" data-component-list="OverviewHero" data-anim-scroll-group data-anim-tween='{"start": "5% - 0vh", "cssClass":"show-body-copy"}' data-analytics-section-engagement="name:hero">
+		<section class="section section-hero">
 			<div class="ribbon" data-sos="example-anim1">
 				<div class="ribbon-wrapper" data-sos="example-anim2">
 					<div class="ribbon-content typography-body-reduced">
@@ -212,15 +212,16 @@
 			<div class="section-content">
 				<figure class="hero-lockup">
 					<div class="inline-video-media">
-						<!-- <div class="hero-animation-top-device frame-active">
+						<div class="hero-animation-top-device frame-active">
 							<div class="band-reflection"></div>
 						</div>
 						<div class="hero-animation-bottom-device">
 							<div class="device"></div>
 							<div class="gradient-mask gradient-mask-horizontal"></div>
 							<div class="gradient-mask gradient-mask-right"></div>
-						</div> -->
-						<video aria-label="iPhone XS 소개 애니메이션." muted autoplay src="./images/mov/1.mp4"></video>
+						</div>
+						<video class="m1_video" aria-label="iPhone XS 소개 애니메이션." muted autoplay src="./images/mov/1_m.mp4"></video>
+						<video class="pc1_video" aria-label="iPhone XS 소개 애니메이션." muted autoplay src="./images/mov/1.mp4"></video>
 					</div>
 				</figure>
 				<div class="copy">
@@ -246,7 +247,7 @@
 				</div>
 			</a>
 		</section>
-		<section class="section section-display enhanced ready activated" data-component-list='ProgressiveImageLoader DisplayComparison' data-anim-scroll-group='DisplayComparison' data-analytics-section-engagement="name:display">
+		<section class="section section-display enhanced ready activated" id="section_display_mobile">
 			<div class="section-content">
 				<div class="manifesto-wrapper large-11 medium-12">
 					<div class="anim-opacity" data-anim-tween='{ "start": "100rh - 50vh", "end": "100rh - 30vh", "relativeTo": ".section-display .manifesto-wrapper", "opacity": [0.999, 0.5], "ease": 1 }'>
@@ -339,7 +340,7 @@
 						<div class="hardware-columns hardware-aligner">
 							<div class="hardware-column">
 								<form class="hardware-selector" data-component-list="DisplayProductSelector">
-									<select class="hardware-selector-dropdown typography-overview-compare-dropdown" disabled>
+									<select class="hardware-selector-dropdown typography-overview-compare-dropdown">
 										<option value="hardware-image-iphonexsmax" selected>iPhone&nbsp;X<span class="small-caps">S</span>&nbsp;Max</option>
 										<option value="hardware-image-iphonexs">iPhone&nbsp;X<span class="small-caps">S</span></option>
 									</select>
@@ -352,7 +353,7 @@
 							</div>
 							<div class="hardware-column">
 								<form class="hardware-selector" data-component-list="DisplayProductSelector">
-									<select class="hardware-selector-dropdown typography-overview-compare-dropdown" disabled>
+									<select class="hardware-selector-dropdown typography-overview-compare-dropdown">
 										<option value="hardware-image-iphone8plus" selected>iPhone&nbsp;8&nbsp;Plus</option>
 										<option value="hardware-image-iphone8">iPhone&nbsp;8</option>
 									</select>
@@ -440,7 +441,8 @@
 									<div class="device-screen">
 										<div class="anim-screen-toggle will-change active">
 										<div class="inline-video-media" data-component-list="OverviewFaceIdVideo">
-											<video data-source-locale="kr" data-source-name="notifications" aria-label="홈 화면 잠금 해제 및 알림 확장 애니메이션." muted playsinline></video>
+											<video class="m1_video" aria-label="홈 화면 잠금 해제 및 알림 확장 애니메이션." muted="" autoplay="" src="./images/mov/2_m.mp4"></video>
+
 											<div class="inline-video-frame-static" data-progressive-image></div>
 											<div class="inline-video-frame-start frame-active" data-progressive-image></div>
 										</div>
@@ -573,7 +575,7 @@
 		</section>
 		<section class="section section-cameras" data-component-list="ProgressiveImageLoader OverviewTrueDepthComponent" data-anim-scroll-group="Cameras">
 			<div class="hero-container sticky-container" data-analytics-section-engagement="name:cameras-hero">
-				<figure id="animate12" class="image-hero sticky-item" data-anim-tween='{"relativeTo":".section-cameras .hero-container", "start":"15rh", "end":"30rh", "opacity":[1, 0.35], "disabledWhen":["reduced-motion","no-sticky"]}' data-progressive-image></figure>
+				<figure id="animate12" class="image-hero sticky-item"></figure>
 				<div class="section-content" id="trigger5">
 					<div class="manifesto-wrapper large-12">
 						<div>
@@ -594,8 +596,8 @@
 						<figure class="image-feature image-depth-control" data-progressive-image></figure>
 						<figure class="video-depth-control hardware-wrapper" id="animate13_1">
 							<div class="hardware-screen" data-progressive-image>
-								<div class="inline-video-media" data-component-list="OverviewDepthControlVideo">
-									<video data-source-locale="kr" data-source-name="depth-control" muted playsinline></video>
+								<div class="inline-video-media video-loaded" data-component-list="OverviewDepthControlVideo">
+									<video class="m1_video" muted="" autoplay="" src="./images/mov/3_m.mp4"></video>
 								</div>
 							</div>
 							<div class="hardware-frame" data-progressive-image></div>

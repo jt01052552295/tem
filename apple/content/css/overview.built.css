@@ -904,7 +904,7 @@ a.pill-button:hover .icon-copy,button.pill-button:hover .icon-copy {
     }
 
     .section-hero .intro,.section-hero .preorder,.section-hero .cta {
-        opacity: 0
+        opacity: 1
     }
 
     html.no-js .section-hero .intro,html.reduced-motion .section-hero .intro,html.aow .section-hero .intro,html.no-js .section-hero .intro,html.reduced-motion .section-hero .intro,html.aow .section-hero .intro,html.no-js .section-hero .intro,html.reduced-motion .section-hero .intro,html.aow .section-hero .intro,html.no-js .section-hero .preorder,html.reduced-motion .section-hero .preorder,html.aow .section-hero .preorder,html.no-js .section-hero .preorder,html.reduced-motion .section-hero .preorder,html.aow .section-hero .preorder,html.no-js .section-hero .preorder,html.reduced-motion .section-hero .preorder,html.aow .section-hero .preorder,html.no-js .section-hero .cta,html.reduced-motion .section-hero .cta,html.aow .section-hero .cta,html.no-js .section-hero .cta,html.reduced-motion .section-hero .cta,html.aow .section-hero .cta,html.no-js .section-hero .cta,html.reduced-motion .section-hero .cta,html.aow .section-hero .cta {
@@ -1175,7 +1175,7 @@ html.js.no-reduced-motion.aow .ribbon.ribbon-hide .ribbon-wrapper {
 
 @media only screen and (max-width: 735px) {
     .ribbon+.section-content .inline-video-media {
-        margin-top:66px
+        margin-top:92px
     }
 }
 

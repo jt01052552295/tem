@@ -12,7 +12,6 @@
 	<link rel="stylesheet" href="./css/main.built.css" type="text/css" />
 	<link rel="stylesheet" href="./css/overview.built.css" type="text/css" />
 	<link rel="stylesheet" href="./css/overview.built.kr.css" type="text/css" />
-
 	<link rel="stylesheet" href="./js/aos/aos2.css?ver=1" type="text/css" />
 	<link rel="stylesheet" href="./js/aos/aos_add.css?ver=1" type="text/css" />
 	
@@ -116,7 +115,7 @@ if(!isMobile){
 
 	var scene3 = new ScrollMagic.Scene({triggerElement: "#trigger3", duration:"150%"})
 				.setTween(tween3) // trigger a TweenMax.to tween
-				.addIndicators({name: "3 (duration: 150%)"}) // add indicators (requires plugin)
+				//.addIndicators({name: "3 (duration: 150%)"}) // add indicators (requires plugin)
 				.addTo(controller)
 				.on("enter leave", function(e){
 					var type = e.type;
@@ -131,7 +130,7 @@ if(!isMobile){
 
 	var scene4 = new ScrollMagic.Scene({triggerElement: "#trigger4", duration:"110%"})
 				.setTween(tween4) 
-				.addIndicators({name: "4 (duration: 110%)"})
+				//.addIndicators({name: "4 (duration: 110%)"})
 				.addTo(controller)
 
 	var tween5 = new TimelineMax()
@@ -139,7 +138,7 @@ if(!isMobile){
 
 	var scene5 = new ScrollMagic.Scene({triggerElement: "#trigger5", duration:"200"})
 				.setTween(tween5) 
-				.addIndicators({name: "5 (duration: 200)"})
+				//.addIndicators({name: "5 (duration: 200)"})
 				.addTo(controller)
 
 	var mouseTopPerc = 0
@@ -154,7 +153,7 @@ if(!isMobile){
 
 	var scene6 = new ScrollMagic.Scene({triggerElement: "#trigger6", duration:getMousePos})
 				.setTween(tween6) 
-				.addIndicators({name: "6 (duration: trigger6)"})
+				//.addIndicators({name: "6 (duration: trigger6)"})
 				.addTo(controller)
 				.on("progress", function(e){
 					var progress = e.progress.toFixed(2)*100
@@ -182,7 +181,7 @@ if(!isMobile){
 
 	var scene7 = new ScrollMagic.Scene({triggerElement: "#trigger7", duration:"100%"})
 				.setTween(tween7) 
-				.addIndicators({name: "7 (duration: 100%)"})
+				//.addIndicators({name: "7 (duration: 100%)"})
 				.addTo(controller)
 } else {
 

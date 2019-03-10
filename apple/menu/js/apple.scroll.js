@@ -17,7 +17,7 @@ jQuery3_3_1(document).ready(function($){
 
 	console.log('%c Parallax 작업 중... ', 'color: #bada55; font-size:3.0em;');
 
-	$('body').addClass('page-overview').addClass('ac-gn-current-iphone').addClass('theme-dark');
+	//$('body').addClass('page-overview').addClass('ac-gn-current-iphone').addClass('theme-dark');
 	
 	window.setTimeout(function(){
 		$('.ribbon').removeClass('ribbon-hide');

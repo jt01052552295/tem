@@ -1,0 +1,82 @@
+<?php include_once('./header.html'); ?>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.rslide.css" rel="stylesheet">
+<pre class="desc">
+ease 적용, 반응형, 지금까지와는 다른 이질적인 움직임ㅋ
+</pre>
+
+
+<div class="r_slide">
+    <ul>
+        <li><img src="./images/rs01.jpg"></li>
+        <li><img src="./images/rs02.jpg"></li>
+        <li><img src="./images/rs03.jpg"></li>
+    </ul>
+    <span id="rs-slider-prev"></span>
+    <span id="rs-slider-next"></span>
+    <div class="rs_txt_wrap">
+        <div class="rs_txt">
+            <div class="rs_con">
+                <h4 data-aos="fade-up" >test1</h4>
+                <strong data-aos="fade-up" data-aos-duration="800">asdfasdfasdfasdfasdf</strong>
+                <p data-aos="fade-up" data-aos-duration="1200">zzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>                            
+            </div>
+        </div>
+        <div class="rs_txt">
+            <div class="rs_con">
+                <h4 data-aos="fade-up" >test2</h4>
+                <strong data-aos="fade-up" data-aos-duration="800">asdfasdfasdfasdfasdf</strong>
+                <p data-aos="fade-up" data-aos-duration="1200">zzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>                            
+            </div>
+        </div>
+        <div class="rs_txt">
+            <div class="rs_con">
+                <h4 data-aos="fade-up" >test3</h4>
+                <strong data-aos="fade-up" data-aos-duration="800">asdfasdfasdfasdfasdf</strong>
+                <p data-aos="fade-up" data-aos-duration="1200">zzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>                            
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="rs_bg bg01"></div>
+    <div class="rs_bg bg02"></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var rslider = $(".r_slide ul").bxSlider({
+    	auto:true,
+        speed : 1500,
+        pager : false,
+        wrapperClass: 'rs-wrapper',
+        easing : "cubic-bezier(0.3, 0, 0, 1)",
+        controls: true,
+        nextSelector: '#rs-slider-next',
+        prevSelector: '#rs-slider-prev',
+        onSliderLoad : function(){
+            $('.rs_txt_wrap > .rs_txt').eq(0).show();
+            $(".r_slide ul li").eq(1).find("img").css("marginLeft", "-20%");
+        },
+        onSlideBefore : function(){
+            var current = rslider.getCurrentSlide();
+            var next = rslider.getCurrentSlide() + 1;
+            $(".r_slide ul li").eq(current).find("img").animate({marginLeft:0}, 1400);
+            $(".r_slide ul li").eq(next).find("img").animate({marginLeft: "-20%"}, 1400);
+        },
+        onSlideAfter : function(obj){
+            var idx = $(obj).index();
+            $('.rs_txt_wrap > .rs_txt').hide();
+            $('.rs_txt_wrap > .rs_txt').eq(idx -1).show();
+
+        }
+    });
+
+    $('#rs-slider-prev a, #rs-slider-next a').click(function(){
+        rslider.stopAuto();
+        rslider.startAuto();
+    });
+</script>
+
+<?php include_once('./footer.html'); ?>

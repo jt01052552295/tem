@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* 회사소개 */
+.company {margin-bottom:10px;text-align:center;}
+.company img {max-width:100%;}
+.c_txt {font-size:1.0rem;line-height:1.8;padding:10px 0;text-align:center;word-break:keep-all;}
+.c_title {font-size:2.0rem;padding:20px 0;text-align:center;display:block;}
+
+/*오시는 길*/
+.location {padding-top:40px;}
+.location p {padding-bottom:10px; border-bottom:1px solid #ddd; width:100%; padding-top:10px;font-size:12px;}
+.location .logo {width:250px;margin:0 auto;text-align:center; vertical-align:middle; background:#ddd; font-size:2.0rem;padding:20px 0}
+
+
+
+
+/* 사이트맵 */
+	.sitemap	{
+		width:48%;
+		float:none;
+		display:inline-block;
+		margin:0 0 10px 0;    vertical-align: top;
+		}
+	.sitemap_cate	{
+		border-top:1px #999 solid;
+		border-bottom:1px #666 solid;
+		text-align:center;
+		padding:13px 0 10px 0;
+		background:#fafafa;
+		}
+	.sitemap_cate_text	{
+		color:#006fbc; font-size:14px; font-weight:bold;
+		}
+	.sitemap_text ul	{
+		margin:0;
+		list-style-type:none;
+		padding:0;
+		}
+	.sitemap_text ul li	{
+		padding:12px 0 8px 0;
+		border-bottom:1px #ddd solid;
+		}
+	.sitemap_text ul li div	{
+		padding:0 0 0 10px;
+		}
+	.sitemap_text ul li div a, .sitemap_text ul li div a:link, .sitemap_text ul li div a:visited 	{
+		}
+	.sitemap_text ul li div a:hover, .sitemap_text ul li div a:active 	{
+		color:blue;
+		}
+
+

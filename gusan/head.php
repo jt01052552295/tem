@@ -6,20 +6,17 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
     //return;
 //}
 
-if (G5_IS_MOBILE) {
-    include_once(G5_MOBILE_PATH.'/head.php');
-    return;
-}
 
 include_once(G5_PATH.'/head.sub.php');
-// include_once(G5_LIB_PATH.'/latest.lib.php');
-// include_once(G5_LIB_PATH.'/outlogin.lib.php');
-// include_once(G5_LIB_PATH.'/poll.lib.php');
-// include_once(G5_LIB_PATH.'/visit.lib.php');
-// include_once(G5_LIB_PATH.'/connect.lib.php');
-// include_once(G5_LIB_PATH.'/popular.lib.php');
+if (G5_IS_MOBILE) {
+	//echo G5_LANG_MOBILE_PATH;
+	//include_once(G5_LANG_MOBILE_PATH.'/_header.php');
+    include_once(G5_LANG_MOBILE_PATH.'/_top.php');
+    return;
+}	else {
+	
+	 include_once(G5_LANG_PATH.'/_top.php');
+}
 
-//if(!defined('G5_IS_ADMIN')) {
-    include_once(G5_LANG_PATH.'/_top.php');
-//}
+
 ?>

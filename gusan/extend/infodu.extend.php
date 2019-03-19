@@ -54,7 +54,7 @@ define('G5_LANG_URL',            G5_CUSTOM_URL.'/'.G5_LANG_DIR);
 define('G5_LANG_IMG_URL',        G5_LANG_URL.'/asset/img');
 define('G5_LANG_CSS_URL',        G5_LANG_URL.'/asset/css');
 define('G5_LANG_JS_URL',         G5_LANG_URL.'/asset/js');
-define('G5_LANG_MOBILE_URL',         G5_LANG_MOBILE_URL.'/'.G5_LANG_DIR);
+define('G5_LANG_MOBILE_URL',         G5_MOBILE_URL.'/'.G5_LANG_DIR);
 define('G5_LANG_MOBILE_IMG_URL',        G5_LANG_MOBILE_URL.'/asset/img');
 define('G5_LANG_MOBILE_CSS_URL',        G5_LANG_MOBILE_URL.'/asset/css');
 define('G5_LANG_MOBILE_JS_URL',         G5_LANG_MOBILE_URL.'/asset/js');

@@ -21,10 +21,17 @@
     td {width:20px;height: 20px;vertical-align:middle;border:1px solid #000;background: #eee;}
     td.opened {background: white}
     #computer {width:150px;height:243px;background:url(https://en.pimg.jp/023/182/267/1/23182267.jpg) 0 0;}
+    #screen{width:300px;height:200px;text-align:center;user-select:none}
+    #screen.waiting{background-color:#0ff}
+    #screen.ready{background-color:red;color:#fff}
+    #screen.now{background-color:#adff2f}
 </style>
 
 
-<input id="hor" type="number" placeholder="가로" value="10"/>
+<div id="screen" class="waiting">클릭해서 시작하세요</div>
+
+
+<!-- <input id="hor" type="number" placeholder="가로" value="10"/>
 <input id="ver" type="number" placeholder="세로" value="10"/>
 <input id="mine" type="number" placeholder="지뢰" value="20"/>
 <button id="exec">execute</button>
@@ -39,7 +46,7 @@
         
     </tbody>
 </table>
-
+ -->
 
 
 <!-- <div id="computer"></div>
@@ -54,13 +61,8 @@
 <!-- <div id = "result"></div>
 <div class ="bonus"></div> -->
 
-<script src="./js/mine.js?ver=1"></script>
+<script src="./js/speed.js?ver=1"></script>
 
-<!-- 
-1. 쿵쿵따 3단어 끝말잇기
-2. 
-
--->
 
 
 

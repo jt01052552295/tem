@@ -26,7 +26,16 @@
     #screen.waiting{background-color:#0ff}
     #screen.ready{background-color:red;color:#fff}
     #screen.now{background-color:#adff2f}
+
+    .card{display:inline-block;margin-right:20px;margin-bottom:20px;width:70px;height:100px;perspective:140px}
+    .card-inner{position:relative;width:100%;height:100%;text-align:center;transition:transform .8s;transform-style:preserve-3d}
+    .card.flipped .card-inner{transform:rotateY(180deg)}
+    .card-front{background:navy}
+    .card-back,.card-front{position:absolute;width:100%;height:100%;border:1px solid #000;backface-visibility:hidden}
+    .card-back{transform:rotateY(180deg)}
 </style>
+
+<div id="wrapper"></div>
 
 
 <!-- <div id="screen" class="waiting">클릭해서 시작하세요</div> -->
@@ -62,7 +71,7 @@
 <!-- <div id = "result"></div>
 <div class ="bonus"></div> -->
 
-<script src="./js/tictactoe.js?ver=1"></script>
+<script src="./js/card.js?ver=1"></script>
 
 
 

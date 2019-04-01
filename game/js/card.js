@@ -13,9 +13,10 @@ function 셔플() { // 피셔예이츠 셔플
   }
 }
 
+
 function 카드세팅(가로, 세로) {
   클릭플래그 = false;
-  for (var i = 0; i < 가로 * 세로; i += 1) {
+  for (var i = 0; i < 가로 * 세로; i++) {
     var card = document.createElement('div');
     card.className = 'card';
     var cardInner = document.createElement('div');
@@ -30,17 +31,52 @@ function 카드세팅(가로, 세로) {
     card.appendChild(cardInner);
     (function (c) { // 클로저 문제 해결
       card.addEventListener('click', function() {
-        
-          c.classList.toggle('flipped');
+          console.log(완성카드)
+          if(클릭플래그 && !완성카드.includes(c)){
+            c.classList.toggle('flipped');
+            클릭카드.push(c);
+            if(클릭카드.length == 2){
+              var color0 = 클릭카드[0].querySelector('.card-back').style.backgroundColor;
+              var color1 = 클릭카드[1].querySelector('.card-back').style.backgroundColor;
+              if(color0 === color1){
+                완성카드.push(클릭카드[0])
+                완성카드.push(클릭카드[1])
+                console.log(완성카드)
+                클릭카드 = [];
+              } else {
+                클릭플래그 = false;
+                setTimeout(function(){
+                  클릭카드[0].classList.remove('flipped')
+                  클릭카드[1].classList.remove('flipped')
+                  클릭플래그 = true;
+                  클릭카드 = [];
+                }, 1000)
+              }
+              
+            }
+          }
+
        
          
       });
     })(card);
     document.querySelector('#wrapper').appendChild(card);
   }
+
+  document.querySelectorAll('.card').forEach(function(card, index){
+    setTimeout(function(){
+      card.classList.add('flipped');
+    }, 1000 + 100 * index)
+  })
+  setTimeout(function(){
+    document.querySelectorAll('.card').forEach(function(card, index){
+      card.classList.remove('flipped')
+    });
+    클릭플래그 = true;
+  }, 5000)
 }
 
 
 
-//셔플();
+셔플();
 카드세팅(가로, 세로);

@@ -31,7 +31,7 @@ function 카드세팅(가로, 세로) {
     card.appendChild(cardInner);
     (function (c) { // 클로저 문제 해결
       card.addEventListener('click', function() {
-          console.log(완성카드)
+
           if(클릭플래그 && !완성카드.includes(c)){
             c.classList.toggle('flipped');
             클릭카드.push(c);
@@ -41,8 +41,18 @@ function 카드세팅(가로, 세로) {
               if(color0 === color1){
                 완성카드.push(클릭카드[0])
                 완성카드.push(클릭카드[1])
-                console.log(완성카드)
+                
                 클릭카드 = [];
+                if(완성카드.length === 12){
+                  var 끝시간 = new Date();
+                  var 플레이시간 = (시작시간 - 끝시간) / 1000;
+                  console.log (플레이시간 + '초 걸렸습니다.')
+                  document.querySelector('#wrapper').innerHTML = '';
+                  완성카드 = [];
+                  시작시간;
+                  셔플();
+                  카드세팅(가로, 세로);
+                }
               } else {
                 클릭플래그 = false;
                 setTimeout(function(){
@@ -73,6 +83,7 @@ function 카드세팅(가로, 세로) {
       card.classList.remove('flipped')
     });
     클릭플래그 = true;
+    시작시간 = new Date();
   }, 5000)
 }
 

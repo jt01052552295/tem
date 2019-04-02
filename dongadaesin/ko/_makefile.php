@@ -27,6 +27,7 @@ for($i=0; $i<count($siteMenu); $i++):
 		fwrite($f, "?>");
 		fclose($f);
 		@chmod($file, G5_FILE_PERMISSION);	
+
 	endif;
 	*/
 	
@@ -37,7 +38,7 @@ for($i=0; $i<count($siteMenu); $i++):
 
 	// 파일만들기
 	/*
-	if(strlen($siteMenu[$i]['mCode'])==4 && substr($siteMenu[$i]['mCode'],0,2) != '70'):
+	if(strlen($siteMenu[$i]['mCode'])==4 && substr($siteMenu[$i]['mCode'],0,2) == '40'):
 		$file = $siteMenu[$i]['url'];
 		echo $file."<Br>";
 		

@@ -28,7 +28,7 @@
 .rs_con p {font-size:1.0rem; font-weight:300; line-height:1.5;color:#8c8c8c;word-break: keep-all;width: 55%;margin: 0 auto;}
 .rs_bg{width:calc(50% - 600px); height:100%; position:absolute; top:0; background:rgba(0, 0, 0, 0.3); z-index:2;}
 .bg01{left:0;}
-
+.bg02{right:0;}
 @media all and (max-width:1024px){
   .r_slide {background: #f1f2f2; padding-top:5%;}
   .r_slide .rs-wrapper {position:relative;}

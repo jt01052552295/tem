@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans+KR);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900');
 
 /* 초기화 */
 body {font-family:'Noto Sans KR', 'Nanum Gothic', 'dotum', AppleGothic, Verdana, Arial, Helvetica, sans-serif;color:#222;min-width:320px;background: #fff;}
@@ -25,6 +26,13 @@ a, a:hover {text-decoration: none;}
 
 .parallax-init-opcity {opacity: 0;-webkit-transform: translateY(-100%);transform: translateY(-100%);-webkit-transition: all 0.5s ease;transition: all 0.5s ease;}
 .parallax-init-opcity.add-stage {opacity: 1;-webkit-transform: translateY(0);transform: translateY(0);}
+
+
+
+.intro {min-width: 1200px;width:100%;height: 923px;position:relative;background: url('/img/ready.jpg') no-repeat 50% 50%;background-size:cover;}
+
+.font_montserrat {font-family: 'Montserrat', sans-serif;}
+
 
 
 /* 
@@ -533,13 +541,13 @@ div#vg_sub	{height:287px; width:1200px;margin: 0 auto; text-align:left;}
 
 
 
-.subNavWrap {position: relative;	width: 100%;	min-width:1200px;background-color: #4f953c;height:62px; display: block;    margin-top: 45px;}
+.subNavWrap {position: relative;	width: 100%;	min-width:1200px;background-color: #00479d;height:62px; display: block;    margin-top: 45px;}
 .subNavWrap div.subNavInner {position:relative;width: 1200px;margin: 0 auto;}
-.subNavWrap .btn_home {display:block;float:left;border-left:1px solid #95bf8a;border-right:1px solid #95bf8a;width:62px;height:62px;background: #2f721d url(../img/sub_home.png) no-repeat center;}
+.subNavWrap .btn_home {display:block;float:left;border-left:1px solid #fff;border-right:1px solid #fff;width:62px;height:62px;background: #00479d url(../img/sub_home.png) no-repeat center;}
 
 .subNav1st {display:block;float:left;zoom:1;font-size:14px;list-style:none;    margin-left: -1px;}
 .subNav1st:after {display:block;clear:both;content:''}
-.subNav1st > .navi_dp1 {float:left;position:relative;padding:0;width:254px;height:62px;border-right:1px solid #95bf8a;}
+.subNav1st > .navi_dp1 {float:left;position:relative;padding:0;width:254px;height:62px;border-right:1px solid #fff;}
 .subNav1st > .navi_dp1 h2,
 .subNav1st > .navi_dp1 h3 {margin:0;line-height:62px;}
 .subNav1st > .navi_dp1 a.dp1 {position:relative;display:block;padding:0 30px 0 30px;text-decoration:none;font-size:17px;line-height:62px;color:#fff;}
@@ -554,10 +562,11 @@ div#vg_sub	{height:287px; width:1200px;margin: 0 auto; text-align:left;}
 .subNav2nd > .navi_dp2 > a:hover, 
 .subNav2nd > .navi_dp2 > a:active, 
 .subNav2nd > .navi_dp2 > a:focus,
-.subNav2nd > .navi_dp2.active > a {color:#4f953c;}
+.subNav2nd > .navi_dp2.active > a {color:#00479d;}
 .subNav2nd > .navi_dp2:last-child > a {border-width:1px;}
 #m_breadcrumbs_wrap {display: none}
 
+#subPageWrap {overflow: hidden;}
 #subPage {padding: 0 0 100px 0;}
 
 @media( max-width:1024px ) {
@@ -681,9 +690,9 @@ div.etcInner div.etc_center div.dashed_line3 {border:1px dashed #000;height: 1px
 
 div.etcInner div.etc_center div.lt {position:relative;display:block;padding:10px 0 0;text-align: center;}
 div.etcInner div.etc_center div.lt h3 {font-size: 1.75rem;line-height:1.5;font-weight:700;margin:0;color:#333333;}
-div.etcInner div.etc_center div.lt div.article {font-size:1.0rem;font-weight:300;margin:10px 0 0;color:#7e7e7e;line-height: 1.5;}
+div.etcInner div.etc_center div.lt div.article {font-size:1.0rem;font-weight:300;margin:10px 0 0;color:#7e7e7e;line-height: 1.5;text-align:left;}
 div.etcInner div.etc_center div.lt div.article strong {display: block}
-div.etcInner div.etc_center div.lt div.datetime {font-size:1.0rem;font-weight:300;margin:10px 0 0;color:#7e7e7e;line-height: 1.5;text-align: right;}
+div.etcInner div.etc_center div.datetime {font-size:1.0rem;font-weight:300;margin:10px 0 0;color:#7e7e7e;line-height: 1.5;text-align: right;}
 
 
 @media( max-width:1024px ) {

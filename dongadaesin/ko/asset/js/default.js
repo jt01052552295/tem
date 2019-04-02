@@ -16,11 +16,8 @@ $(function() {
 					var eventHandler = function(e){
 						e.preventDefault();
 
-						$(_tab).find("li.active").removeClass("active");
-						$(_tab).find("li a.active").removeClass("active");
-
-						$(e.target).parent("li").addClass("active");
-						$(e.target).addClass("active");
+						$(_tab).find("li").removeClass("on");
+						$(e.target).parent().addClass("on");
 						$(_tab._targetId.join(", ")).not(thisId).hide();
 						$(thisId).show();
 					};
@@ -53,6 +50,5 @@ $(function() {
 });
 
 $(document).ready(function(){
-	$("#nav_tab_menu[data-tab-event]").tab();
-
+	$(".ex_tab[data-tab-event]").tab();
 })

@@ -3,148 +3,190 @@ $routeName = G5_LANG_URL."/company";
 $siteMenu[] = array(
 	mCode 		=> "10",	
 	title 		=> "병원소개",		
-	url 		=> $routeName."/history.php",		  
+	url 		=> $routeName."/overview.php",		  
 	pid 		=> "",			
-	makeDir		=> "company",
-	subTitle	=> "company",
 	me_link		=> false,	
 	me_use 		=> true
 );
 $siteMenu[] = array(
 	mCode 		=> "1010",	
-	title 		=> "병원역사",		
-	url 		=> $routeName."/history.php",		  
-	pid 		=> "",		
-	me_position	=> "1",	
-	me_link		=> false,	
-	me_use 		=> true
-);
-$siteMenu[] = array(mCode => "101010",	title => "연혁", url => $routeName."/history.php", pid => "history", me_link => true, me_use => true);
-
-$siteMenu[] = array(
-	mCode 		=> "1020",	
-	title 		=> "병원장 인사말",		
-	url 		=> $routeName."/message.php",		  
-	pid 		=> "",			
-	me_position	=> "1",	
-	me_link		=> false,	
-	me_use 		=> true
-);
-$siteMenu[] = array(mCode => "102010",	title => "인사말", 		url => $routeName."/message.php", pid => "message", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "102020",	title => "역대병원장", 	url => $routeName."/director.php", pid => "director", me_link => true, me_use => true);
-
-
-$siteMenu[] = array(
-	mCode 		=> "1030",	
 	title 		=> "병원개요",		
 	url 		=> $routeName."/overview.php",		  
 	pid 		=> "overview",	
-	me_position	=> "2",			
+	me_position	=> "1",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "1020",	
+	title 		=> "원장 인사말",		
+	url 		=> $routeName."/message.php",		  
+	pid 		=> "message",			
+	me_position	=> "1",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "1030",	
+	title 		=> "연혁",		
+	url 		=> $routeName."/history.php",		  
+	pid 		=> "history",			
+	me_position	=> "1",	
 	me_link		=> true,	
 	me_use 		=> true
 );
 $siteMenu[] = array(
 	mCode 		=> "1040",	
-	title 		=> "조직도",		
-	url 		=> $routeName."/organization.php",		  
-	pid 		=> "",	
-	me_position	=> "2",			
-	me_link		=> false,	
-	me_use 		=> true
-);
-$siteMenu[] = array(mCode => "104010",	title => "조직도", 		url => $routeName."/organization.php", pid => "organization", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "104020",	title => "현황 및 통계", 	url => $routeName."/statistics.php", pid => "statistics", me_link => true, me_use => true);
-
-
-$siteMenu[] = array(
-	mCode 		=> "1050",	
-	title 		=> "CI",		
-	url 		=> $routeName."/ci.php",		  
-	pid 		=> "",	
-	me_position	=> "2",			
-	me_link		=> false,	
-	me_use 		=> true
-);
-$siteMenu[] = array(mCode => "105010",	title => "CI소개", 		url => $routeName."/ci.php", pid => "ci", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "105020",	title => "CI다운로드", 	url => $routeName."/ci_dlc.php", pid => "ci_dlc", me_link => true, me_use => true);
-
-$siteMenu[] = array(
-	mCode 		=> "1060",	
 	title 		=> "미션/비전",		
 	url 		=> $routeName."/vision.php",		  
 	pid 		=> "vision",
-	me_position	=> "3",				
+	me_position	=> "2",				
 	me_link		=> true,	
 	me_use 		=> true
 );
 
 $siteMenu[] = array(
-	mCode 		=> "1070",	
-	title 		=> "입원생활안내",		
-	url 		=> $routeName."/guide.php",		  
-	pid 		=> "",	
-	me_position	=> "3",			
-	me_link		=> false,	
+	mCode 		=> "1050",	
+	title 		=> "설립취지 및 목적",		
+	url 		=> $routeName."/purpose.php",		  
+	pid 		=> "purpose",	
+	me_position	=> "2",			
+	me_link		=> true,	
 	me_use 		=> true
 );
-$siteMenu[] = array(mCode => "107010",	title => "입원준비", 		url => $routeName."/guide1.php", pid => "guide1", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "107020",	title => "입원수속", 		url => $routeName."/guide2.php", pid => "guide2", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "107030",	title => "입원생활", 		url => $routeName."/guide3.php", pid => "guide3", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "107040",	title => "면회안내", 		url => $routeName."/guide4.php", pid => "guide4", me_link => true, me_use => true);
-$siteMenu[] = array(mCode => "107050",	title => "퇴원준비", 		url => $routeName."/guide5.php", pid => "guide5", me_link => true, me_use => true);
-
-
+$siteMenu[] = array(
+	mCode 		=> "1060",	
+	title 		=> "조직도",		
+	url 		=> $routeName."/organization.php",		  
+	pid 		=> "organization",	
+	me_position	=> "2",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "1070",	
+	title 		=> "HI소개",		
+	url 		=> $routeName."/ci.php",		  
+	pid 		=> "ci",	
+	me_position	=> "3",			
+	me_link		=> true,	
+	me_use 		=> true
+);
 $siteMenu[] = array(
 	mCode 		=> "1080",	
-	title 		=> "병원갤러리",		
-	url 		=> $routeName."/gallery.php",		  
-	pid 		=> "gallery",
-	me_position	=> "4",				
+	title 		=> "의료진소개",		
+	url 		=> $routeName."/doctor.php",		  
+	pid 		=> "doctor",	
+	me_position	=> "3",			
 	me_link		=> true,	
 	me_use 		=> true
 );
 $siteMenu[] = array(
 	mCode 		=> "1090",	
-	title 		=> "현황",		
-	url 		=> $routeName."/status.php",		  
-	pid 		=> "status",
-	me_position	=> "4",				
-	me_link		=> true,	
-	me_use 		=> true
-);
-$siteMenu[] = array(
-	mCode 		=> "10a0",	
-	title 		=> "병원내부둘러보기",		
+	title 		=> "병원둘러보기",		
 	url 		=> $routeName."/tour.php",		  
 	pid 		=> "tour",	
 	me_position	=> "4",			
 	me_link		=> true,	
 	me_use 		=> true
 );
+$siteMenu[] = array(
+	mCode 		=> "10a0",	
+	title 		=> "찾아오시는길",		
+	url 		=> $routeName."/location.php",		  
+	pid 		=> "location",	
+	me_position	=> "4",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+//$siteMenu[] = array(
+	//mCode 		=> "10b0",	
+	//title 		=> "원내배치도",		
+	//url 		=> $routeName."/plan.php",		  
+	//pid 		=> "plan",	
+	//me_position	=> "4",			
+	//me_link		=> true,	
+	//me_use 		=> true
+//);
+
 
 
 $routeName = G5_LANG_URL."/info";
 $siteMenu[] = array(
 	mCode 		=> "20",	
 	title 		=> "이용안내",		
-	url 		=> $routeName."/info.php",
+	url 		=> $routeName."/out.php",
 	makeDir		=> "info",		  
-	pid 		=> "info",	
-	subTitle	=> "info",
+	pid 		=> "",	
+	me_link		=> false,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "2010",	
+	title 		=> "외래진료안내",		
+	url 		=> $routeName."/out.php",
+	pid 		=> "out",	
+	me_position	=> "1",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "2020",	
+	title 		=> "입퇴원안내",		
+	url 		=> $routeName."/inout.php",
+	pid 		=> "inout",	
+	me_position	=> "1",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "2030",	
+	title 		=> "비급여안내",		
+	url 		=> $routeName."/non.php",
+	pid 		=> "non",	
+	me_position	=> "1",	
 	me_link		=> true,	
 	me_use 		=> true
 );
 
 
-$routeName = G5_LANG_URL."/sponsor";
+
+
+$routeName = G5_LANG_URL."/center";
 $siteMenu[] = array(
 	mCode 		=> "30",	
 	title 		=> "진료안내",		
-	url 		=> $routeName."/sponsor.php",		  
-	makeDir		=> "sponsor",		
-	pid 		=> "sponsor",	
-	subTitle	=> "sponsor",
+	url 		=> $routeName."/rehabilitation.php",		  
+	makeDir		=> "center",		
+	pid 		=> "",
 	me_link		=> false,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "3010",	
+	title 		=> "재활의학과",		
+	url 		=> $routeName."/rehabilitation.php",
+	pid 		=> "rehabilitation",	
+	me_position	=> "1",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "3020",	
+	title 		=> "신경과",		
+	url 		=> $routeName."/neuro.php",
+	pid 		=> "neuro",	
+	me_position	=> "1",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "3030",	
+	title 		=> "한방재활의학과",		
+	url 		=> $routeName."/medicine.php",
+	pid 		=> "medicine",	
+	me_position	=> "1",	
+	me_link		=> true,	
 	me_use 		=> true
 );
 
@@ -152,39 +194,125 @@ $siteMenu[] = array(
 $routeName = G5_LANG_URL."/department";
 $siteMenu[] = array(
 	mCode 		=> "40",	
-	title 		=> "부서안내",		
-	url 		=> $routeName."/department.php",	
+	title 		=> "재활치료안내",		
+	url 		=> $routeName."/department1.php",	
 	makeDir		=> "department",		  
-	pid 		=> "department",	
-	subTitle	=> "department",
+	pid 		=> "",
+	me_link		=> false,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "4010",	
+	title 		=> "신경계운동치료",		
+	url 		=> $routeName."/department1.php",
+	pid 		=> "department1",	
+	me_position	=> "1",			
 	me_link		=> true,	
 	me_use 		=> true
 );
+$siteMenu[] = array(
+	mCode 		=> "4020",	
+	title 		=> "열·전기치료",		
+	url 		=> $routeName."/department2.php",
+	pid 		=> "department2",
+	me_position	=> "1",				
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4030",	
+	title 		=> "체외충격파치료(ESWT)",		
+	url 		=> $routeName."/department3.php",
+	pid 		=> "department3",	
+	me_position	=> "1",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4040",	
+	title 		=> "도수치료",		
+	url 		=> $routeName."/department4.php",
+	pid 		=> "department4",
+	me_position	=> "1",				
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4050",	
+	title 		=> "작업치료",		
+	url 		=> $routeName."/department5.php",
+	pid 		=> "department5",	
+	me_position	=> "2",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4060",	
+	title 		=> "연하치료",		
+	url 		=> $routeName."/department6.php",
+	pid 		=> "department6",	
+	me_position	=> "2",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4070",	
+	title 		=> "인지치료",		
+	url 		=> $routeName."/department7.php",
+	pid 		=> "department7",	
+	me_position	=> "2",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+
+$siteMenu[] = array(
+	mCode 		=> "4080",	
+	title 		=> "언어치료",		
+	url 		=> $routeName."/department8.php",
+	pid 		=> "department8",
+	me_position	=> "2",		
+	me_link		=> true,	
+	me_use 		=> true
+);
+
 
 
 $routeName = G5_LANG_URL."/program";
 $siteMenu[] = array(
 	mCode 		=> "50",	
-	title 		=> "프로그램소개",		
-	url 		=> $routeName."/program.php",	
-	makeDir		=> "program",		  
-	pid 		=> "program",	
-	subTitle	=> "program",
+	title 		=> "병원소식",		
+	url 		=> G5_BBS_URL."/board.php?bo_table=notice", 
+	pid 		=> "",	
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "5010",	
+	title 		=> "공지사항",		
+	url 		=> G5_BBS_URL."/board.php?bo_table=notice",
+	pid 		=> "notice",	
+	me_position	=> "1",			
+	me_link		=> true,	
+	me_use 		=> true
+);
+$siteMenu[] = array(
+	mCode 		=> "5020",	
+	title 		=> "언론보도",		
+	url 		=> G5_BBS_URL."/board.php?bo_table=news",
+	pid 		=> "news",	
+	me_position	=> "1",			
 	me_link		=> true,	
 	me_use 		=> true
 );
 
-$routeName = G5_LANG_URL."/community";
-$siteMenu[] = array(
-	mCode 		=> "60",	
-	title 		=> "커뮤니티",		
-	url 		=> $routeName."/community.php",	
-	makeDir		=> "community",		  
-	pid 		=> "community",	
-	subTitle	=> "community",
-	me_link		=> true,	
-	me_use 		=> true
-);
+
+
+
 
 
 
@@ -211,6 +339,42 @@ $siteMenu[] = array(
 	me_use 		=> false,
 	me_etc		=> true
 );
+
+$routeName = G5_LANG_URL."/customer";
+$siteMenu[] = array(
+	mCode 		=> "8020",	
+	title 		=> "개인정보처리방침",		
+	url 		=> $routeName."/ft02.php",		  
+	pid 		=> "ft02",	
+	subTitle	=> "개인정보처리방침", 
+	me_link		=> false,	
+	me_use 		=> false,
+	me_etc		=> true
+);
+$routeName = G5_LANG_URL."/customer";
+$siteMenu[] = array(
+	mCode 		=> "8030",	
+	title 		=> "이메일주소무단수집거부",		
+	url 		=> $routeName."/ft03.php",		  
+	pid 		=> "ft03",	
+	subTitle	=> "이메일주소무단수집거부", 
+	me_link		=> false,	
+	me_use 		=> false,
+	me_etc		=> true
+);
+
+$routeName = G5_LANG_URL."/customer";
+$siteMenu[] = array(
+	mCode 		=> "8040",	
+	title 		=> "환자의 권리와 의무",		
+	url 		=> $routeName."/ft04.php",		  
+	pid 		=> "ft04",	
+	subTitle	=> "환자의 권리와 의무", 
+	me_link		=> false,	
+	me_use 		=> false,
+	me_etc		=> true
+);
+
 
 
 

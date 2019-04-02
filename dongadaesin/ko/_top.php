@@ -1,24 +1,24 @@
-    <div id="message_box" data-display="">
-        <div class="k_container type_center">
-            <div class="box_txt img"><img src="<?php echo G5_LANG_IMG_URL?>/topBanner_ic.png" /></div>
-            <div class="box_txt"><p><?php echo  $infodu['lang']['common']['top01']?></p></div>
-            <div class="box_txt tel"><p><?php echo  $infodu['lang']['common']['top02']?></p></div>
-            <div class="box_txt"><a href="#" class="tran-animate"><?php echo  $infodu['lang']['common']['top03']?></a></div>
+<div id="message_box" data-display="">
+	<div class="k_container type_center">
+		<div class="box_txt img"><img src="<?php echo G5_LANG_IMG_URL?>/topBanner_ic.png" /></div>
+		<div class="box_txt"><p><?php echo  $infodu['lang']['common']['top01']?></p></div>
+		<div class="box_txt tel"><p><?php echo  $infodu['lang']['common']['top02']?></p></div>
+		<div class="box_txt"><a href="#" class="tran-animate"><?php echo  $infodu['lang']['common']['top03']?></a></div>
 
-            <div class="message_box_close">
-                <a href="#" id="message_box_close_btn" class="">
-                    <span class="line1 tran-animate"></span>
-                    <span class="line2 tran-animate"></span>
-                </a>                
-            </div>
-        </div>
-    </div>
+		<div class="message_box_close">
+			<a href="#" id="message_box_close_btn" class="">
+				<span class="line1 tran-animate"></span>
+				<span class="line2 tran-animate"></span>
+			</a>                
+		</div>
+	</div>
+</div>
 <header id="header" class="main" >
 
 
 
     <div class="header_wrap tran-animate" id="header_height">
-        
+
         <div class="headerBox">           
             <div class="cs" id="totalMenu">
                 <div class="header_sp_first__r">
@@ -57,7 +57,6 @@
            <!-- <div class="lang">
                 <a href="#" id="lang_btn">LANG <i class="fas fa-angle-down"></i></a>
            </div>  -->
-
         </div>
             
         <!--모바일메뉴!-->
@@ -65,8 +64,8 @@
             <a href="#"><i class="fas fa-bars fa-2x"></i></a>
         </div>
          <?php include_once(G5_LANG_PATH.'/_menu_drop_mobile.php'); ?>                     
-        
-         <div class="subMenuBg">&nbsp;</div>
+        <div class="subMenuBg">&nbsp;</div>
+
     </div> 
 </header>
 <div id="header_overlay"></div>

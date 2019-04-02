@@ -11,6 +11,7 @@ $url_pieces = explode("/", $check_lang_url);
 
 $status_lang = array('ko','en','jp','cn');
 
+
 if(in_array($url_pieces[1], $status_lang)){
 	define('G5_LANG',      $url_pieces[1]);
 	set_session('ss_lang', G5_LANG);
@@ -23,7 +24,6 @@ if(in_array($url_pieces[1], $status_lang)){
 	define('G5_LANG',     'ko');
 	set_session('ss_lang', G5_LANG);
 }
-
 
 
 

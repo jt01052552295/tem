@@ -239,6 +239,10 @@ include_once(G5_LANG_PATH.'/_top.php');
 
 
 <link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/bxslider/dist/jquery.bxslider.rslide.css" />
+<!-- <script src="<?php echo G5_LANG_JS_URL?>/bxslider/dist/jquery.bxslider.js"></script> -->
+
+
+
 <div class="r_slide">
     <ul>
         <li><img src="<?php echo G5_LANG_IMG_URL?>/rs01.jpg"></li>

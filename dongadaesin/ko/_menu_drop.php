@@ -96,7 +96,13 @@
                     
                 </div>
 
-
+                <!-- <ul class="subNavi">
+                    <?php for($j=0; $j<count($nav2nd); $j++):?>
+                        <?php if(substr($nav2nd[$j]['mCode'],0,2) == $nav1st[$i]['mCode']): ?>
+                            <li><a href="<?php echo $nav2nd[$j]['url']?>"><?php echo $nav2nd[$j]['title']?></a></li>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+                </ul> -->
                 
             </li>
             <?php endfor; ?>

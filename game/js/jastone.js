@@ -1,13 +1,47 @@
+var com = {
+  영웅: document.getElementById('rival-hero'),
+  덱: document.getElementById('rival-deck'),
+  필드: document.getElementById('rival-cards'),
+  코스트: document.getElementById('rival-cost'),
+  덱data: [],
+  영웅data: [],
+  필드data: [],
+  선택카드: null,
+  선택카드data: null,
+};
+
+var user = {
+  영웅: document.getElementById('my-hero'),
+  덱: document.getElementById('my-deck'),
+  필드: document.getElementById('my-cards'),
+  코스트: document.getElementById('my-cost'),
+  덱data: [],
+  영웅data: [],
+  필드data: [],
+  선택카드: null,
+  선택카드data: null,
+};
+
+
 var 상대덱 = document.querySelector('#rival-deck')
 var 내덱 = document.querySelector('#my-deck')
 
 var 상대영웅 = document.querySelector('#rival-hero')
 var 내영웅 = document.querySelector('#my-hero')
 
+var 상대필드 = document.querySelector('#rival-cards')
+var 내필드 = document.querySelector('#my-cards')
+
 var deckComData = [];
 var deckMyData = [];
 var heroComData;
 var heroMyData;
+
+var 상대필드data = [];
+var 내필드data = [];
+
+var turnBtn = document.getElementById('turn-btn');
+var turn = true; // true면 내턴, false면 니턴
 
 function Card(hero, myCard) {
   if (hero) {
@@ -44,10 +78,18 @@ function copyCard(data, dom, hero) { // 카드돔연결
   }
 
   card.addEventListener('click', function(){
-    console.log(card)
+    turnAct(card, data, turn);
   })
 
   dom.appendChild(card)
+}
+
+function turnAct(card, data, turn){
+  console.log(card)
+  console.log(data)
+  console.log(turn)
+
+
 }
 
 

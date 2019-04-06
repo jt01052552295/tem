@@ -37,7 +37,7 @@
     */
 
     /* 자스톤 */
-
+    /*
     #my,#rival{display:inline-block;vertical-align:top;margin-right:50px}
     .turn{border:1px solid #00f}
     #rival{vertical-align:bottom}
@@ -52,32 +52,45 @@
     .card-hidden{display:none}
     .card-selected{border:2px solid red}
     .card-turnover{background:gray}
-    #turn-btn{float:right;position:relative;top:-23px}
+    #turn-btn{float:right;position:relative;top:-23px}*/
+
+    /* 2048 */
+    #table{border-collapse:collapse;user-select:none}
+    #table td{border:5px solid #000;width:150px;height:150px;font-size:50px;font-weight:700;text-align:center}
+    #score{user-select:none}
+
 </style>
 
+<table id="table"></table>
+<div id="score">0</div>
 
-
-<div id="rival">
+<!-- <div id="rival">
     <div>코스트: <span id="rival-cost">10</span>/<span>10</span></div>
     <div id="rival-hero"></div>
     <div id="rival-cards" style="height: 150px">
 
     </div>
 </div>
+
 <div id="rival-deck">
     <div>덱</div>
 </div>
+
 <hr />
+
 <button id="turn-btn">턴넘기기</button>
+
 <div id="my" class="turn">
     <div id="my-cards" style="height: 150px"></div>
     <div id="my-hero">
     </div>
     <div>코스트: <span id="my-cost">10</span>/<span>10</span></div>
 </div>
+
 <div id="my-deck">
     <div>덱</div>
 </div>
+
 <div class="card-hidden">
     <div class="card">
         <div class="card-cost"></div>
@@ -87,7 +100,7 @@
 </div>
 
 <div>빨강이 체력, 노랑이 공격력, 적 영웅의 체력이 0이되면 승리!
-영웅을 보호하기 위해 쫄병들을 코스트(파란색) 내에서 뽑을 수 있음</div>
+영웅을 보호하기 위해 쫄병들을 코스트(파란색) 내에서 뽑을 수 있음</div> -->
 
 
 <!-- <div id="wrapper"></div> -->
@@ -126,7 +139,7 @@
 <!-- <div id = "result"></div>
 <div class ="bonus"></div> -->
 
-<script src="./js/jastone.js?ver=1"></script>
+<script src="./js/g2048.js?ver=1"></script>
 
 
 

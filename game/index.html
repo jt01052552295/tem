@@ -55,14 +55,57 @@
     #turn-btn{float:right;position:relative;top:-23px}*/
 
     /* 2048 */
-    #table{border-collapse:collapse;user-select:none}
+    /*#table{border-collapse:collapse;user-select:none}
     #table td{border:5px solid #000;width:150px;height:150px;font-size:50px;font-weight:700;text-align:center}
-    #score{user-select:none}
+    #score{user-select:none}*/
+
+    /*tetris */
+    #next-table,#tetris{border-collapse:collapse}
+    #next-table{position:absolute;right:10px;top:10px}
+    #tetris td{border:1px solid #000;width:30px;height:30px}
+    #next-table td{border:1px solid #000;width:15px;height:15px}
+    td.white{background-color:#fff}
+    td.red{background-color:red}
+    td.blue{background-color:#00f}
+    td.orange{background-color:orange}
+    td.green{background-color:green}
+    td.navy{background-color:navy}
+    td.violet{background-color:violet}
+    td.yellow{background-color:#ff0}
+    td.black{background-color:#000}
 
 </style>
 
-<table id="table"></table>
-<div id="score">0</div>
+
+    <table id="tetris">
+    </table>
+    <table id="next-table">
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <button id="stop">중단</button>
+    <button id="start">재개</button>
+    <button id="mute">소리끔</button>
+    <div>점수: <span id="score">0</span></div>
+    <!-- <audio id="bgm" src="./images/tetris.mp3" autoplay></audio> -->
+
+
+
+
+
+
+<!-- <table id="table"></table>
+<div id="score">0</div> -->
 
 <!-- <div id="rival">
     <div>코스트: <span id="rival-cost">10</span>/<span>10</span></div>
@@ -139,7 +182,7 @@
 <!-- <div id = "result"></div>
 <div class ="bonus"></div> -->
 
-<script src="./js/g2048.js?ver=1"></script>
+<script src="./js/tetris.js?ver=1"></script>
 
 
 

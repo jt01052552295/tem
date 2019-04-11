@@ -37,6 +37,8 @@ var curShape = shapes[0], curShapeType = 0;
 var sPos = {x:0, y:0};
 var gamePanel = [];
 
+
+// 게임패널 초기화
 for (var y = 0; y < 20; y++) {
     gamePanel[y] = [];
     for (var x = 0; x < 10; x++) {
@@ -56,13 +58,19 @@ for (var y = 0; y < 20; y++) {
 // ); 
 
 function playingTetris(){
-
+    console.log('playingTetris1', sPos.y, sPos.x)
+    console.log('playingTetris2', sPos.y+1, sPos.x)
+    console.log(intersects(sPos.y + 1, sPos.x))
     if ( intersects(sPos.y + 1, sPos.x)) {
-        for (var i = 0; i < 4; i++)
-            for (var j = 0; j < 4; j++)
+        for (var i = 0; i < 4; i++){
+            for (var j = 0; j < 4; j++){
                 if (curShape[i][j]) {
                     gamePanel[sPos.y+i][sPos.x+j] = 1;
                 }
+            }
+        }
+        console.log(gamePanel)
+        
         
         curShape = getNextShape();        
         sPos = {x:0, y:0};
@@ -74,20 +82,19 @@ function playingTetris(){
         sPos.y++; // 현재위치를 다음위치로 바꾼 뒤 게임판을 다시 그림.
     }
 
-
-
-
     draw();
 }
 
 function intersects(y, x) { // 다음 행(칸)에 값이 있는지 없는지 체크
     for (var i = 0; i < 4; i++){
         for (var j = 0; j < 4; j++){
+
             if (curShape[i][j]){
+                   console.log('intersects',i,j, curShape[i][j])
                 if (y+i >= 20 || x+j < 0 || x+j >= 10 || gamePanel[y+i][x+j]){
-                    // y+i >= 20 ; 이동하려는 위치가 바닥을 벗어나거나,
+                    //  y+i >= 20 ; 이동하려는 위치가 바닥을 벗어나거나,
                     //  x+j < 0 ; 좌우 이동시 왼쪽으로 벗어나거나,
-                    //   x+j >= 10 ; 오른쪽으로 벗어나도 이동하지 말라는 의미 /
+                    //  x+j >= 10 ; 오른쪽으로 벗어나도 이동하지 말라는 의미 /
                     return true;
                 }
             }
@@ -120,7 +127,7 @@ function draw() {
         ctx.stroke();
     }
 
-
+    // 자기차례가 끝난 블록 화면 저장
     for (var y = 0; y < gamePanel.length; y++) {
         for (var x = 0; x < gamePanel[y].length; x++) {
             if (gamePanel[y][x]) {

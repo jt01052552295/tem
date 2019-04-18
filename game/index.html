@@ -79,10 +79,14 @@
 
 <canvas id="tetrisCanvas" width="200" height="400"></canvas>
 
-<button onclick="leftBtnClick()">Rotate Left</button> 
-<button onclick="rightBtnClick()">Rotate Right</button> 
-<button onclick="getNextShape()">Next shape</button>
+<button onclick="moveShape(-1)"> Left</button> 
+<button onclick="rotateShape()">Rotate</button>
+<button onclick="moveShape(1)"> Right</button> 
+<button onclick="dropShape()">Drop</button>
 
+
+
+<button onclick="getNextShape()">Next shape</button>
 <button onclick="playingTetris()">debug</button>
 
     <!-- <table id="tetris">
@@ -190,7 +194,7 @@
 <!-- <div id = "result"></div>
 <div class ="bonus"></div> -->
 
-<script src="./js/tetrisArr3.js?ver=1"></script>
+<script src="./js/tetrisArr4.js?ver=1"></script>
 
 
 

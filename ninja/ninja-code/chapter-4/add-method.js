@@ -1,5 +1,5 @@
 function addMethod(object, name, fn) {
-  var old = object[name];                        //#1
+  var old = object[name];                    //#1
   object[name] = function(){
     if (fn.length == arguments.length)           //#2
       return fn.apply(this, arguments)           //#2

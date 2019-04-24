@@ -32,6 +32,11 @@ var shapes = [
     [1, 1, 0, 0],
     [0, 0, 0, 0]]
 ];
+var ROW_CNT = 20;
+var COL_CNT = 10;
+var KEY = { ESC: 27, SPACE: 32, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 };
+var shapeColor = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
 var shapeSize = [2,4,3,3,3,3,3];
 var curShape = shapes[0], curShapeType = 0;
 var sPos = {x:0, y:0};
@@ -58,26 +63,21 @@ for (var y = 0; y < 20; y++) {
 // ); 
 
 function playingTetris(){
-    console.log('playingTetris1', sPos.y, sPos.x)
-    console.log('playingTetris2', sPos.y+1, sPos.x)
-    console.log(intersects(sPos.y + 1, sPos.x))
     if ( intersects(sPos.y + 1, sPos.x)) {
         for (var i = 0; i < 4; i++){
             for (var j = 0; j < 4; j++){
                 if (curShape[i][j]) {
-                    gamePanel[sPos.y+i][sPos.x+j] = 1;
+                    gamePanel[sPos.y+i][sPos.x+j] = curShapeType+1;
                 }
             }
         }
-        console.info(gamePanel)
-        
-        
         curShape = getNextShape();        
         sPos = {x:0, y:0};
         if ( intersects(sPos.y, sPos.x)) {
             //clearInterval(intervalHandler);
             alert("Game Over");
         }
+        gamePanel = removeRow(); // 게임판의 y축 검사 
     } else {
         sPos.y++; // 현재위치를 다음위치로 바꾼 뒤 게임판을 다시 그림.
     }
@@ -132,16 +132,17 @@ function draw() {
         for (var x = 0; x < gamePanel[y].length; x++) {
             if (gamePanel[y][x]) {
                 //console.log(gamePanel[y][x])
+                ctx.fillStyle = shapeColor[gamePanel[y][x]-1];
                 ctx.fillRect(x * 20, y * 20, 19, 19);
             }
         }
     }
 
     // 도형 그리기 (움직이는 동안)
+    ctx.fillStyle = shapeColor[curShapeType];
     for (var y = 0; y < 4; y++) {
         for (var x = 0; x < 4; x++) {
             if (curShape[y][x]) {
-                console.log(y,x)
                 ctx.fillRect((sPos.x+x) * 20, (sPos.y+y) * 20, 19, 19);
             }
         }
@@ -155,54 +156,85 @@ function getNextShape() {
     return shapes[curShapeType];
 }
 
-function leftBtnClick() {
-    curShape = rotateLeft(curShape);
-    draw();
+
+function moveShape(value){
+    if (!intersects(sPos.y, sPos.x+value)) {
+        sPos.x += value;
+        draw();
+    }
 }
 
-function rightBtnClick() {
-    curShape = rotateRight(curShape);
-    draw();
-}
-
-function rotateLeft(piece) {
-	var newPiece = [];
-	for (var y = 0; y < 4; y++) {
-		newPiece[y] = piece[y].slice(); //원본배열 그대로, 얕은복사본 으로 새로운배열에 객체로 반환
-	}
-
-	var size = shapeSize[curShapeType];
-	for (var y = 0; y < size; y++) {
-        for (var x = 0; x < size ; x++) {
-            newPiece[y][x] = piece[x][(size-1)-y];
+function dropShape(){
+    for (var y = sPos.y; y < 20; y++) {
+        if (!intersects(sPos.y+1, sPos.x)) {
+            sPos.y++;
+            draw();
+        } else {
+            break;
         }
     }
-    return newPiece;
-    // return [ 왼쪽으로 돌림,
-    //         [piece[0][3], piece[1][3], piece[2][3], piece[3][3]],
-    //         [piece[0][2], piece[1][2], piece[2][2], piece[3][2]],
-    //         [piece[0][1], piece[1][1], piece[2][1], piece[3][1]],
-    //         [piece[0][0], piece[1][0], piece[2][0], piece[3][0]]
-    // ];
 }
 
-function rotateRight(piece) {
+
+function rotateShape() {
 	var newPiece = [];
 	for (var y = 0; y < 4; y++) {
-		newPiece[y] = piece[y].slice(); //원본배열 그대로, 얕은복사본 으로 새로운배열에 객체로 반환
+		newPiece[y] = curShape[y].slice(); //원본배열 그대로, 얕은복사본 으로 새로운배열에 객체로 반환
 	}
 	var size = shapeSize[curShapeType];
 	for (var y = 0; y < size; y++) {
         for (var x = 0; x < size ; x++) {
         	//console.log(3-x, y)
-            newPiece[y][x] = piece[(size-1)-x][y];
+            newPiece[y][x] = curShape[(size-1)-x][y];
         }
     }
-    return newPiece;
-    // return [  오른쪽으로..
-    //         [piece[3][0], piece[2][0], piece[1][0], piece[0][0]],
-    //         [piece[3][1], piece[2][1], piece[1][1], piece[0][1]],
-    //         [piece[3][2], piece[2][2], piece[1][2], piece[0][2]],
-    //         [piece[3][3], piece[2][3], piece[1][3], piece[0][3]]
-    // ];
+    curShape = newPiece;
+    draw();
+
 }
+
+
+
+function removeRow() {
+    var newRows = [];
+    var k = ROW_CNT;
+    for (var y = ROW_CNT-1; y>=0; y--) {
+        for (var x = 0; x < COL_CNT; x++) {
+            if (!gamePanel[y][x]) { // 값이 한칸이라도 0인 줄은 새데이터에 해당줄을 복사.
+                newRows[--k] = gamePanel[y].slice();
+                break;
+            }
+        }
+    }
+    
+    for (var y = 0; y < k; y++) { // 복사된 데이터를 리턴
+        newRows[y] = [];
+        for (var x = 0; x < COL_CNT; x++)
+            newRows[y][x] = 0;
+    }
+    return newRows;
+}
+
+
+// 회전시, 좌우 넘어갈때 
+// 내릴때 좀 빠르게 하기.
+function keydown(ev) {
+    var handled = false;
+    switch(ev.keyCode) {
+        case KEY.LEFT:   moveShape(-1); handled = true; break;
+        case KEY.RIGHT:  moveShape( 1); handled = true; break;
+        case KEY.UP:     rotateShape(); handled = true; break;
+        case KEY.DOWN:   dropShape();      handled = true; break;
+        case KEY.ESC:    clearInterval(intervalHandler); handled = true; break;
+    }
+    if (handled) {
+        ev.preventDefault();
+    }
+}
+    
+document.addEventListener('keydown', keydown, false);
+
+
+
+
+

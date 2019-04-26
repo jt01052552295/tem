@@ -5,6 +5,34 @@ include_once(G5_LANG_PATH.'/_header.php');
 include_once(G5_LANG_PATH.'/_top.php'); 
 ?>
 
+
+
+<section class="k_wrap">
+
+    <div style="width:50%">
+        <div class="hd-reel-container">
+            <h3 class="hd-rotate-title">CSF-14-1U-CC</h3>
+
+            <a data-app-function="rotate-left" class="left carousel-control">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a data-app-function="rotate-right" class="right carousel-control">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+
+            <img class="img-responsive reel" width="1920" height="1038"
+                 src="<?php echo G5_LANG_IMG_URL?>/product/360.0.jpg"
+                 data-frames="36"
+                 data-cw="true"
+                 data-images="<?php echo G5_LANG_IMG_URL?>/360.#.jpg|0..35"
+                 data-revolution="400" />
+            <a href="#hd-popup-rotate" class="btn btn-sm hd-rotate-zoom-link open-popup-inline"><i class="fas fa-expand-arrows-alt"></i></a>
+        </div>
+    </div>
+
+</section>
+
+
 <link rel="stylesheet" href="<?php echo G5_LANG_JS_URL?>/bxslider/dist/jquery.bxslider.main.css" />
 <script src="<?php echo G5_LANG_JS_URL?>/bxslider/dist/jquery.bxslider.js"></script>
 <section class="k_wrap">

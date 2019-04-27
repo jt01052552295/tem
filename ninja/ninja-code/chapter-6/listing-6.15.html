@@ -12,8 +12,7 @@
       MyArray.prototype.length = 0;                                 //#1
 
       (function() {                                                 //#2
-        var methods = ['push', 'pop', 'shift', 'unshift',
-          'slice', 'splice', 'join'];
+        var methods = ['push', 'pop', 'shift', 'unshift', 'slice', 'splice', 'join'];
 
         for (var i = 0; i < methods.length; i++) (function(name) {
           MyArray.prototype[ name ] = function() {

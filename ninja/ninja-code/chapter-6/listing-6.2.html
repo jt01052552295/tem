@@ -11,11 +11,13 @@
       function Ninja(){
         this.swung = false;                                  //#1
         this.swingSword = function(){                        //#2
+          console.log("1", this.swung)
           return !this.swung;
         };
       }
 
       Ninja.prototype.swingSword = function(){               //#3
+        console.log("2", this.swung)
         return this.swung;
       };
 

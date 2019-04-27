@@ -15,6 +15,11 @@
 
     <script type="text/javascript">
 
+
+      (function(what){
+        console.log(what)
+      })('hi there!')
+
       $ = function(){ alert('not jQuery!'); };             //#1
 
       (function($){                                        //#2

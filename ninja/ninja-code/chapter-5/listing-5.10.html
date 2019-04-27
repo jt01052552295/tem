@@ -10,9 +10,10 @@
     <script type="text/javascript">
 
       String.prototype.csv = String.prototype.split.partial(/,\s*/);  //#1
-
+      // ,와 그 뒤에 오는 0개이상의 공백문자
       var results = ("Mugan, Jin, Fuu").csv();                        //#2
 
+      console.log(results)
       assert(results[0]=="Mugan" &&                                   //#3
              results[1]=="Jin" &&                                     //#3
              results[2]=="Fuu",                                       //#3

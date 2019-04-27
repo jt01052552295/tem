@@ -10,6 +10,8 @@
 
       Function.prototype.memoized = function(key){
         this._values = this._values || {};                            //#1
+        console.log(key)
+        console.log(this.apply(this, arguments))
         return this._values[key] !== undefined ?                      //#2
           this._values[key] :
           this._values[key] = this.apply(this, arguments);
@@ -25,7 +27,7 @@
         }
         return prime;
       }
-
+      //assert(isPrime(5), "The function works; 5 is prime."); //#4
       assert(isPrime.memoized(5), "The function works; 5 is prime."); //#4
       assert(isPrime._values[5], "The answer has been cached.");      //#4
 

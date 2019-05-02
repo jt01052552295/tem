@@ -14,8 +14,7 @@
         source.replace(
           /([^=&]+)=([^&]*)/g,
           function(full, key, value) {                     //#2
-            keys[key] =
-              (keys[key] ? keys[key] + "," : "") + value;
+            keys[key] = (keys[key] ? keys[key] + "," : "") + value;
             return "";
           }
         );

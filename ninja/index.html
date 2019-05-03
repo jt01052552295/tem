@@ -138,11 +138,25 @@
 	);
 
 
+	$menus['08'] = array(
+		mCode => "08",
+		title => "스레드와 타이머",
+		url => "./ninja-code/chapter-8/listing-8.1.html",
+		items => array(
+			array(mCode => "0801", title => "8.1 반복되는 타이머를 생성하는 두가지방법" 	, url => "./ninja-code/chapter-8/listing-8.1.html"),
+			array(mCode => "0802", title => "8.2 긴시간동안 실행되는 작업의 예"			, url => "./ninja-code/chapter-8/listing-8.2.html"),
+			array(mCode => "0803", title => "8.3 타이머를 이용해서 긴작업을 나누기"		, url => "./ninja-code/chapter-8/listing-8.3.html"),
+			array(mCode => "0804", title => "8.4 다수의핸들러를관리하는 중앙타이머"		, url => "./ninja-code/chapter-8/listing-8.4.html"),
+			array(mCode => "0805", title => "8.5 간단한 비동기 테스트 스위트"			, url => "./ninja-code/chapter-8/listing-8.5.html"),
+		),
+	);
+
+
 	// 전체메뉴 출력
 ?>
 
 <?php foreach($menus as $menu){ ?>
-	<dl>
+	<dl style="width:45%;display: inline-block;vertical-align: middle;">
 		<dt><a href="<?php echo $menu['url']?>"> <?php echo $menu['title']?></a></dt>
 		<?php
 			if(count($menu['items'])>0):

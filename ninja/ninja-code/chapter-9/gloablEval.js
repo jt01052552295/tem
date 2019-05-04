@@ -7,6 +7,6 @@ function globalEval(data) {
     script.type = "text/javascript";
     script.text = data;
     head.appendChild(script);
-    head.removeChild(script);
+    //head.removeChild(script);
   }
 }

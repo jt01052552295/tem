@@ -33,8 +33,8 @@
       })();
 
       window.onload = function () {
-        var b = rootedQuerySelectorAll(
-            document.getElementById("test"), "div b");
+        var b = rootedQuerySelectorAll(document.getElementById("test"), "div b");
+        console.log(b)
         assert(b.length === 0, "The selector is now rooted properly.");
       };
     </script>

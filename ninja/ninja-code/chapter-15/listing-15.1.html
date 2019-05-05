@@ -19,8 +19,8 @@
         var divs = document.querySelectorAll("body > div");
         assert(divs.length === 2, "Two divs found using a CSS selector.");
 
-        var b = document.getElementById("test")
-            .querySelector("b:only-child");
+        var b = document.getElementById("test").querySelector("b:only-child");
+        console.log(b)
         assert(b,
             "The bold element was found relative to another element.");
       };

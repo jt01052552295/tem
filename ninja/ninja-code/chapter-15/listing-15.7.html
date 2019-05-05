@@ -26,7 +26,7 @@
 
           for (var i = 0, length = array.length; i < length; i++) {
             var elem = array[i];
-
+            console.log(elem.uniqueID)
             if (elem.uniqueID !== run) {                          //#E
               elem.uniqueID = run;
               ret.push(array[i]);

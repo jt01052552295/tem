@@ -1,3 +1,7 @@
+/*
+이벤트 핸들러를 해제하는 함수 
+ */
+
 this.removeEvent = function (elem, type, fn) {      // #1
 
   var data = getData(elem);                          //#2

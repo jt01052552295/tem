@@ -1,3 +1,7 @@
+/*
+이벤트 처리를 위해 사용한 요소들을 정리하기 
+ */
+
 function tidyUp(elem, type) {
 
   function isEmpty(object) {                         //#1

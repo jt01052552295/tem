@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Html5 canvas</title>
+<link rel="stylesheet" type="text/css" href="./css/responsive.css" />
+</head>
+<body>
+
+<?php
+
+	$menus['01'] = array(
+		mCode => "01",
+		title => "canvas 예제",
+		url => "./canvas",
+		items => array(),
+	);
+
+	$path = scandir('./canvas');
+	$files = array_diff($path, array('.', '..'));
+	$pattern = '/(.*?).html/';
+	foreach ($files as $key => $value) {
+		preg_match($pattern, $value, $matches, PREG_OFFSET_CAPTURE);
+		if($matches){
+			//echo $value."<Br>";
+			$menus['01']['items'][] = array(mCode => '2010', title=>$value, url=>'./canvas/'.$value); 
+		}
+	}
+
+
+
+	
+
+
+
+	// 전체메뉴 출력
+?>
+
+<?php foreach($menus as $menu){ ?>
+	<dl style="width:45%;display: inline-block;vertical-align: middle;">
+		<dt><a href="<?php echo $menu['url']?>"> <?php echo $menu['title']?></a></dt>
+		<?php
+			if(count($menu['items'])>0):
+				for($i=0; $i<count($menu['items']); $i++):
+		?>
+				<dd><a href="<?php echo $menu['items'][$i]['url']?>"><?php echo $menu['items'][$i]['title']?></a>
+					<?php 
+						if(count($menu['items3rd'])>0):
+							echo "<ul>";
+							for($k=0; $k<count($menu['items3rd']); $k++):
+								if(substr($menu['items3rd'][$k]['mCode'],0,4) == $menu['items'][$i]['mCode']):
+
+					?>
+									<li><?php echo $menu['items3rd'][$k]['title']?></li>
+					<?php 
+								endif;
+							endfor;
+							echo "</ul>";
+						endif;
+					?>
+				</dd>
+		<?php
+				endfor;
+			endif;
+		?>
+	</dl>
+<?php } ?>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+/************* Common *************/ 
+@font-face { 
+	font-family: 'BmJua'; 
+	font-style: normal;
+  	font-weight: 400;
+	src: local('BMJUA'), url(./bmjua/BMJUA.woff2) format('woff2'); 
+} 
+
+

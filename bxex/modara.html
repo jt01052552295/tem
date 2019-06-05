@@ -1,0 +1,108 @@
+<?php include_once('./header.html'); ?>
+
+
+<script src="./js/bxslider-4-4.2.12/dist/jquery.bxslider.wide.js"></script>
+<link href="./js/bxslider-4-4.2.12/dist/jquery.bxslider.wide.css" rel="stylesheet">
+
+
+<pre class="desc">
+모다라 스타일, 반응형 대응
+</pre>
+
+<section class="k_wrap section5">
+  <div class="k_container type_center">
+    <div class="m_inner">
+      <h3>MODARA Promotion <div class="bLine"><span class="bImg"><img src="./images/bLine.png" alt=""></span></div></h3>
+
+      <ul class="bigSlide">
+        <li>
+          <div class="overLay"></div>
+          <div class="bigThumbImg"><img src="./images/temp_slide.jpg" alt=""></div>
+          <div class="bigThumbTxt">
+            <span class="btit">입점매장 안내1</span>
+            <span class="name">부산 롯데면세점 </span>
+            <p class="comm">부산 서면에 위치한 롯데백화점 7F  롯데면세점에서 모다라 상품을 만나보실 수 있습니다.</p>
+            <a href="#" class="btn-more tran-animate">입점매장 더보기</a>
+          </div>
+        </li>
+        <li>
+          <div class="overLay"></div>
+          <div class="bigThumbImg"><img src="./images/temp_slide.jpg" alt=""></div>
+          <div class="bigThumbTxt">
+            <span class="btit">입점매장 안내2</span>
+            <span class="name">부산 롯데면세점 </span>
+            <p class="comm">부산 서면에 위치한 롯데백화점 7F  롯데면세점에서 모다라 상품을 만나보실 수 있습니다.</p>
+            <a href="#" class="btn-more tran-animate">입점매장 더보기</a>
+          </div>
+        </li>
+        <li>
+          <div class="overLay"></div>
+          <div class="bigThumbImg"><img src="./images/temp_slide.jpg" alt=""></div>
+          <div class="bigThumbTxt">
+            <span class="btit">입점매장 안내3</span>
+            <span class="name">부산 롯데면세점 </span>
+            <p class="comm">부산 서면에 위치한 롯데백화점 7F  롯데면세점에서 모다라 상품을 만나보실 수 있습니다.</p>
+            <a href="#" class="btn-more tran-animate">입점매장 더보기</a>
+          </div>
+        </li>
+      </ul>
+      <span id="wide-slider-prev"></span>
+      <span id="wide-slider-next"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    var bigSlider = $('.bigSlide').bxSliderWide({
+      auto: false,
+      infiniteLoop: true,
+      wrapperClass: 'wide-wrapper',
+      autoControls: false,
+      adaptiveHeight: false,
+      pager:true,
+      speed:500,
+      controls: true,
+      nextSelector: '#wide-slider-next',
+      prevSelector: '#wide-slider-prev',
+      onSliderLoad: function(){ 
+        $('.bigSlide > li').eq(1).addClass('current');
+      },
+      onSlideBefore: function (slide, oldIndex, newIndex) {
+                var before = bigSlider.getCurrentSlide();
+        var current = bigSlider.getCurrentSlide() + 1;
+        
+        $('.bigSlide > li').removeClass('active-slide').removeClass('current');   
+        $('.bigSlide > li').eq(before).addClass('active-slide');
+        $('.bigSlide > li').eq(current).addClass('current');
+      
+
+        
+      },
+      onSlideAfter: function (slide, oldIndex, newIndex) {
+        var current = bigSlider.getCurrentSlide() + 1;
+        //$('.bigSlide > li').eq(current).addClass('current');
+        
+      }
+    });
+    $('#wide-slider-prev a, #wide-slider-next a').click(function(){
+      var before = bigSlider.getCurrentSlide();
+      var current = bigSlider.getCurrentSlide() + 1;
+
+      $('.bigSlide > li').removeClass('active-slide').removeClass('current');   
+      $('.bigSlide > li').eq(before).addClass('active-slide');
+      $('.bigSlide > li').eq(current).addClass('current');
+
+
+      bigSlider.stopAuto();
+      bigSlider.startAuto();
+    });
+
+  });
+</script>   
+
+
+
+
+
+<?php include_once('./footer.html'); ?>

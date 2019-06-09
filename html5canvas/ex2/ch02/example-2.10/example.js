@@ -93,7 +93,7 @@ function drawOuterCircleAnnotations(sameDirection) {
 
    context.beginPath();
    context.arc(500, 250, 3, 0, Math.PI*2, false);
-   context.fillStyle = 'navy';
+   context.fillStyle = 'red';
    context.fill();
 
    context.font = '16px Lucida Sans';
@@ -132,7 +132,7 @@ function drawAnnotations(sameDirection) {
 
 function drawTwoArcs(sameDirection) {
    context.beginPath();
-   context.arc(300, 170, 150, 0, Math.PI*2, false); // outer: CW
+   context.arc(300, 170, 150, 0, Math.PI*2, false); // outer: CW 
    context.arc(300, 170, 100, 0, Math.PI*2, !sameDirection); // innner
 
    context.fill();
@@ -143,16 +143,16 @@ function drawTwoArcs(sameDirection) {
 }
 
 function draw(sameDirection) {
-   context.clearRect(0, 0, context.canvas.width,
-                           context.canvas.height);
+   console.info('sameDirection', sameDirection)
+   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
    drawGrid('lightgray', 10, 10);
 
    context.save();
 
-   context.shadowColor = 'rgba(0, 0, 0, 0.8)';
-   context.shadowOffsetX = 12;
-   context.shadowOffsetY = 12;
-   context.shadowBlur = 15;
+   // context.shadowColor = 'rgba(0, 0, 0, 0.8)';
+   // context.shadowOffsetX = 12;
+   // context.shadowOffsetY = 12;
+   // context.shadowBlur = 15;
 
    drawTwoArcs(directionCheckbox.checked);
 

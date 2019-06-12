@@ -107,15 +107,14 @@ function drawCentroid() {
    context.save();
    context.strokeStyle = CENTROID_STROKE_STYLE;
    context.fillStyle = CENTROID_FILL_STYLE;
-   context.arc(circle.x, circle.y,
-               CENTROID_RADIUS, 0, Math.PI*2, false);
+   context.arc(circle.x, circle.y, CENTROID_RADIUS, 0, Math.PI*2, false);
    context.stroke();
    context.fill();
    context.restore();
 }
 
 function drawCentroidGuidewire(loc) {
-   var angle = -Math.PI/4,
+  var angle = -Math.PI/4,
        radius, endpt;
 
   radius = circle.radius + RING_OUTER_RADIUS;

@@ -90,7 +90,7 @@ function drawAxes() {
    drawHorizontalAxis();
    drawVerticalAxis();
 
-   context.lineWidth = 0.5;
+   //context.lineWidth = 0.5;
    context.lineWidth = TICKS_LINEWIDTH;
    context.strokeStyle = TICKS_COLOR;
 
@@ -118,17 +118,20 @@ function drawVerticalAxisTicks() {
    var deltaY;
    
    for (var i=1; i < NUM_VERTICAL_TICKS; ++i) {
+      //console.info(NUM_VERTICAL_TICKS)
       context.beginPath();
 
       if (i % 5 === 0) deltaX = TICK_WIDTH;
       else             deltaX = TICK_WIDTH/2;
-              
+      
+      //console.info(AXIS_ORIGIN.x - deltaX, AXIS_ORIGIN.y - i * VERTICAL_TICK_SPACING)
       context.moveTo(AXIS_ORIGIN.x - deltaX,
                      AXIS_ORIGIN.y - i * VERTICAL_TICK_SPACING);
 
+      //console.info(AXIS_ORIGIN.x + deltaX, AXIS_ORIGIN.y - i * VERTICAL_TICK_SPACING)
       context.lineTo(AXIS_ORIGIN.x + deltaX,
                      AXIS_ORIGIN.y - i * VERTICAL_TICK_SPACING);
-
+      //console.info("-----")
       context.stroke();
    }
 }

@@ -54,3 +54,8 @@ drawDashedLine(context, 20, 20, context.canvas.width-20, 20);
 drawDashedLine(context, context.canvas.width-20, 20, context.canvas.width-20, context.canvas.height-20, 10);
 drawDashedLine(context, context.canvas.width-20, context.canvas.height-20, 20, context.canvas.height-20, 15);
 drawDashedLine(context, 20, context.canvas.height-20, 20, 20, 2);
+
+
+
+
+

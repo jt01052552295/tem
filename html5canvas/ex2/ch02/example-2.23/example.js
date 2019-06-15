@@ -103,7 +103,7 @@ function drawArrow() {
 
    context.quadraticCurveTo(points[4].x, points[4].y,
                             points[5].x, points[5].y);
-   context.fill();
+   // context.fill();
    context.stroke();
 }
 

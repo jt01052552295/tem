@@ -32,7 +32,7 @@
     wrapperClass: 'bx-wrapper',
 
     // TOUCH
-    touchEnabled: false,
+    touchEnabled: true,
     swipeThreshold: 50,
     oneToOneTouch: true,
     preventDefaultSwipeX: true,

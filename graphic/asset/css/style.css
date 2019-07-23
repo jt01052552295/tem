@@ -3,7 +3,7 @@
 
 /* 초기화 */
 /*body {font-family:'Noto Sans KR', 'Nanum Gothic','Malgun Gothic', dotum,'Helvetica',Apple SD Gothic Neo, sans-serif;color:#222;min-width:320px;background: #fff;font-size:12px;}*/
-body {font-family:'Malgun Gothic', dotum,'Helvetica',Apple SD Gothic Neo, sans-serif;color:#222;min-width:320px;background: #fff;font-size:12px;}
+body {font-family:'Malgun Gothic', dotum, Arial , Georgia, "Times New Roman", Verdana, Helvetica  , AppleGothic, Apple SD Gothic Neo, sans-serif;color:#222;min-width:320px;background: #fff;font-size:12px;}
 a, a:hover {text-decoration: none;}
 .bg_primary {background-color:#163f8c;}
 .bg_sub {}

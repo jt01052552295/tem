@@ -27,37 +27,46 @@
 </head>
 <body>
 
-<div id="">
-	<header>
+<div id="wrap">
+	<header id="header">
 		<div class="menubar">
-			<ul>
-			 <li><a href="#">Home</a></li>
-			 <li><a href="#" id="current">Products</a>
-				<ul>
-			     <li><a href="#">Sliders</a></li>
-			     <li><a href="#">Galleries</a></li>
-			     <li><a href="#">Apps</a></li>
-			     <li><a href="#">Extensions</a></li>
-			    </ul>
-			 </li>
-			 <li><a href="#">Company</a></li>
-			 <li><a href="#">Address</a></li>
+			<ul class="topMenu">
+				 <li class="dropdown"><a href="#" class="dropbtn">Home</a></li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Products</a>
+					<ul class="dropdown-content">
+					     <li><a href="#">Sliders</a></li>
+					     <li><a href="#">Galleries</a></li>
+					     <li><a href="#">Apps</a></li>
+					     <li><a href="#">Extensions</a></li>
+				    </ul>
+				 </li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Company</a></li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Address</a></li>
 			</ul>
 		</div>
 	</header>
 
 
-	<aside>
-		사이드
+	<aside id="side">
+		<ul class="cate">
+            <li><button class="sbtn">Click Me</button></li>
+            <li><button class="sbtn">Click Me</button></li>
+            <li><button class="sbtn">Click Me</button></li>
+            <li><button class="sbtn">Click Me</button></li>
+            <li><button class="sbtn">Click Me</button></li>
+        </ul>
 	</aside>
 
-	<main>
+	<main id="main">
 		메인
 
 	</main>
 
 
+	<footer id="footer">
+		푸터
 
+	</footer>
 </div>
 
 <!-- 컨셉 : 유틸리티 프로그램 처럼	

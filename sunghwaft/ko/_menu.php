@@ -27,7 +27,7 @@ $siteMenu[] = array(
 	me_use 		=> true
 );
 $siteMenu[] = array(
-	mCode 		=> "1040",	
+	mCode 		=> "1030",	
 	title 		=> "연혁",		
 	url 		=> $routeName."/history.php",		  
 	pid 		=> "history",			
@@ -35,7 +35,7 @@ $siteMenu[] = array(
 	me_use 		=> true
 );
 $siteMenu[] = array(
-	mCode 		=> "1060",	
+	mCode 		=> "1040",	
 	title 		=> "주요고객사",		
 	url 		=> $routeName."/partner.php",		  
 	pid 		=> "partner",			
@@ -43,7 +43,7 @@ $siteMenu[] = array(
 	me_use 		=> true
 );
 $siteMenu[] = array(
-	mCode 		=> "1030",	
+	mCode 		=> "1050",	
 	title 		=> "조직도",		
 	url 		=> $routeName."/organization.php",		  
 	pid 		=> "organization",			
@@ -51,7 +51,7 @@ $siteMenu[] = array(
 	me_use 		=> true
 );
 $siteMenu[] = array(
-	mCode 		=> "1050",	
+	mCode 		=> "1060",	
 	title 		=> "오시는길",		
 	url 		=> $routeName."/location.php",		  
 	pid 		=> "location",			
@@ -110,7 +110,8 @@ $siteMenu[] = array(
 	mCode 		=> "40",	
 	title 		=> "기술자료실",		
 	url 		=> $routeName."/data.php",	
-	makeDir		=> "data",		  
+	makeDir		=> "data",	
+	subTitle	=> "data",	  
 	pid 		=> "",
 	me_link		=> false,	
 	me_use 		=> true
@@ -124,20 +125,13 @@ $siteMenu[] = array(
 	me_use 		=> true
 );
 
-
-
-
-
-
-
-
-
 $routeName = G5_LANG_URL."/mail";
 $siteMenu[] = array(
 	mCode 		=> "50",	
 	title 		=> "고객문의",		
 	url 		=> $routeName."/mail.php",		  
-	pid 		=> "mail",		
+	pid 		=> "mail",	
+	subTitle	=> "mail",	
 	makeDir		=> "",	
 	me_link		=> true,	
 	me_use 		=> true
@@ -149,47 +143,12 @@ $siteMenu[] = array(
 	title 		=> "사이트맵",		
 	url 		=> $routeName."/sitemap.php",		  
 	pid 		=> "sitemap",	
-	subTitle	=> "사이트맵", 
+	subTitle	=> "sitemap", 
 	me_link		=> false,	
 	me_use 		=> false,
 	me_etc		=> true
 );
 
-
-$routeName = G5_LANG_URL."/customer";
-$siteMenu[] = array(
-	mCode 		=> "8020",	
-	title 		=> "개인정보처리방침",		
-	url 		=> $routeName."/ft02.php",		  
-	pid 		=> "ft02",	
-	subTitle	=> "개인정보처리방침", 
-	me_link		=> false,	
-	me_use 		=> false,
-	me_etc		=> true
-);
-$routeName = G5_LANG_URL."/customer";
-$siteMenu[] = array(
-	mCode 		=> "8030",	
-	title 		=> "이메일주소무단수집거부",		
-	url 		=> $routeName."/ft03.php",		  
-	pid 		=> "ft03",	
-	subTitle	=> "이메일주소무단수집거부", 
-	me_link		=> false,	
-	me_use 		=> false,
-	me_etc		=> true
-);
-
-$routeName = G5_LANG_URL."/customer";
-$siteMenu[] = array(
-	mCode 		=> "8040",	
-	title 		=> "환자의 권리와 의무",		
-	url 		=> $routeName."/ft04.php",		  
-	pid 		=> "ft04",	
-	subTitle	=> "환자의 권리와 의무", 
-	me_link		=> false,	
-	me_use 		=> false,
-	me_etc		=> true
-);
 
 
 

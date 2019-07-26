@@ -1,8 +1,8 @@
-<header id="header" class="main" >
+<header id="header" class="main tran-animate" >
 
 
 
-    <div class="header_wrap tran-animate" id="header_height">
+    <div class="header_wrap " id="header_height">
 
         <div class="headerBox">           
             <div class="cs" id="totalMenu">
@@ -20,36 +20,30 @@
 
             <div class="logo"><h1><a href="<?php echo G5_LANG_URL?>"><span class="blind"><?php echo $infodu['title']?></span></a></h1></div>
 
-            <div class="right">
-                <ul> 
-                    <?php if($is_member){?>
-                    <li><a href="<?php echo G5_BBS_URL?>/member_confirm.php?url=register_form.php">정보수정</a></li>
-                    <li><a href="<?php echo G5_BBS_URL?>/logout.php">로그아웃</a></li>
-                    <?php }else{?>
-                    <li><a href="<?php echo G5_LANG_URL?>/mail/mail.php" class="login">로그인</a></li>
-                    <li><a href="<?php echo G5_LANG_URL?>/mail/mail.php">회원가입</a></li>
-                    <?php }?>
-                    <li><a href="<?php echo G5_LANG_URL?>/mail/mail.php">오시는길</a></li>
-                    
-                </ul>
+            <div class="lang">
+                <div class="lang_m">
+                    <a href="#" id="lang_btn"><?php echo  $infodu['lang']['common']['lang01']?> <i class="fas fa-angle-down"></i></a>
+                    <ul class="lang_sub" >
+                        <li><a href="#"><?php echo  $infodu['lang']['common']['lang02']?></a></li>
+                    </ul>                   
+                </div>
             </div>
 
+            <div class="header_inner"> 
+               <?php include_once(G5_LANG_PATH.'/_menu_drop.php'); ?>
+            </div>
+            <div class="subMenuBg">&nbsp;</div>
         </div>
 
 
-        <div class="header_inner"> 
-           <?php include_once(G5_LANG_PATH.'/_menu_drop.php'); ?>
-           <!-- <div class="lang">
-                <a href="#" id="lang_btn">LANG <i class="fas fa-angle-down"></i></a>
-           </div>  -->
-        </div>
+        
             
         <!--모바일메뉴!-->
         <div id="m_menu">
-            <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+            <a href="#"><i class="fas fa-bars fa-1x"></i></a>
         </div>
          <?php include_once(G5_LANG_PATH.'/_menu_drop_mobile.php'); ?>                     
-        <div class="subMenuBg">&nbsp;</div>
+        
 
     </div> 
 </header>
@@ -59,10 +53,10 @@
 
 
 <?php if (!defined("_INDEX_")) { ?>
-<div class="sub_vg" style="display: none">
+<div class="sub_vg" style="display: block">
     <div id="vg_con">
-        <h2><?php echo $breadcrumArr[0]['title'];?></h2>
-        <p><?php echo $infodu['lang']['sub']['common'][0]?></p>
+        <h2 class="font_montserrat"><?php echo $breadcrumArr[0]['subTitle'];?></h2>
+        <p><?php echo $infodu['lang']['common']['subvg']?></p>
     </div>
 </div>
 
@@ -162,7 +156,7 @@
 
 <div class="subNavWrap" id="sub_navi" style="display: block">
     <div class="subNavInner">
-        <a href="<?php echo G5_LANG_URL?>"  class="btn_home"><span class="blind">홈으로 이동</span></a>
+        <a href="<?php echo G5_LANG_URL?>"  class="btn_home"><em>HOME</em><span class="blind">홈으로 이동</span></a>
         <ul class="subNav1st">
             <li class="navi_dp1">
                 <a href="#" class="dp1">
@@ -178,7 +172,7 @@
 
                     ?>
 
-                    <span class="sub_drop bg"><em class="blind">대분류 메뉴 펼치기</em></span>
+                    <span class="sub_drop bg tran-animate"><em class="blind">대분류 메뉴 펼치기</em></span>
                 </a>
                 <ul class="subNav2nd">
                     <?php 
@@ -200,7 +194,7 @@
 
             <?php if($breadcrumArr[1]['title']):?>
             <li class="navi_dp1">
-                <a href="#" class="dp1"><?php echo $breadcrumArr[1]['title']?> <span class="sub_drop bg"><em class="blind">대분류 <?php echo $breadcrumArr[1]['title']?> 하위 메뉴 펼치기</em> </span></a>
+                <a href="#" class="dp1"><?php echo $breadcrumArr[1]['title']?> <span class="sub_drop bg tran-animate"><em class="blind">대분류 <?php echo $breadcrumArr[1]['title']?> 하위 메뉴 펼치기</em> </span></a>
                 
                 <ul class="subNav2nd">
                     <?php 

@@ -62,16 +62,35 @@ define('G5_LANG_PATH',     G5_CUSTOM_PATH.'/'.G5_LANG_DIR);
 define('G5_LANG_MOBILE_PATH',    G5_CUSTOM_PATH.'/'.G5_MOBILE_DIR.'/'.G5_LANG_DIR);
 
 
-
 /* 기본설정 */
+if(G5_LANG=='en'){
+	$siteTitle = "성화퓨렌텍";
+	$siteKeyword = "";
+	$siteLang = "en";
+} else if(G5_LANG=='cn'){
+	$siteTitle = "성화퓨렌텍";
+	$siteKeyword = "";
+	$siteLang = "zh";
+} else if(G5_LANG=='jp'){
+	$siteTitle = "성화퓨렌텍";
+	$siteKeyword = "";
+	 $siteLang = "ja";
+} else {
+	$siteTitle = "성화퓨렌텍";
+	$siteKeyword = "";
+	$siteLang = "ko";
+}
+
 $infodu = array();
-$infodu['title'] = "성화퓨렌텍";
-$infodu['keywords'] = "";
+$infodu['title'] = $siteTitle;
+$infodu['keywords'] = $siteKeyword;
 $infodu['email'] = "";
 $infodu['device'] = "pc";
+$infodu['language'] =  $siteLang;
+
 
 ////////////////// 운영자 정보
-$infodu['admin']['homepage']    = "shdetector.com/"; /// 홈페이지주소를 입력해주세요
+$infodu['admin']['homepage']    = "shdetector.com"; /// 홈페이지주소를 입력해주세요
 
 if (function_exists('get_member')) {
 	$master = get_member('master');

@@ -12,9 +12,9 @@
 	font-weight: 500;
     font-size: 18px;
 	height: 50px;
-    color: #4f953c;
+    color: #0080ff;
 	padding:50px 0 0;
-    border-bottom: 3px solid #4f953c;
+    border-bottom: 3px solid #0080ff;
 }
 .mail_kind	{
 	width: 15%;
@@ -54,10 +54,10 @@ input[type=checkbox], input[type=radio], input[type=image] {
 	}
 .mail_submit input[type="submit"]{
 	padding: 8px 20px;
-	background-color: #4f953c;
+	background-color: #0080ff;
 	color:#fff;
 	font-size: 16px;
-	border: 1px solid #4f953c;
+	border: 1px solid #0080ff;
 }
 /* 글자 */
 .mail_help	{
@@ -118,7 +118,7 @@ input[type=checkbox], input[type=radio], input[type=image] {
 .mailTit {clear:both;overflow:hidden;margin:20px 0 10px 0;}
 .mailTit h4 {float:left;font-size:18px;}
 .mailTit p {float:right;}
-.mailFormWrap {border-top:3px solid #4f953c;clear:both;overflow:hidden;}
+.mailFormWrap {border-top:3px solid #0080ff;clear:both;overflow:hidden;}
 .mailFormWrap div.inputForm {width:100%;display:table;}
 .mailFormWrap div.inputForm .cell.label {width: 15%;padding-left: 30px;font-size:16px;}
 .mailFormWrap div.inputForm .cell {display:table-cell;height:45px;padding:0;border-bottom:1px solid #e5e5e5;vertical-align:middle}
@@ -130,7 +130,7 @@ input[type=checkbox], input[type=radio], input[type=image] {
 .inputTextMail {padding:0 5px;height:25px;line-height:25px;border:1px solid #ddd;outline:none;vertical-align:middle}
 .textareaMail {overflow-y:scroll;font-size:14px;width:100%;height:150px;padding:5px 5px 0 5px;border:1px solid #ddd;box-sizing:border-box;-webkit-box-sizing:border-box;resize:none}
 
-input#onSubmitMail {padding: 8px 20px;background-color: #4f953c;color:#fff;font-size: 16px;border: 1px solid #4f953c;}
+input#onSubmitMail {padding: 8px 20px;background-color: #0080ff;color:#fff;font-size: 16px;border: 1px solid #0080ff;}
 
 @media all and (max-width:1024px){
 	.mailFormWrap div.inputForm.half {width:100%;float:none;}

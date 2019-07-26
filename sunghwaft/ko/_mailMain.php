@@ -1,7 +1,6 @@
 <?php
 include_once('./_common.php');
-?>
-<?php
+
 
 $admin_company = $infodu['admin']['company']; //// 회사명을 입력해주세요
 $admin_email = $infodu['admin']['email']; /// 이메일을 입력해주세요
@@ -12,33 +11,22 @@ if (!$to)	{$to=$admin_email;}
 
 $mail = 'korea@koreaind.com';
 
-//에러메세지 출력함수
-function error ($error)
-{
-  echo " <script> alert('$error'); history.go(-1); </script> ";
-  exit; 
-}
-     
 
 //▶ 받는사람 이메일 주소가 입력되었는지 확인
-if(!preg_match("([^[:space:]]+)",$name)) {
-	die("error,담당자명을 입력해주세요.");
+if(!$name) {
+	alert("담당자명을 입력해주세요.");
 }
 
-//▶ 이메일 내용이 입력되었는지 확인
-if(!preg_match("([^[:space:]]+)",$tel)) {
-	die("error,연락처를 입력해 주세요.");
-}
 
 //▶ 이메일 내용이 입력되었는지 확인
-if(!preg_match("([^[:space:]]+)",$email)) {
-	die("error,이메일을 입력해 주세요.");
+if(!$mail) {
+	alert("이메일을 입력해 주세요.");
 }
 
 
 //▶ 내용이 입력되었는지 확인
-if(!preg_match("([^[:space:]]+)",$con)) {
-	error("문의사항을 입력해 주세요.");
+if(!$memo) {
+	alert("문의사항을 입력해 주세요.");
 }
 
 
@@ -48,18 +36,13 @@ $subject=$name."님 빠른상담신청 --".$admin_home;
 //메일 내용합치기
 
 ////////////////메일 내용합치기////////////////[수정가능]항목이 추가되면 아래와 같은 방식으로 추가해주십시오.
-$content=$admin_home." 에서 작성된 <b>".$name."</b>님으로 부터의 상담신청 입니다.<br><hr>";
+$content=$admin_home." 에서 작성된 <b>".$company."/".$name."</b>님 고객상담.<br><hr>";
 
-if($store == 'yes'){
-	$businesstype = '있음';
-} else {
-	$businesstype = '없음';
-}
-
-$content.="<b>이름 - </b>$name<br>";
+$content.="<b>업체명 - </b>$company<br>";
+$content.="<b>담당자 - </b>$name<br>";
 $content.="<b>연락처 - </b>$tel<br>";
-$content.="<b>이메일 - </b>$email<br><br><br><br>";
-$content.= $con;
+$content.="<b>이메일 - </b>$mail<br>";
+$content.= $memo;
 
 // $header = "MIME-Version: 1.0 \r\n";
 // $header .= "Return-Path: ".$mail." \r\n";
@@ -143,8 +126,8 @@ if($upfile) {
 //print_r($header);
 //▶ 메일을 $to 로 발송하고 에러가 있다면 에러 출력 후 뒤로 이동 그렇지 않으면 정상발송 메세지를 출력후 mail.php 로 이동...
 if(!mail($to, $subject, $mailbody, $header)) {
-	die("error,문의신청이 실패하였습니다. 고객센터로 전화주시기 바랍니다.");
+	alert("문의신청이 실패하였습니다. 고객센터로 전화주시기 바랍니다.");
 } else { 
-	die("ok,문의신청이 정상적으로 접수되었습니다.");
+	alert("문의신청이 정상적으로 접수되었습니다.", G5_LANG_URL);
 }
 ?>

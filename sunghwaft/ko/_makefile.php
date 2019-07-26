@@ -9,14 +9,14 @@ for($i=0; $i<count($siteMenu); $i++):
 	
 
 	
-	$siteMenu[$i]['url'] = str_replace("http://localhost:8080/dongadaesin/ko", ".", $siteMenu[$i]['url']);
+	$siteMenu[$i]['url'] = str_replace("http://localhost:8080/sunghwaft/ko", ".", $siteMenu[$i]['url']);
 	//echo $siteMenu[$i]['url']."<Br>";
 	
 	// 폴더 만들기
 	/*
 	if(strlen($siteMenu[$i]['mCode'])==2 && $siteMenu[$i]['makeDir'] != ''):
 
-		echo $siteMenu[$i]['makeDir']."<Br>";
+		// echo $siteMenu[$i]['makeDir']."<Br>";
 		
 		@rmdir('./'.$siteMenu[$i]['makeDir']);
 		@mkdir('./'.$siteMenu[$i]['makeDir'], G5_DIR_PERMISSION);
@@ -27,7 +27,7 @@ for($i=0; $i<count($siteMenu); $i++):
 		fwrite($f, "?>");
 		fclose($f);
 		@chmod($file, G5_FILE_PERMISSION);	
-
+		
 	endif;
 	*/
 	
@@ -38,7 +38,7 @@ for($i=0; $i<count($siteMenu); $i++):
 
 	// 파일만들기
 	/*
-	if(strlen($siteMenu[$i]['mCode'])==4 && substr($siteMenu[$i]['mCode'],0,2) == '40'):
+	if(strlen($siteMenu[$i]['mCode'])==4 && substr($siteMenu[$i]['mCode'],0,2) == '20'):
 		$file = $siteMenu[$i]['url'];
 		echo $file."<Br>";
 		

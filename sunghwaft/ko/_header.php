@@ -35,7 +35,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 */
 ?>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<?php echo $infodu['language']?>">
 <head>
 <meta charset="utf-8">
 <?php

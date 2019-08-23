@@ -114,6 +114,10 @@ ul.topMenu li.dropdown:hover ul.dropdown-content {display: block;}
 
 aside#side {width:260px;height:1000px;overflow-y:auto;background:#fff;padding:15px;position:absolute;left:0;-webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4));-moz-box-shadow: 0 0 5px rgba(55,55,5,0.4));box-shadow: 0 0 5px rgba(55,55,5,0.4);}
 
+main#main {margin-left:260px;height:1000px;background:#eee;position: relative;padding:10px;}
+
+main#main canvas {border:1px solid #ccc;background:#fff;}
+
 
 .cate li {position:relative;width:50%;float:left;padding:10px;}
 

@@ -13,14 +13,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="google" content="notranslate">
 <meta name="format-detection" content="telephone=no">
-
 <link href="./asset/css/fonts.css?ver=1" rel="stylesheet">
 <link href="./asset/css/default.css?ver=1" rel="stylesheet">
 <link href="./asset/css/style.css?ver=1" rel="stylesheet">
-
+<link href="./asset/fontawesome/css/all.css?ver=1" rel="stylesheet">
 <script src="./asset/js/jquery-3.3.1.min.js?ver=1" crossorigin="anonymous"></script>
 <script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
-
 <!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/respond.min.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
@@ -31,8 +29,15 @@
 	<header id="header">
 		<div class="menubar">
 			<ul class="topMenu">
-				 <li class="dropdown"><a href="#" class="dropbtn">Home</a></li>
-				 <li class="dropdown"><a href="#" class="dropbtn">Products</a>
+				 <li class="dropdown"><a href="#" class="dropbtn">File <i class="fas fa-caret-down"></i></a>
+				 	<ul class="dropdown-content">
+					     <li><a href="#"><i class="fas fa-file-alt"></i> New</a></li>
+					     <li><a href="#"><i class="fas fa-folder-open"></i> Open</a></li>
+					     <li><a href="#"><i class="fas fa-save"></i> Save</a></li>
+					     <li><a href="#"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
+				    </ul>
+				 </li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Edit <i class="fas fa-caret-down"></i></a>
 					<ul class="dropdown-content">
 					     <li><a href="#">Sliders</a></li>
 					     <li><a href="#">Galleries</a></li>
@@ -40,8 +45,22 @@
 					     <li><a href="#">Extensions</a></li>
 				    </ul>
 				 </li>
-				 <li class="dropdown"><a href="#" class="dropbtn">Company</a></li>
-				 <li class="dropdown"><a href="#" class="dropbtn">Address</a></li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Image <i class="fas fa-caret-down"></i></a>
+				 	<ul class="dropdown-content">
+					     <li><a href="#">Sliders</a></li>
+					     <li><a href="#">Galleries</a></li>
+					     <li><a href="#">Apps</a></li>
+					     <li><a href="#">Extensions</a></li>
+				    </ul>
+				 </li>
+				 <li class="dropdown"><a href="#" class="dropbtn">Help <i class="fas fa-caret-down"></i></a>
+				 	<ul class="dropdown-content">
+					     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+					     <li><a href="#"><i class="fas fa-atlas"></i> About</a></li>
+					     <li><a href="#"><i class="fas fa-tv"></i> System</a></li>
+					     <li><a href="#"><i class="fas fa-clipboard-list"></i> Log</a></li>
+				    </ul>
+				 </li>
 			</ul>
 		</div>
 	</header>
@@ -58,7 +77,9 @@
 	</aside>
 
 	<main id="main">
-		메인
+		<canvas id='drawingCanvas' width='915' height='670'>
+		  Canvas not supported
+		</canvas>
 
 	</main>
 
@@ -69,10 +90,26 @@
 	</footer>
 </div>
 
-<!-- 컨셉 : 유틸리티 프로그램 처럼	
-1. 상단 메뉴 (드롭다운)
-2. 레프트 메뉴 (버튼 on off)
-3. 컨텐츠 부분 (캔버스) -->
+<!-- script 모음 -->
+<!-- <script src="./asset/js/wc2.js?_t=1566547782"></script> -->
+
+
+
+
+<!-- 
+
+컨셉 : 유틸리티 프로그램 처럼	
+
+기능 : 캔버스 사이즈 ( 오토, 매뉴얼 )
+기능 : unde ,redo
+기능 : 이미지 리사이즈, 캔버스 리사이즈, 회전 , 가로세로 정렬?
+기능 : 가이드라인
+기능 : 선, 도형, 텍스트, 색상(파레트), 지우기, 이미지 파일 업로드, 파일저장
+
+포토샵 심화 : 레이어, 필터 등등
+
+
+ -->
 
 
 
@@ -93,6 +130,14 @@ https://github.com/pieroxy/lz-string/ (http://pieroxy.net/blog/pages/lz-string/i
 https://github.com/kig/canvasfilters : MIT
 https://www.npmjs.com/package/rgbquant : MIT
 https://github.com/jnordberg/gif.js : MIT -->
+
+
+<!-- 
+하면서 알게된 기타 잡지식
+1. Canvas는 비트맵 기반, SVG는 벡터기반 
+
+
+-->
 
 
 </body>

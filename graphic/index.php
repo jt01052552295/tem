@@ -31,50 +31,49 @@
 			<ul class="topMenu">
 				<li class="dropdown left"><a href="#" class="dropbtn"><i class="fab fa-html5"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-					     <li><a href="#"><i class="fas fa-atlas"></i> About</a></li>
-					     <li><a href="#"><i class="fas fa-tv"></i> System</a></li>
-					     <li><a href="#"><i class="fas fa-clipboard-list"></i> Log</a></li>
+					     <li><a href="#" data-menuName="Home"><i class="fas fa-home"></i> Home</a></li>
+					     <li><a href="#" data-menuName="About"><i class="fas fa-atlas"></i> About</a></li>
+					     <li><a href="#" data-menuName="System"><i class="fas fa-tv"></i> System</a></li>
+					     <li><a href="#" data-menuName="Log"><i class="fas fa-clipboard-list"></i> Log</a></li>
 				    </ul>
 				</li>
 				<li class="dropdown left"><a href="#" class="dropbtn">File <i class="fas fa-caret-down"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#"><i class="fas fa-file-alt"></i> New</a></li>
-					     <li><a href="#"><i class="fas fa-folder-open"></i> Open</a></li>
-					     <li><a href="#"><i class="fas fa-save"></i> Save</a></li>
-					     <li><a href="#"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
+					     <li><a href="#" data-menuName="New"><i class="fas fa-file-alt"></i> New</a></li>
+					     <li><a href="#" data-menuName="Open"><i class="fas fa-folder-open"></i> Open</a></li>
+					     <li><a href="#" data-menuName="Save"><i class="fas fa-save"></i> Save</a></li>
+					     <li><a href="#" data-menuName="Exit"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
 				    </ul>
 				</li>
 				<li class="dropdown left"><a href="#" class="dropbtn">Edit <i class="fas fa-caret-down"></i></a>
 					<ul class="dropdown-content">
-					     <li><a href="#">Sliders</a></li>
-					     <li><a href="#">Galleries</a></li>
-					     <li><a href="#">Apps</a></li>
-					     <li><a href="#">Extensions</a></li>
+					     <li><a href="#" data-menuName="">Sliders</a></li>
+					     <li><a href="#" data-menuName="">Galleries</a></li>
+					     <li><a href="#" data-menuName="">Apps</a></li>
+					     <li><a href="#" data-menuName="">Extensions</a></li>
 				    </ul>
 				</li>
 				<li class="dropdown left"><a href="#" class="dropbtn">Image <i class="fas fa-caret-down"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#">Sliders</a></li>
-					     <li><a href="#">Galleries</a></li>
-					     <li><a href="#">Apps</a></li>
-					     <li><a href="#">Extensions</a></li>
+					     <li><a href="#" data-menuName="">Sliders</a></li>
+					     <li><a href="#" data-menuName="">Galleries</a></li>
+					     <li><a href="#" data-menuName="">Apps</a></li>
+					     <li><a href="#" data-menuName="">Extensions</a></li>
 				    </ul>
 				</li>
 				<li class="dropdown left"><a href="#" class="dropbtn">Help <i class="fas fa-caret-down"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#"><i class="fas fa-book"></i> Manual</a></li>
-					     <li><a href="#"><i class="fas fa-at"></i> CS</a></li>
-					     <li><a href="#"><i class="far fa-angry"></i> Bug</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-book"></i> Manual</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-at"></i> CS</a></li>
+					     <li><a href="#" data-menuName=""><i class="far fa-angry"></i> Bug</a></li>
 				    </ul>
 				</li>
 				<li class="dropdown right"><a href="#" class="dropbtn"><i class="fas fa-ellipsis-v"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#"><i class="fas fa-id-card"></i> Login</a></li>
-					     <li><a href="#"><i class="fas fa-user-plus"></i> Join</a></li>
-
-					     <li><a href="#"><i class="fas fa-user"></i> My</a></li>
-					     <li><a href="#"><i class="fas fa-power-off"></i> Logout</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-id-card"></i> Login</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-user-plus"></i> Join</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-user"></i> My</a></li>
+					     <li><a href="#" data-menuName=""><i class="fas fa-power-off"></i> Logout</a></li>
 				    </ul>
 				</li>
 			</ul>
@@ -113,7 +112,7 @@ $ver_time = date("Y-m-dH:i:s");
 $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 //echo $ver_time;
 ?>
-<!-- <script src="./asset/js/graphic.js?_t=1566547782"></script> -->
+<script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
 
 
 

@@ -109,11 +109,10 @@
 $ver_time = date("Y-m-dH:i:s");
 $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 ?>
-<script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
+<script src="./asset/dev/singleton.js?t=<?php echo $ver_time?>"></script>
 
 <script>
-	var mainF = new Main('dev');
-	mainF.init();
+	
 
 </script>
 

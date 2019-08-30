@@ -25,83 +25,42 @@
 </head>
 <body>
 
-<div id="wrap">
-	<header id="header">
-		<div class="menubar">
-			<ul class="topMenu">
-				<li class="dropdown left"><a href="#" class="dropbtn"><i class="fab fa-html5"></i></a>
-				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName="Home"><i class="fas fa-home"></i> Home</a></li>
-					     <li><a href="#" data-menuName="About"><i class="fas fa-atlas"></i> About</a></li>
-					     <li><a href="#" data-menuName="System"><i class="fas fa-tv"></i> System</a></li>
-					     <li><a href="#" data-menuName="Log"><i class="fas fa-clipboard-list"></i> Log</a></li>
-				    </ul>
-				</li>
-				<li class="dropdown left"><a href="#" class="dropbtn">File <i class="fas fa-caret-down"></i></a>
-				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName="New"><i class="fas fa-file-alt"></i> New</a></li>
-					     <li><a href="#" data-menuName="Open"><i class="fas fa-folder-open"></i> Open</a></li>
-					     <li><a href="#" data-menuName="Save"><i class="fas fa-save"></i> Save</a></li>
-					     <li><a href="#" data-menuName="Exit"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
-				    </ul>
-				</li>
-				<li class="dropdown left"><a href="#" class="dropbtn">Edit <i class="fas fa-caret-down"></i></a>
-					<ul class="dropdown-content">
-					     <li><a href="#" data-menuName="">Sliders</a></li>
-					     <li><a href="#" data-menuName="">Galleries</a></li>
-					     <li><a href="#" data-menuName="">Apps</a></li>
-					     <li><a href="#" data-menuName="">Extensions</a></li>
-				    </ul>
-				</li>
-				<li class="dropdown left"><a href="#" class="dropbtn">Image <i class="fas fa-caret-down"></i></a>
-				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName="">Sliders</a></li>
-					     <li><a href="#" data-menuName="">Galleries</a></li>
-					     <li><a href="#" data-menuName="">Apps</a></li>
-					     <li><a href="#" data-menuName="">Extensions</a></li>
-				    </ul>
-				</li>
-				<li class="dropdown left"><a href="#" class="dropbtn">Help <i class="fas fa-caret-down"></i></a>
-				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName=""><i class="fas fa-book"></i> Manual</a></li>
-					     <li><a href="#" data-menuName=""><i class="fas fa-at"></i> CS</a></li>
-					     <li><a href="#" data-menuName=""><i class="far fa-angry"></i> Bug</a></li>
-				    </ul>
-				</li>
-				<li class="dropdown right"><a href="#" class="dropbtn"><i class="fas fa-ellipsis-v"></i></a>
-				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName=""><i class="fas fa-id-card"></i> Login</a></li>
-					     <li><a href="#" data-menuName=""><i class="fas fa-user-plus"></i> Join</a></li>
-					     <li><a href="#" data-menuName=""><i class="fas fa-user"></i> My</a></li>
-					     <li><a href="#" data-menuName=""><i class="fas fa-power-off"></i> Logout</a></li>
-				    </ul>
-				</li>
-			</ul>
-		</div>
-	</header>
 
-
-	<aside id="side">
-		<ul class="cate">
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-        </ul>
-	</aside>
-
-	<main id="main">
-		<canvas id='drawingCanvas' width='915' height='670'>
-		  Canvas not supported
-		</canvas>
-
-	</main>
-
-
-	<footer id="footer">푸터</footer>
-
+<!-- 턴게임 뷰 -->
+<form id="start-screen">
+  <input id="name-input" placeholder="영웅 이름을 입력하세요!" />
+  <button id="start">시작</button>
+</form>
+<div id="screen">
+  <div id="hero-stat">
+    <span id="hero-name"></span>
+    <span id="hero-level"></span>
+    <span id="hero-hp"></span>
+    <span id="hero-xp"></span>
+    <span id="hero-att"></span>
+  </div>
+  <form id="game-menu" style="display: none;">
+    <div id="menu-1">1.모험</div>
+    <div id="menu-2">2.휴식</div>
+    <div id="menu-3">3.종료</div>
+    <input id="menu-input" />
+    <button id="menu-button">입력</button>
+  </form>
+  <form id="battle-menu" style="display: none;">
+    <div id="battle-1">1.공격</div>
+    <div id="battle-2">2.회복</div>
+    <div id="battle-3">3.도망</div>
+    <input id="battle-input" />
+    <button id="battle-button">입력</button>
+  </form>
+  <div id="message"></div>
+  <div id="monster-stat">
+    <span id="monster-name"></span>
+    <span id="monster-hp"></span>
+    <span id="monster-att"></span>  
+  </div>
 </div>
+
 
 <!-- script 모음 -->
  
@@ -109,57 +68,17 @@
 $ver_time = date("Y-m-dH:i:s");
 $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 ?>
-<script src="./asset/dev/singleton.js?t=<?php echo $ver_time?>"></script>
+<script src="./asset/dev/turnGame.js?t=<?php echo $ver_time?>"></script>
 
 <script>
+
+var hero = TurnGame.getInstance('445544');
+console.dir(hero)
 	
 
 </script>
 
 
-
-<!-- 
-
-컨셉 : 유틸리티 프로그램 처럼	
-
-기능 : 캔버스 사이즈 ( 오토, 매뉴얼 )
-기능 : unde ,redo
-기능 : 이미지 리사이즈, 캔버스 리사이즈, 회전 , 가로세로 정렬?
-기능 : 가이드라인
-기능 : 선, 도형, 텍스트, 색상(파레트), 지우기, 이미지 파일 업로드, 파일저장
-
-포토샵 심화 : 레이어, 필터 등등
-
-
- -->
-
-
-
-<!-- <canvas id='drawingCanvas' width='915' height='670'>
-  Canvas not supported
-</canvas>	 -->
-
-
-<!-- 부트스트랩 3.3.7 - 드롭다운메뉴 확장용, jquery ui
-
-참고해보자
-https://github.com/behigh/bootstrap_dropdowns_enhancement : MIT
-https://github.com/phstc/jquery-dateFormat : MIT
-https://github.com/jquery/jquery-mousewheel : https://github.com/jquery/jquery-mousewheel/blob/master/LICENSE.txt
-https://github.com/ccampbell/mousetrap : Apache 2.0
-https://github.com/eligrey/FileSaver.js : https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
-https://github.com/pieroxy/lz-string/ (http://pieroxy.net/blog/pages/lz-string/index.html) :  WTFPL
-https://github.com/kig/canvasfilters : MIT
-https://www.npmjs.com/package/rgbquant : MIT
-https://github.com/jnordberg/gif.js : MIT -->
-
-
-<!-- 
-하면서 알게된 기타 잡지식
-1. Canvas는 비트맵 기반, SVG는 벡터기반 
-
-
--->
 
 
 </body>

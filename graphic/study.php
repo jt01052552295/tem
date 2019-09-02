@@ -28,10 +28,14 @@
 
 <!-- 턴게임 뷰 -->
 <form id="start-screen">
-  <input id="name-input" placeholder="영웅 이름을 입력하세요!" />
+  <input id="name-input" placeholder="영웅 이름을 입력하세요!" value="aaaa" />
   <button id="start">시작</button>
 </form>
+
+
+<!-- 게임화면 창 -->
 <div id="screen">
+  <!-- 주인공 스탯 -->
   <div id="hero-stat">
     <span id="hero-name"></span>
     <span id="hero-level"></span>
@@ -39,26 +43,35 @@
     <span id="hero-xp"></span>
     <span id="hero-att"></span>
   </div>
+
+  <!-- 게임 메뉴 -->
   <form id="game-menu" style="display: none;">
     <div id="menu-1">1.모험</div>
     <div id="menu-2">2.휴식</div>
     <div id="menu-3">3.종료</div>
-    <input id="menu-input" />
-    <button id="menu-button">입력</button>
+    <input id="menu-input" placeholder="게임메뉴선택" />
+    <button id="menu-button">게임메뉴입력</button>
   </form>
+
+  <!-- 배틀 메뉴 -->
   <form id="battle-menu" style="display: none;">
     <div id="battle-1">1.공격</div>
     <div id="battle-2">2.회복</div>
     <div id="battle-3">3.도망</div>
-    <input id="battle-input" />
-    <button id="battle-button">입력</button>
+    <input id="battle-input" placeholder="배틀메뉴선택" />
+    <button id="battle-button">배틀메뉴입력</button>
   </form>
+
+  <!-- 메시지창 -->
   <div id="message"></div>
+
+  <!-- 몬스터 스탯 -->
   <div id="monster-stat">
     <span id="monster-name"></span>
     <span id="monster-hp"></span>
     <span id="monster-att"></span>  
   </div>
+
 </div>
 
 
@@ -72,8 +85,9 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 <script>
 
-var hero = TurnGame.getInstance('445544');
-console.dir(hero)
+// var hero = TurnGame.getInstance('445544');
+// console.dir(hero)
+// console.log(hero.stat)
 	
 
 </script>

@@ -26,6 +26,10 @@
 <body>
 
 
+<style>
+#message{background:#ccc;position:fixed;bottom:0;width:100%;padding:10px;height:500px;overflow: auto;}
+</style>
+
 <!-- 턴게임 뷰 -->
 <form id="start-screen">
   <input id="name-input" placeholder="영웅 이름을 입력하세요!" value="aaaa" />

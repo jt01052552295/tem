@@ -92,7 +92,7 @@ var TurnGame = (function() {
 		        if (input === '1') {
 		          return this.generateMonster();
 		        } else if (input === '2') {
-		          hp = maxHp;
+		          hero.hp = hero.maxHp;
 		          return this.showHp().setMessage('체력을 회복했습니다');
 		        } else if (input === '3') {
 		          return this.exit();
@@ -133,6 +133,7 @@ var TurnGame = (function() {
 			  var self = this;
 			  turn = !turn;
 			  document.getElementById('battle-button').disabled = true;
+			  console.log(turn)
 			  if (!turn) {
 				    window.setTimeout(function () {
 				      self.setMessage(monster.name + '의 턴입니다');

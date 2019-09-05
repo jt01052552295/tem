@@ -27,7 +27,17 @@
 
 
 <style>
+#start-screen {width:500px;margin:0 auto;}
+#screen{position: relative;}
 #message{background:#ccc;position:fixed;bottom:0;width:100%;padding:10px;height:500px;overflow: auto;}
+#hero-stat{position:absolute;top:0;right:0;padding:10px;background:#eee}
+#hero-stat span {display: block;margin-bottom: 5px;}
+
+#screen form {width:500px;margin:0 auto;}
+
+
+#monster-stat {position:absolute;top:0;left:0;padding:10px;background:#eee}
+#monster-stat span {display: block;margin-bottom: 5px;}
 </style>
 
 <!-- 턴게임 뷰 -->

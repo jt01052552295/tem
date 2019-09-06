@@ -28,7 +28,7 @@ var TurnGame = (function() {
 	      xp: 50 + hero.lev * 5,
 	    }];
 	    var monster = null;
-    	var turn = true;
+    	var myTurn = true;
 
 	    return {
 	    	stat:hero,
@@ -131,10 +131,10 @@ var TurnGame = (function() {
 	        }, 
 	        nextTurn: function() {
 			  var self = this;
-			  turn = !turn;
+			  myTurn = !myTurn;
 			  document.getElementById('battle-button').disabled = true;
-			  console.log(turn)
-			  if (!turn) {
+			 
+			  if (!myTurn) { // false 적턴, true 플레이어턴
 				    window.setTimeout(function () {
 				      self.setMessage(monster.name + '의 턴입니다');
 				      window.setTimeout(function () {

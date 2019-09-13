@@ -1,3 +1,7 @@
+<?php 
+$ver_time = date("Y-m-dH:i:s");
+$ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
+?>
 <!DOCTYPE html>
 <!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
 <!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
@@ -13,9 +17,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="google" content="notranslate">
 <meta name="format-detection" content="telephone=no">
-<link href="./asset/css/fonts.css?ver=1" rel="stylesheet">
-<link href="./asset/css/default.css?ver=1" rel="stylesheet">
-<link href="./asset/css/style.css?ver=1" rel="stylesheet">
+<link href="./asset/css/fonts.css?t=<?php echo $ver_time?>" rel="stylesheet">
+<link href="./asset/css/default.css?t=<?php echo $ver_time?>" rel="stylesheet">
+<link href="./asset/css/style.css?t=<?php echo $ver_time?>" rel="stylesheet">
 <link href="./asset/fontawesome/css/all.css?ver=1" rel="stylesheet">
 <script src="./asset/js/jquery-3.3.1.min.js?ver=1" crossorigin="anonymous"></script>
 <script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
@@ -83,11 +87,20 @@
 
 	<aside id="side">
 		<ul class="cate">
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
-            <li><button class="mBtn">Click Me</button></li>
+            <li><button class="mBtn" data-menuName="func11"><i class="fas fa-arrows-alt"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func12"><i class="fas fa-expand"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func13"><i class="fas fa-crop"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func14"><i class="fas fa-eye-dropper"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func15"><i class="fas fa-eraser"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func16"><i class="fas fa-pen-nib"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func17"><i class="fas fa-font"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func18"><i class="fas fa-mouse-pointer"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func19"><i class="far fa-square"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func20"><i class="far fa-hand-paper"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func21"><i class="fas fa-search"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func22"><i class="fas fa-ellipsis-h"></i><span>Text</span></button></li>
+
+
         </ul>
 	</aside>
 
@@ -105,16 +118,13 @@
 
 <!-- script 모음 -->
  
-<?php 
-$ver_time = date("Y-m-dH:i:s");
-$ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
-?>
+
 <script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
 
 <script>
-	var mainF = new Main('dev');
-	mainF.init();
-
+	var mode = 'dev';
+	var main = Main.getInstance(mode);
+	main.init();
 </script>
 
 

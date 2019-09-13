@@ -1,25 +1,94 @@
 "use strict"
 
+/*
 
-var Main = function(mode){
+ 언제 다하니...
 
-	this.dev = (mode ? mode : "product");
+ */
 
-	this.init = function(){	
-		$(".topMenu").on("click","a",function(e){
-			e.preventDefault();
+var Main = (function() {
 
-			console.log(e)
-			// wc2.closeOnclickNavbar(event);
-			// if($(event.target).attr("data-wc-menu")){
-			// 	wc2.btnShowMenuDetail(event.target);
-			// }
-			//return;
-		});
+	var instance;
+	var initiate = function(mode) {
+		var defaults = {
+	      mode: mode,
+	      topMenuActivate: false,
+	      
+	    };
 
-		return 'rs';
+		return {
+			opt:defaults,
+			init:function(){
+				this.showMode();
+				this.topMenu();
+				this.sideMenu();
+				return this;
+			},
+			showMode: function() {
+		        console.log('current mode is ' + defaults.mode)
+		        return this;
+		    },
+		    topMenu: function(){
+		    	
+		    	var dropDownBtn = 'a.dropbtn';
+		    	var dropDownMenu = 'ul.dropdown-content';
+
+		    	$(dropDownBtn).on('click', function(e){
+		    		e.preventDefault();
+		    		defaults.topMenuActivate = !defaults.topMenuActivate;
+		    		if(defaults.topMenuActivate){
+		    			$(this).addClass('on')
+		    			$(this).siblings(dropDownMenu).addClass('on')
+		    		}
+		    	})
+		    	$(dropDownBtn).on('mouseenter', function(e){
+		    		$(dropDownBtn).removeClass('on')
+		    		$(dropDownMenu).removeClass('on')
+		    		if(defaults.topMenuActivate){
+		    			$(this).addClass('on')
+		    			$(this).siblings(dropDownMenu).addClass('on')
+		    		}	
+		    	})
+		    	$('html').click(function (event) {
+					if ($(dropDownMenu).is(":visible") && !$(event.target).is("#header *")) {
+						if ($(dropDownMenu).is(":visible")) {
+							defaults.topMenuActivate = !defaults.topMenuActivate;
+							$(dropDownBtn).removeClass('on')
+							$(dropDownMenu).removeClass( "on" );
+						}   
+					}
+				});
+
+
+		    	return this;
+		    },
+		    sideMenu: function(){
+		    	console.log('sideMenu')
+		    	var sBtn = 'button.mBtn';
+
+		    	$(sBtn).on('click', function(e){
+		    		e.preventDefault();
+		    		$(sBtn).removeClass('active')
+		    		$(this).addClass('active')
+		    		var func = $(this).attr('data-menuName')
+		    		console.log(func)
+		    	});
+
+		    	return this;
+		    },
+
+
+		};
+	};
+
+	return {
+	    getInstance: function(name) {
+	      if (!instance) {
+	        instance = initiate(name);
+	      }
+	      return instance;
+	    }
 	};
 
 
-};
-
+})();

@@ -22,6 +22,7 @@ var Main = (function() {
 				this.showMode();
 				this.topMenu();
 				this.sideMenu();
+				this.groundToggle();
 				return this;
 			},
 			showMode: function() {
@@ -63,7 +64,7 @@ var Main = (function() {
 		    	return this;
 		    },
 		    sideMenu: function(){
-		    	console.log('sideMenu')
+		    	
 		    	var sBtn = 'button.mBtn';
 
 		    	$(sBtn).on('click', function(e){
@@ -74,6 +75,18 @@ var Main = (function() {
 		    		console.log(func)
 		    	});
 
+		    	return this;
+		    },
+		    groundToggle: function(){
+		    	console.log('groundToggle')
+		    	var toggleBtn = '.groundToggle > a';
+		    	var groundForeColor = '.groundColor.foreG';
+		    	var groundBackColor = '.groundColor.backG';
+
+		    	$(toggleBtn).on('click', function(e){
+		    		e.preventDefault();
+		    		console.log('toggleBtn')
+		    	})
 		    	return this;
 		    },
 

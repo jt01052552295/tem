@@ -99,9 +99,14 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
             <li><button class="mBtn" data-menuName="func20"><i class="far fa-hand-paper"></i><span>Text</span></button></li>
             <li><button class="mBtn" data-menuName="func21"><i class="fas fa-search"></i><span>Text</span></button></li>
             <li><button class="mBtn" data-menuName="func22"><i class="fas fa-ellipsis-h"></i><span>Text</span></button></li>
-
-
         </ul>
+
+        <div class="foreBg">
+        	<div class="groundToggle"><a href="#"><i class="fas fa-retweet"></i></a></div>
+        	<div class="groundColor foreG" data-currentForeColor=""></div>
+        	<div class="groundColor backG" data-currentBackColor=""></div>
+        </div>
+
 	</aside>
 
 	<main id="main">

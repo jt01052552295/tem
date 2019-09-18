@@ -103,8 +103,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
         <div class="foreBg">
         	<div class="groundToggle"><a href="#"><i class="fas fa-retweet"></i></a></div>
-        	<div class="groundColor foreG" data-currentForeColor=""></div>
-        	<div class="groundColor backG" data-currentBackColor=""></div>
+        	<div class="groundColor" id="foreG" data-currentColor=""></div>
+        	<div class="groundColor" id="backG" data-currentColor=""></div>
         </div>
 
 	</aside>

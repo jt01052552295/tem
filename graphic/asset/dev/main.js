@@ -13,6 +13,10 @@ var Main = (function() {
 		var defaults = {
 	      mode: mode,
 	      topMenuActivate: false,
+	      foreGroundColor: 'white',
+	      backGroundColor: 'black',
+	      foreSelector: '#foreG',
+	      backSelector: '#backG',
 	      
 	    };
 
@@ -22,6 +26,7 @@ var Main = (function() {
 				this.showMode();
 				this.topMenu();
 				this.sideMenu();
+				this.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);
 				this.groundToggle();
 				return this;
 			},
@@ -77,15 +82,27 @@ var Main = (function() {
 
 		    	return this;
 		    },
-		    groundToggle: function(){
-		    	console.log('groundToggle')
-		    	var toggleBtn = '.groundToggle > a';
-		    	var groundForeColor = '.groundColor.foreG';
-		    	var groundBackColor = '.groundColor.backG';
+		    setGroundColor: function(foreColor, backColor){
+		    	if(!foreColor) foreColor = defaults.foreGroundColor;
+		    	if(!backColor) backColor = defaults.backGroundColor;
 
+		    	$(defaults.foreSelector).css({'background-color':foreColor});
+		    	$(defaults.foreSelector).attr("data-currentColor",foreColor);
+
+		    	$(defaults.backSelector).css({'background-color':backColor});	    	
+		    	$(defaults.backSelector).attr("data-currentColor",backColor);
+
+		    	return this;
+		    },
+		    groundToggle: function(){
+		    	var self = this;
+		    	var toggleBtn = '.groundToggle > a';
 		    	$(toggleBtn).on('click', function(e){
 		    		e.preventDefault();
-		    		console.log('toggleBtn')
+	    			var foreColor = $(defaults.foreSelector).attr("data-currentColor");
+	    			var backColor = $(defaults.backSelector).attr("data-currentColor");
+
+	    			self.setGroundColor(backColor, foreColor);	    		
 		    	})
 		    	return this;
 		    },

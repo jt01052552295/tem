@@ -18,6 +18,7 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      
+	      
 	    };
 
 		return {
@@ -28,6 +29,7 @@ var Main = (function() {
 				this.sideMenu();
 				this.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);
 				this.groundToggle();
+				this.groundColor();
 				return this;
 			},
 			showMode: function() {
@@ -104,6 +106,26 @@ var Main = (function() {
 
 	    			self.setGroundColor(backColor, foreColor);	    		
 		    	})
+		    	return this;
+		    },
+		    groundColor: function(){
+		    	var self = this;
+		    	var btnGroundColor = 'button.groundColor';
+
+		    	$(btnGroundColor).on('click', function(e){
+		    		e.preventDefault();
+		    		var mode = $(this).attr('data-colorMode');
+
+		    		console.log('고민...' + mode)
+	    			
+	    			// var foreColor = $(defaults.foreSelector).attr("data-currentColor");
+	    			// var backColor = $(defaults.backSelector).attr("data-currentColor");
+
+	    			// self.setGroundColor(backColor, foreColor);	    		
+		    	})
+
+
+
 		    	return this;
 		    },
 

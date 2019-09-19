@@ -183,9 +183,9 @@ main#main canvas {border:1px solid #ccc;background:#fff;}
 div.foreBg {padding:10px;clear: both;position: relative;background: #333;height:90px;margin-top:10px;}
 div.foreBg div.groundToggle {text-align: right;}
 div.foreBg div.groundToggle a {color:#fff;}
-div.foreBg div.groundColor {width:30px;height:30px;position: absolute;}
-div.foreBg div#foreG {border:1px solid #000;background: transparent;left: 50%;transform: translate(-80%, 0);top:22px;z-index: 10}
-div.foreBg div#backG {border:1px solid #fff;background: transparent;left: 50%;transform: translate(-15%, 0);top:40px;z-index: 1}
+div.foreBg button.groundColor {width:30px;height:30px;position: absolute;display: block;}
+div.foreBg button#foreG {border:1px solid #000;background: transparent;left: 50%;transform: translate(-80%, 0);top:22px;z-index: 10}
+div.foreBg button#backG {border:1px solid #fff;background: transparent;left: 50%;transform: translate(-15%, 0);top:40px;z-index: 1}
 
 
 

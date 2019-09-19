@@ -103,8 +103,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
         <div class="foreBg">
         	<div class="groundToggle"><a href="#"><i class="fas fa-retweet"></i></a></div>
-        	<div class="groundColor" id="foreG" data-currentColor=""></div>
-        	<div class="groundColor" id="backG" data-currentColor=""></div>
+        	<button class="groundColor" id="foreG" data-colorMode = "fore" data-currentColor=""></button>
+        	<button class="groundColor" id="backG" data-colorMode = "back" data-currentColor=""></button>
         </div>
 
 	</aside>
@@ -119,7 +119,11 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<footer id="footer">푸터</footer>
 
+	<div id="poplayer">
+	</div>
+
 </div>
+
 
 <!-- script 모음 -->
  

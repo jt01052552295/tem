@@ -103,8 +103,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
         <div class="foreBg">
         	<div class="groundToggle"><a href="#"><i class="fas fa-retweet"></i></a></div>
-        	<button class="groundColor" id="foreG" data-colorMode = "fore" data-currentColor=""></button>
-        	<button class="groundColor" id="backG" data-colorMode = "back" data-currentColor=""></button>
+        	<button class="groundColor" id="foreG" data-colorMode = "foreColorMode" data-modal="true" data-currentColor=""></button>
+        	<button class="groundColor" id="backG" data-colorMode = "backColorMode" data-modal="true" data-currentColor=""></button>
         </div>
 
 	</aside>
@@ -119,17 +119,21 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<footer id="footer">푸터</footer>
 
-	<div id="poplayer">
+	<div id="modal" class="modalWrap">
+		<div class="modalInner">
+			<div class="modalTit">
+				<h5>모달창</h5>
+				<button class="dbtn closeModal">&times;</button> 
+			</div>
+			<div class="modalCon" id="getModalData"></div>         
+		</div>
 	</div>
 
 </div>
 
 
 <!-- script 모음 -->
- 
-
 <script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
-
 <script>
 	var mode = 'dev';
 	var main = Main.getInstance(mode);

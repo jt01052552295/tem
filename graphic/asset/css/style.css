@@ -52,6 +52,12 @@ a, a:hover {text-decoration: none;}
 	.f_list li a {font-size:1.2em;color:red;}
 }
 
+/* 
+** button 
+*/
+a.dbtn,.dbtn{line-height:35px;height:35px;padding:0 10px;text-align:center;border:0;background: #fff;color:#333;}
+
+
 
 /* 
 ** opacity 
@@ -188,6 +194,14 @@ div.foreBg button#foreG {border:1px solid #000;background: transparent;left: 50%
 div.foreBg button#backG {border:1px solid #fff;background: transparent;left: 50%;transform: translate(-15%, 0);top:40px;z-index: 1}
 
 
+div.modalWrap {display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.4)}
+div.modalWrap .modalInner {background-color:#fefefe;width:50%;position: absolute;top:10%;left:50%; transform: translate(-50%, 0);border-radius: 5px;box-shadow: 0 3px 6px rgba(0,0,0,.5);}
+div.modalWrap .modalInner .modalTit {padding:10px;    position: relative;}
+div.modalWrap .modalInner .modalTit h5 {font-size:1.2em;}
+div.modalWrap .modalInner .modalTit .closeModal{color:#aaa;font-size:2.0em;;font-weight:700;position: absolute;top:0;right:10px;}
+div.modalWrap .modalInner .modalTit .closeModal:focus,
+div.modalWrap .modalInner .modalTit .closeModal:hover{color:#000;text-decoration:none;cursor:pointer}
+div.modalWrap .modalInner .modalCon {padding:10px;}
 
 
 

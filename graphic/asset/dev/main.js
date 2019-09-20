@@ -17,6 +17,7 @@ var Main = (function() {
 	      backGroundColor: 'black',
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
+	      modalActivate: false,
 	      
 	      
 	    };
@@ -30,6 +31,7 @@ var Main = (function() {
 				this.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);
 				this.groundToggle();
 				this.groundColor();
+				this.toggleModal();
 				return this;
 			},
 			showMode: function() {
@@ -115,8 +117,14 @@ var Main = (function() {
 		    	$(btnGroundColor).on('click', function(e){
 		    		e.preventDefault();
 		    		var mode = $(this).attr('data-colorMode');
+		    		var modal = $(this).attr('data-modal');
 
-		    		console.log('고민...' + mode)
+		    		
+		    		if(modal){
+		    			defaults.modalActivate = !defaults.modalActivate;
+		    			self.toggleModal(mode);
+		    		}
+
 	    			
 	    			// var foreColor = $(defaults.foreSelector).attr("data-currentColor");
 	    			// var backColor = $(defaults.backSelector).attr("data-currentColor");
@@ -128,6 +136,29 @@ var Main = (function() {
 
 		    	return this;
 		    },
+		    toggleModal: function(mode){
+		    	var modal = document.getElementById('modal');
+		    	var closeBtn = document.getElementsByClassName("closeModal")[0];  
+		    	var getModalData = document.getElementById('getModalData');
+
+    			
+    			if(defaults.modalActivate){
+    				modal.style.display = "block";   				
+    				getModalData.innerHTML = mode;
+    			} 
+
+		        window.onclick = function(event) {
+
+		            if (event.target == modal || event.target == closeBtn) {
+		                modal.style.display = "none";
+		                getModalData.innerHTML = '';
+		                defaults.modalActivate = !defaults.modalActivate;
+		            }
+		        }
+		        return this; 
+
+		    },
+
 
 
 		};

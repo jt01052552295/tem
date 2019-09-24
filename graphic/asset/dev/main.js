@@ -114,6 +114,8 @@ var Main = (function() {
 		    	var self = this;
 		    	var btnGroundColor = 'button.groundColor';
 
+		    	self.toggleModal(mode);
+
 		    	$(btnGroundColor).on('click', function(e){
 		    		e.preventDefault();
 		    		var mode = $(this).attr('data-colorMode');
@@ -141,20 +143,20 @@ var Main = (function() {
 		    	var closeBtn = document.getElementsByClassName("closeModal")[0];  
 		    	var getModalData = document.getElementById('getModalData');
 
-    			
+    			modal.style.display = "block";   	
     			if(defaults.modalActivate){
     				modal.style.display = "block";   				
-    				getModalData.innerHTML = mode;
+    				//getModalData.innerHTML = mode;
     			} 
 
-		        window.onclick = function(event) {
+		        // window.onclick = function(event) {
 
-		            if (event.target == modal || event.target == closeBtn) {
-		                modal.style.display = "none";
-		                getModalData.innerHTML = '';
-		                defaults.modalActivate = !defaults.modalActivate;
-		            }
-		        }
+		        //     if (event.target == modal || event.target == closeBtn) {
+		        //         modal.style.display = "none";
+		        //         getModalData.innerHTML = '';
+		        //         defaults.modalActivate = !defaults.modalActivate;
+		        //     }
+		        // }
 		        return this; 
 
 		    },

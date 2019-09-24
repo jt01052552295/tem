@@ -125,7 +125,24 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				<h5>모달창</h5>
 				<button class="dbtn closeModal">&times;</button> 
 			</div>
-			<div class="modalCon" id="getModalData"></div>         
+			<div class="modalCon" id="getModalData">
+				<!-- preview element -->
+				<div class="preview"></div>
+				<!-- colorpicker element -->
+				<div class="colorpicker" style="display:block">
+				    <canvas id="picker" width="300" height="300"></canvas>
+				    <div class="controls">
+				        <div><label>R</label> <input type="text" id="rVal" /></div>
+				        <div><label>G</label> <input type="text" id="gVal" /></div>
+				        <div><label>B</label> <input type="text" id="bVal" /></div>
+				        <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+				        <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+				    </div>
+				</div>
+
+
+
+			</div>         
 		</div>
 	</div>
 
@@ -133,6 +150,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 
 <!-- script 모음 -->
+<script src="./asset/dev/colorPicker.js?t=<?php echo $ver_time?>"></script>
 <script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
 <script>
 	var mode = 'dev';

@@ -131,12 +131,17 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				<!-- colorpicker element -->
 				<div class="colorpicker" style="display:block">
 				    <canvas id="picker" width="300" height="300"></canvas>
+				    <canvas id="colorPalette" width="30" height="300"></canvas>
+
 				    <div class="controls">
 				        <div><label>R</label> <input type="text" id="rVal" /></div>
 				        <div><label>G</label> <input type="text" id="gVal" /></div>
 				        <div><label>B</label> <input type="text" id="bVal" /></div>
+				        <div><label>A</label> <input type="text" id="bVal" /></div>
 				        <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
 				        <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+				        <div><label>HSL</label> <input type="text" id="hslVal" /></div>
+				        <div><label>CMYK</label> <input type="text" id="cmykVal" /></div>
 				    </div>
 				</div>
 

@@ -220,11 +220,12 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
 
 #picker {
     cursor: crosshair;
-    float: none;
+    float: left;
     margin: 10px;
     border: 0;
 }
 .controls {
+    clear: both;
     float: none;
     margin: 10px;
 }
@@ -250,11 +251,99 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     width: 75px;
 }
 .preview {
-    background: url("../img/select.png") repeat scroll center center transparent;
+    background:transparent;
+    border:1px solid #333;
     border-radius: 3px;
-    box-shadow: 2px 2px 2px #444444;
+    box-shadow: 2px 2px 2px #333;
     cursor: pointer;
     height: 30px;
     width: 30px;
 }
 
+/*
+HSL 색상값은 빛의 삼원색으로 색을 표현하는 RGB 색상값과는 달리 색상, 채도, 명도를 사용해서 색을 표현합니다.
+HSL 색상값에서 HSL은 각각 색상(Hue), 채도(Saturation), 명도(Lightness)를 의미합니다.
+
+색상은 0부터 360 사이의 값을 가지며, 색상환(color wheel)의 각도를 나타냅니다.
+색상 값이 0 또는 360이면 빨간색(red)이 되며, 120이면 녹색(green), 240이면 파란색(blue)이 됩니다
+ #header_01 {background-color: hsl(0, 100%, 0%);}
+
+채도는 0%부터 100% 사이의 값을 가지며, 색상의 연하고 짙은 정도를 나타냅니다.
+채도 값이 0%면 회색이 되고, 100%면 원래 색상이 됩니다.
+ #header_01 {background-color: hsl(0, 100%, 0%);}
+
+명도는 0%부터 100% 사이의 값을 가지며, 색상의 밝고 어두운 정도를 나타냅니다.
+명도 값이 0%면 검정색이 되고, 50%면 원래 색상, 100%면 흰색이 됩니다.
+ #header_01 {background-color: hsl(0, 100%, 0%);}
+
+
+HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니다.
+#header_01 {background-color: hsla(0, 100%, 50%, 0);}
+*/
+
+#colorPalette {
+    width:30px;height:300px;float:left;margin:10px;background:#fff;cursor: crosshair;
+    /*background: linear-gradient( 
+      0deg,
+      hsl(0, 100%, 50%),
+      hsl(15, 100%, 50%),
+      hsl(30, 100%, 50%),
+      hsl(45, 100%, 50%),
+      hsl(60, 100%, 50%),
+      hsl(75, 100%, 50%),
+      hsl(90, 100%, 50%),
+      hsl(105, 100%, 50%),
+      hsl(120, 100%, 50%),
+      hsl(135, 100%, 50%),
+      hsl(150, 100%, 50%),
+      hsl(165, 100%, 50%),
+      hsl(180, 100%, 50%),
+      hsl(195, 100%, 50%),
+      hsl(210, 100%, 50%),
+      hsl(225, 100%, 50%),
+      hsl(240, 100%, 50%),
+      hsl(255, 100%, 50%),
+      hsl(270, 100%, 50%),
+      hsl(285, 100%, 50%),
+      hsl(300, 100%, 50%),
+      hsl(315, 100%, 50%),
+      hsl(330, 100%, 50%),
+      hsl(345, 100%, 50%),
+      hsl(0, 100%, 50%)
+    );*/
+}
+
+
+
+
+.colorPalette .colorRangeSlider {
+
+
+
+  -webkit-appearance: none;display: block;width:300px;height: 30px;outline: none;-webkit-transition: .2s;transition: opacity .2s;
+  -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+     transform:translate(0, 0);
+}
+
+.colorPalette .colorRangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border:1px solid #000;
+  background: transparent;
+  cursor: pointer;
+}
+
+.colorPalette .colorRangeSlider::-moz-range-thumb {
+  width: 100%;
+  height: 2px;
+  border:1px solid #000;
+  background: transparent;
+  cursor: pointer;
+}

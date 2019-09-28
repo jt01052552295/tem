@@ -137,7 +137,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				        <div><label>R</label> <input type="text" id="rVal" /></div>
 				        <div><label>G</label> <input type="text" id="gVal" /></div>
 				        <div><label>B</label> <input type="text" id="bVal" /></div>
-				        <div><label>A</label> <input type="text" id="bVal" /></div>
+				        <div><label>A</label> <input type="text" id="aVal" /></div>
 				        <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
 				        <div><label>HEX</label> <input type="text" id="hexVal" /></div>
 				        <div><label>HSL</label> <input type="text" id="hslVal" /></div>
@@ -155,6 +155,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 
 <!-- script 모음 -->
+<script src="./asset/dev/w3color.js?t=<?php echo $ver_time?>"></script>
 <script src="./asset/dev/colorPicker.js?t=<?php echo $ver_time?>"></script>
 <script src="./asset/dev/main.js?t=<?php echo $ver_time?>"></script>
 <script>

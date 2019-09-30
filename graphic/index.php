@@ -162,6 +162,10 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	var mode = 'dev';
 	var main = Main.getInstance(mode);
 	main.init();
+
+
+	var rs = colorPicker().toRgbString();
+	console.log(rs)
 </script>
 
 

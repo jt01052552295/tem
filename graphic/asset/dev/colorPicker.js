@@ -16,12 +16,19 @@
             this.bCanPreview = true; // can preview
             this.cAlpha = 1;    
 
+            this.canvas = document.getElementById('picker');
+            this.ctx = this.canvas.getContext('2d');
             this.cpCanvas = document.getElementById('colorPalette');    
-            this.cpCtx = this.cpCanvas.getContext('2d');   
+            this.cpCtx = this.cpCanvas.getContext('2d');  
+            this.colorPaletteControlHandler = document.getElementById('colorPaletteControlHandler'); 
+            this.cpCanvasRect = this.cpCanvas.getBoundingClientRect();
+            this.colorPaletteControlMove = false; 
+            this.cpCanvasPosY = 0
 
             this.initCanvas();
             this.initPalette();
             this.selectColorPalette();
+            
         },
         initCanvas : function(){
             var canvas = document.getElementById('picker');
@@ -79,27 +86,146 @@
             this.cpCtx.fillRect(0, 0, 30, 300);
 
         },
+        updatePreviewColor: function(colorData){
+            if(!colorData) return;
+            var self = this;
+            var pixel = colorData.data;
+            // update preview color
+            var color = "rgba("+pixel[0]+", "+pixel[1]+", "+pixel[2]+", "+self.cAlpha+")";
+            var c = w3color(color);
+
+            
+
+            if ((color.indexOf("rgba") > -1 || color.indexOf("hsla") > -1 || color.indexOf("hwba") > -1 || color.indexOf("ncola")) > -1
+            || (color.indexOf("cmyk") == -1 && color.split(",").length == 4)
+            || (color.indexOf("cmyk") > -1 && color.split(",").length == 5)) {
+
+                $('#hslVal').val(c.toHslaString());
+                $('#rgbVal').val(c.toRgbaString());
+            } else {
+
+                $('#hslVal').val(c.toHslString());
+                $('#rgbVal').val(c.toRgbString());
+            }
+
+            // update controls
+            $('.preview').css('backgroundColor', c.toRgbString());
+            self.ctx.fillStyle = c.toRgbString().toLowerCase();
+            self.ctx.fillRect(0, 0, 300, 300);
+
+            var gradient = null;
+            var gradient2 = null; 
+
+            //ctx.fillStyle = 'white'; 
+
+            gradient = self.ctx.createLinearGradient(0, 150, 300, 150);
+            gradient.addColorStop(0, 'hsla(0, 0%, 50%, 1)');
+            gradient.addColorStop(1, 'hsla(0, 0%, 50%, 0)');
+            
+            gradient2 = self.ctx.createLinearGradient(150, 0, 150, 300);
+            gradient2.addColorStop(0, 'hsl(0, 0%, 100%)');
+            gradient2.addColorStop(.5, 'hsla(0, 0%, 100%, 0)');
+            gradient2.addColorStop(.5, 'hsla(0, 0%, 0%, 0)');
+            gradient2.addColorStop(1, 'hsl(0, 0%, 0%)');
+
+            self.ctx.fillStyle = gradient;
+            self.ctx.fillRect(0, 0, 300, 300);
+
+            self.ctx.fillStyle = gradient2;
+            self.ctx.fillRect(0, 0, 300, 300);
+
+            $('#rVal').val(pixel[0]);
+            $('#gVal').val(pixel[1]);
+            $('#bVal').val(pixel[2]);
+            $('#aVal').val(self.cAlpha);
+            $('#hexVal').val(c.toHexString());
+            $('#cmykVal').val(c.toCmykString()); 
+
+            return this;
+        },
+        updatePreviewColor2: function(colorData){
+            if(!colorData) return;
+            var self = this;
+            var pixel = colorData.data;
+            // update preview color
+            var color = "rgba("+pixel[0]+", "+pixel[1]+", "+pixel[2]+", "+self.cAlpha+")";
+            var c = w3color(color);
+
+            
+
+            if ((color.indexOf("rgba") > -1 || color.indexOf("hsla") > -1 || color.indexOf("hwba") > -1 || color.indexOf("ncola")) > -1
+            || (color.indexOf("cmyk") == -1 && color.split(",").length == 4)
+            || (color.indexOf("cmyk") > -1 && color.split(",").length == 5)) {
+
+                $('#hslVal').val(c.toHslaString());
+                $('#rgbVal').val(c.toRgbaString());
+            } else {
+
+                $('#hslVal').val(c.toHslString());
+                $('#rgbVal').val(c.toRgbString());
+            }
+
+            $('#rVal').val(pixel[0]);
+            $('#gVal').val(pixel[1]);
+            $('#bVal').val(pixel[2]);
+            $('#aVal').val(self.cAlpha);
+            $('#hexVal').val(c.toHexString());
+            $('#cmykVal').val(c.toCmykString()); 
+
+            // update controls
+            $('.preview').css('backgroundColor', c.toRgbString());
+        },
         selectColorPalette: function(){
             var self = this;
-            $(this.cpCanvas).mousemove(function(e) { // mouse move handler
+
+
+            $(this.canvas).click(function(e) { // mouse click handler
                 if (self.bCanPreview) {
                     // get coordinates of current position
                     var currentOffset = $(this).offset();
                     var currentX = Math.floor(e.pageX - currentOffset.left);
                     var currentY = Math.floor(e.pageY - currentOffset.top);
-                    //console.log(currentX, currentY)
-                   
+
+                    // get current pixel
+                    var colorData = self.ctx.getImageData(currentX, currentY, 1, 1);                  
+                    self.updatePreviewColor2(colorData);                                     
                 }
             });
-
             $(this.cpCanvas).click(function(e) { // mouse click handler
                 if (self.bCanPreview) {
                     // get coordinates of current position
                     var currentOffset = $(this).offset();
                     var currentX = Math.floor(e.pageX - currentOffset.left);
-                    var currentY = Math.floor(e.pageY - currentOffset.top);
-                    console.log(currentX, currentY)
-                   
+                    self.cpCanvasPosY = Math.floor(e.pageY - currentOffset.top);
+
+                    $('.colorPaletteControl').css({'top':self.cpCanvasPosY+'px'})
+                    // get current pixel
+                    var colorData = self.cpCtx.getImageData(currentX, self.cpCanvasPosY, 1, 1);                  
+                    self.updatePreviewColor(colorData);                                     
+                }
+            });
+
+            $(this.cpCanvas).mousedown(function(e) {
+                    self.colorPaletteControlMove = true;
+            });
+            $(this.cpCanvas).mousemove(function(e) {
+                if (self.colorPaletteControlMove === true) {
+
+                    var currentOffset = $(this).offset();
+                    var currentX = Math.floor(e.pageX - currentOffset.left);
+                    self.cpCanvasPosY = Math.floor(e.pageY - currentOffset.top);
+
+                    $('.colorPaletteControl').css({'top':self.cpCanvasPosY+'px'})
+                    // get current pixel
+                    var colorData = self.cpCtx.getImageData(currentX, self.cpCanvasPosY, 1, 1);                  
+                    self.updatePreviewColor(colorData);     
+                    
+                    
+                }
+            });
+            $(this.cpCanvas).mouseup(function(e) {
+                if (self.colorPaletteControlMove === true) {
+                     self.colorPaletteControlMove = false;
                 }
             });
 

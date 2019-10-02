@@ -141,6 +141,11 @@
             $('#hexVal').val(c.toHexString());
             $('#cmykVal').val(c.toCmykString()); 
 
+
+            console.log(c.toRgb())
+            console.log(c.toHsl())
+            console.log(c.toCmyk())
+
             return this;
         },
         updatePreviewColor2: function(colorData){

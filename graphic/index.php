@@ -146,6 +146,19 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				        <div><label>HSL</label> <input type="text" id="hslVal" /></div>
 				        <div><label>CMYK</label> <input type="text" id="cmykVal" /></div>
 				    </div>
+
+				    <div class="controls_panel">
+				        <div class="cPanel"><label><span>R :</span><input type="number" id="r01" value="255" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>G :</span><input type="number" id="g01" value="255" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>B :</span><input type="number" id="b01" value="255" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>H :</span><input type="number" id="h01" value="360" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>S :</span><input type="number" id="s01" value="100" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>L :</span><input type="number" id="l01" value="100" /></label> <div class="slide_panel"></div> </div>			        
+				        <div class="cPanel"><label><span>C :</span><input type="number" id="c01" value="100" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>M :</span><input type="number" id="m01" value="100" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>Y :</span><input type="number" id="y01" value="100" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel"><label><span>K :</span><input type="number" id="k01" value="100" /></label> <div class="slide_panel"></div> </div>
+				    </div>
 				</div>
 
 

@@ -240,9 +240,9 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     );*/
 }
 .controls {
-    clear: both;
-    float: none;
-    margin: 10px;
+    
+    float: right;
+    margin: 10px 20px;
 }
 .controls > div {
     border: 1px solid #2F2F2F;
@@ -261,10 +261,19 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     font-size: 10px;
     height: 14px;
     margin-left: 6px;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
-    width: 75px;
+    width: 85px;
+    padding:5px;
 }
+
+.controls_panel {clear: both;margin:10px;}
+.controls_panel div.cPanel {padding: 5px;margin-bottom: 5px;overflow: hidden;border: 1px solid #2F2F2F;display: table;width: 100%;}
+.controls_panel div.cPanel label {padding-right:5px; display: table-cell;width:80px;}
+.controls_panel div.cPanel label span {width:20px;display: inline-block;}
+.controls_panel div.cPanel label input {padding-left: 5px;width: 45px;}
+.controls_panel div.cPanel .slide_panel {display: table-cell;width:calc(100% - 80px); background-color: #121212}
+
 .preview {
     background:transparent;
     border:1px solid #333;

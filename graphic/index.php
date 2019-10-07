@@ -148,16 +148,47 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				    </div>
 
 				    <div class="controls_panel">
-				        <div class="cPanel"><label><span>R :</span><input type="number" id="r01" value="255" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>G :</span><input type="number" id="g01" value="255" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>B :</span><input type="number" id="b01" value="255" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>H :</span><input type="number" id="h01" value="360" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>S :</span><input type="number" id="s01" value="100" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>L :</span><input type="number" id="l01" value="100" /></label> <div class="slide_panel"></div> </div>			        
-				        <div class="cPanel"><label><span>C :</span><input type="number" id="c01" value="100" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>M :</span><input type="number" id="m01" value="100" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>Y :</span><input type="number" id="y01" value="100" /></label> <div class="slide_panel"></div> </div>
-				        <div class="cPanel"><label><span>K :</span><input type="number" id="k01" value="100" /></label> <div class="slide_panel"></div> </div>
+				        <div class="cPanel">
+				        	<label><span>R :</span><input type="number" id="r01" value="255" /></label> 
+				        	<div class="slide_panel"><input type="range" name="r01v" min="0" max="255" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>G :</span><input type="number" id="g01" value="255" /></label> 
+				        	<div class="slide_panel"><input type="range" name="g01v" min="0" max="255" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>B :</span><input type="number" id="b01" value="255" /></label> 
+				        	<div class="slide_panel"><input type="range" name="b01v" min="0" max="255" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>H :</span><input type="number" id="h01" value="360" /></label> 
+				        	<div class="slide_panel"><input type="range" name="h01v" min="0" max="360" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>S :</span><input type="number" id="s01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="s01v" min="0" max="100" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>L :</span><input type="number" id="l01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="l01v" min="0" max="100" step="1"></div> 
+				        </div>			  
+
+				        <div class="cPanel">
+				        	<label><span>C :</span><input type="number" id="c01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="c01v" min="0" max="100" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>M :</span><input type="number" id="m01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="m01v" min="0" max="100" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>Y :</span><input type="number" id="y01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="y01v" min="0" max="100" step="1"></div> 
+				        </div>
+				        <div class="cPanel">
+				        	<label><span>K :</span><input type="number" id="k01" value="100" /></label> 
+				        	<div class="slide_panel"><input type="range" name="k01v" min="0" max="100" step="1"></div> 
+				        </div>
 				    </div>
 				</div>
 

@@ -240,7 +240,7 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     );*/
 }
 .controls {
-    
+    width: 210px;
     float: right;
     margin: 10px 20px;
 }
@@ -251,6 +251,7 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     padding: 5px;
 }
 .controls label {
+    width: 35px;
     float: left;
 }
 .controls > div input {
@@ -263,7 +264,7 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
     margin-left: 6px;
     text-align: left;
     text-transform: uppercase;
-    width: 85px;
+    width: 150px;
     padding:5px;
 }
 
@@ -273,6 +274,11 @@ div.modalWrap .modalInner .modalCon {padding:10px;}
 .controls_panel div.cPanel label span {width:20px;display: inline-block;}
 .controls_panel div.cPanel label input {padding-left: 5px;width: 45px;}
 .controls_panel div.cPanel .slide_panel {display: table-cell;width:calc(100% - 80px); background-color: #121212}
+.controls_panel div.cPanel .slide_panel input[type=range] {width:100%;height:5px;-webkit-appearance: none;outline: none;padding: 0;margin: 0;background: #d7dcdf;}
+.controls_panel div.cPanel .slide_panel input[type=range]:hover {background: #1abc9c;}
+.controls_panel div.cPanel .slide_panel input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 15px;height: 15px;border-radius: 50%;border:0;background: #fff;cursor: pointer;}
+.controls_panel div.cPanel .slide_panel input[type=range]::-moz-range-thumb {width: 15px;height: 15px;border-radius: 50%;background: #fff;border:0;cursor: pointer;}
+
 
 .preview {
     background:transparent;

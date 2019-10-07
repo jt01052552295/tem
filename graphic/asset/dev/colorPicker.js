@@ -23,11 +23,13 @@
             this.colorPaletteControlHandler = document.getElementById('colorPaletteControlHandler'); 
             this.cpCanvasRect = this.cpCanvas.getBoundingClientRect();
             this.colorPaletteControlMove = false; 
-            this.cpCanvasPosY = 0
+            this.cpCanvasPosY = 0;
 
             this.initCanvas();
             this.initPalette();
             this.selectColorPalette();
+
+            this.initRangeInputColor();
             
         },
         initCanvas : function(){
@@ -236,6 +238,39 @@
 
             return this;
 
+        },
+        initRangeInputColor: function(){
+            var self = this;
+
+            var cPanel = $('.cPanel');
+
+            cPanel.each(function(){
+                
+                var range = $(this).find('input[type=range]');
+                range.on('input', function(){
+                    var val = this.value
+                    $(this).closest("div.slide_panel").siblings('label').find('input[type=number]').val(val)
+                });  
+
+                var number = $(this).find('input[type=number]');
+                number.on('input', function(){
+                    var val = this.value
+                    if(val<0)val=0;
+                    $(this).closest("label").siblings('div.slide_panel').find('input[type=range]').val(val)
+                });  
+                var number = $(this).find('input[type=number]');
+                number.on('change', function(){
+                    var val = this.value
+                    if(val<0)val=0;
+                    $(this).closest("label").siblings('div.slide_panel').find('input[type=range]').val(val)
+                });  
+
+                
+            })
+
+
+
+            return this;
         },
         toRgbString : function () {
             return "rs - rgb(" + this.red + ", " + this.green + ", " + this.blue + ")";

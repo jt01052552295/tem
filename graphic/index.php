@@ -210,10 +210,6 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	var mode = 'dev';
 	var main = Main.getInstance(mode);
 	main.init();
-
-
-	//var rs = colorPicker();
-	// console.log(rs)
 </script>
 
 
@@ -230,17 +226,6 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 포토샵 심화 : 레이어, 필터 등등
 
-
- -->
-
-
-
-<!-- <canvas id='drawingCanvas' width='915' height='670'>
-  Canvas not supported
-</canvas>	 -->
-
-
-<!-- 부트스트랩 3.3.7 - 드롭다운메뉴 확장용, jquery ui
 
 참고해보자
 https://github.com/behigh/bootstrap_dropdowns_enhancement : MIT

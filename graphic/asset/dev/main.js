@@ -142,8 +142,6 @@ var Main = (function() {
 		    	var rs = null;
 		    	var setColorClose = document.getElementsByClassName("setColorClose")[0];  
 
-		    	console.log(mode)
-
 		    	switch(mode){
 		    		case 'foreColorMode':
 		    		rs = colorPicker(defaults.foreGroundColor);
@@ -165,8 +163,16 @@ var Main = (function() {
 
 		            if (event.target == modal || event.target == setColorClose) {
 		                modal.style.display = "none";
-		                
-		                defaults.foreGroundColor = rs.getCurrentColor();
+
+		                switch(mode){
+				    		case 'foreColorMode':
+				    		defaults.foreGroundColor = rs.getCurrentColor();
+				    		
+				    		break;
+				    		case 'backColorMode':
+				    		defaults.backGroundColor = rs.getCurrentColor();
+				    		break;
+				    	}
 		                self.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);	 
 
 		                defaults.modalActivate = !defaults.modalActivate;

@@ -1,8 +1,5 @@
 (function() {
 
-	console.info('color picker')
-
-
     function colorPicker(color) {
         if (!(this instanceof colorPicker)) { return new colorPicker(color); }
         this.initUI(color);    

@@ -13,8 +13,8 @@ var Main = (function() {
 		var defaults = {
 	      mode: mode,
 	      topMenuActivate: false,
-	      foreGroundColor: 'white',
-	      backGroundColor: 'black',
+	      foreGroundColor: 'rgb(255,255,255)',
+	      backGroundColor: 'rgb(0,0,0)',
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
@@ -31,7 +31,6 @@ var Main = (function() {
 				this.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);
 				this.groundToggle();
 				this.groundColor();
-				this.toggleModal();
 				return this;
 			},
 			showMode: function() {
@@ -90,6 +89,9 @@ var Main = (function() {
 		    	if(!foreColor) foreColor = defaults.foreGroundColor;
 		    	if(!backColor) backColor = defaults.backGroundColor;
 
+		    	defaults.foreGroundColor = foreColor;
+		    	defaults.backGroundColor = backColor;
+
 		    	$(defaults.foreSelector).css({'background-color':foreColor});
 		    	$(defaults.foreSelector).attr("data-currentColor",foreColor);
 
@@ -120,18 +122,12 @@ var Main = (function() {
 		    		e.preventDefault();
 		    		var mode = $(this).attr('data-colorMode');
 		    		var modal = $(this).attr('data-modal');
-
 		    		
 		    		if(modal){
 		    			defaults.modalActivate = !defaults.modalActivate;
 		    			self.toggleModal(mode);
 		    		}
-
-	    			
-	    			// var foreColor = $(defaults.foreSelector).attr("data-currentColor");
-	    			// var backColor = $(defaults.backSelector).attr("data-currentColor");
-
-	    			// self.setGroundColor(backColor, foreColor);	    		
+	
 		    	})
 
 
@@ -139,24 +135,50 @@ var Main = (function() {
 		    	return this;
 		    },
 		    toggleModal: function(mode){
+		    	var self = this;
 		    	var modal = document.getElementById('modal');
 		    	var closeBtn = document.getElementsByClassName("closeModal")[0];  
 		    	var getModalData = document.getElementById('getModalData');
+		    	var rs = null;
+		    	var setColorClose = document.getElementsByClassName("setColorClose")[0];  
 
-    			modal.style.display = "block";   	
+		    	console.log(mode)
+
+		    	switch(mode){
+		    		case 'foreColorMode':
+		    		rs = colorPicker(defaults.foreGroundColor);
+		    		
+		    		break;
+		    		case 'backColorMode':
+		    		rs = colorPicker(defaults.backGroundColor);
+		    		break;
+		    	}
+		    	
+
+    			//modal.style.display = "block";   	
     			if(defaults.modalActivate){
     				modal.style.display = "block";   				
     				//getModalData.innerHTML = mode;
     			} 
 
-		        // window.onclick = function(event) {
+    			window.onclick = function(event) {
 
-		        //     if (event.target == modal || event.target == closeBtn) {
-		        //         modal.style.display = "none";
-		        //         getModalData.innerHTML = '';
-		        //         defaults.modalActivate = !defaults.modalActivate;
-		        //     }
-		        // }
+		            if (event.target == modal || event.target == setColorClose) {
+		                modal.style.display = "none";
+		                
+		                defaults.foreGroundColor = rs.getCurrentColor();
+		                self.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);	 
+
+		                defaults.modalActivate = !defaults.modalActivate;
+		            }
+
+		            if (event.target == modal || event.target == closeBtn) {
+		                modal.style.display = "none";
+		              
+		                //getModalData.innerHTML = '';
+		                defaults.modalActivate = !defaults.modalActivate;
+		            }
+		        }
 		        return this; 
 
 		    },

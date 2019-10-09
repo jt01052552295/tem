@@ -3,17 +3,16 @@
 	console.info('color picker')
 
 
-    function colorPicker() {
-        if (!(this instanceof colorPicker)) { return new colorPicker(); }
-        this.initUI();    
+    function colorPicker(color) {
+        if (!(this instanceof colorPicker)) { return new colorPicker(color); }
+        this.initUI(color);    
     }
 
     colorPicker.prototype = {
-        initUI : function() {
+        initUI : function(color) {
             this.obj = this;
-            this.red = 'color.red';
-            this.green = 'color.green';
-            this.blue = 'color.blue';
+            this.initColor = color;
+            this.finalColor = color;
             this.bCanPreview = true; // can preview
             this.cAlpha = 1;    
 
@@ -53,7 +52,6 @@
             this.initCanvas();
             this.initPalette();
             this.selectColorPalette();
-
             this.initRangeInputColor();
             
         },
@@ -113,6 +111,9 @@
             this.cpCtx.fillRect(0, 0, 30, 300);
 
         },
+        getCurrentColor: function(){
+            return this.finalColor;
+        },
         setColorValue: function(c){
             
             $('#rVal').val(c.red);
@@ -143,26 +144,18 @@
             this.m01v.value = Math.round(c.magenta * 100);
             this.y01v.value = Math.round(c.yellow * 100);
             this.k01v.value = Math.round(c.black * 100);
+
+            this.finalColor = c.toRgbString();
+            $('.preview').css('backgroundColor', this.finalColor);
+
         },
-        updatePreviewColor: function(colorData){
-            if(!colorData) return;
+        updateCanvasGradient: function(c){
             var self = this;
-            var pixel = colorData.data;
-            // update preview color
-            var color = "rgba("+pixel[0]+", "+pixel[1]+", "+pixel[2]+", "+self.cAlpha+")";
-            var c = w3color(color);
-
-            self.setColorValue(c);             
-
-            // update controls
-            $('.preview').css('backgroundColor', c.toRgbString());
             self.ctx.fillStyle = c.toRgbString().toLowerCase();
             self.ctx.fillRect(0, 0, 300, 300);
 
             var gradient = null;
             var gradient2 = null; 
-
-            //ctx.fillStyle = 'white'; 
 
             gradient = self.ctx.createLinearGradient(0, 150, 300, 150);
             gradient.addColorStop(0, 'hsla(0, 0%, 50%, 1)');
@@ -180,7 +173,17 @@
             self.ctx.fillStyle = gradient2;
             self.ctx.fillRect(0, 0, 300, 300);
 
+            return this;
+        },
+        updatePreviewColor: function(colorData){
+            if(!colorData) return;
+            var self = this;
+            var pixel = colorData.data;
+            var color = "rgba("+pixel[0]+", "+pixel[1]+", "+pixel[2]+", "+self.cAlpha+")";
+            var c = w3color(color);
 
+            self.setColorValue(c); 
+            self.updateCanvasGradient(c);                    
 
             return this;
         },
@@ -195,9 +198,6 @@
             
 
             self.setColorValue(c); 
-
-            // update controls
-            $('.preview').css('backgroundColor', c.toRgbString());
         },
         selectColorPalette: function(){
             var self = this;
@@ -258,7 +258,7 @@
         },
         initRangeInputColor: function(){
             var self = this;
-            var c = w3color("hsl(" + this.h01.value + ", " + this.s01.value + "%, " + this.l01.value + "%)");
+            var c = w3color(this.initColor);
             self.setColorValue(c);   
 
             var cPanel = $('.cPanel');
@@ -277,7 +277,9 @@
                     if(val<0)val=0;
                     $(this).closest("label").siblings('div.slide_panel').find('input[type=range]').val(val)
                     self.updateRangeInputColor(this);
-                }).on('change', function(){
+                })
+                var number = $(this).find('input[type=number]');
+                number.on('change', function(){
                     var val = this.value
                     if(val<0)val=0;
                     $(this).closest("label").siblings('div.slide_panel').find('input[type=range]').val(val)
@@ -288,19 +290,21 @@
             return self;
         },
         updateRangeInputColor: function(e){
-            // console.log(this.r01.value)
-            // console.log(e.className, e.value)
-
-            // var a = w3color("rgb(" + this.r01.value + ", " + this.g01.value + "%, " + this.b01.value + "%)");
-            // var b = w3color("hsl(" + this.h01.value + ", " + this.s01.value + "%, " + this.l01.value + "%)");
-            // var c = w3color("cmyk(" + this.c01.value  + ", " + this.m01.value + ", " + this.y01.value + ", " + this.k01.value + ")");
-
-
+            var a = null;
+            switch(e.className){
+                case 'red01':case 'green01': case 'blue01': 
+                a = w3color("rgb(" + this.r01.value + ", " + this.g01.value + ", " + this.b01.value + ")");
+                break;
+                case 'hue01':case 'sat01': case 'light01': 
+                a = w3color("hsl(" + this.h01.value + ", " + this.s01.value + "%, " + this.l01.value + "%)");
+                break;
+                case 'cyan01':case 'magenta01': case 'yellow01': case 'kkk01':
+                a = w3color("cmyk(" + this.c01.value  + "%, " + this.m01.value + "%, " + this.y01.value + "%, " + this.k01.value + "%)");
+                break;
+            }
+            this.setColorValue(a);   
+            this.updateCanvasGradient(a);          
             return this;
-        },
-        
-        toRgbString : function () {
-            return "rs - rgb(" + this.red + ", " + this.green + ", " + this.blue + ")";
         }
     };
 

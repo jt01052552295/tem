@@ -123,9 +123,10 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		<div class="modalInner">
 			<div class="modalTit">
 				<h5>모달창</h5>
-				<button class="dbtn closeModal">&times;</button> 
 			</div>
 			<div class="modalCon" id="getModalData">
+				<button class="dbtn setColorClose">확인</button> 
+				<button class="dbtn closeModal">&times;</button> 
 				<!-- preview element -->
 				<div class="preview"></div>
 				<!-- colorpicker element -->
@@ -169,7 +170,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				        	<div class="slide_panel"><input type="range" id="s01v" class="sat01" min="0" max="100" step="1" value="100"></div> 
 				        </div>
 				        <div class="cPanel">
-				        	<label><span>L :</span><input type="number" id="l01" class="light01" value="100" /></label> 
+				        	<label><span>L :</span><input type="number" id="l01" class="light01" value="50" /></label> 
 				        	<div class="slide_panel"><input type="range" id="l01v" class="light01" min="0" max="100" step="1" value="100"></div> 
 				        </div>			  
 
@@ -211,8 +212,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	main.init();
 
 
-	var rs = colorPicker().toRgbString();
-	console.log(rs)
+	//var rs = colorPicker();
+	// console.log(rs)
 </script>
 
 

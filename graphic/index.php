@@ -87,24 +87,28 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<aside id="side">
 		<ul class="cate">
-            <li><button class="mBtn" data-menuName="func11"><i class="fas fa-arrows-alt"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func12"><i class="fas fa-expand"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func13"><i class="fas fa-crop"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func14"><i class="fas fa-eye-dropper"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func15"><i class="fas fa-eraser"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func16"><i class="fas fa-pen-nib"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func11"><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
+            <li><button class="mBtn" data-menuName="func12"><i class="fas fa-expand"></i><span>Marquee</span></button></li>
+            <li><button class="mBtn" data-menuName="func13"><i class="fas fa-crop"></i><span>Crop</span></button></li>
+            <li><button class="mBtn" data-menuName="func14"><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
+            <li><button class="mBtn" data-menuName="func15"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
+            <li><button class="mBtn" data-menuName="func16"><i class="fas fa-pen-nib"></i><span>Pen</span></button></li>
             <li><button class="mBtn" data-menuName="func17"><i class="fas fa-font"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func18"><i class="fas fa-mouse-pointer"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func19"><i class="far fa-square"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func20"><i class="far fa-hand-paper"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func21"><i class="fas fa-search"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func22"><i class="fas fa-ellipsis-h"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-menuName="func18"><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
+            <li><button class="mBtn" data-menuName="func19"><i class="far fa-square"></i><span>Square</span></button></li>
+            <li><button class="mBtn" data-menuName="func20"><i class="far fa-circle"></i><span>Circle</span></button></li>
+            <li><button class="mBtn" data-menuName="func21"><i class="fas fa-minus"></i><span>Line</span></button></li>
+            <li><button class="mBtn" data-menuName="func22"><i class="far fa-star-half"></i><span>Line2</span></button></li>
+            <li><button class="mBtn" data-menuName="func23"><i class="fas fa-star-half"></i><span>Line3</span></button></li>
+            <li><button class="mBtn" data-menuName="func24"><i class="far fa-hand-paper"></i><span>Hand</span></button></li>
+            <li><button class="mBtn" data-menuName="func25"><i class="fas fa-search"></i><span>Zoom</span></button></li>
+            <li><button class="mBtn" data-menuName="func26"><i class="fas fa-ellipsis-h"></i><span>More</span></button></li>
         </ul>
 
         <div class="foreBg">
         	<div class="groundToggle"><a href="#"><i class="fas fa-retweet"></i></a></div>
-        	<button class="groundColor" id="foreG" data-colorMode = "foreColorMode" data-modal="true" data-currentColor=""></button>
-        	<button class="groundColor" id="backG" data-colorMode = "backColorMode" data-modal="true" data-currentColor=""></button>
+        	<button class="groundColor" id="foreG" data-colorMode = "foreColorMode" data-menuName="colorPicker" data-currentColor=""></button>
+        	<button class="groundColor" id="backG" data-colorMode = "backColorMode" data-menuName="colorPicker" data-currentColor=""></button>
         </div>
 
 	</aside>
@@ -123,14 +127,22 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		<div class="modalInner">
 			<div class="modalTit">
 				<h5>모달창</h5>
+				<div class="modalBtn">
+					<button class="dbtn line closeModal">취소</button> 
+				</div>
 			</div>
-			<div class="modalCon" id="getModalData">
-				<button class="dbtn setColorClose">확인</button> 
-				<button class="dbtn closeModal">&times;</button> 
+			<div class="modalCon" id="getModalData-menu-New">
+				
+				New1111
+			</div>
+			<div class="modalCon" id="getModalData-menu-colorPicker">
+				<div class="modalBtn2">
+					<button class="dbtn line setColorClose">확인</button> 
+				</div>
 				<!-- preview element -->
 				<div class="preview"></div>
 				<!-- colorpicker element -->
-				<div class="colorpicker" style="display:block">
+				<div class="colorpicker">
 				    <canvas id="picker" width="300" height="300"></canvas>
 				    <div class="colorPaletteWrap">
 				    	<div class="colorPaletteControl"><i class="far fa-hand-point-left" id="colorPaletteControlHandler"></i></div>

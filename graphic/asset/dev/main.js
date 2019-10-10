@@ -38,7 +38,7 @@ var Main = (function() {
 		        return this;
 		    },
 		    topMenu: function(){
-		    	
+		    	var self = this;
 		    	var dropDownBtn = 'a.dropbtn';
 		    	var dropDownMenu = 'ul.dropdown-content';
 
@@ -68,6 +68,25 @@ var Main = (function() {
 					}
 				});
 
+				$(dropDownMenu).on("click","a",function(event){
+					if ($(dropDownMenu).is(":visible")) {
+						defaults.topMenuActivate = !defaults.topMenuActivate;
+						$(dropDownBtn).removeClass('on')
+						$(dropDownMenu).removeClass( "on" );
+					}
+					if($(event.target).attr("data-menuName")){
+						self.callDataMenu(event.target);
+					}
+				});
+
+
+		    	return this;
+		    },
+		    callDataMenu: function(menuName){
+		    	
+
+				defaults.modalActivate = !defaults.modalActivate;
+		    	this.viewModal(menuName);
 
 		    	return this;
 		    },
@@ -116,31 +135,59 @@ var Main = (function() {
 		    	var self = this;
 		    	var btnGroundColor = 'button.groundColor';
 
-		    	self.toggleModal(mode);
-
 		    	$(btnGroundColor).on('click', function(e){
 		    		e.preventDefault();
-		    		var mode = $(this).attr('data-colorMode');
-		    		var modal = $(this).attr('data-modal');
+		    		// var mode = $(this).attr('data-colorMode');
+		    		var mode = e.target;
 		    		
-		    		if(modal){
-		    			defaults.modalActivate = !defaults.modalActivate;
-		    			self.toggleModal(mode);
-		    		}
+		    		defaults.modalActivate = !defaults.modalActivate;
+		    		self.toggleModal(mode);
 	
 		    	})
 
+		    	return this;
+		    },
+		    viewModal: function(menuName){
+		    	var self = this;
+		    	var modal = document.getElementById('modal');
+		    	var closeBtn = document.getElementsByClassName("closeModal")[0];  
+
+		    	var menu = $(menuName).attr("data-menuName");
+		    	var frms = $("#modal").find("#getModalData-menu-"+menu);
+				frms.show()
+
+
+
+		    	if(defaults.modalActivate){
+    				modal.style.display = "block";   	
+    			} 
+
+    			window.onclick = function(event) {
+    				console.log(event.target)
+    				console.log(closeBtn)
+
+    				if (event.target == modal || event.target == closeBtn) {
+		                modal.style.display = "none";
+		                frms.hide()
+		                defaults.modalActivate = !defaults.modalActivate;
+		            }
+		        }
 
 
 		    	return this;
 		    },
-		    toggleModal: function(mode){
+		    toggleModal: function(menuName){
 		    	var self = this;
 		    	var modal = document.getElementById('modal');
 		    	var closeBtn = document.getElementsByClassName("closeModal")[0];  
-		    	var getModalData = document.getElementById('getModalData');
 		    	var rs = null;
 		    	var setColorClose = document.getElementsByClassName("setColorClose")[0];  
+
+		    	var menu = $(menuName).attr("data-menuName");
+		    	var frms = $("#modal").find("#getModalData-menu-"+menu);
+				frms.show()
+
+				var mode = $(menuName).attr("data-colorMode");
 
 		    	switch(mode){
 		    		case 'foreColorMode':
@@ -155,15 +202,14 @@ var Main = (function() {
 
     			//modal.style.display = "block";   	
     			if(defaults.modalActivate){
-    				modal.style.display = "block";   				
-    				//getModalData.innerHTML = mode;
+    				modal.style.display = "block";   	
     			} 
 
     			window.onclick = function(event) {
 
 		            if (event.target == modal || event.target == setColorClose) {
 		                modal.style.display = "none";
-
+		                frms.hide()
 		                switch(mode){
 				    		case 'foreColorMode':
 				    		defaults.foreGroundColor = rs.getCurrentColor();
@@ -177,11 +223,9 @@ var Main = (function() {
 
 		                defaults.modalActivate = !defaults.modalActivate;
 		            }
-
 		            if (event.target == modal || event.target == closeBtn) {
 		                modal.style.display = "none";
-		              
-		                //getModalData.innerHTML = '';
+		                frms.hide()
 		                defaults.modalActivate = !defaults.modalActivate;
 		            }
 		        }

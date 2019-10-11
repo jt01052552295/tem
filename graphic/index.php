@@ -43,7 +43,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				</li>
 				<li class="dropdown left"><a href="#" class="dropbtn">File <i class="fas fa-caret-down"></i></a>
 				 	<ul class="dropdown-content">
-					     <li><a href="#" data-menuName="New"><i class="fas fa-file-alt"></i> New</a></li>
+					     <li><a href="#" data-menuName="New" id="tempTrigger"><i class="fas fa-file-alt"></i> New</a></li>
 					     <li><a href="#" data-menuName="Open"><i class="fas fa-folder-open"></i> Open</a></li>
 					     <li><a href="#" data-menuName="Save"><i class="fas fa-save"></i> Save</a></li>
 					     <li><a href="#" data-menuName="Exit"><i class="fas fa-sign-out-alt"></i> Exit</a></li>
@@ -133,7 +133,23 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 			</div>
 			<div class="modalCon" id="getModalData-menu-New">
 				
-				New1111
+				<div class="makeCanvasSize">
+					<form id="frm_canvas_size" method="post" name="frm_canvas_size" action="" onsubmit="">
+						<div class="mailFormWrap">
+							<div class="inputForm">
+								<div class="cell_row">
+									<label class="blind" for="custom_width">가로입력</label>
+									<div class="cell"><input type="number" name="custom_width" id="custom_width" class="inputTextMail" /></div>
+									<label class="blind" for="custom_height">세로입력</label>
+									<div class="cell"><input type="number" name="custom_height" id="custom_height" class="inputTextMail" /></div>
+								</div>
+							</div>
+							<div class="mail_submit"><input type="submit" id="onSubmitMail" value="확인"></div>
+						</div>
+
+					</form>
+				</div>
+				
 			</div>
 			<div class="modalCon" id="getModalData-menu-colorPicker">
 				<div class="modalBtn2">
@@ -222,6 +238,12 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	var mode = 'dev';
 	var main = Main.getInstance(mode);
 	main.init();
+
+
+	
+	$("#tempTrigger").trigger('click');
+
+
 </script>
 
 
@@ -236,7 +258,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 기능 : 가이드라인
 기능 : 선, 도형, 텍스트, 색상(파레트), 지우기, 이미지 파일 업로드, 파일저장
 
-포토샵 심화 : 레이어, 필터 등등
+포토샵 심화? : 레이어, 필터 등등
 
 
 참고해보자

@@ -13,8 +13,8 @@ var Main = (function() {
 		var defaults = {
 	      mode: mode,
 	      topMenuActivate: false,
-	      foreGroundColor: 'rgb(255,255,255)',
-	      backGroundColor: 'rgb(0,0,0)',
+	      foreGroundColor: 'rgb(0,0,0)',
+	      backGroundColor: 'rgb(255,255,255)',
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,

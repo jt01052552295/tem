@@ -135,16 +135,29 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				
 				<div class="makeCanvasSize">
 					<form id="frm_canvas_size" method="post" name="frm_canvas_size" action="" onsubmit="">
-						<div class="mailFormWrap">
+						<div class="modalFormWrap">
 							<div class="inputForm">
-								<div class="cell_row">
 									<label class="blind" for="custom_width">가로입력</label>
-									<div class="cell"><input type="number" name="custom_width" id="custom_width" class="inputTextMail" /></div>
+									<input type="number" name="custom_width" id="custom_width" class="inputText" />
+									X
 									<label class="blind" for="custom_height">세로입력</label>
-									<div class="cell"><input type="number" name="custom_height" id="custom_height" class="inputTextMail" /></div>
-								</div>
+									<input type="number" name="custom_height" id="custom_height" class="inputText" />
+					
 							</div>
-							<div class="mail_submit"><input type="submit" id="onSubmitMail" value="확인"></div>
+							<div class="inputForm">
+									<button class=""><i class="fas fa-mobile-alt"></i><span>mobile</span></button>
+									<button class=""><i class="fas fa-tablet-alt"></i><span>tablet</span></button>
+									<button class=""><i class="fas fa-laptop"></i><span>laptop</span></button>
+									<button class=""><i class="fas fa-desktop"></i><span>desktop</span></button>
+							</div>
+							<div class="inputForm">	
+									<button class=""><i class="far fa-file"></i><span>A4</span></button>
+									<button class=""><i class="far fa-file"></i><span>A4</span></button>
+									<button class=""><i class="far fa-file"></i><span>b4</span></button>
+									<button class=""><i class="far fa-file"></i><span>b4</span></button>
+								
+							</div>
+							<div class="modal_submit"><input type="submit" class="onSubmit" value="확인"></div>
 						</div>
 
 					</form>

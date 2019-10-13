@@ -55,7 +55,7 @@ a, a:hover {text-decoration: none;}
 /* 
 ** button 
 */
-.dbtn{line-height:35px;height:35px;padding:0 10px;text-align:center;border:0;background: #fff;color:#333;}
+.dbtn{padding:5px 10px;text-align:center;border:0;background: #fff;color:#333;font-size:0.8em;}
 .dbtn.line {border:1px solid #333;border-radius: 15px}
 .dbtn:hover {background:#333;color:#fff;}
 .dbtn:active, .dbtn.active {background:#333;color:#fff;}
@@ -382,17 +382,30 @@ HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니�
 
 .makeCanvasSize {}
 
-.mailFormWrap {border-top:3px solid #0553ab;clear:both;overflow:hidden;}
-.mailFormWrap div.inputForm {width:100%;display:block;font-size:12px;}
-.mailFormWrap div.inputForm .cell.label {width: 15%;}
-.mailFormWrap div.inputForm .cell {display:table-cell;height:45px;padding:10px;border-bottom:1px solid #e5e5e5;vertical-align:middle}
-.mailFormWrap div.inputForm div.cell_row {display: table;width: 100%}
+.modalFormWrap {border-top:3px solid #0553ab;clear:both;overflow:hidden;}
+.modalFormWrap div.inputForm {width:100%;border-bottom:1px solid #e5e5e5;text-align: center;padding:10px;}
 
-.inputTextMail {padding:0 5px;height:25px;line-height:25px;border:1px solid #ddd;outline:none;vertical-align:middle}
-.inputTextMail.full {width:100%} 
-.inputTextMail.readonly {background:#eee;}
+.inputText {padding:0 5px;height:25px;line-height:25px;border:1px solid #ddd;outline:none;vertical-align:middle}
+.inputText.full {width:100%} 
+.inputText.readonly {background:#eee;}
 .textareaMail {overflow-y:scroll;font-size:14px;width:100%;height:150px;margin:10px 0;padding:5px 5px 0 5px;border:1px solid #ddd;box-sizing:border-box;-webkit-box-sizing:border-box;resize:none}
 
-.mail_submit {text-align:center;padding:10px 0 10px 0;}
-.mail_submit input#onSubmitMail {padding: 8px 20px;background-color: #0553ab;color:#fff;font-size: 16px;border: 1px solid #0553ab;}
+.modal_submit {text-align:center;padding:10px 0 10px 0;}
+.modal_submit input.onSubmit {padding: 8px 10px;background-color: #0553ab;color:#fff;font-size: 0.8em;border: 1px solid #0553ab;border-radius:5px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

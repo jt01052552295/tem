@@ -383,7 +383,8 @@ HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니�
 .makeCanvasSize {}
 
 .modalFormWrap {border-top:3px solid #0553ab;clear:both;overflow:hidden;}
-.modalFormWrap div.inputForm {width:100%;border-bottom:1px solid #e5e5e5;text-align: center;padding:10px;}
+.modalFormWrap div.inputForm {width:100%;border-bottom:1px solid #e5e5e5;text-align: center;padding:0 0 10px;}
+.modalFormWrap div.inputForm h6 {text-align: left;padding:5px;margin-bottom: 10px;background-color: #0553ab;color: #fff;font-size: 1.0em;}
 
 .inputText {padding:0 5px;height:25px;line-height:25px;border:1px solid #ddd;outline:none;vertical-align:middle}
 .inputText.full {width:100%} 
@@ -393,7 +394,37 @@ HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니�
 .modal_submit {text-align:center;padding:10px 0 10px 0;}
 .modal_submit input.onSubmit {padding: 8px 10px;background-color: #0553ab;color:#fff;font-size: 0.8em;border: 1px solid #0553ab;border-radius:5px;}
 
+.sizeBtn {
+  background-color:#333;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:5px solid #333;
+  display:inline-block;
+  cursor:pointer;
+  
+  font-family:Arial;
+  font-size:0.8em;
+  font-weight:400;
+  padding:10px;
+  text-decoration:none;
+  text-align: center;
+  display: inline-block;
 
+}
+
+.sizeBtn i {color:#fff;display: block;font-size: 2.0em;margin-bottom: 10px}
+.sizeBtn span {color:#fff;display: block;}
+.sizeBtn span.name {margin-bottom: 5px;text-transform: uppercase;font-size: 1.1em}
+.sizeBtn span.size {color:#a5a5a5;}
+
+.sizeBtn:hover {
+  background:#444;
+}
+.sizeBtn:hover span.name {color:#0079ff;}
+.sizeBtn:active, .sizeBtn.active {
+  border:5px solid #0553ab;
+}
 
 
 

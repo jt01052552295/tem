@@ -137,25 +137,36 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 					<form id="frm_canvas_size" method="post" name="frm_canvas_size" action="" onsubmit="">
 						<div class="modalFormWrap">
 							<div class="inputForm">
+								<h6>Input</h6>
 									<label class="blind" for="custom_width">가로입력</label>
-									<input type="number" name="custom_width" id="custom_width" class="inputText" />
+									<input type="number" name="custom_width" id="custom_width" class="inputText" value="100" />
 									X
 									<label class="blind" for="custom_height">세로입력</label>
-									<input type="number" name="custom_height" id="custom_height" class="inputText" />
+									<input type="number" name="custom_height" id="custom_height" class="inputText" value="100" />
 					
 							</div>
+							<div class="inputForm">	
+								<h6>Basic</h6>
+									<button class="sizeBtn"><i class="fas fa-square"></i><span class="size">100 X 100</span></button>
+									<button class="sizeBtn"><i class="fas fa-square"></i><span class="size">200 X 200</span></button>
+									<button class="sizeBtn"><i class="fas fa-square"></i><span class="size">300 X 300</span></button>
+									<button class="sizeBtn"><i class="fas fa-square"></i><span class="size">400 X 400</span></button>
+									<button class="sizeBtn"><i class="fas fa-square"></i><span class="size">500 X 500</span></button>
+							</div>
 							<div class="inputForm">
-									<button class=""><i class="fas fa-mobile-alt"></i><span>mobile</span></button>
-									<button class=""><i class="fas fa-tablet-alt"></i><span>tablet</span></button>
-									<button class=""><i class="fas fa-laptop"></i><span>laptop</span></button>
-									<button class=""><i class="fas fa-desktop"></i><span>desktop</span></button>
+								<h6>Device</h6>
+									<button class="sizeBtn"><i class="fas fa-mobile-alt"></i><span class="name">mobile</span><span class="size">640 X 1136</span></button>
+									<button class="sizeBtn"><i class="fas fa-tablet-alt"></i><span class="name">tablet</span><span class="size">2048 X 2732</span></button>
+									<button class="sizeBtn"><i class="fas fa-laptop"></i><span class="name">laptop</span><span class="size">2560 X 1160</span></button>
+									<button class="sizeBtn"><i class="fas fa-desktop"></i><span class="name">desktop</span><span class="size">2560 X 1440</span></button>
 							</div>
 							<div class="inputForm">	
-									<button class=""><i class="far fa-file"></i><span>A4</span></button>
-									<button class=""><i class="far fa-file"></i><span>A4</span></button>
-									<button class=""><i class="far fa-file"></i><span>b4</span></button>
-									<button class=""><i class="far fa-file"></i><span>b4</span></button>
-								
+								<h6>Web</h6>
+									<button class="sizeBtn"><i class="fab fa-edge"></i><span class="name">minimum</span><span class="size">1024 X 768</span></button>
+									<button class="sizeBtn"><i class="fab fa-edge"></i><span class="name">small</span><span class="size">1280 X 800</span></button>
+									<button class="sizeBtn"><i class="fab fa-edge"></i><span class="name">common</span><span class="size">1366 X 768</span></button>
+									<button class="sizeBtn"><i class="fab fa-edge"></i><span class="name">medium</span><span class="size">1440 X 900</span></button>									
+									<button class="sizeBtn"><i class="fab fa-edge"></i><span class="name">large</span><span class="size">1920 X 1080</span></button>
 							</div>
 							<div class="modal_submit"><input type="submit" class="onSubmit" value="확인"></div>
 						</div>

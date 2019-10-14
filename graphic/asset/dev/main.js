@@ -18,6 +18,8 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
+	      drawingCanvas: '#drawingCanvas',
+	      dataMenu : '',
 	      
 	      
 	    };
@@ -31,6 +33,7 @@ var Main = (function() {
 				this.setGroundColor(defaults.foreGroundColor, defaults.backGroundColor);
 				this.groundToggle();
 				this.groundColor();
+				this.canvasSize();
 				return this;
 			},
 			showMode: function() {
@@ -87,6 +90,7 @@ var Main = (function() {
 
 				defaults.modalActivate = !defaults.modalActivate;
 		    	this.viewModal(menuName);
+		    	defaults.dataMenu = menuName;
 
 		    	return this;
 		    },
@@ -163,9 +167,6 @@ var Main = (function() {
     			} 
 
     			window.onclick = function(event) {
-    				console.log(event.target)
-    				console.log(closeBtn)
-
     				if (event.target == modal || event.target == closeBtn) {
 		                modal.style.display = "none";
 		                frms.hide()
@@ -175,6 +176,19 @@ var Main = (function() {
 
 
 		    	return this;
+		    },
+		    closeModal:function(menuName){
+		    	var modal = document.getElementById('modal');
+		    	var menu = $(menuName).attr("data-menuName");	
+		    	var frms = $("#modal").find("#getModalData-menu-"+menu);
+
+		    	if(defaults.modalActivate){
+		    		modal.style.display = "none";
+					frms.hide()
+					defaults.modalActivate = !defaults.modalActivate;
+				}
+
+				return this;
 		    },
 		    toggleModal: function(menuName){
 		    	var self = this;
@@ -230,6 +244,36 @@ var Main = (function() {
 		            }
 		        }
 		        return this; 
+
+		    },
+		    canvasSize: function(){
+		   		var self = this;
+		    	var sizeBtn = 'button.sizeBtn';
+		    	var resizeCanvas = 'button#resizeCanvas';
+
+		    	$(sizeBtn).on('click', function(e){
+		    		e.preventDefault();
+		    		var _this = $(this).attr('data-size')
+		    		var size = _this.split(',');
+
+		    		$("#custom_width").val(size[0]);
+		    		$("#custom_height").val(size[1]);
+		    	})
+
+		    	$(resizeCanvas).on('click', function(e){
+		    		e.preventDefault();
+		    		var c_w = $("#custom_width").val();
+		    		var c_h = $("#custom_height").val();
+		    		var canvas = document.getElementById('drawingCanvas');
+            		canvas.width = c_w;
+            		canvas.height = c_h;
+
+            		self.closeModal(defaults.dataMenu);
+
+		    	})
+
+		    	
+		    	return self; 	
 
 		    },
 

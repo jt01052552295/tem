@@ -87,22 +87,22 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<aside id="side">
 		<ul class="cate">
-            <li><button class="mBtn" data-menuName="func11"><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
-            <li><button class="mBtn" data-menuName="func12"><i class="fas fa-expand"></i><span>Marquee</span></button></li>
-            <li><button class="mBtn" data-menuName="func13"><i class="fas fa-crop"></i><span>Crop</span></button></li>
-            <li><button class="mBtn" data-menuName="func14"><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
-            <li><button class="mBtn" data-menuName="func15"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
-            <li><button class="mBtn" data-menuName="func16"><i class="fas fa-pen-nib"></i><span>Pen</span></button></li>
-            <li><button class="mBtn" data-menuName="func17"><i class="fas fa-font"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-menuName="func18"><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
-            <li><button class="mBtn" data-menuName="func19"><i class="far fa-square"></i><span>Square</span></button></li>
-            <li><button class="mBtn" data-menuName="func20"><i class="far fa-circle"></i><span>Circle</span></button></li>
-            <li><button class="mBtn" data-menuName="func21"><i class="fas fa-minus"></i><span>Line</span></button></li>
-            <li><button class="mBtn" data-menuName="func22"><i class="far fa-star-half"></i><span>Line2</span></button></li>
-            <li><button class="mBtn" data-menuName="func23"><i class="fas fa-star-half"></i><span>Line3</span></button></li>
-            <li><button class="mBtn" data-menuName="func24"><i class="far fa-hand-paper"></i><span>Hand</span></button></li>
-            <li><button class="mBtn" data-menuName="func25"><i class="fas fa-search"></i><span>Zoom</span></button></li>
-            <li><button class="mBtn" data-menuName="func26"><i class="fas fa-ellipsis-h"></i><span>More</span></button></li>
+            <li><button class="mBtn" data-draw-func="func11"><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
+            <li><button class="mBtn" data-draw-func="func12"><i class="fas fa-expand"></i><span>Marquee</span></button></li>
+            <li><button class="mBtn" data-draw-func="func13"><i class="fas fa-crop"></i><span>Crop</span></button></li>
+            <li><button class="mBtn" data-draw-func="func14"><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
+            <li><button class="mBtn" data-draw-func="func15"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawPen"><i class="fas fa-pen-nib"></i><span>Pen</span></button></li>
+            <li><button class="mBtn" data-draw-func="func17"><i class="fas fa-font"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-draw-func="func18"><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
+            <li><button class="mBtn" data-draw-func="func19"><i class="far fa-square"></i><span>Square</span></button></li>
+            <li><button class="mBtn" data-draw-func="func20"><i class="far fa-circle"></i><span>Circle</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawLine"><i class="fas fa-minus"></i><span>Line</span></button></li>
+            <li><button class="mBtn" data-draw-func="func22"><i class="far fa-star-half"></i><span>Line2</span></button></li>
+            <li><button class="mBtn" data-draw-func="func23"><i class="fas fa-star-half"></i><span>Line3</span></button></li>
+            <li><button class="mBtn" data-draw-func="func24"><i class="far fa-hand-paper"></i><span>Hand</span></button></li>
+            <li><button class="mBtn" data-draw-func="func25"><i class="fas fa-search"></i><span>Zoom</span></button></li>
+            <li><button class="mBtn" data-draw-func="func26"><i class="fas fa-ellipsis-h"></i><span>More</span></button></li>
         </ul>
 
         <div class="foreBg">
@@ -280,7 +280,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 기능 : unde ,redo
 기능 : 이미지 리사이즈, 캔버스 리사이즈, 회전 , 가로세로 정렬?
 기능 : 가이드라인
-기능 : 선, 도형, 텍스트, 색상(파레트), 지우기, 이미지 파일 업로드, 파일저장
+기능 : 선, 도형, 텍스트, 색상(파레트), 지우기, 
+기능 : 이미지 파일 업로드, 파일저장 https://www.codicode.com/art/upload_and_save_a_canvas_image_to_the_server.aspx
 
 포토샵 심화? : 레이어, 필터 등등
 

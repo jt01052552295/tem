@@ -18,8 +18,13 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
-	      drawingCanvas: '#drawingCanvas',
+	      drawingCanvas: document.getElementById('drawingCanvas'),
+	      drawingCTX: document.getElementById('drawingCanvas').getContext("2d"),
 	      dataMenu : '',
+	      drawTool : null,
+	      mousePressed : false,
+	      lastX : 0,
+	      lastY : 0,
 	      
 	      
 	    };
@@ -34,6 +39,31 @@ var Main = (function() {
 				this.groundToggle();
 				this.groundColor();
 				this.canvasSize();
+				this.drawCanvas();
+				return this;
+			},
+			showMsg:function(msg, type){
+				if(!msg) msg = '알수없는 오류 발생!';
+				if(!type) type = 'log';
+
+				if(type == 'log'){
+					console.log(msg);
+				}
+				if(type == 'info'){
+					console.info(msg);
+				}
+				if(type == 'warn'){
+					console.warn(msg);
+				}
+				if(type == 'error'){
+					alert(msg);
+					console.error(msg);
+				}
+				if(type == 'dir'){
+					console.dir(msg);
+				}
+
+
 				return this;
 			},
 			showMode: function() {
@@ -97,16 +127,22 @@ var Main = (function() {
 		    sideMenu: function(){
 		    	
 		    	var sBtn = 'button.mBtn';
+		    	var self = this;
 
 		    	$(sBtn).on('click', function(e){
 		    		e.preventDefault();
 		    		$(sBtn).removeClass('active')
 		    		$(this).addClass('active')
-		    		var func = $(this).attr('data-menuName')
-		    		console.log(func)
+		    		self.setDrawFunc(this);
+
 		    	});
 
 		    	return this;
+		    },
+		    setDrawFunc: function(mBtn){
+		    	var func = $(mBtn).attr('data-draw-func')
+		    	defaults.drawTool = func;
+		    	this.showMsg(defaults.drawTool) // drawLine 
 		    },
 		    setGroundColor: function(foreColor, backColor){
 		    	if(!foreColor) foreColor = defaults.foreGroundColor;
@@ -264,9 +300,8 @@ var Main = (function() {
 		    		e.preventDefault();
 		    		var c_w = $("#custom_width").val();
 		    		var c_h = $("#custom_height").val();
-		    		var canvas = document.getElementById('drawingCanvas');
-            		canvas.width = c_w;
-            		canvas.height = c_h;
+            		defaults.drawingCanvas.width = c_w;
+            		defaults.drawingCanvas.height = c_h;
 
             		self.closeModal(defaults.dataMenu);
 
@@ -276,11 +311,63 @@ var Main = (function() {
 		    	return self; 	
 
 		    },
+		    drawCanvas: function(){
+		    	var self = this;
+		
+		    	$(drawingCanvas).mousedown(function (e) {
+				    defaults.mousePressed = true;
+					switch(defaults.drawTool){
+						case 'drawPen': self.drawPen(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false); break; 
+
+					}
+
+				});
+
+				$(drawingCanvas).mousemove(function (e) {
+				    if(defaults.mousePressed){
+						switch(defaults.drawTool){
+							case 'drawPen': self.drawPen(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true); break; 
+						}
+					}
+
+				});
+
+				$(drawingCanvas).mouseup(function (e) {
+				    defaults.mousePressed = false;
+				});
+
+				$(drawingCanvas).mouseleave(function (e) {
+				    defaults.mousePressed = false;
+				});
+
+		    	
+		    },
+		    drawPen: function(x, y, isDown){
+		    	if (isDown) {
+				    defaults.drawingCTX.beginPath();
+				    defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
+				    defaults.drawingCTX.lineWidth = 1;
+				    defaults.drawingCTX.lineJoin = "round";
+				    defaults.drawingCTX.moveTo(defaults.lastX, defaults.lastY);
+				    defaults.drawingCTX.lineTo(x, y);
+				    defaults.drawingCTX.closePath();
+				    defaults.drawingCTX.stroke();
+				}
+				defaults.lastX = x; 
+				defaults.lastY = y;
+		    }
 
 
 
 		};
 	};
+
+
+	function clearArea() {
+	  // Use the identity matrix while clearing the canvas
+	  ctx.setTransform(1, 0, 0, 1, 0, 0);
+	  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+	}
 
 	return {
 	    getInstance: function(name) {

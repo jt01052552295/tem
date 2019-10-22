@@ -188,6 +188,16 @@ main#main canvas {border:1px solid #ccc;background:#fff;}
   transform: translateY(4px);
 }
 .mBtn span {display: none}
+.mBtn:disabled {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #f6f6f6));
+  background:-moz-linear-gradient(top, #cccccc 5%, #f6f6f6 100%);
+  background:-webkit-linear-gradient(top, #cccccc 5%, #f6f6f6 100%);
+  background:-o-linear-gradient(top, #cccccc 5%, #f6f6f6 100%);
+  background:-ms-linear-gradient(top, #cccccc 5%, #f6f6f6 100%);
+  background:linear-gradient(to bottom, #cccccc 5%, #f6f6f6 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#f6f6f6',GradientType=0);
+  background-color:#cccccc;
+}
 
 div.foreBg {padding:10px;clear: both;position: relative;background: #333;height:90px;margin-top:10px;}
 div.foreBg div.groundToggle {text-align: right;}

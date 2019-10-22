@@ -87,22 +87,22 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<aside id="side">
 		<ul class="cate">
-            <li><button class="mBtn" data-draw-func="func11"><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
-            <li><button class="mBtn" data-draw-func="func12"><i class="fas fa-expand"></i><span>Marquee</span></button></li>
-            <li><button class="mBtn" data-draw-func="func13"><i class="fas fa-crop"></i><span>Crop</span></button></li>
-            <li><button class="mBtn" data-draw-func="func14"><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
-            <li><button class="mBtn" data-draw-func="func15"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
-            <li><button class="mBtn" data-draw-func="drawPen"><i class="fas fa-pen-nib"></i><span>Pen</span></button></li>
-            <li><button class="mBtn" data-draw-func="func17"><i class="fas fa-font"></i><span>Text</span></button></li>
-            <li><button class="mBtn" data-draw-func="func18"><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
-            <li><button class="mBtn" data-draw-func="func19"><i class="far fa-square"></i><span>Square</span></button></li>
-            <li><button class="mBtn" data-draw-func="func20"><i class="far fa-circle"></i><span>Circle</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-expand"></i><span>Marquee</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-crop"></i><span>Crop</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eraser"></i><span>Erase</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawBrush"><i class="fas fa-paint-brush"></i><span>Brush</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-font"></i><span>Text</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawRect"><i class="far fa-square"></i><span>Square</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawCircle"><i class="far fa-circle"></i><span>Circle</span></button></li>
             <li><button class="mBtn" data-draw-func="drawLine"><i class="fas fa-minus"></i><span>Line</span></button></li>
-            <li><button class="mBtn" data-draw-func="func22"><i class="far fa-star-half"></i><span>Line2</span></button></li>
-            <li><button class="mBtn" data-draw-func="func23"><i class="fas fa-star-half"></i><span>Line3</span></button></li>
-            <li><button class="mBtn" data-draw-func="func24"><i class="far fa-hand-paper"></i><span>Hand</span></button></li>
-            <li><button class="mBtn" data-draw-func="func25"><i class="fas fa-search"></i><span>Zoom</span></button></li>
-            <li><button class="mBtn" data-draw-func="func26"><i class="fas fa-ellipsis-h"></i><span>More</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="far fa-star-half"></i><span>Line2</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-star-half"></i><span>Line3</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="far fa-hand-paper"></i><span>Hand</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-search"></i><span>Zoom</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-ellipsis-h"></i><span>More</span></button></li>
         </ul>
 
         <div class="foreBg">
@@ -114,9 +114,11 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	</aside>
 
 	<main id="main">
+
 		<canvas id='drawingCanvas' width='915' height='670'>
 		  Canvas not supported
 		</canvas>
+		<div id="output"></div>
 
 	</main>
 

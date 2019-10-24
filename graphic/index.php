@@ -115,7 +115,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<main id="main">
 
-		<canvas id='drawingCanvas' width='915' height='670'>
+		<canvas id='drawingCanvas' width='400' height='400'>
 		  Canvas not supported
 		</canvas>
 		<div id="output"></div>

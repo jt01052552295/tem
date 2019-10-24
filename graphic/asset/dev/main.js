@@ -25,7 +25,6 @@ var Main = (function() {
 	      mousePressed : false,
 	      lastX : 0,
 	      lastY : 0,
-	      drawRadius : 0,
 	      
 	      
 	    };
@@ -328,6 +327,7 @@ var Main = (function() {
 						case 'drawBrush': self.drawBrush(e, false); break; 
 						case 'drawRect': self.drawRect(e, false); break; 
 						case 'drawCircle': self.drawCircle(e, false); break; 
+						case 'drawLine': self.drawLine(e, false); break; 
 
 					}
 
@@ -340,11 +340,9 @@ var Main = (function() {
 							case 'drawBrush': self.drawBrush(e, true); break; 
 							case 'drawRect': self.drawRect(e, true); break; 
 							case 'drawCircle': self.drawCircle(e, true); break; 
+							case 'drawLine': self.drawLine(e, true); break; 
 						}
 					}
-
-    				//$('#output').html('current: '+mouse_x+', '+mouse_y+'<br/>last: '+defaults.lastX+', '+defaults.lastY+'<br/>mousePressed: '+defaults.mousePressed);
-
 				});
 
 				$(drawingCanvas).mouseup(function (e) {
@@ -405,14 +403,19 @@ var Main = (function() {
 		    	if (!isDown) {
 			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
 					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-					defaults.drawRadius = 0;
 				}
 
 				if (isDown) {
 		    		var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
 					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-					
-					defaults.drawRadius++;
+
+					var rubberbandW = Math.abs(defaults.lastX - x);
+   					var rubberbandH = Math.abs(defaults.lastY - y);
+   					var angle = Math.atan(rubberbandH/rubberbandW);
+				    var radius = rubberbandH / Math.sin(angle);
+				    if (defaults.lastY === y) {
+				      	radius = Math.abs(defaults.lastX - x); 
+				    }
 
 		    		this.clearCanvas();
 
@@ -420,12 +423,28 @@ var Main = (function() {
 					defaults.drawingCTX.lineWidth = 1;
 					defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
 
-					defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, defaults.drawRadius, 0 * Math.PI, 2 * Math.PI, false);
+					defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, radius, 0 * Math.PI, 2 * Math.PI, false);
 
 					defaults.drawingCTX.closePath();
 					defaults.drawingCTX.stroke();
 
+					//$('#output').html('current: '+x+', '+y+'<br/>last: '+defaults.lastX+', '+defaults.lastY+'<br/>mousePressed: '+defaults.mousePressed);
+				}
+		    },
+		    drawLine: function(e, isDown){
+		    	if (!isDown) {
+			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
+					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
+				}
+				if (isDown) {
+					this.clearCanvas();
+					var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
+					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
 
+				   defaults.drawingCTX.beginPath();
+				   defaults.drawingCTX.moveTo(x, y);
+				   defaults.drawingCTX.lineTo(defaults.lastX, defaults.lastY);
+				   defaults.drawingCTX.stroke();
 				}
 		    },
 

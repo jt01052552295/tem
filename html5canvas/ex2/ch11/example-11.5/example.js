@@ -399,6 +399,7 @@ function restoreDrawingSurface() {
 // Rubberbands...................................................
 
 function updateRubberbandRectangle(loc) {
+
    rubberbandW = Math.abs(loc.x - mousedown.x);
    rubberbandH = Math.abs(loc.y - mousedown.y);
 

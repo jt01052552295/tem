@@ -91,7 +91,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-expand"></i><span>Marquee</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-crop"></i><span>Crop</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
-            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eraser"></i><span>Erase</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawEraser"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
             <li><button class="mBtn" data-draw-func="drawBrush"><i class="fas fa-paint-brush"></i><span>Brush</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-font"></i><span>Text</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>

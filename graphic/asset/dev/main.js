@@ -319,6 +319,9 @@ var Main = (function() {
 		    drawCanvas: function(){
 		    	var self = this;
 
+
+		    	
+
 		
 		    	$(drawingCanvas).mousedown(function (e) {
 				    defaults.mousePressed = true;
@@ -328,6 +331,7 @@ var Main = (function() {
 						case 'drawRect': self.drawRect(e, false); break; 
 						case 'drawCircle': self.drawCircle(e, false); break; 
 						case 'drawLine': self.drawLine(e, false); break; 
+						case 'drawEraser': self.drawEraser(e, false); break; 
 
 					}
 
@@ -341,6 +345,7 @@ var Main = (function() {
 							case 'drawRect': self.drawRect(e, true); break; 
 							case 'drawCircle': self.drawCircle(e, true); break; 
 							case 'drawLine': self.drawLine(e, true); break; 
+							case 'drawEraser': self.drawEraser(e, true); break; 
 						}
 					}
 				});
@@ -441,12 +446,30 @@ var Main = (function() {
 					var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
 					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
 
+						
 				   defaults.drawingCTX.beginPath();
 				   defaults.drawingCTX.moveTo(x, y);
 				   defaults.drawingCTX.lineTo(defaults.lastX, defaults.lastY);
 				   defaults.drawingCTX.stroke();
 				}
 		    },
+		    drawEraser: function(e, isDown){
+		    	if (!isDown) {
+			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
+					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
+				}
+				if (isDown) {
+					var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
+					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
+
+				  	defaults.drawingCTX.beginPath();
+					defaults.drawingCTX.fillStyle = defaults.foreGroundColor;
+					defaults.drawingCTX.arc(x, y, 10, 0 * Math.PI, 2 * Math.PI, false);
+					defaults.drawingCTX.fill();
+					defaults.drawingCTX.closePath();
+		
+				}
+		    }
 
 
 

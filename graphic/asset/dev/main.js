@@ -18,6 +18,7 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
+	      backgroundContext: document.createElement('canvas').getContext('2d'),
 	      drawingCanvas: document.getElementById('drawingCanvas'),
 	      drawingCTX: document.getElementById('drawingCanvas').getContext("2d"),
 	      dataMenu : '',
@@ -25,6 +26,9 @@ var Main = (function() {
 	      mousePressed : false,
 	      lastX : 0,
 	      lastY : 0,
+	      drawingSurfaceImageData: null,
+	      rubberbandRect : {},
+	      mousedown : {},
 	      
 	      
 	    };
@@ -32,6 +36,7 @@ var Main = (function() {
 		return {
 			opt:defaults,
 			init:function(){
+				this.drawBackground();
 				this.showMode();
 				this.topMenu();
 				this.sideMenu();
@@ -41,6 +46,19 @@ var Main = (function() {
 				this.canvasSize();
 				this.drawCanvas();
 				return this;
+			},
+			drawBackground: function(){
+				defaults.backgroundContext.canvas.width = defaults.drawingCTX.canvas.width;
+   				defaults.backgroundContext.canvas.height = defaults.drawingCTX.canvas.height;
+			},
+			drawInitCanvas: function(){
+				defaults.drawingCTX.save()
+
+				defaults.drawingCTX.strokeStyle = '#ffffff';
+				defaults.drawingCTX.fillStyle = '#ffffff';
+				defaults.drawingCTX.lineWidth = 0.5;
+				defaults.drawingCTX.fillRect(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
+				defaults.drawingCTX.restore();
 			},
 			showMsg:function(msg, type){
 				if(!msg) msg = '알수없는 오류 발생!';
@@ -283,6 +301,8 @@ var Main = (function() {
             		defaults.drawingCanvas.width = c_w;
             		defaults.drawingCanvas.height = c_h;
 
+            		self.drawBackground();
+
             		self.closeModal(defaults.dataMenu);
 
 		    	})
@@ -311,7 +331,114 @@ var Main = (function() {
 			  defaults.drawingCTX.setTransform(1, 0, 0, 1, 0, 0);
 			  defaults.drawingCTX.clearRect(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
 			},
-		    setDrawFunc: function(mBtn){
+			windowToCanvas: function(x, y) {
+			   	var bbox = defaults.drawingCTX.canvas.getBoundingClientRect();
+			   	return { 
+			   		x: x - bbox.left * (defaults.drawingCanvas.width  / defaults.drawingCanvas.width),
+            		y: y - bbox.top  * (defaults.drawingCanvas.height / defaults.drawingCanvas.height) 
+            	};
+			
+			},
+			saveDrawingSurface: function() {
+			   defaults.drawingSurfaceImageData = defaults.drawingCTX.getImageData(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
+			},
+			restoreDrawingSurface: function() {
+			   defaults.drawingCTX.putImageData(defaults.drawingSurfaceImageData, 0, 0);
+			},
+			updateRubberbandRectangle: function(loc) {
+			   defaults.rubberbandRect.width  = Math.abs(loc.x - defaults.mousedown.x);
+			   defaults.rubberbandRect.height = Math.abs(loc.y - defaults.mousedown.y);
+
+			   if (loc.x > defaults.mousedown.x) defaults.rubberbandRect.left = defaults.mousedown.x;
+			   else                     defaults.rubberbandRect.left = loc.x;
+
+			   if (loc.y > defaults.mousedown.y) defaults.rubberbandRect.top = defaults.mousedown.y;
+			   else                     defaults.rubberbandRect.top = loc.y;
+
+			   
+			},
+			drawRubberbandShape: function(loc) {
+			   defaults.drawingCTX.beginPath();
+			   defaults.drawingCTX.moveTo(defaults.mousedown.x, defaults.mousedown.y);
+			   defaults.drawingCTX.lineTo(loc.x, loc.y);
+			   defaults.drawingCTX.stroke();
+			},
+			drawRubberbandShape2: function(loc) {
+			   var angle, radius;
+			   if(defaults.mousedown.y === loc.y){
+			   		radius = Math.abs(loc.x - defaults.mousedown.x);	
+			   } else { 
+			   		angle = Math.atan(defaults.rubberbandRect.height / defaults.rubberbandRect.width),
+      				radius = defaults.rubberbandRect.height / Math.sin(angle);
+			   }
+
+			   defaults.drawingCTX.beginPath();
+			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
+			   defaults.drawingCTX.stroke();
+			   defaults.drawingCTX.fill(); //색상채우기
+
+			},
+			drawRubberbandShape3: function(loc) {
+				var width = loc.x - defaults.mousedown.x;
+				var height = loc.y - defaults.mousedown.y;
+			    defaults.drawingCTX.beginPath();
+				defaults.drawingCTX.lineWidth = 1;
+				defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
+				defaults.drawingCTX.rect(defaults.mousedown.x, defaults.mousedown.y, width, height);
+				defaults.drawingCTX.closePath();
+				defaults.drawingCTX.stroke();
+			   //defaults.drawingCTX.fill(); 색상채우기
+
+			},
+			drawRubberbandShape4: function(loc) {
+				    defaults.drawingCTX.beginPath();
+				    defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
+				    defaults.drawingCTX.lineWidth = 1;
+				    defaults.drawingCTX.lineJoin = "round";
+				    defaults.drawingCTX.moveTo(loc.x, loc.y);
+				    defaults.drawingCTX.lineTo(defaults.mousedown.x, defaults.mousedown.y);
+				    defaults.drawingCTX.closePath();
+				    defaults.drawingCTX.stroke();
+			},
+			updateRubberband: function(loc) {
+			   this.updateRubberbandRectangle(loc);
+			   this.drawRubberbandShape2(loc);
+
+			},
+			setEraserAttributes: function() {
+			  defaults.drawingCTX.lineWidth     = 1;
+			  defaults.drawingCTX.shadowColor   = 'rgb(0,0,0)';
+			  defaults.drawingCTX.shadowOffsetX = -5; 
+			  defaults.drawingCTX.shadowOffsetY = -5;
+			  defaults.drawingCTX.shadowBlur    = 20;
+			  defaults.drawingCTX.strokeStyle   = 'rgb(0,0,255)';
+			},
+			setErasePathForEraser: function(){
+				var eraserWidth = parseFloat(20);
+				defaults.drawingCTX.beginPath();
+				defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, eraserWidth/2,0, Math.PI*2, false);
+				defaults.drawingCTX.clip();
+			},
+			setDrawPathForEraser: function(loc){
+				var eraserWidth = parseFloat(20);
+				defaults.drawingCTX.beginPath();
+				defaults.drawingCTX.arc(loc.x, loc.y, eraserWidth/2,0, Math.PI*2, false);
+				defaults.drawingCTX.clip();
+			},
+			eraseLast: function() {
+			   defaults.drawingCTX.save();
+			   this.setErasePathForEraser();
+			   this.drawInitCanvas();
+			   defaults.drawingCTX.restore();
+			},
+			drawEraser: function(loc) {
+			   defaults.drawingCTX.save();
+			   this.setEraserAttributes();     
+			   this.setDrawPathForEraser(loc);
+			   defaults.drawingCTX.stroke();
+			   defaults.drawingCTX.restore();
+			},
+			setDrawFunc: function(mBtn){
 		    	var func = $(mBtn).attr('data-draw-func')
 		    	defaults.drawTool = func;
 		    	this.showMsg(defaults.drawTool) // drawLine 
@@ -319,42 +446,70 @@ var Main = (function() {
 		    drawCanvas: function(){
 		    	var self = this;
 
-
-		    	
-
 		
 		    	$(drawingCanvas).mousedown(function (e) {
+		    		var loc = self.windowToCanvas(e.clientX, e.clientY);
+		    		e.preventDefault();
+				    
+				    switch(defaults.drawTool){
+				    	case "drawRect": case "drawCircle": case "drawLine":
+				    		self.saveDrawingSurface();
+				    		break;
+				    }
+
+				    
+
+				    defaults.mousedown.x = loc.x;
+				    defaults.mousedown.y = loc.y;
+				    defaults.lastX = loc.x;
+				    defaults.lastY = loc.y;
 				    defaults.mousePressed = true;
 
-					switch(defaults.drawTool){
-						case 'drawBrush': self.drawBrush(e, false); break; 
-						case 'drawRect': self.drawRect(e, false); break; 
-						case 'drawCircle': self.drawCircle(e, false); break; 
-						case 'drawLine': self.drawLine(e, false); break; 
-						case 'drawEraser': self.drawEraser(e, false); break; 
-
-					}
 
 				});
 
 				$(drawingCanvas).mousemove(function (e) {
+					var loc;
+					e.preventDefault();
 
-				    if(defaults.mousePressed){
+					if(defaults.mousePressed){
+						loc = self.windowToCanvas(e.clientX, e.clientY);
+
 						switch(defaults.drawTool){
-							case 'drawBrush': self.drawBrush(e, true); break; 
-							case 'drawRect': self.drawRect(e, true); break; 
-							case 'drawCircle': self.drawCircle(e, true); break; 
-							case 'drawLine': self.drawLine(e, true); break; 
-							case 'drawEraser': self.drawEraser(e, true); break; 
-						}
+					    	case "drawRect": case "drawCircle": case "drawLine":
+					    		self.restoreDrawingSurface();
+								self.updateRubberband(loc);
+					    		break;
+					    	case "drawEraser":
+					    		self.eraseLast();
+         						self.drawEraser(loc);
+					    		break;
+					    }
+
+					    defaults.lastX = loc.x;
+				    	defaults.lastY = loc.y;
 					}
+
+
 				});
 
 				$(drawingCanvas).mouseup(function (e) {
+					var loc = self.windowToCanvas(e.clientX, e.clientY);
+					e.preventDefault();
+					switch(defaults.drawTool){
+				    	case "drawRect": case "drawCircle": case "drawLine":
+				    		self.restoreDrawingSurface();
+							self.updateRubberband(loc);
+				    		break;
+				    	case "drawEraser":
+					    	self.eraseLast();
+					    	break;
+				    }
 				    defaults.mousePressed = false;
 				});
 
 				$(drawingCanvas).mouseleave(function (e) {
+					e.preventDefault();
 				    defaults.mousePressed = false;
 				});
 
@@ -376,100 +531,7 @@ var Main = (function() {
 				defaults.lastX = x; 
 				defaults.lastY = y;
 		    },
-		    drawRect: function(e, isDown){
-		    	if (!isDown) {
-			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-				}
-
-		    	if (isDown) {
-		    		var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-					var width = x - defaults.lastX;
-					var height = y - defaults.lastY;
-
-
-		    		this.clearCanvas();
-
-		    		defaults.drawingCTX.beginPath();
-					defaults.drawingCTX.lineWidth = 1;
-					defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-					defaults.drawingCTX.rect(defaults.lastX, defaults.lastY, width, height);
-					defaults.drawingCTX.closePath();
-					defaults.drawingCTX.stroke();
-
-
-				}
-
-		    },
-		    drawCircle: function(e, isDown){
-
-
-		    	if (!isDown) {
-			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-				}
-
-				if (isDown) {
-		    		var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-
-					var rubberbandW = Math.abs(defaults.lastX - x);
-   					var rubberbandH = Math.abs(defaults.lastY - y);
-   					var angle = Math.atan(rubberbandH/rubberbandW);
-				    var radius = rubberbandH / Math.sin(angle);
-				    if (defaults.lastY === y) {
-				      	radius = Math.abs(defaults.lastX - x); 
-				    }
-
-		    		this.clearCanvas();
-
-		    		defaults.drawingCTX.beginPath();
-					defaults.drawingCTX.lineWidth = 1;
-					defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-
-					defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, radius, 0 * Math.PI, 2 * Math.PI, false);
-
-					defaults.drawingCTX.closePath();
-					defaults.drawingCTX.stroke();
-
-					//$('#output').html('current: '+x+', '+y+'<br/>last: '+defaults.lastX+', '+defaults.lastY+'<br/>mousePressed: '+defaults.mousePressed);
-				}
-		    },
-		    drawLine: function(e, isDown){
-		    	if (!isDown) {
-			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-				}
-				if (isDown) {
-					this.clearCanvas();
-					var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-
-						
-				   defaults.drawingCTX.beginPath();
-				   defaults.drawingCTX.moveTo(x, y);
-				   defaults.drawingCTX.lineTo(defaults.lastX, defaults.lastY);
-				   defaults.drawingCTX.stroke();
-				}
-		    },
-		    drawEraser: function(e, isDown){
-		    	if (!isDown) {
-			    	defaults.lastX = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					defaults.lastY = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-				}
-				if (isDown) {
-					var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-					var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-
-				  	defaults.drawingCTX.beginPath();
-					defaults.drawingCTX.fillStyle = defaults.foreGroundColor;
-					defaults.drawingCTX.arc(x, y, 10, 0 * Math.PI, 2 * Math.PI, false);
-					defaults.drawingCTX.fill();
-					defaults.drawingCTX.closePath();
-		
-				}
-		    }
+		    
 
 
 

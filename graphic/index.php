@@ -93,11 +93,13 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
             <li><button class="mBtn" data-draw-func="drawEraser"><i class="fas fa-eraser"></i><span>Erase</span></button></li>
             <li><button class="mBtn" data-draw-func="drawBrush"><i class="fas fa-paint-brush"></i><span>Brush</span></button></li>
-            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-font"></i><span>Text</span></button></li>
-            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
+            
             <li><button class="mBtn" data-draw-func="drawRect"><i class="far fa-square"></i><span>Square</span></button></li>
             <li><button class="mBtn" data-draw-func="drawCircle"><i class="far fa-circle"></i><span>Circle</span></button></li>
             <li><button class="mBtn" data-draw-func="drawLine"><i class="fas fa-minus"></i><span>Line</span></button></li>
+
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-font"></i><span>Text</span></button></li>
+            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="far fa-star-half"></i><span>Line2</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-star-half"></i><span>Line3</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="far fa-hand-paper"></i><span>Hand</span></button></li>

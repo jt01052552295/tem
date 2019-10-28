@@ -142,35 +142,35 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 						<div class="modalFormWrap">
 							<div class="inputForm">
 								<h6>Input</h6>
-									<label class="blind" for="custom_width">가로입력</label>
-									<input type="number" name="custom_width" id="custom_width" class="inputText" value="100" />
-									X
-									<label class="blind" for="custom_height">세로입력</label>
-									<input type="number" name="custom_height" id="custom_height" class="inputText" value="100" />
+								<label class="blind" for="custom_width">가로입력</label>
+								<input type="number" name="custom_width" id="custom_width" class="inputText" value="100" />
+								X
+								<label class="blind" for="custom_height">세로입력</label>
+								<input type="number" name="custom_height" id="custom_height" class="inputText" value="100" />
 					
 							</div>
 							<div class="inputForm">	
 								<h6>Basic</h6>
-									<button class="sizeBtn" data-size="100,100"><i class="fas fa-square"></i><span class="size">100 X 100</span></button>
-									<button class="sizeBtn" data-size="200,200"><i class="fas fa-square"></i><span class="size">200 X 200</span></button>
-									<button class="sizeBtn" data-size="300,300"><i class="fas fa-square"></i><span class="size">300 X 300</span></button>
-									<button class="sizeBtn" data-size="400,400"><i class="fas fa-square"></i><span class="size">400 X 400</span></button>
-									<button class="sizeBtn" data-size="500,500"><i class="fas fa-square"></i><span class="size">500 X 500</span></button>
+								<button class="sizeBtn" data-size="100,100"><i class="fas fa-square"></i><span class="size">100 X 100</span></button>
+								<button class="sizeBtn" data-size="200,200"><i class="fas fa-square"></i><span class="size">200 X 200</span></button>
+								<button class="sizeBtn" data-size="300,300"><i class="fas fa-square"></i><span class="size">300 X 300</span></button>
+								<button class="sizeBtn" data-size="400,400"><i class="fas fa-square"></i><span class="size">400 X 400</span></button>
+								<button class="sizeBtn" data-size="500,500"><i class="fas fa-square"></i><span class="size">500 X 500</span></button>
 							</div>
 							<div class="inputForm">
 								<h6>Device</h6>
-									<button class="sizeBtn" data-size="640,1136"><i class="fas fa-mobile-alt"></i><span class="name">mobile</span><span class="size">640 X 1136</span></button>
-									<button class="sizeBtn" data-size="2048,2732"><i class="fas fa-tablet-alt"></i><span class="name">tablet</span><span class="size">2048 X 2732</span></button>
-									<button class="sizeBtn" data-size="2560,1160"><i class="fas fa-laptop"></i><span class="name">laptop</span><span class="size">2560 X 1160</span></button>
-									<button class="sizeBtn" data-size="2560,1440"><i class="fas fa-desktop"></i><span class="name">desktop</span><span class="size">2560 X 1440</span></button>
+								<button class="sizeBtn" data-size="640,1136"><i class="fas fa-mobile-alt"></i><span class="name">mobile</span><span class="size">640 X 1136</span></button>
+								<button class="sizeBtn" data-size="2048,2732"><i class="fas fa-tablet-alt"></i><span class="name">tablet</span><span class="size">2048 X 2732</span></button>
+								<button class="sizeBtn" data-size="2560,1160"><i class="fas fa-laptop"></i><span class="name">laptop</span><span class="size">2560 X 1160</span></button>
+								<button class="sizeBtn" data-size="2560,1440"><i class="fas fa-desktop"></i><span class="name">desktop</span><span class="size">2560 X 1440</span></button>
 							</div>
 							<div class="inputForm">	
 								<h6>Web</h6>
-									<button class="sizeBtn" data-size="1024,768"><i class="fab fa-edge"></i><span class="name">minimum</span><span class="size">1024 X 768</span></button>
-									<button class="sizeBtn" data-size="1280,800"><i class="fab fa-edge"></i><span class="name">small</span><span class="size">1280 X 800</span></button>
-									<button class="sizeBtn" data-size="1366,768"><i class="fab fa-edge"></i><span class="name">common</span><span class="size">1366 X 768</span></button>
-									<button class="sizeBtn" data-size="1440,900"><i class="fab fa-edge"></i><span class="name">medium</span><span class="size">1440 X 900</span></button>									
-									<button class="sizeBtn" data-size="1920,1080"><i class="fab fa-edge"></i><span class="name">large</span><span class="size">1920 X 1080</span></button>
+								<button class="sizeBtn" data-size="1024,768"><i class="fab fa-edge"></i><span class="name">minimum</span><span class="size">1024 X 768</span></button>
+								<button class="sizeBtn" data-size="1280,800"><i class="fab fa-edge"></i><span class="name">small</span><span class="size">1280 X 800</span></button>
+								<button class="sizeBtn" data-size="1366,768"><i class="fab fa-edge"></i><span class="name">common</span><span class="size">1366 X 768</span></button>
+								<button class="sizeBtn" data-size="1440,900"><i class="fab fa-edge"></i><span class="name">medium</span><span class="size">1440 X 900</span></button>									
+								<button class="sizeBtn" data-size="1920,1080"><i class="fab fa-edge"></i><span class="name">large</span><span class="size">1920 X 1080</span></button>
 							</div>
 							<div class="modal_submit"><button class="onSubmit" id="resizeCanvas">확인</button></div>
 						</div>
@@ -178,6 +178,13 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 					</form>
 				</div>
 				
+			</div>
+			<div class="modalCon" id="getModalData-menu-Save">
+				<div class="basicBox">
+					<h6>파일 저장</h6>
+					<button class="saveBtn" download="myImage.jpg" data-file="jpg"><i class="fas fa-save"></i><span class="size">JPG 저장</span></button>
+					<button class="saveBtn" download="myImage.png" data-file="png"><i class="fas fa-save"></i><span class="size">PNG 저장</span></button>
+				</div>
 			</div>
 			<div class="modalCon" id="getModalData-menu-colorPicker">
 				<div class="modalBtn2">

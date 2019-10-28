@@ -438,6 +438,41 @@ HSLA 색상값은 HSL 색상값에 알파 채널 값을 더한 색상값입니�
 }
 
 
+div.basicBox {width:100%;border-bottom:1px solid #e5e5e5;text-align: center;padding:0 0 10px;}
+div.basicBox h6 {text-align: left;padding:5px;margin-bottom: 10px;background-color: #0553ab;color: #fff;font-size: 1.0em;}
+.saveBtn {
+  background-color:#333;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:5px solid #333;
+  display:inline-block;
+  cursor:pointer;
+  
+  font-family:Arial;
+  font-size:0.8em;
+  font-weight:400;
+  padding:10px;
+  margin:0 0 5px 0;
+  text-decoration:none;
+  text-align: center;
+  display: inline-block;
+}
+.saveBtn i {color:#fff;display: block;font-size: 2.0em;margin-bottom: 10px}
+.saveBtn span {color:#fff;display: block;}
+.saveBtn span.name {margin-bottom: 5px;text-transform: uppercase;font-size: 1.1em}
+.saveBtn span.size {color:#a5a5a5;}
+
+.saveBtn:hover {
+  background:#444;border:5px solid #444;
+}
+.saveBtn:hover span.name {color:#0079ff;}
+.saveBtn:active, .saveBtn.active {
+  border:5px solid #0553ab;
+}
+
+
+
 
 
 

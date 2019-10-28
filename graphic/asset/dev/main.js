@@ -29,6 +29,7 @@ var Main = (function() {
 	      drawingSurfaceImageData: null,
 	      rubberbandRect : {},
 	      mousedown : {},
+	      eraserSize : 20,
 	      
 	      
 	    };
@@ -45,6 +46,7 @@ var Main = (function() {
 				this.groundColor();
 				this.canvasSize();
 				this.drawCanvas();
+				this.saveImageFile();
 				return this;
 			},
 			drawBackground: function(){
@@ -288,6 +290,7 @@ var Main = (function() {
 		    	$(sizeBtn).on('click', function(e){
 		    		e.preventDefault();
 		    		var _this = $(this).attr('data-size')
+		    		if(!_this) return;
 		    		var size = _this.split(',');
 
 		    		$("#custom_width").val(size[0]);
@@ -357,13 +360,14 @@ var Main = (function() {
 
 			   
 			},
-			drawRubberbandShape: function(loc) {
+			drawLine: function(loc) {
 			   defaults.drawingCTX.beginPath();
 			   defaults.drawingCTX.moveTo(defaults.mousedown.x, defaults.mousedown.y);
 			   defaults.drawingCTX.lineTo(loc.x, loc.y);
+			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
 			   defaults.drawingCTX.stroke();
 			},
-			drawRubberbandShape2: function(loc) {
+			drawCircle: function(loc) {
 			   var angle, radius;
 			   if(defaults.mousedown.y === loc.y){
 			   		radius = Math.abs(loc.x - defaults.mousedown.x);	
@@ -373,12 +377,13 @@ var Main = (function() {
 			   }
 
 			   defaults.drawingCTX.beginPath();
+			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
 			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
 			   defaults.drawingCTX.stroke();
-			   defaults.drawingCTX.fill(); //색상채우기
+			   //defaults.drawingCTX.fill(); //색상채우기
 
 			},
-			drawRubberbandShape3: function(loc) {
+			drawRect: function(loc) {
 				var width = loc.x - defaults.mousedown.x;
 				var height = loc.y - defaults.mousedown.y;
 			    defaults.drawingCTX.beginPath();
@@ -390,19 +395,24 @@ var Main = (function() {
 			   //defaults.drawingCTX.fill(); 색상채우기
 
 			},
-			drawRubberbandShape4: function(loc) {
+			drawBrush: function(loc) {
 				    defaults.drawingCTX.beginPath();
 				    defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
 				    defaults.drawingCTX.lineWidth = 1;
 				    defaults.drawingCTX.lineJoin = "round";
 				    defaults.drawingCTX.moveTo(loc.x, loc.y);
-				    defaults.drawingCTX.lineTo(defaults.mousedown.x, defaults.mousedown.y);
+				    defaults.drawingCTX.lineTo(defaults.lastX, defaults.lastY);
 				    defaults.drawingCTX.closePath();
 				    defaults.drawingCTX.stroke();
 			},
-			updateRubberband: function(loc) {
+			updateRubberband: function(loc, drawTool) {
 			   this.updateRubberbandRectangle(loc);
-			   this.drawRubberbandShape2(loc);
+			   switch(drawTool){
+			    	case "drawLine": 	this.drawLine(loc); 	break;
+			    	case "drawCircle": 	this.drawCircle(loc); break;
+			    	case "drawRect": 	this.drawRect(loc); break;
+			    	case "drawBrush": 	this.drawBrush(loc); break;
+			    }
 
 			},
 			setEraserAttributes: function() {
@@ -414,13 +424,13 @@ var Main = (function() {
 			  defaults.drawingCTX.strokeStyle   = 'rgb(0,0,255)';
 			},
 			setErasePathForEraser: function(){
-				var eraserWidth = parseFloat(20);
+				var eraserWidth = parseFloat(defaults.eraserSize);
 				defaults.drawingCTX.beginPath();
-				defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, eraserWidth/2,0, Math.PI*2, false);
+				defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, eraserWidth/2+1,0, Math.PI*2, false);
 				defaults.drawingCTX.clip();
 			},
 			setDrawPathForEraser: function(loc){
-				var eraserWidth = parseFloat(20);
+				var eraserWidth = parseFloat(defaults.eraserSize);
 				defaults.drawingCTX.beginPath();
 				defaults.drawingCTX.arc(loc.x, loc.y, eraserWidth/2,0, Math.PI*2, false);
 				defaults.drawingCTX.clip();
@@ -478,7 +488,10 @@ var Main = (function() {
 						switch(defaults.drawTool){
 					    	case "drawRect": case "drawCircle": case "drawLine":
 					    		self.restoreDrawingSurface();
-								self.updateRubberband(loc);
+								self.updateRubberband(loc, defaults.drawTool);
+					    		break;
+					    	case "drawBrush":
+					    		self.updateRubberband(loc, defaults.drawTool);
 					    		break;
 					    	case "drawEraser":
 					    		self.eraseLast();
@@ -499,7 +512,7 @@ var Main = (function() {
 					switch(defaults.drawTool){
 				    	case "drawRect": case "drawCircle": case "drawLine":
 				    		self.restoreDrawingSurface();
-							self.updateRubberband(loc);
+							self.updateRubberband(loc, defaults.drawTool);
 				    		break;
 				    	case "drawEraser":
 					    	self.eraseLast();
@@ -515,28 +528,83 @@ var Main = (function() {
 
 		    	
 		    },
-		    drawBrush: function(e, isDown){
-		    	var x = parseInt(e.pageX - $(defaults.drawingCanvas).offset().left);
-				var y = parseInt(e.pageY - $(defaults.drawingCanvas).offset().top);
-		    	if (isDown) {
-				    defaults.drawingCTX.beginPath();
-				    defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-				    defaults.drawingCTX.lineWidth = 1;
-				    defaults.drawingCTX.lineJoin = "round";
-				    defaults.drawingCTX.moveTo(defaults.lastX, defaults.lastY);
-				    defaults.drawingCTX.lineTo(x, y);
-				    defaults.drawingCTX.closePath();
-				    defaults.drawingCTX.stroke();
-				}
-				defaults.lastX = x; 
-				defaults.lastY = y;
-		    },
+		    formatDate: function(date) {
+			    var year = date.getFullYear(),
+			        month = date.getMonth() + 1, // months are zero indexed
+			        day = date.getDate(),
+			        hour = date.getHours(),
+			        minute = date.getMinutes(),
+			        second = date.getSeconds(),
+			        hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+			        hourFormatted = hour < 10 ? "0" + hour : hour,
+			        minuteFormatted = minute < 10 ? "0" + minute : minute,
+			        morning = hour < 12 ? "am" : "pm";
+
+			    return year + "" + month + "" + day + "" + hourFormatted + "" + minuteFormatted;
+			},
+		    saveImageFile: function(){
+		    	var self = this;
+		    	var saveBtn = 'button.saveBtn';
+
+		    	$(saveBtn).on('click', function(e){
+		    		e.preventDefault();
+		    		var file = $(this).attr('data-file');
+		    		var date1 = new Date();
+		    		var dateStr = self.formatDate(date1);
+            		
+            		if(file == 'jpg'){
+            			// 포토샵에서 못불러옴. 압축률 때문인지..비트 때문인지 ....
+
+            			var dataURL = defaults.drawingCanvas.toDataURL('image/jpg');
+            			dataURL = dataURL.replace('/^data:image\/[^;]*/', 'data:application/octet-stream');
+            			var aTag = document.createElement('a');
+			            aTag.download = dateStr+'temp.jpg';
+			            aTag.href = dataURL;
+			            aTag.click();
+
+
+
+            		} else if(file == 'png'){
+            			var dataURL = defaults.drawingCanvas.toDataURL('image/png');
+            			dataURL = dataURL.replace('/^data:image\/[^;]*/', 'data:application/octet-stream');
+            			dataURL = dataURL.replace('/^data:application\/octet-stream/', 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
+
+            			var aTag = document.createElement('a');
+			            aTag.download = dateStr+'temp.png';
+			            aTag.href = dataURL;
+			            aTag.click();
+
+            		} else {
+            			this.showMsg('잘못된 경로입니다.')
+            		}
+
+            		self.closeModal(defaults.dataMenu);
+
+		    	})
+		    }
+		    
 		    
 
 
 
 		};
 	};
+
+
+	function formatDate(date) {
+	    var year = date.getFullYear(),
+	        month = date.getMonth() + 1, // months are zero indexed
+	        day = date.getDate(),
+	        hour = date.getHours(),
+	        minute = date.getMinutes(),
+	        second = date.getSeconds(),
+	        hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+	        minuteFormatted = minute < 10 ? "0" + minute : minute,
+	        morning = hour < 12 ? "am" : "pm";
+
+	    return month + "/" + day + "/" + year + " " + hourFormatted + ":" +
+	            minuteFormatted + morning;
+	}
 
 
 	function clearArea() {

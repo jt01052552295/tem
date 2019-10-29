@@ -551,15 +551,24 @@ var Main = (function() {
 		    		var file = $(this).attr('data-file');
 		    		var date1 = new Date();
 		    		var dateStr = self.formatDate(date1);
+
+		    		var canvas = defaults.drawingCanvas;
+		    		var context = defaults.drawingCTX;
+		    		
+		    		var imgData;
+		    		var img = new Image();
+		    		img.crossOrigin='anonymous';
             		
             		if(file == 'jpg'){
             			// 포토샵에서 못불러옴. 압축률 때문인지..비트 때문인지 ....
 
-            			var dataURL = defaults.drawingCanvas.toDataURL('image/jpg');
+
+            			var dataURL = defaults.drawingCanvas.toDataURL('image/jpg', 0.8);
             			dataURL = dataURL.replace('/^data:image\/[^;]*/', 'data:application/octet-stream');
+
             			var aTag = document.createElement('a');
+            			aTag.href = dataURL;
 			            aTag.download = dateStr+'temp.jpg';
-			            aTag.href = dataURL;
 			            aTag.click();
 
 

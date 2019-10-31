@@ -465,8 +465,13 @@ var Main = (function() {
 				    	case "drawRect": case "drawCircle": case "drawLine":
 				    		self.saveDrawingSurface();
 				    		break;
+				    	case "drawFill":
+				    		//draw_fill(ctx, x, y, rgba[0], rgba[1], rgba[2], rgba[3]);
+				    		break;
 				    }
 
+
+				    
 				    
 
 				    defaults.mousedown.x = loc.x;
@@ -558,14 +563,14 @@ var Main = (function() {
 		    		var imgData;
 		    		var img = new Image();
 		    		img.crossOrigin='anonymous';
+
             		
             		if(file == 'jpg'){
             			// 포토샵에서 못불러옴. 압축률 때문인지..비트 때문인지 ....
 
 
-            			var dataURL = defaults.drawingCanvas.toDataURL('image/jpg', 0.8);
+            			var dataURL = defaults.drawingCanvas.toDataURL('image/jpeg', 0.8);
             			dataURL = dataURL.replace('/^data:image\/[^;]*/', 'data:application/octet-stream');
-
             			var aTag = document.createElement('a');
             			aTag.href = dataURL;
 			            aTag.download = dateStr+'temp.jpg';

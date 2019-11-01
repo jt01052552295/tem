@@ -14,7 +14,7 @@ var Main = (function() {
 	      mode: mode,
 	      topMenuActivate: false,
 	      foreGroundColor: 'rgb(0,0,0)',
-	      backGroundColor: 'rgb(255,255,255)',
+	      backGroundColor: 'rgb(255,0,0)',
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
@@ -380,7 +380,6 @@ var Main = (function() {
 			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
 			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
 			   defaults.drawingCTX.stroke();
-			   //defaults.drawingCTX.fill(); //색상채우기
 
 			},
 			drawRect: function(loc) {
@@ -392,7 +391,36 @@ var Main = (function() {
 				defaults.drawingCTX.rect(defaults.mousedown.x, defaults.mousedown.y, width, height);
 				defaults.drawingCTX.closePath();
 				defaults.drawingCTX.stroke();
-			   //defaults.drawingCTX.fill(); 색상채우기
+
+			},
+			drawCircleFill: function(loc) {
+			   var angle, radius;
+			   if(defaults.mousedown.y === loc.y){
+			   		radius = Math.abs(loc.x - defaults.mousedown.x);	
+			   } else { 
+			   		angle = Math.atan(defaults.rubberbandRect.height / defaults.rubberbandRect.width),
+      				radius = defaults.rubberbandRect.height / Math.sin(angle);
+			   }
+
+			   defaults.drawingCTX.beginPath();
+			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
+			   defaults.drawingCTX.fillStyle = defaults.backGroundColor;
+			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
+			   defaults.drawingCTX.stroke();
+			   defaults.drawingCTX.fill();
+
+			},
+			drawRectFill: function(loc) {
+				var width = loc.x - defaults.mousedown.x;
+				var height = loc.y - defaults.mousedown.y;
+			    defaults.drawingCTX.beginPath();
+				defaults.drawingCTX.lineWidth = 1;
+				defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
+				defaults.drawingCTX.fillStyle = defaults.backGroundColor;
+				defaults.drawingCTX.rect(defaults.mousedown.x, defaults.mousedown.y, width, height);
+				defaults.drawingCTX.closePath();
+				defaults.drawingCTX.stroke();
+			    defaults.drawingCTX.fill();
 
 			},
 			drawBrush: function(loc) {
@@ -411,6 +439,8 @@ var Main = (function() {
 			    	case "drawLine": 	this.drawLine(loc); 	break;
 			    	case "drawCircle": 	this.drawCircle(loc); break;
 			    	case "drawRect": 	this.drawRect(loc); break;
+			    	case "drawCircleFill": 	this.drawCircleFill(loc); break;
+			    	case "drawRectFill": 	this.drawRectFill(loc); break;
 			    	case "drawBrush": 	this.drawBrush(loc); break;
 			    }
 
@@ -462,7 +492,7 @@ var Main = (function() {
 		    		e.preventDefault();
 				    
 				    switch(defaults.drawTool){
-				    	case "drawRect": case "drawCircle": case "drawLine":
+				    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
 				    		self.saveDrawingSurface();
 				    		break;
 				    	case "drawFill":
@@ -491,7 +521,7 @@ var Main = (function() {
 						loc = self.windowToCanvas(e.clientX, e.clientY);
 
 						switch(defaults.drawTool){
-					    	case "drawRect": case "drawCircle": case "drawLine":
+					    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
 					    		self.restoreDrawingSurface();
 								self.updateRubberband(loc, defaults.drawTool);
 					    		break;
@@ -515,7 +545,7 @@ var Main = (function() {
 					var loc = self.windowToCanvas(e.clientX, e.clientY);
 					e.preventDefault();
 					switch(defaults.drawTool){
-				    	case "drawRect": case "drawCircle": case "drawLine":
+				    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
 				    		self.restoreDrawingSurface();
 							self.updateRubberband(loc, defaults.drawTool);
 				    		break;

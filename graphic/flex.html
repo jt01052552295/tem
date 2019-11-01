@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>css flex</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<link href="./asset/css/fonts.css?ver=1" rel="stylesheet">
+<link href="./asset/css/default.css?ver=1" rel="stylesheet">
+<link href="./asset/css/style.css?ver=1" rel="stylesheet">
+<link href="./asset/fontawesome/css/all.css?ver=1" rel="stylesheet">
+<script src="./asset/js/jquery-3.3.1.min.js?ver=1" crossorigin="anonymous"></script>
+<script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
+<!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="./asset/js/respond.min.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
+</head>
+<body>
+<style>
+.flex-container {
+  background-color: DodgerBlue;
+  display: flex; 
+
+  /* 2019-11-01  https://www.w3schools.com/css/css3_flexbox.asp */
+  /*flex-wrap: wrap;*/ /* 가로 크기에 따라 아이템들이 정렬됨. */
+  /*flex-wrap: nowrap;*/   /* 가로 크기에 따라 아이템들이 정렬 되지않고 유지됨. */
+  /*flex-wrap: wrap-reverse;*/ /* 가로 크기에 따라 아이템들이 역순정렬됨. 왼쪽하단부터 오른쪽 상단방향으로  */
+  /*flex-flow: row wrap;*/ /* wrap 이랑 뭔차이? */
+
+  /*flex-direction: column;*/ /*  위에서 아래로 세로정렬 */
+  /*flex-direction: column-reverse;*/ /* 아래에서 위로 역순 세로정렬 */
+  /*flex-direction: row;*/ /*  왼쪽에서 오른쪽 가로 정렬 (기본) */
+  /*flex-direction: row-reverse;*/ /*  오른쪽부터 왼쪽으로 가로 정렬  */
+
+  /*justify-content: center;*/ /* 아이템 중앙정렬 */
+  /*justify-content: flex-start;*/ /* 기본.  박스 시작지점부터 정렬됨. */ 
+ /* justify-content: flex-end;*/ /* 박스 마지막지점부터 정렬 */
+ /*justify-content: space-around;*/ /* 박스 중앙기준으로 아이템 여백 정렬됨 */
+ /*justify-content: space-between; *//* 박스 시작,종료 기준으로 아이템 여백 정렬 */
+
+
+
+
+
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 100px;
+  text-align: center;
+}
+</style>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+</div>
+
+
+
+
+
+
+<p><strong>Note:</strong> Flexbox is not supported in Internet Explorer 10 or earlier versions.</p>
+
+
+</body>
+</html>

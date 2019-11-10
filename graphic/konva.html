@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="ko" class="ie7"> <![endif]-->
+<!--[if IE 8]> <html lang="ko" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ko" class="ie9"> <![endif]-->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>konva js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<link href="./asset/fontawesome/css/all.css?ver=1" rel="stylesheet">
+<script src="./asset/js/jquery-3.3.1.min.js?ver=1" crossorigin="anonymous"></script>
+<script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
+<script src="./asset/dev/konva.js" crossorigin="anonymous"></script>
+<script src="./asset/dev/error.js" crossorigin="anonymous"></script>
+<!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="./asset/js/respond.min.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
+</head>
+<body>
+<style>
+body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
+#buttons {position: absolute;right: 10px;top: 0px;z-index: 111;}
+</style>
+<div id="buttons">
+  <button id="show">show</button>
+  <button id="hide">hide</button>
+  <button id="punch">Punch</button>
+  <button id="removeClick">Remove onclick</button>
+  <button id="remove1">
+    Remove First Listener
+  </button>
+  <button id="remove2">
+    Remove Second Listener
+  </button>
+  <button id="removeAll">
+    Remove All Listeners
+  </button>
+  <button id="toggle">Toggle hit canvas</button>
+  <button id="listen">
+    Listen
+  </button>
+  <button id="dontListen">
+    Dont' Listen
+  </button>
+</div>
+
+<div id="container"></div>
+
+<script src="./asset/konva/event/keyboard.js"></script>
+<!-- 
+<script src="./asset/konva/event/delegation.js"></script> 
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+https://konvajs.org/docs/filters/Pixelate.html

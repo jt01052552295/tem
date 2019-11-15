@@ -80,20 +80,54 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
   <button id="toYellow">
     Move red box to yellow group
   </button>
+  <input type="button" id="play" value="Play" />
+  <input type="button" id="pause" value="Pause" />
+  <input type="button" id="reverse" value="Reverse" />
+  <input type="button" id="start" value="Start" />
+  <input type="button" id="stop" value="Stop" />
+  <input type="button" id="activate" value="Activate rectangle" />
+     <button id="create-yoda">Create yoda</button>
+    <button id="create-darth">Create darth</button>
+    <button id="undo">Undo</button>
+    <button id="redo">Redo</button>
+    <button id="save">Save as image</button>
 </div>
 <input id="slider" type="range" min="0" max="40" step="0.05" value="20" />
 <input id="contrast" type="range" min="-100" max="100" step="1" value="0" />
 
 <div id="container"></div>
 
-<script src="./asset/konva/filter/contrast.js"></script>
+<script src="./asset/konva/performance/create.js"></script>
 <!-- 
-<script src="./asset/konva/filter/kaleidoscope.js"></script> 
-<script src="./asset/konva/filter/mask.js"></script> 
-<script src="./asset/konva/filter/noise.js"></script> 
-<script src="./asset/konva/filter/pixelate.js"></script> 
-<script src="./asset/konva/filter/custom.js"></script> 
-<script src="./asset/konva/filter/multiple.js"></script> 
+<script src="./asset/konva/performance/disable.js"></script> 
+<script src="./asset/konva/performance/false.js"></script> 
+<script src="./asset/konva/performance/memory.js"></script> 
+
+
+
+
+HTML5 Canvas All Konva performance tips list
+Don’t want to spend your time with performance issues? Request a performance review.
+
+There is a full list of useful performance tips:
+
+Shape Caching
+Layer Management
+batchDraw method
+Optimize Animation
+Shape Redraw
+If your shape has only position transformation (x and y, no scale, rotation) set transformsEnabled = 'position'
+If you don’t need event on layer set layer.hitGraphEnabled(false). Or use Konva.FastLayer. See Demo
+For mobile application set viewport: <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+If you have bad performance on retina devices set Konva.pixelRatio = 1. Make sure that quality of result is ok for you.
+While dragging a node you can move it on separate layer. Then move it back to original layer. See Demo
+Optimize Stroke Drawing
+If a shape has fill, stroke and opacity you may set shape.perfectDrawEnabled(false). See demo for more information Disable Perfect Drawing.
+Try to set shape.listening(false) where possible. For more info read Listening false.
+Avoid Memory Leaks.
+Don’t create large stages. Try to make canvases as small, as possible. 8000px wide canvas is blah 🤢. use this tip instead
+Do not create too many layers. Usually 3-5 is max.
+Hide (or remove from layer) invisible objects (or objects that go out of the screen).
 -->
 
 

@@ -52,30 +52,26 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
       var mode = 'brush';
       var lastLine;
       var lastShape;
+      var arrow;
+      var rect;
+
+      var posStart;
+      var posEnd;
 
       stage.on('mousedown touchstart', function(e) {
         isPaint = true;
-        var pos = stage.getPointerPosition();
+        posStart = stage.getPointerPosition();
 
-        lastShape = new Konva.Rect({
-          x: pos.x,
-          y: pos.y,
+        rect = new Konva.Rect({
+          x: posStart.x,
+          y: posStart.y,
           width: 0,
           height: 0,
+          fill: 'green',
           stroke: 'black',
           strokeWidth: 1
         });
-        layer.add(lastShape);
-
-        //console.info(lastStartPos)
-        // lastLine = new Konva.Line({
-        //   stroke: '#df4b26',
-        //   strokeWidth: 10,
-        //   globalCompositeOperation:
-        //     mode === 'brush' ? 'source-over' : 'destination-out',
-        //   points: [pos.x, pos.y]
-        // });
-        // layer.add(lastLine);
+        layer.add(rect);
 
         
       });
@@ -90,38 +86,14 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
           return;
         }
 
-        var pos = stage.getPointerPosition();
-
-        console.log(pos)
-        // https://jsfiddle.net/w33e9fpa/
-        // rect api 체크해보자.
-
-        // var obj = {
-        //   x: lastEndPos.x - lastStartPos.x, 
-        //   y: lastEndPos.y - lastStartPos.y
-        // };
-
-        // lastShape = new Konva.Rect({
-        //   x: lastStartPos.x,
-        //   y: lastStartPos.y,
-        //   width: obj.x,
-        //   height: obj.y,
-        //   stroke: 'black',
-        //   strokeWidth: 1
-        // });
-        // layer.add(lastShape);
-        // layer.batchDraw();
-
-
-        
+        posEnd = stage.getPointerPosition();
+        var w = posEnd.x - posStart.x;
+        var h = posEnd.y - posStart.y;
+        rect.width(w);
+        rect.height(h);
+        layer.draw();
         
 
-         // var newPoints = lastLine.points().concat([pos.x, pos.y]);
-        // lastLine.points(newPoints);
-
-        // var newPoints = lastShape.points().concat([pos.x, pos.y]);
-        // lastLine.points(newPoints);
-        //layer.batchDraw();
       });
 
       var select = document.getElementById('tool');

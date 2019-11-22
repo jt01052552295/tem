@@ -26,8 +26,12 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 </style>
  Tool:
     <select id="tool">
-      <option value="brush">Brush</option>
-      <option value="eraser">Eraser</option>
+      <option value="rect">rect</option>
+      <option value="circle">circle</option>
+      <option value="line">line</option>
+      <option value="pen">pen</option>
+      <option value="text">text</option>
+      <option value="eraser">eraser</option>
     </select>
 
 <div id="container"></div>
@@ -46,31 +50,49 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
       stage.add(layer);
 
 
-
-
       var isPaint = false;
-      var mode = 'brush';
+      var mode = 'rect';
       var lastLine;
       var lastShape;
       var arrow;
       var rect;
-
       var posStart;
       var posEnd;
+
+      function addShape(mode){
+        var shape;
+        // shape = new Konva.Rect({
+        //   x: posStart.x,
+        //   y: posStart.y,
+        //   width: 0,
+        //   height: 0,
+        //   fill: 'green',
+        //   stroke: 'black',
+        //   strokeWidth: 1,
+        //   name: 'rect',
+        //   draggable: true,
+        // });
+
+        shape = new Konva.Ellipse({
+          x: posStart.x,
+          y: posStart.y,
+          radiusX: 0,
+          radiusY: 0,
+          fill: 'yellow',
+          stroke: 'black',
+          strokeWidth: 4
+        });
+
+        return shape;
+      }
+
 
       stage.on('mousedown touchstart', function(e) {
         isPaint = true;
         posStart = stage.getPointerPosition();
 
-        rect = new Konva.Rect({
-          x: posStart.x,
-          y: posStart.y,
-          width: 0,
-          height: 0,
-          fill: 'green',
-          stroke: 'black',
-          strokeWidth: 1
-        });
+
+        rect = addShape(mode);
         layer.add(rect);
 
         
@@ -89,12 +111,38 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
         posEnd = stage.getPointerPosition();
         var w = posEnd.x - posStart.x;
         var h = posEnd.y - posStart.y;
-        rect.width(w);
-        rect.height(h);
+        rect.radius({
+          x: w,
+          y: h
+        });
+        // rect.width(w);
+        // rect.height(h);
         layer.draw();
-        
+        stage.add(layer);
 
       });
+
+      // stage.on('click tap', function(e) {
+      //   // if click on empty area - remove all transformers
+      //   if (e.target === stage) {
+      //     stage.find('Transformer').destroy();
+      //     layer.draw();
+      //     return;
+      //   }
+      //   // do nothing if clicked NOT on our rectangles
+      //   if (!e.target.hasName('rect')) {
+      //     return;
+      //   }
+      //   // remove old transformers
+      //   // TODO: we can skip it if current rect is already selected
+      //   stage.find('Transformer').destroy();
+
+      //   // create new transformer
+      //   var tr = new Konva.Transformer();
+      //   layer.add(tr);
+      //   tr.attachTo(e.target);
+      //   layer.draw();
+      // });
 
       var select = document.getElementById('tool');
       select.addEventListener('change', function() {

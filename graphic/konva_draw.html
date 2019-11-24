@@ -26,11 +26,12 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 </style>
  Tool:
     <select id="tool">
+      <option value="text">text</option>
+      <option value="select">select</option>
+      <option value="line">line</option>
       <option value="rect">rect</option>
       <option value="circle">circle</option>
-      <option value="line">line</option>
       <option value="pen">pen</option>
-      <option value="text">text</option>
       <option value="eraser">eraser</option>
     </select>
 
@@ -51,51 +52,109 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 
 
       var isPaint = false;
-      var mode = 'rect';
+      var mode = 'text';
       var lastLine;
       var lastShape;
       var arrow;
       var rect;
+      var textNode;
       var posStart;
       var posEnd;
+      var tr;
 
-      function addShape(mode){
-        var shape;
-        // shape = new Konva.Rect({
-        //   x: posStart.x,
-        //   y: posStart.y,
-        //   width: 0,
-        //   height: 0,
-        //   fill: 'green',
-        //   stroke: 'black',
-        //   strokeWidth: 1,
-        //   name: 'rect',
-        //   draggable: true,
-        // });
+      function addShape(mode, posStart){
+        var shape = null;
+        if(mode=='rect'){
+          shape = new Konva.Rect({
+            x: posStart.x,
+            y: posStart.y,
+            width: 0,
+            height: 0,
+            fill: 'green',
+            stroke: 'black',
+            strokeWidth: 1,
+            name: 'rect',
+            draggable: true,
+          });
+        } else if(mode=='circle'){
+          shape = new Konva.Ellipse({
+            x: posStart.x,
+            y: posStart.y,
+            radiusX: 0,
+            radiusY: 0,
+            fill: 'yellow',
+            stroke: 'black',
+            strokeWidth: 4
+          });
+        } else if(mode=='pen'){
+          shape = new Konva.Line({
+            stroke: '#df4b26',
+            strokeWidth: 5,
+            globalCompositeOperation:'source-over',
+            points: [posStart.x, posStart.y],
+          });
+        } else if(mode=='line'){
+          shape = new Konva.Line({
+            stroke: '#df4b26',
+            strokeWidth: 5,
+            globalCompositeOperation:'source-over',
+            points: [posStart.x, posStart.y],
+          });
+        } else {
+          shape = null;
+        }
+        return shape;
+      }
 
-        shape = new Konva.Ellipse({
-          x: posStart.x,
-          y: posStart.y,
-          radiusX: 0,
-          radiusY: 0,
-          fill: 'yellow',
-          stroke: 'black',
-          strokeWidth: 4
-        });
+      function drawShape(mode, rect, posStart, posEnd){
+        var shape = rect;
+        var w = Math.abs(posEnd.x - posStart.x);
+        var h = Math.abs(posEnd.y - posStart.y);
+        if(mode=='rect'){
+          shape.width(w);
+          shape.height(h);
+        } else if(mode=='circle'){
+          shape.radius({
+            x: w,
+            y: h
+          });
+        } else if(mode=='pen'){
+          var newPoints = shape.points().concat([posEnd.x, posEnd.y]);
+          shape.points(newPoints);
+        } else if(mode=='line'){
+          var newPoints = [posStart.x, posStart.y, posEnd.x, posEnd.y];
+          shape.points(newPoints);
+        } else {
+          shape = null;
+        }
 
         return shape;
       }
 
+      function addTextNode(mode, posStart){
+        var shape;
+        if(mode=='text'){
+          shape = new Konva.Text({
+            text: 'Some text here',
+            x: posStart.x,
+            y: posStart.y,
+            fontSize: 20,
+            draggable: true,
+            name: 'ttt',
+          });
+        } else {
+          shape = null;
+        }
+        return shape;
+      }
 
       stage.on('mousedown touchstart', function(e) {
         isPaint = true;
         posStart = stage.getPointerPosition();
-
-
-        rect = addShape(mode);
-        layer.add(rect);
-
-        
+        rect = addShape(mode, posStart);
+        if(rect != null){
+          layer.add(rect);
+        }
       });
 
       stage.on('mouseup touchend', function() {
@@ -109,40 +168,87 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
         }
 
         posEnd = stage.getPointerPosition();
-        var w = posEnd.x - posStart.x;
-        var h = posEnd.y - posStart.y;
-        rect.radius({
-          x: w,
-          y: h
-        });
-        // rect.width(w);
-        // rect.height(h);
-        layer.draw();
-        stage.add(layer);
+        var rs;
+        rs = drawShape(mode, rect, posStart, posEnd);
+        if(rs != null){
+          layer.draw();
+          stage.add(layer);
+        }
 
       });
 
-      // stage.on('click tap', function(e) {
-      //   // if click on empty area - remove all transformers
-      //   if (e.target === stage) {
-      //     stage.find('Transformer').destroy();
-      //     layer.draw();
-      //     return;
-      //   }
-      //   // do nothing if clicked NOT on our rectangles
-      //   if (!e.target.hasName('rect')) {
-      //     return;
-      //   }
-      //   // remove old transformers
-      //   // TODO: we can skip it if current rect is already selected
-      //   stage.find('Transformer').destroy();
+      stage.on('click tap', function(e) {
+        // if click on empty area - remove all transformers
+        // if (e.target === stage) {
+        //   stage.find('Transformer').destroy();
+        //   layer.draw();
+        //   return;
+        // }
+        
+        if (!textNode){
+          
+          textNode = addTextNode(mode, posStart);
+          layer.add(textNode);
+          layer.draw();
+          stage.add(layer);
 
-      //   // create new transformer
-      //   var tr = new Konva.Transformer();
-      //   layer.add(tr);
-      //   tr.attachTo(e.target);
-      //   layer.draw();
-      // });
+          tr = new Konva.Transformer();
+          layer.add(tr);
+          tr.attachTo(textNode);
+          layer.draw();
+
+          textNode.on('dblclick', () => {
+              var textPosition = textNode.getAbsolutePosition();
+
+              // then lets find position of stage container on the page:
+              var stageBox = stage.container().getBoundingClientRect();
+
+              // so position of textarea will be the sum of positions above:
+              var areaPosition = {
+                x: stageBox.left + textPosition.x,
+                y: stageBox.top + textPosition.y
+              };
+
+              // create textarea and style it
+              var textarea = document.createElement('textarea');
+              document.body.appendChild(textarea);
+
+              textarea.value = textNode.text();
+              textarea.style.position = 'absolute';
+              textarea.style.top = areaPosition.y + 'px';
+              textarea.style.left = areaPosition.x + 'px';
+              textarea.style.width = textNode.width();
+
+              textarea.focus();
+
+              textarea.addEventListener('keydown', function(e) {
+                // hide on enter
+                if (e.keyCode === 13) {
+                  textNode.text(textarea.value);
+                  layer.draw();
+                  document.body.removeChild(textarea);
+                }
+              });
+          });
+
+        } else if (e.target === textNode){
+          if(tr) {
+            tr.destroy();
+            layer.draw();
+          }
+          tr = new Konva.Transformer();
+          layer.add(tr);
+          tr.attachTo(textNode);
+          layer.draw();
+        } else if (textNode && tr){
+          tr.destroy();
+          layer.draw();
+        }
+        
+       
+      });
+
+
 
       var select = document.getElementById('tool');
       select.addEventListener('change', function() {

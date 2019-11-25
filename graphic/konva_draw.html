@@ -26,10 +26,11 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 </style>
  Tool:
     <select id="tool">
+      <option value="rect">rect</option>
       <option value="text">text</option>
       <option value="select">select</option>
       <option value="line">line</option>
-      <option value="rect">rect</option>
+     
       <option value="circle">circle</option>
       <option value="pen">pen</option>
       <option value="eraser">eraser</option>
@@ -52,15 +53,16 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 
 
       var isPaint = false;
-      var mode = 'text';
+      var mode = 'rect';
       var lastLine;
-      var lastShape;
       var arrow;
       var rect;
       var textNode;
       var posStart;
       var posEnd;
       var tr;
+      var lastShape = null;
+      var lastTr = null;
 
       function addShape(mode, posStart){
         var shape = null;
@@ -73,7 +75,6 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
             fill: 'green',
             stroke: 'black',
             strokeWidth: 1,
-            name: 'rect',
             draggable: true,
           });
         } else if(mode=='circle'){
@@ -84,7 +85,8 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
             radiusY: 0,
             fill: 'yellow',
             stroke: 'black',
-            strokeWidth: 4
+            strokeWidth: 4,
+            draggable: true,
           });
         } else if(mode=='pen'){
           shape = new Konva.Line({
@@ -92,6 +94,7 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
             strokeWidth: 5,
             globalCompositeOperation:'source-over',
             points: [posStart.x, posStart.y],
+            draggable: true,
           });
         } else if(mode=='line'){
           shape = new Konva.Line({
@@ -99,6 +102,7 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
             strokeWidth: 5,
             globalCompositeOperation:'source-over',
             points: [posStart.x, posStart.y],
+            draggable: true,
           });
         } else if(mode=='eraser'){
           shape = new Konva.Line({
@@ -189,11 +193,11 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
 
       stage.on('click tap', function(e) {
         // if click on empty area - remove all transformers
-        // if (e.target === stage) {
-        //   stage.find('Transformer').destroy();
-        //   layer.draw();
-        //   return;
-        // }
+        if (e.target === stage) {
+          stage.find('Transformer').destroy();
+          layer.draw();
+          return;
+        }
         
         if (!textNode){
           
@@ -256,11 +260,32 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
           tr.destroy();
           layer.draw();
         }
+
+        if(mode=='select' && e.target != stage){
+            stage.find('Transformer').destroy();
+            var tr = new Konva.Transformer();
+            layer.add(tr);
+            tr.attachTo(e.target);
+            layer.draw();
+            lastTr = tr;
+            lastShape = e.target;
+        }
         
        
       });
 
-
+      var container = stage.container();
+      container.tabIndex = 1;
+      container.addEventListener('keydown', function(e) {
+        if (e.keyCode === 8 && mode === 'select') {
+          lastShape.destroy();
+          stage.find('Transformer').destroy();
+          layer.draw();
+          return;
+        }
+        e.preventDefault();
+        layer.batchDraw();
+      });
 
       var select = document.getElementById('tool');
       select.addEventListener('change', function() {

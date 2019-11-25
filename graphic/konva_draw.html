@@ -100,6 +100,13 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
             globalCompositeOperation:'source-over',
             points: [posStart.x, posStart.y],
           });
+        } else if(mode=='eraser'){
+          shape = new Konva.Line({
+            stroke: '#df4b26',
+            strokeWidth: 10,
+            globalCompositeOperation:'destination-out',
+            points: [posStart.x, posStart.y],
+          });
         } else {
           shape = null;
         }
@@ -123,6 +130,9 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
           shape.points(newPoints);
         } else if(mode=='line'){
           var newPoints = [posStart.x, posStart.y, posEnd.x, posEnd.y];
+          shape.points(newPoints);
+        } else if(mode=='eraser'){
+          var newPoints = shape.points().concat([posEnd.x, posEnd.y]);
           shape.points(newPoints);
         } else {
           shape = null;
@@ -188,48 +198,50 @@ body {margin: 0;padding: 0;overflow: hidden;background-color: #f0f0f0;}
         if (!textNode){
           
           textNode = addTextNode(mode, posStart);
-          layer.add(textNode);
-          layer.draw();
-          stage.add(layer);
+          if(textNode){
+            layer.add(textNode);
+            layer.draw();
+            stage.add(layer);
 
-          tr = new Konva.Transformer();
-          layer.add(tr);
-          tr.attachTo(textNode);
-          layer.draw();
+            tr = new Konva.Transformer();
+            layer.add(tr);
+            tr.attachTo(textNode);
+            layer.draw();
 
-          textNode.on('dblclick', () => {
-              var textPosition = textNode.getAbsolutePosition();
+            textNode.on('dblclick', () => {
+                var textPosition = textNode.getAbsolutePosition();
 
-              // then lets find position of stage container on the page:
-              var stageBox = stage.container().getBoundingClientRect();
+                // then lets find position of stage container on the page:
+                var stageBox = stage.container().getBoundingClientRect();
 
-              // so position of textarea will be the sum of positions above:
-              var areaPosition = {
-                x: stageBox.left + textPosition.x,
-                y: stageBox.top + textPosition.y
-              };
+                // so position of textarea will be the sum of positions above:
+                var areaPosition = {
+                  x: stageBox.left + textPosition.x,
+                  y: stageBox.top + textPosition.y
+                };
 
-              // create textarea and style it
-              var textarea = document.createElement('textarea');
-              document.body.appendChild(textarea);
+                // create textarea and style it
+                var textarea = document.createElement('textarea');
+                document.body.appendChild(textarea);
 
-              textarea.value = textNode.text();
-              textarea.style.position = 'absolute';
-              textarea.style.top = areaPosition.y + 'px';
-              textarea.style.left = areaPosition.x + 'px';
-              textarea.style.width = textNode.width();
+                textarea.value = textNode.text();
+                textarea.style.position = 'absolute';
+                textarea.style.top = areaPosition.y + 'px';
+                textarea.style.left = areaPosition.x + 'px';
+                textarea.style.width = textNode.width();
 
-              textarea.focus();
+                textarea.focus();
 
-              textarea.addEventListener('keydown', function(e) {
-                // hide on enter
-                if (e.keyCode === 13) {
-                  textNode.text(textarea.value);
-                  layer.draw();
-                  document.body.removeChild(textarea);
-                }
-              });
-          });
+                textarea.addEventListener('keydown', function(e) {
+                  // hide on enter
+                  if (e.keyCode === 13) {
+                    textNode.text(textarea.value);
+                    layer.draw();
+                    document.body.removeChild(textarea);
+                  }
+                });
+            });
+          }
 
         } else if (e.target === textNode){
           if(tr) {

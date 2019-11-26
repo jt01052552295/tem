@@ -2,48 +2,105 @@
 
 /*@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700');*/
 /*@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans+KR');*/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&subset=korean');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap');
 
 
 @font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: normal;
-  src: url(../fonts/nanumgothic/NanumGothic-Regular.eot);
-  src: url(../fonts/nanumgothic/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/nanumgothic/NanumGothic-Regular.woff2) format('woff2'),
-       url(../fonts/nanumgothic/NanumGothic-Regular.woff) format('woff')
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 100;
+    src: local('※'),
+        url('../fonts/nanumgothic/NanumGothicL.woff2') format('woff2'), 
+        url('../fonts/nanumgothic/NanumGothicL.woff') format('woff'),
+        url('../fonts/nanumgothic/NanumGothicL.ttf') format('truetype'),
+        url('../fonts/nanumgothic/NanumGothicL.otf') format('opentype'),
+        url('../fonts/nanumgothic/NanumGothicL.eot') format('embedded-opentype');
 }
+
 @font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: bold;
-  src: url(../fonts/nanumgothic/NanumGothic-Bold.eot);
-  src: url(../fonts/nanumgothic/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/nanumgothic/NanumGothic-Bold.woff2) format('woff2'),
-       url(../fonts/nanumgothic/NanumGothic-Bold.woff) format('woff')
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('※'),
+        url('../fonts/nanumgothic/NanumGothicR.woff2') format('woff2'), 
+        url('../fonts/nanumgothic/NanumGothicR.woff') format('woff'),
+        url('../fonts/nanumgothic/NanumGothicR.ttf') format('truetype'),
+        url('../fonts/nanumgothic/NanumGothicR.otf') format('opentype'),
+        url('../fonts/nanumgothic/NanumGothicR.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: local('※'),
+        url('../fonts/nanumgothic/NanumGothicB.woff2') format('woff2'), 
+        url('../fonts/nanumgothic/NanumGothicB.woff') format('woff'),
+        url('../fonts/nanumgothic/NanumGothicB.ttf') format('truetype'),
+        url('../fonts/nanumgothic/NanumGothicB.otf') format('opentype'),
+        url('../fonts/nanumgothic/NanumGothicB.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 900;
+    src: local('※'),
+        url('../fonts/nanumgothic/NanumGothicEB.woff2') format('woff2'), 
+        url('../fonts/nanumgothic/NanumGothicEB.woff') format('woff'),
+        url('../fonts/nanumgothic/NanumGothicEB.ttf') format('truetype'),
+        url('../fonts/nanumgothic/NanumGothicEB.otf') format('opentype'),
+        url('../fonts/nanumgothic/NanumGothicEB.eot') format('embedded-opentype');
 }
 
 
+
 @font-face {
-   font-family: 'Noto Sans KR';
-   font-style: normal;
-   font-weight: 400;
-   src: url(../fonts/notosanskr/NotoSansKR-Regular.eot);
-   src: url(../fonts/notosanskr/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
-   		  url(../fonts/notosanskr/NotoSansKR-Regular.woff2) format('woff2'),
-        url(../fonts/notosanskr/NotoSansKR-Regular.woff) format('woff'),
-        url(../fonts/notosanskr/NotoSansKR-Regular.otf) format('opentype');
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 100;
+    src: local('NotoSans'),
+        url('../fonts/notosanskr/NotoSans-Thin.woff2') format('woff2'), 
+        url('../fonts/notosanskr/NotoSans-Thin.woff') format('woff'),
+        url('../fonts/notosanskr/NotoSans-Thin.ttf') format('truetype'),
+        url('../fonts/notosanskr/NotoSans-Thin.otf') format('opentype'),
+        url('../fonts/notosanskr/NotoSans-Thin.eot') format('embedded-opentype');
 }
+
 @font-face {
-   font-family: 'Noto Sans KR';
-   font-style: normal;
-   font-weight: 700;
-   src: url(../fonts/notosanskr/NotoSansKR-Bold.eot);
-   src: url(../fonts/notosanskr/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),   
-  		  url(../fonts/notosanskr/NotoSansKR-Bold.woff2) format('woff2'),
-        url(../fonts/notosanskr/NotoSansKR-Bold.woff) format('woff'),
-        url(../fonts/notosanskr/NotoSansKR-Bold.otf) format('opentype');
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('NotoSans'),
+        url('../fonts/notosanskr/NotoSans-Regular.woff2') format('woff2'), 
+        url('../fonts/notosanskr/NotoSans-Regular.woff') format('woff'),
+        url('../fonts/notosanskr/NotoSans-Regular.ttf') format('truetype'),
+        url('../fonts/notosanskr/NotoSans-Regular.otf') format('opentype'),
+        url('../fonts/notosanskr/NotoSans-Regular.eot') format('embedded-opentype');
 }
+
+@font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('NotoSans'),
+        url('../fonts/notosanskr/NotoSans-Bold.woff2') format('woff2'), 
+        url('../fonts/notosanskr/NotoSans-Bold.woff') format('woff'),
+        url('../fonts/notosanskr/NotoSans-Bold.ttf') format('truetype'),
+        url('../fonts/notosanskr/NotoSans-Bold.otf') format('opentype'),
+        url('../fonts/notosanskr/NotoSans-Bold.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 900;
+    src: local('NotoSans'),
+        url('../fonts/notosanskr/NotoSans-Black.woff2') format('woff2'), 
+        url('../fonts/notosanskr/NotoSans-Black.woff') format('woff'),
+        url('../fonts/notosanskr/NotoSans-Black.ttf') format('truetype'),
+        url('../fonts/notosanskr/NotoSans-Black.otf') format('opentype'),
+        url('../fonts/notosanskr/NotoSans-Black.eot') format('embedded-opentype');
+}
+

@@ -35,233 +35,605 @@
 </ul>
 
 <?php if($_GET['f']=='nanum'):?>
-<div class="font_test font_nanum">
-	<h1>h1 나눔고딕</h1>
-	<h2>h2 나눔고딕</h2>
-	<h3>h3 나눔고딕</h3>
-	<h4>h4 나눔고딕</h4>
-	<h5>h5 나눔고딕</h5>
-	<h6>h6 나눔고딕</h6>
-	<br/><br/>
-	<h1>h1 Nanum Gothic</h1>
-	<h2>h2 Nanum Gothic</h2>
-	<h3>h3 Nanum Gothic</h3>
-	<h4>h4 Nanum Gothic</h4>
-	<h5>h5 Nanum Gothic</h5>
-	<h6>h6 Nanum Gothic</h6>
-	<br/><br/>
 
-	<div class="font_size_12">
-		<p class="c_red">사이즈 12</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
 
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_16">
-		<p class="c_red">사이즈 16</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
+<div class="page">
+    <div class="demo" style="font-family: 'NanumGothic'; font-weight: 900; font-style: normal;">
+        <h1>NanumGothic ExtraBold</h1>
+        <pre>.your-style {
+			    font-family: 'NanumGothic';
+			    font-weight: 900;
+			    font-style: normal;
+			}
+		</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NanumGothic'; font-weight: 700; font-style: normal;">
+        <h1>NanumGothic Bold</h1>
+        <pre>.your-style {
+			    font-family: 'NanumGothic';
+			    font-weight: 700;
+			    font-style: normal;
+			}
+		</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NanumGothic'; font-weight: 400; font-style: normal;">
+        <h1>NanumGothic Regular</h1>
+        <pre>.your-style {
+	            font-family: 'NanumGothic';
+	            font-weight: 400;
+	            font-style: normal;
+	        }
+	    </pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NanumGothic'; font-weight: 100; font-style: normal;">
+        <h1>NanumGothic Light</h1>
+        <pre>.your-style {
+			    font-family: 'NanumGothic';
+			    font-weight: 100;
+			    font-style: normal;
+			}
+		</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+</div>  
 
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_20">
-		<p class="c_red">사이즈 20</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
 
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-</div>
 <?php elseif($_GET['f']=='noto'):?>
-<div class="font_test font_noto">
-	<h1>h1 노토 산스</h1>
-	<h2>h2 노토 산스</h2>
-	<h3>h3 노토 산스</h3>
-	<h4>h4 노토 산스</h4>
-	<h5>h5 노토 산스</h5>
-	<h6>h6 노토 산스</h6>
-	<br/><br/>
-	<h1>h1 Noto Sans KR</h1>
-	<h2>h2 Noto Sans KR</h2>
-	<h3>h3 Noto Sans KR</h3>
-	<h4>h4 Noto Sans KR</h4>
-	<h5>h5 Noto Sans KR</h5>
-	<h6>h6 Noto Sans KR</h6>
-	<br/><br/>
-
-	<div class="font_size_12">
-		<p class="c_red">사이즈 12</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_16">
-		<p class="c_red">사이즈 16</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_20">
-		<p class="c_red">사이즈 20</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-</div>
+<div class="page">
+    <div class="demo" style="font-family: 'NotoSans'; font-weight: 900; font-style: normal;">
+        <h1>NotoSans Black</h1>
+        <pre>.your-style {
+		    font-family: 'NotoSans';
+		    font-weight: 900;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NotoSans'; font-weight: 700; font-style: normal;">
+        <h1>NotoSans Bold</h1>
+        <pre>.your-style {
+		    font-family: 'NotoSans';
+		    font-weight: 700;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NotoSans'; font-weight: 400; font-style: normal;">
+        <h1>NotoSans Regular</h1>
+        <pre>.your-style {
+            font-family: 'NotoSans';
+            font-weight: 400;
+            font-style: normal;
+        }</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'NotoSans'; font-weight: 100; font-style: normal;">
+        <h1>NotoSans Thin</h1>
+        <pre>.your-style {
+		    font-family: 'NotoSans';
+		    font-weight: 100;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+</div>   
 <?php elseif($_GET['f']=='open'):?>
-<div class="font_test font_open">
-	<h1>h1 오픈 산스</h1>
-	<h2>h2 오픈 산스</h2>
-	<h3>h3 오픈 산스</h3>
-	<h4>h4 오픈 산스</h4>
-	<h5>h5 오픈 산스</h5>
-	<h6>h6 오픈 산스</h6>
-	<br/><br/>
-	<h1>h1 Open Sans</h1>
-	<h2>h2 Open Sans</h2>
-	<h3>h3 Open Sans</h3>
-	<h4>h4 Open Sans</h4>
-	<h5>h5 Open Sans</h5>
-	<h6>h6 Open Sans</h6>
-	<br/><br/>
-
-	<div class="font_size_12">
-		<p class="c_red">사이즈 12</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_16">
-		<p class="c_red">사이즈 16</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_20">
-		<p class="c_red">사이즈 20</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-</div>
+<div class="page">
+    <div class="demo" style="font-family: 'Open Sans'; font-weight: 800; font-style: normal;">
+        <h1>Open Sans Extra-Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Open Sans';
+		    font-weight: 800;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Open Sans'; font-weight: 700; font-style: normal;">
+        <h1>Open Sans Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Open Sans';
+		    font-weight: 700;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Open Sans'; font-weight: 600; font-style: normal;">
+        <h1>Open Sans Semi-Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Open Sans';
+		    font-weight: 600;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Open Sans'; font-weight: 400; font-style: normal;">
+        <h1>Open Sans Regular</h1>
+        <pre>.your-style {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-style: normal;
+        }</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Open Sans'; font-weight: 300; font-style: normal;">
+        <h1>Open Sans Light</h1>
+        <pre>.your-style {
+		    font-family: 'Open Sans';
+		    font-weight: 300;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+</div>   
 <?php elseif($_GET['f']=='mont'):?>
-<div class="font_test font_montserrat">
-	<h1>h1 ??</h1>
-	<h2>h2 ??</h2>
-	<h3>h3 ??</h3>
-	<h4>h4 ??</h4>
-	<h5>h5 ??</h5>
-	<h6>h6 ??</h6>
-	<br/><br/>
-	<h1>h1 Montserrat</h1>
-	<h2>h2 Montserrat</h2>
-	<h3>h3 Montserrat</h3>
-	<h4>h4 Montserrat</h4>
-	<h5>h5 Montserrat</h5>
-	<h6>h6 Montserrat</h6>
-	<br/><br/>
-
-	<div class="font_size_12">
-		<p class="c_red">사이즈 12</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_16">
-		<p class="c_red">사이즈 16</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-	<div class="font_size_20">
-		<p class="c_red">사이즈 20</p>
-		<p>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</p>
-		<strong>대한민국은 민주공화국이다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.</strong>
-		<br/><br/>
-		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</p>
-		<strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla.</strong>
-		<br/><br/>
-
-		<p>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</p>
-		<strong>1234567890 !@#$%^&*()_+-=;:'",<.>/?`~</strong>
-	</div>
-</div>
+<div class="page">
+	<div class="demo" style="font-family: 'Montserrat'; font-weight: 900; font-style: normal;">
+        <h1>Montserrat Black</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 900;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 800; font-style: normal;">
+        <h1>Montserrat Extra-Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 800;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 700; font-style: normal;">
+        <h1>Montserrat Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 700;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 600; font-style: normal;">
+        <h1>Montserrat Semi-Bold</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 600;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 500; font-style: normal;">
+        <h1>Montserrat Medium</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 500;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 400; font-style: normal;">
+        <h1>Montserrat Regular</h1>
+        <pre>.your-style {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-style: normal;
+        }</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+    <div class="demo" style="font-family: 'Montserrat'; font-weight: 300; font-style: normal;">
+        <h1>Montserrat Light</h1>
+        <pre>.your-style {
+		    font-family: 'Montserrat';
+		    font-weight: 300;
+		    font-style: normal;
+		}</pre>
+        <div class="font-container">
+            <p class="letters">
+                abcdefghijklmnopqrstuvwxyz
+                <br /> ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                <br /> 0123456789.:,;()*!?'@#
+                <>$%&^+-=~
+                    <br> 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+                    <br> 무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세.
+            </p>
+            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+        </div>
+    </div>
+</div>  
 <?php else:?>
 
 <?php endif;?>

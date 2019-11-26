@@ -18,9 +18,16 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
-	      backgroundContext: document.createElement('canvas').getContext('2d'),
-	      drawingCanvas: document.getElementById('drawingCanvas'),
-	      drawingCTX: document.getElementById('drawingCanvas').getContext("2d"),
+	      // backgroundContext: document.createElement('canvas').getContext('2d'),
+	      // drawingCanvas: document.getElementById('drawingCanvas'),
+	      // drawingCTX: document.getElementById('drawingCanvas').getContext("2d"),
+	      stage: new Konva.Stage({
+	        container: 'container',
+	        width: 600,
+	        height: 400,
+	      }),
+	      layer: new Konva.Layer(),
+
 	      dataMenu : '',
 	      drawTool : null,
 	      mousePressed : false,
@@ -37,7 +44,9 @@ var Main = (function() {
 		return {
 			opt:defaults,
 			init:function(){
-				this.drawBackground();
+				defaults.stage.add(defaults.layer);
+				// defaults.stage.getContainer().style.backgroundColor = 'white';
+				//this.drawBackground();
 				this.showMode();
 				this.topMenu();
 				this.sideMenu();
@@ -45,7 +54,7 @@ var Main = (function() {
 				this.groundToggle();
 				this.groundColor();
 				this.canvasSize();
-				this.drawCanvas();
+				//this.drawCanvas();
 				this.saveImageFile();
 				return this;
 			},
@@ -295,16 +304,22 @@ var Main = (function() {
 
 		    		$("#custom_width").val(size[0]);
 		    		$("#custom_height").val(size[1]);
+
+		    		defaults.stage.setAttrs({
+					  width: parseInt(size[0]),
+					  height: parseInt(size[1])
+					});
 		    	})
 
 		    	$(resizeCanvas).on('click', function(e){
 		    		e.preventDefault();
 		    		var c_w = $("#custom_width").val();
 		    		var c_h = $("#custom_height").val();
-            		defaults.drawingCanvas.width = c_w;
-            		defaults.drawingCanvas.height = c_h;
 
-            		self.drawBackground();
+            		defaults.stage.setAttrs({
+					  width: parseInt(c_w),
+					  height: parseInt(c_h)
+					});
 
             		self.closeModal(defaults.dataMenu);
 

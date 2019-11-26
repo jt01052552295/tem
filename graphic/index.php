@@ -23,6 +23,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <link href="./asset/fontawesome/css/all.css?ver=1" rel="stylesheet">
 <script src="./asset/js/jquery-3.3.1.min.js?ver=1" crossorigin="anonymous"></script>
 <script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
+<script src="./asset/dev/konva.js" crossorigin="anonymous"></script>
+<script src="./asset/dev/error.js" crossorigin="anonymous"></script>
 <!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/respond.min.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
@@ -119,10 +121,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	</aside>
 
 	<main id="main">
-
-		<canvas id='drawingCanvas' width='400' height='400'>
-		  Canvas not supported
-		</canvas>
+		<div id="container"></div>
 		<div id="output"></div>
 
 	</main>

@@ -132,7 +132,7 @@ aside#side {width:160px;height:1000px;overflow-y:auto;background:#fff;padding:5p
 
 main#main {margin-left:160px;height:1000px;background:#eee;position: relative;padding:10px;}
 
-main#main canvas {border:1px solid #ccc;background:#fff;}
+main#main canvas {border:1px solid #ccc !important;background:#fff !important;}
 
 
 .cate {clear: both;overflow: hidden;}
@@ -472,7 +472,7 @@ div.basicBox h6 {text-align: left;padding:5px;margin-bottom: 10px;background-col
 }
 
 
-
+#container {}
 
 
 

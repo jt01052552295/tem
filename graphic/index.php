@@ -89,7 +89,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 	<aside id="side">
 		<ul class="cate">
-            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
+            <li><button class="mBtn active" data-draw-func="select"><i class="fas fa-arrows-alt"></i><span>Move</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-expand"></i><span>Marquee</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-crop"></i><span>Crop</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-eye-dropper"></i><span>Eye</span></button></li>
@@ -288,6 +288,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <!-- 
 
 컨셉 : 유틸리티 프로그램 처럼	
+konva JS 기반
 
 기능 : 캔버스 사이즈 ( 오토, 매뉴얼 )
 기능 : unde ,redo

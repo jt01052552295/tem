@@ -29,8 +29,8 @@ var Main = (function() {
 	      layer: new Konva.Layer(),
 
 	      dataMenu : '',
-	      drawTool : null,
-	      mousePressed : false,
+	      drawTool : 'select',
+	      isPaint : false,
 	      lastX : 0,
 	      lastY : 0,
 	      drawingSurfaceImageData: null,
@@ -54,22 +54,9 @@ var Main = (function() {
 				this.groundToggle();
 				this.groundColor();
 				this.canvasSize();
-				//this.drawCanvas();
+				this.drawCanvas();
 				this.saveImageFile();
 				return this;
-			},
-			drawBackground: function(){
-				defaults.backgroundContext.canvas.width = defaults.drawingCTX.canvas.width;
-   				defaults.backgroundContext.canvas.height = defaults.drawingCTX.canvas.height;
-			},
-			drawInitCanvas: function(){
-				defaults.drawingCTX.save()
-
-				defaults.drawingCTX.strokeStyle = '#ffffff';
-				defaults.drawingCTX.fillStyle = '#ffffff';
-				defaults.drawingCTX.lineWidth = 0.5;
-				defaults.drawingCTX.fillRect(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
-				defaults.drawingCTX.restore();
 			},
 			showMsg:function(msg, type){
 				if(!msg) msg = '알수없는 오류 발생!';
@@ -145,12 +132,9 @@ var Main = (function() {
 		    	return this;
 		    },
 		    callDataMenu: function(menuName){
-		    	
-
 				defaults.modalActivate = !defaults.modalActivate;
 		    	this.viewModal(menuName);
 		    	defaults.dataMenu = menuName;
-
 		    	return this;
 		    },
 		    setGroundColor: function(foreColor, backColor){
@@ -330,169 +314,16 @@ var Main = (function() {
 
 		    },
 		    sideMenu: function(){
-		    	
 		    	var sBtn = 'button.mBtn';
 		    	var self = this;
-
 		    	$(sBtn).on('click', function(e){
 		    		e.preventDefault();
 		    		$(sBtn).removeClass('active')
 		    		$(this).addClass('active')
 		    		self.setDrawFunc(this);
-
 		    	});
-
 		    	return this;
 		    },
-		    clearCanvas: function() {
-			  // Use the identity matrix while clearing the canvas
-			  defaults.drawingCTX.setTransform(1, 0, 0, 1, 0, 0);
-			  defaults.drawingCTX.clearRect(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
-			},
-			windowToCanvas: function(x, y) {
-			   	var bbox = defaults.drawingCTX.canvas.getBoundingClientRect();
-			   	return { 
-			   		x: x - bbox.left * (defaults.drawingCanvas.width  / defaults.drawingCanvas.width),
-            		y: y - bbox.top  * (defaults.drawingCanvas.height / defaults.drawingCanvas.height) 
-            	};
-			
-			},
-			saveDrawingSurface: function() {
-			   defaults.drawingSurfaceImageData = defaults.drawingCTX.getImageData(0, 0, defaults.drawingCTX.canvas.width, defaults.drawingCTX.canvas.height);
-			},
-			restoreDrawingSurface: function() {
-			   defaults.drawingCTX.putImageData(defaults.drawingSurfaceImageData, 0, 0);
-			},
-			updateRubberbandRectangle: function(loc) {
-			   defaults.rubberbandRect.width  = Math.abs(loc.x - defaults.mousedown.x);
-			   defaults.rubberbandRect.height = Math.abs(loc.y - defaults.mousedown.y);
-
-			   if (loc.x > defaults.mousedown.x) defaults.rubberbandRect.left = defaults.mousedown.x;
-			   else                     defaults.rubberbandRect.left = loc.x;
-
-			   if (loc.y > defaults.mousedown.y) defaults.rubberbandRect.top = defaults.mousedown.y;
-			   else                     defaults.rubberbandRect.top = loc.y;
-
-			   
-			},
-			drawLine: function(loc) {
-			   defaults.drawingCTX.beginPath();
-			   defaults.drawingCTX.moveTo(defaults.mousedown.x, defaults.mousedown.y);
-			   defaults.drawingCTX.lineTo(loc.x, loc.y);
-			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-			   defaults.drawingCTX.stroke();
-			},
-			drawCircle: function(loc) {
-			   var angle, radius;
-			   if(defaults.mousedown.y === loc.y){
-			   		radius = Math.abs(loc.x - defaults.mousedown.x);	
-			   } else { 
-			   		angle = Math.atan(defaults.rubberbandRect.height / defaults.rubberbandRect.width),
-      				radius = defaults.rubberbandRect.height / Math.sin(angle);
-			   }
-
-			   defaults.drawingCTX.beginPath();
-			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
-			   defaults.drawingCTX.stroke();
-
-			},
-			drawRect: function(loc) {
-				var width = loc.x - defaults.mousedown.x;
-				var height = loc.y - defaults.mousedown.y;
-			    defaults.drawingCTX.beginPath();
-				defaults.drawingCTX.lineWidth = 1;
-				defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-				defaults.drawingCTX.rect(defaults.mousedown.x, defaults.mousedown.y, width, height);
-				defaults.drawingCTX.closePath();
-				defaults.drawingCTX.stroke();
-
-			},
-			drawCircleFill: function(loc) {
-			   var angle, radius;
-			   if(defaults.mousedown.y === loc.y){
-			   		radius = Math.abs(loc.x - defaults.mousedown.x);	
-			   } else { 
-			   		angle = Math.atan(defaults.rubberbandRect.height / defaults.rubberbandRect.width),
-      				radius = defaults.rubberbandRect.height / Math.sin(angle);
-			   }
-
-			   defaults.drawingCTX.beginPath();
-			   defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-			   defaults.drawingCTX.fillStyle = defaults.backGroundColor;
-			   defaults.drawingCTX.arc(defaults.mousedown.x, defaults.mousedown.y, radius, 0, Math.PI*2, false); 
-			   defaults.drawingCTX.stroke();
-			   defaults.drawingCTX.fill();
-
-			},
-			drawRectFill: function(loc) {
-				var width = loc.x - defaults.mousedown.x;
-				var height = loc.y - defaults.mousedown.y;
-			    defaults.drawingCTX.beginPath();
-				defaults.drawingCTX.lineWidth = 1;
-				defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-				defaults.drawingCTX.fillStyle = defaults.backGroundColor;
-				defaults.drawingCTX.rect(defaults.mousedown.x, defaults.mousedown.y, width, height);
-				defaults.drawingCTX.closePath();
-				defaults.drawingCTX.stroke();
-			    defaults.drawingCTX.fill();
-
-			},
-			drawBrush: function(loc) {
-				    defaults.drawingCTX.beginPath();
-				    defaults.drawingCTX.strokeStyle = defaults.foreGroundColor;
-				    defaults.drawingCTX.lineWidth = 1;
-				    defaults.drawingCTX.lineJoin = "round";
-				    defaults.drawingCTX.moveTo(loc.x, loc.y);
-				    defaults.drawingCTX.lineTo(defaults.lastX, defaults.lastY);
-				    defaults.drawingCTX.closePath();
-				    defaults.drawingCTX.stroke();
-			},
-			updateRubberband: function(loc, drawTool) {
-			   this.updateRubberbandRectangle(loc);
-			   switch(drawTool){
-			    	case "drawLine": 	this.drawLine(loc); 	break;
-			    	case "drawCircle": 	this.drawCircle(loc); break;
-			    	case "drawRect": 	this.drawRect(loc); break;
-			    	case "drawCircleFill": 	this.drawCircleFill(loc); break;
-			    	case "drawRectFill": 	this.drawRectFill(loc); break;
-			    	case "drawBrush": 	this.drawBrush(loc); break;
-			    }
-
-			},
-			setEraserAttributes: function() {
-			  defaults.drawingCTX.lineWidth     = 1;
-			  defaults.drawingCTX.shadowColor   = 'rgb(0,0,0)';
-			  defaults.drawingCTX.shadowOffsetX = -5; 
-			  defaults.drawingCTX.shadowOffsetY = -5;
-			  defaults.drawingCTX.shadowBlur    = 20;
-			  defaults.drawingCTX.strokeStyle   = 'rgb(0,0,255)';
-			},
-			setErasePathForEraser: function(){
-				var eraserWidth = parseFloat(defaults.eraserSize);
-				defaults.drawingCTX.beginPath();
-				defaults.drawingCTX.arc(defaults.lastX, defaults.lastY, eraserWidth/2+1,0, Math.PI*2, false);
-				defaults.drawingCTX.clip();
-			},
-			setDrawPathForEraser: function(loc){
-				var eraserWidth = parseFloat(defaults.eraserSize);
-				defaults.drawingCTX.beginPath();
-				defaults.drawingCTX.arc(loc.x, loc.y, eraserWidth/2,0, Math.PI*2, false);
-				defaults.drawingCTX.clip();
-			},
-			eraseLast: function() {
-			   defaults.drawingCTX.save();
-			   this.setErasePathForEraser();
-			   this.drawInitCanvas();
-			   defaults.drawingCTX.restore();
-			},
-			drawEraser: function(loc) {
-			   defaults.drawingCTX.save();
-			   this.setEraserAttributes();     
-			   this.setDrawPathForEraser(loc);
-			   defaults.drawingCTX.stroke();
-			   defaults.drawingCTX.restore();
-			},
 			setDrawFunc: function(mBtn){
 		    	var func = $(mBtn).attr('data-draw-func')
 		    	defaults.drawTool = func;
@@ -500,81 +331,26 @@ var Main = (function() {
 		    },
 		    drawCanvas: function(){
 		    	var self = this;
+		    	defaults.stage.on('mousedown touchstart', function(e) {
+		    		defaults.isPaint = true;
+		    	});
 
-		
-		    	$(drawingCanvas).mousedown(function (e) {
-		    		var loc = self.windowToCanvas(e.clientX, e.clientY);
-		    		e.preventDefault();
-				    
-				    switch(defaults.drawTool){
-				    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
-				    		self.saveDrawingSurface();
-				    		break;
-				    	case "drawFill":
-				    		//draw_fill(ctx, x, y, rgba[0], rgba[1], rgba[2], rgba[3]);
-				    		break;
-				    }
+		    	defaults.stage.on('mouseup touchend', function(e) {
+		    		defaults.isPaint = false;
+		    	});
 
-
-				    
-				    
-
-				    defaults.mousedown.x = loc.x;
-				    defaults.mousedown.y = loc.y;
-				    defaults.lastX = loc.x;
-				    defaults.lastY = loc.y;
-				    defaults.mousePressed = true;
-
+		    	// and core function - drawing
+		    	defaults.stage.on('mousemove touchmove', function() {
+		    		if (!defaults.isPaint) {return;}
 
 				});
 
-				$(drawingCanvas).mousemove(function (e) {
-					var loc;
-					e.preventDefault();
-
-					if(defaults.mousePressed){
-						loc = self.windowToCanvas(e.clientX, e.clientY);
-
-						switch(defaults.drawTool){
-					    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
-					    		self.restoreDrawingSurface();
-								self.updateRubberband(loc, defaults.drawTool);
-					    		break;
-					    	case "drawBrush":
-					    		self.updateRubberband(loc, defaults.drawTool);
-					    		break;
-					    	case "drawEraser":
-					    		self.eraseLast();
-         						self.drawEraser(loc);
-					    		break;
-					    }
-
-					    defaults.lastX = loc.x;
-				    	defaults.lastY = loc.y;
+				defaults.stage.on('click tap', function(e) {
+					if (e.target === defaults.stage) {
 					}
-
-
-				});
-
-				$(drawingCanvas).mouseup(function (e) {
-					var loc = self.windowToCanvas(e.clientX, e.clientY);
-					e.preventDefault();
-					switch(defaults.drawTool){
-				    	case "drawRect": case "drawCircle":case "drawRectFill": case "drawCircleFill": case "drawLine":
-				    		self.restoreDrawingSurface();
-							self.updateRubberband(loc, defaults.drawTool);
-				    		break;
-				    	case "drawEraser":
-					    	self.eraseLast();
-					    	break;
-				    }
-				    defaults.mousePressed = false;
-				});
-
-				$(drawingCanvas).mouseleave(function (e) {
-					e.preventDefault();
-				    defaults.mousePressed = false;
-				});
+					console.log(defaults.drawTool)
+					console.log(e.target)
+		    	});
 
 		    	
 		    },

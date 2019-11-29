@@ -18,24 +18,23 @@ var Main = (function() {
 	      foreSelector: '#foreG',
 	      backSelector: '#backG',
 	      modalActivate: false,
-	      // backgroundContext: document.createElement('canvas').getContext('2d'),
-	      // drawingCanvas: document.getElementById('drawingCanvas'),
-	      // drawingCTX: document.getElementById('drawingCanvas').getContext("2d"),
 	      stage: new Konva.Stage({
 	        container: 'container',
 	        width: 600,
 	        height: 400,
 	      }),
 	      layer: new Konva.Layer(),
-
 	      dataMenu : '',
 	      drawTool : 'select',
+	      isCurrentMode: {},
 	      isPaint : false,
+	      isText : false,
+	      isSelect : false,
 	      lastX : 0,
 	      lastY : 0,
-	      drawingSurfaceImageData: null,
-	      rubberbandRect : {},
-	      mousedown : {},
+	      posStart: {},
+	      posEnd: {},
+	      lastShape: null,     
 	      eraserSize : 20,
 	      
 	      
@@ -329,27 +328,148 @@ var Main = (function() {
 		    	defaults.drawTool = func;
 		    	this.showMsg(defaults.drawTool) // drawLine 
 		    },
+		    currentDrawToolStatus: function(mode){
+		    	var isMode = {};
+		    	defaults.isSelect	= false;
+		    	defaults.isText		= false;
+		    	defaults.isPaint	= false;
+
+		    	if(mode=='select'){
+		    	 	defaults.isSelect	= true;
+		    	}
+		    	if(mode=='text'){
+		    	 	defaults.isText	= true;
+		    	}
+		    	if (mode.indexOf('draw') != -1) {
+		    		defaults.isPaint	= true;
+		    	}
+
+		    	isMode = {
+		    		select : defaults.isSelect,
+		    		text : defaults.isText,
+		    		paint : defaults.isPaint,
+		    	};
+		    	return isMode;
+		    },
+		    addShape: function(mode, posStart){
+		    	var shape = null;
+		    	if(mode=='drawRect'){
+		          shape = new Konva.Rect({
+		            x: posStart.x,
+		            y: posStart.y,
+		            width: 0,
+		            height: 0,
+		            //fill: 'green',
+		            stroke: defaults.foreGroundColor,
+		            strokeWidth: 1,
+		          });
+		        } else if(mode=='drawCircle'){
+		          shape = new Konva.Ellipse({
+		            x: posStart.x,
+		            y: posStart.y,
+		            radiusX: 0,
+		            radiusY: 0,
+		            //fill: 'yellow',
+		            stroke: defaults.foreGroundColor,
+		            strokeWidth: 1,
+		          });
+		        } else if(mode=='drawBrush'){
+		          shape = new Konva.Line({
+		            stroke: defaults.foreGroundColor,
+		            strokeWidth: 1,
+		            globalCompositeOperation:'source-over',
+		            points: [posStart.x, posStart.y],
+		          });
+		        } else if(mode=='drawLine'){
+		          shape = new Konva.Line({
+		            stroke: defaults.foreGroundColor,
+		            strokeWidth: 1,
+		            globalCompositeOperation:'source-over',
+		            points: [posStart.x, posStart.y],
+		          });
+		        } else if(mode=='drawEraser'){
+		          shape = new Konva.Line({
+		          	stroke: defaults.foreGroundColor,
+		            strokeWidth: defaults.eraserSize,
+		            globalCompositeOperation:'destination-out',
+		            points: [posStart.x, posStart.y],
+		          });
+		        } else {
+		          shape = null;
+		        }
+		    	return shape;
+		    },
+		    drawShape: function(mode, shape, posStart, posEnd){
+		    	var w = Math.abs(posEnd.x - posStart.x);
+		        var h = Math.abs(posEnd.y - posStart.y);
+		        if(mode=='drawRect'){
+		          shape.width(w);
+		          shape.height(h);
+		        } else if(mode=='drawCircle'){
+		          shape.radius({
+		            x: w,
+		            y: h
+		          });
+		        } else if(mode=='drawBrush'){
+		          var newPoints = shape.points().concat([posEnd.x, posEnd.y]);
+		          shape.points(newPoints);
+		        } else if(mode=='drawLine'){
+		          var newPoints = [posStart.x, posStart.y, posEnd.x, posEnd.y];
+		          shape.points(newPoints);
+		        } else if(mode=='drawEraser'){
+		          var newPoints = shape.points().concat([posEnd.x, posEnd.y]);
+		          shape.points(newPoints);
+		        } else {
+		          shape = null;
+		        }
+
+		        return shape;
+		    },
 		    drawCanvas: function(){
 		    	var self = this;
+
 		    	defaults.stage.on('mousedown touchstart', function(e) {
+
+		    		defaults.isCurrentMode = self.currentDrawToolStatus(defaults.drawTool);
+
+		    		console.log(defaults.isCurrentMode.paint)
+
 		    		defaults.isPaint = true;
+		    		defaults.posStart = defaults.stage.getPointerPosition();
+
+		    		defaults.lastShape = self.addShape(defaults.drawTool, defaults.posStart);
+		    		if(defaults.lastShape != null){
+			          defaults.layer.add(defaults.lastShape);
+			        }
+
 		    	});
 
 		    	defaults.stage.on('mouseup touchend', function(e) {
 		    		defaults.isPaint = false;
+
+		    		//console.log('posEnd', defaults.posEnd)
 		    	});
 
 		    	// and core function - drawing
 		    	defaults.stage.on('mousemove touchmove', function() {
 		    		if (!defaults.isPaint) {return;}
+		    		defaults.posEnd = defaults.stage.getPointerPosition();
+
+		    		var rs;
+		    		rs = self.drawShape(defaults.drawTool, defaults.lastShape, defaults.posStart, defaults.posEnd);
+
+			        if(rs != null){
+			          defaults.layer.draw();
+			          defaults.stage.add(defaults.layer);
+			        }
 
 				});
 
 				defaults.stage.on('click tap', function(e) {
 					if (e.target === defaults.stage) {
 					}
-					console.log(defaults.drawTool)
-					console.log(e.target)
+					// console.log(defaults.drawTool)
+					// console.log(e.target)
 		    	});
 
 		    	

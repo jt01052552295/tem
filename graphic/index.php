@@ -102,8 +102,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
             <li><button class="mBtn" data-draw-func="drawCircleFill"><i class="fas fa-circle"></i><span>Circle</span></button></li>
             <li><button class="mBtn" data-draw-func="drawLine"><i class="fas fa-minus"></i><span>Line</span></button></li>
 
-            <li><button class="mBtn" disabled data-draw-func="drawFill"><i class="fas fa-fill"></i><span>Paint</span></button></li>
-            <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-font"></i><span>Text</span></button></li>
+            <li><button class="mBtn" data-draw-func="drawFill"><i class="fas fa-fill"></i><span>Paint</span></button></li>
+            <li><button class="mBtn" data-draw-func="text"><i class="fas fa-font"></i><span>Text</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-mouse-pointer"></i><span>Path</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="far fa-star-half"></i><span>Line2</span></button></li>
             <li><button class="mBtn" disabled data-draw-func=""><i class="fas fa-star-half"></i><span>Line3</span></button></li>

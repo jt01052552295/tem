@@ -365,7 +365,7 @@ var Main = (function() {
 		            y: posStart.y,
 		            width: 0,
 		            height: 0,
-		            //fill: 'green',
+		            fill: 'green',
 		            stroke: defaults.foreGroundColor,
 		            strokeWidth: 1,
 		          });
@@ -375,7 +375,7 @@ var Main = (function() {
 		            y: posStart.y,
 		            radiusX: 0,
 		            radiusY: 0,
-		            //fill: 'yellow',
+		            fill: 'yellow',
 		            stroke: defaults.foreGroundColor,
 		            strokeWidth: 1,
 		          });
@@ -436,8 +436,10 @@ var Main = (function() {
 		    setSeAndTr: function(target){
 		    	var shape = target;
 
-		    	shape.draggable(true);
 		    	defaults.stage.find('Transformer').destroy();
+		    	//defaults.lastShape.draggable(false)
+
+		    	shape.draggable(true);		    	
 	            var tr = new Konva.Transformer();
 	            defaults.layer.add(tr);
 	            tr.attachTo(shape);
@@ -447,12 +449,17 @@ var Main = (function() {
 
 		    },
 		    clSeAndTr: function(){
-		    	if(defaults.lastSeAndTr == null) return;
-		    	defaults.lastShape.draggable(false);
-		    	defaults.stage.find('Transformer').destroy();           
+		    	if(defaults.lastSeAndTr == null) return;    	    	
+
+		    	defaults.stage.find('Transformer').destroy();   
+		    	defaults.layer.getChildren(function(node){
+				   node.draggable(false);		
+				});        
 	            defaults.layer.draw();
+
 	            defaults.lastSeAndTr = null;
 	            defaults.lastShape = null;
+	            
 
 		    },
 		    drawCanvas: function(){
@@ -522,8 +529,9 @@ var Main = (function() {
 		    		if(shape && defaults.isCurrentMode.select){
 		    			// lastSeAndTr, seAndTr, lastShape
 		    			//console.log(shape)
-		    			self.setSeAndTr(e.target);
+		    			self.setSeAndTr(shape);
 		    		}
+
 		    		
 		    	});
 

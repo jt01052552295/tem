@@ -28,13 +28,13 @@ var Main = (function() {
 	      drawTool : 'select',
 	      isCurrentMode: {},
 	      isPaint : false,
-	      isText : false,
-	      isSelect : false,
 	      lastX : 0,
 	      lastY : 0,
 	      posStart: {},
 	      posEnd: {},
-	      lastShape: null,     
+	      lastShape: null,    
+	      seAndTr: null,
+	      lastSeAndTr: null, 
 	      eraserSize : 20,
 	      
 	      
@@ -55,6 +55,7 @@ var Main = (function() {
 				this.canvasSize();
 				this.drawCanvas();
 				this.saveImageFile();
+				this.currentDrawToolStatus('select');
 				return this;
 			},
 			showMsg:function(msg, type){
@@ -326,30 +327,35 @@ var Main = (function() {
 			setDrawFunc: function(mBtn){
 		    	var func = $(mBtn).attr('data-draw-func')
 		    	defaults.drawTool = func;
+		    	this.currentDrawToolStatus(defaults.drawTool);
 		    	this.showMsg(defaults.drawTool) // drawLine 
 		    },
 		    currentDrawToolStatus: function(mode){
-		    	var isMode = {};
-		    	defaults.isSelect	= false;
-		    	defaults.isText		= false;
-		    	defaults.isPaint	= false;
+		    	var curSelect	= false;
+		    	var curText		= false;
+		    	var curPaint	= false;
+		    	var curFill		= false;
 
 		    	if(mode=='select'){
-		    	 	defaults.isSelect	= true;
+		    	 	curSelect	= true;
 		    	}
 		    	if(mode=='text'){
-		    	 	defaults.isText	= true;
+		    	 	curText	= true;
 		    	}
 		    	if (mode.indexOf('draw') != -1) {
-		    		defaults.isPaint	= true;
+		    		curPaint	= true;
+		    	}
+		    	if(mode=='fill'){
+		    	 	curFill	= true;
 		    	}
 
-		    	isMode = {
-		    		select : defaults.isSelect,
-		    		text : defaults.isText,
-		    		paint : defaults.isPaint,
+		    	defaults.isCurrentMode = {
+		    		select : curSelect,
+		    		text : curText,
+		    		draw : curPaint,
+		    		fill : curFill,
 		    	};
-		    	return isMode;
+		    	// return isMode;
 		    },
 		    addShape: function(mode, posStart){
 		    	var shape = null;
@@ -400,12 +406,14 @@ var Main = (function() {
 		    	return shape;
 		    },
 		    drawShape: function(mode, shape, posStart, posEnd){
-		    	var w = Math.abs(posEnd.x - posStart.x);
-		        var h = Math.abs(posEnd.y - posStart.y);
+		    	var w = posEnd.x - posStart.x;
+		        var h = posEnd.y - posStart.y;
 		        if(mode=='drawRect'){
 		          shape.width(w);
 		          shape.height(h);
 		        } else if(mode=='drawCircle'){
+		          w = Math.abs(w);
+		          h = Math.abs(h);
 		          shape.radius({
 		            x: w,
 		            y: h
@@ -425,51 +433,98 @@ var Main = (function() {
 
 		        return shape;
 		    },
+		    setSeAndTr: function(target){
+		    	var shape = target;
+
+		    	shape.draggable(true);
+		    	defaults.stage.find('Transformer').destroy();
+	            var tr = new Konva.Transformer();
+	            defaults.layer.add(tr);
+	            tr.attachTo(shape);
+	            defaults.layer.draw();
+	            defaults.lastSeAndTr = tr;
+	            defaults.lastShape = shape;
+
+		    },
+		    clSeAndTr: function(){
+		    	if(defaults.lastSeAndTr == null) return;
+		    	defaults.lastShape.draggable(false);
+		    	defaults.stage.find('Transformer').destroy();           
+	            defaults.layer.draw();
+	            defaults.lastSeAndTr = null;
+	            defaults.lastShape = null;
+
+		    },
 		    drawCanvas: function(){
 		    	var self = this;
 
 		    	defaults.stage.on('mousedown touchstart', function(e) {
-
-		    		defaults.isCurrentMode = self.currentDrawToolStatus(defaults.drawTool);
-
-		    		console.log(defaults.isCurrentMode.paint)
-
 		    		defaults.isPaint = true;
-		    		defaults.posStart = defaults.stage.getPointerPosition();
 
-		    		defaults.lastShape = self.addShape(defaults.drawTool, defaults.posStart);
-		    		if(defaults.lastShape != null){
-			          defaults.layer.add(defaults.lastShape);
-			        }
+					defaults.posStart = defaults.stage.getPointerPosition();
+
+					if(defaults.isCurrentMode.draw){
+			    		defaults.lastShape = self.addShape(defaults.drawTool, defaults.posStart);
+			    		if(defaults.lastShape != null){
+				          defaults.layer.add(defaults.lastShape);
+				        }
+				    }
+				  
 
 		    	});
 
 		    	defaults.stage.on('mouseup touchend', function(e) {
 		    		defaults.isPaint = false;
-
-		    		//console.log('posEnd', defaults.posEnd)
 		    	});
 
 		    	// and core function - drawing
 		    	defaults.stage.on('mousemove touchmove', function() {
-		    		if (!defaults.isPaint) {return;}
+		    		if (!defaults.isPaint) {
+		    			return;
+		    		}
+
 		    		defaults.posEnd = defaults.stage.getPointerPosition();
-
 		    		var rs;
-		    		rs = self.drawShape(defaults.drawTool, defaults.lastShape, defaults.posStart, defaults.posEnd);
 
-			        if(rs != null){
-			          defaults.layer.draw();
-			          defaults.stage.add(defaults.layer);
-			        }
+		    		if(defaults.isCurrentMode.draw){
+			    		rs = self.drawShape(defaults.drawTool, defaults.lastShape, defaults.posStart, defaults.posEnd);
+				        if(rs != null){
+				          defaults.layer.draw();
+				          defaults.stage.add(defaults.layer);
+				        }
+				    }
+				    
 
 				});
 
 				defaults.stage.on('click tap', function(e) {
-					if (e.target === defaults.stage) {
-					}
-					// console.log(defaults.drawTool)
-					// console.log(e.target)
+					// if click on empty area - remove all transformers
+			        if (e.target === defaults.stage) {
+			          self.clSeAndTr();
+			          defaults.stage.find('Transformer').destroy();
+			          defaults.layer.draw();
+			          return;
+			        }
+
+		    	});
+
+		    	defaults.layer.on('click tap', function(e) {
+		    		var shape = e.target;
+		    		// 2019-12-06
+		    		// 브러쉬 셀렉트 안되는 버그
+		    		// 지우개 일때 도형이 안지워지고 스테이지 영역쪽에서 생기는 버그
+
+
+		    		if(shape && defaults.isCurrentMode.fill){
+		    			shape.fill(defaults.foreGroundColor)
+		    			shape.draw();
+		    		}
+		    		if(shape && defaults.isCurrentMode.select){
+		    			// lastSeAndTr, seAndTr, lastShape
+		    			//console.log(shape)
+		    			self.setSeAndTr(e.target);
+		    		}
+		    		
 		    	});
 
 		    	

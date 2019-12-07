@@ -335,6 +335,8 @@ var Main = (function() {
 		    	var curText		= false;
 		    	var curPaint	= false;
 		    	var curFill		= false;
+		    	var curErase	= false;
+		    	var curRemove	= false;
 
 		    	if(mode=='select'){
 		    	 	curSelect	= true;
@@ -348,12 +350,20 @@ var Main = (function() {
 		    	if(mode=='fill'){
 		    	 	curFill	= true;
 		    	}
+		    	if(mode=='eraser'){
+		    	 	curErase	= true;
+		    	}
+		    	if(mode=='remove'){
+		    	 	curRemove	= true;
+		    	}
 
 		    	defaults.isCurrentMode = {
 		    		select : curSelect,
 		    		text : curText,
 		    		draw : curPaint,
 		    		fill : curFill,
+		    		eraser : curErase,
+		    		remove : curRemove,
 		    	};
 		    	// return isMode;
 		    },
@@ -462,6 +472,23 @@ var Main = (function() {
 	            
 
 		    },
+		    removeShape: function(target){
+		    	//this.clSeAndTr();
+
+		    	var shape = target;
+		    	shape.destroy();
+		    	defaults.layer.draw();
+		    },
+		    eraserCanvas: function(){ 
+		    	// 2019-12-07 
+		    	var curPt = defaults.stage.getPointerPosition();
+		    	console.log(curPt)
+
+		    	defaults.layer.getChildren(function(node){
+				   console.log(node.getClassName())		
+				});  
+
+		    },
 		    drawCanvas: function(){
 		    	var self = this;
 
@@ -475,6 +502,9 @@ var Main = (function() {
 			    		if(defaults.lastShape != null){
 				          defaults.layer.add(defaults.lastShape);
 				        }
+				    }
+				    if(defaults.isCurrentMode.eraser){
+			    		self.eraserCanvas();
 				    }
 				  
 
@@ -500,6 +530,10 @@ var Main = (function() {
 				          defaults.stage.add(defaults.layer);
 				        }
 				    }
+
+				    if(defaults.isCurrentMode.eraser){
+			    		self.eraserCanvas();
+				    }
 				    
 
 				});
@@ -517,20 +551,17 @@ var Main = (function() {
 
 		    	defaults.layer.on('click tap', function(e) {
 		    		var shape = e.target;
-		    		// 2019-12-06
-		    		// 브러쉬 셀렉트 안되는 버그
-		    		// 지우개 일때 도형이 안지워지고 스테이지 영역쪽에서 생기는 버그
-
 
 		    		if(shape && defaults.isCurrentMode.fill){
 		    			shape.fill(defaults.foreGroundColor)
 		    			shape.draw();
 		    		}
 		    		if(shape && defaults.isCurrentMode.select){
-		    			// lastSeAndTr, seAndTr, lastShape
-		    			//console.log(shape)
 		    			self.setSeAndTr(shape);
 		    		}
+		    		if(shape && defaults.isCurrentMode.remove){
+			    		self.removeShape(shape);
+				    }
 
 		    		
 		    	});

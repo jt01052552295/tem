@@ -36,6 +36,14 @@ var Main = (function() {
 	      seAndTr: null,
 	      lastSeAndTr: null, 
 	      eraserSize : 20,
+	      eraserShape : new Konva.Circle({
+            x: 0,
+            y: 0,
+            radius: 20,
+            fill: 'yellow',
+            stroke: 'black',
+            strokeWidth: 1,
+          }),
 	      
 	      
 	    };
@@ -473,20 +481,35 @@ var Main = (function() {
 
 		    },
 		    removeShape: function(target){
-		    	//this.clSeAndTr();
-
 		    	var shape = target;
 		    	shape.destroy();
 		    	defaults.layer.draw();
 		    },
-		    eraserCanvas: function(){ 
+		    eraserCanvas: function(mode){
+		    	if(mode != 'move') return;
+		    	
 		    	// 2019-12-07 
 		    	var curPt = defaults.stage.getPointerPosition();
-		    	console.log(curPt)
+		    	var eraserShape = new Konva.Circle({
+		            x: curPt.x,
+		            y: curPt.y,
+		            radius: defaults.eraserSize,
+		            fill: 'yellow',
+		            stroke: 'black',
+		            strokeWidth: 0,
+		            opacity: 0.4,
+		            shadowColor: 'black',
+		            shadowOffset: {x:3, y:3},
+		            shadowOpacity: 0.2,
+		            globalCompositeOperation:'destination-out'
+		          });
 
-		    	defaults.layer.getChildren(function(node){
-				   console.log(node.getClassName())		
-				});  
+		    	defaults.layer.add(eraserShape)
+		    	defaults.layer.draw();
+
+		  //   	defaults.layer.getChildren(function(node){
+				//    console.log(node.getClassName())		
+				// });  
 
 		    },
 		    drawCanvas: function(){
@@ -504,7 +527,7 @@ var Main = (function() {
 				        }
 				    }
 				    if(defaults.isCurrentMode.eraser){
-			    		self.eraserCanvas();
+			    		self.eraserCanvas('init');
 				    }
 				  
 
@@ -512,6 +535,9 @@ var Main = (function() {
 
 		    	defaults.stage.on('mouseup touchend', function(e) {
 		    		defaults.isPaint = false;
+		    		if(defaults.isCurrentMode.eraser){
+			    		self.eraserCanvas('end');
+				    }
 		    	});
 
 		    	// and core function - drawing
@@ -532,7 +558,7 @@ var Main = (function() {
 				    }
 
 				    if(defaults.isCurrentMode.eraser){
-			    		self.eraserCanvas();
+			    		self.eraserCanvas('move');
 				    }
 				    
 

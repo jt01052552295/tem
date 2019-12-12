@@ -24,6 +24,8 @@ var Main = (function() {
 	        height: 400,
 	      }),
 	      layer: new Konva.Layer(),
+	      trLayer: new Konva.Layer(),
+	      backgroundContext : document.createElement('canvas').getContext('2d'),
 	      dataMenu : '',
 	      drawTool : 'select',
 	      isCurrentMode: {},
@@ -35,6 +37,7 @@ var Main = (function() {
 	      lastShape: null,    
 	      seAndTr: null,
 	      lastSeAndTr: null, 
+	      lastText: null, 
 	      eraserSize : 20,
 	      eraserShape : new Konva.Circle({
             x: 0,
@@ -51,6 +54,8 @@ var Main = (function() {
 		return {
 			opt:defaults,
 			init:function(){
+				defaults.backgroundContext.width = defaults.stage.width();
+				defaults.backgroundContext.height = defaults.stage.height();
 				defaults.stage.add(defaults.layer);
 				// defaults.stage.getContainer().style.backgroundColor = 'white';
 				//this.drawBackground();
@@ -312,6 +317,8 @@ var Main = (function() {
 					  width: parseInt(c_w),
 					  height: parseInt(c_h)
 					});
+					defaults.backgroundContext.width = parseInt(c_w);
+					defaults.backgroundContext.height = parseInt(c_h);
 
             		self.closeModal(defaults.dataMenu);
 
@@ -451,13 +458,24 @@ var Main = (function() {
 
 		        return shape;
 		    },
+		    addTextNode: function(posStart){
+		        var shape;
+		        
+		        shape = new Konva.Text({
+		            text: 'Some text here',
+		            x: posStart.x,
+		            y: posStart.y,
+		            fontSize: 20,
+		            draggable: true,
+		            name: 'ttt',
+		        });
+		        
+		        return shape;
+		    },
 		    setSeAndTr: function(target){
 		    	var shape = target;
-
 		    	defaults.stage.find('Transformer').destroy();
-		    	//defaults.lastShape.draggable(false)
-
-		    	shape.draggable(true);		    	
+		    	shape.draggable(true);	  	
 	            var tr = new Konva.Transformer();
 	            defaults.layer.add(tr);
 	            tr.attachTo(shape);
@@ -488,7 +506,6 @@ var Main = (function() {
 		    eraserCanvas: function(mode){
 		    	if(mode != 'move') return;
 		    	
-		    	// 2019-12-07 
 		    	var curPt = defaults.stage.getPointerPosition();
 		    	var eraserShape = new Konva.Circle({
 		            x: curPt.x,
@@ -497,19 +514,15 @@ var Main = (function() {
 		            fill: 'yellow',
 		            stroke: 'black',
 		            strokeWidth: 0,
-		            opacity: 0.4,
-		            shadowColor: 'black',
-		            shadowOffset: {x:3, y:3},
-		            shadowOpacity: 0.2,
 		            globalCompositeOperation:'destination-out'
-		          });
+		        });
 
 		    	defaults.layer.add(eraserShape)
 		    	defaults.layer.draw();
 
-		  //   	defaults.layer.getChildren(function(node){
+		  		//defaults.layer.getChildren(function(node){
 				//    console.log(node.getClassName())		
-				// });  
+				//});  
 
 		    },
 		    drawCanvas: function(){
@@ -538,6 +551,10 @@ var Main = (function() {
 		    		if(defaults.isCurrentMode.eraser){
 			    		self.eraserCanvas('end');
 				    }
+
+				    if(defaults.isCurrentMode.draw){
+			    		//self.setSeAndTr(defaults.lastShape)
+				    }
 		    	});
 
 		    	// and core function - drawing
@@ -550,8 +567,8 @@ var Main = (function() {
 		    		var rs;
 
 		    		if(defaults.isCurrentMode.draw){
-			    		rs = self.drawShape(defaults.drawTool, defaults.lastShape, defaults.posStart, defaults.posEnd);
-				        if(rs != null){
+			    		defaults.lastShape = self.drawShape(defaults.drawTool, defaults.lastShape, defaults.posStart, defaults.posEnd);
+				        if(defaults.lastShape != null){
 				          defaults.layer.draw();
 				          defaults.stage.add(defaults.layer);
 				        }
@@ -565,13 +582,69 @@ var Main = (function() {
 				});
 
 				defaults.stage.on('click tap', function(e) {
-					// if click on empty area - remove all transformers
-			        if (e.target === defaults.stage) {
-			          self.clSeAndTr();
-			          defaults.stage.find('Transformer').destroy();
-			          defaults.layer.draw();
-			          return;
-			        }
+					defaults.layer.getChildren(function(node){
+					   //console.log(node)	
+					}); 
+					
+					if(defaults.isCurrentMode.text && !defaults.lastText){
+						defaults.posStart = defaults.stage.getPointerPosition();
+						defaults.lastText = self.addTextNode(defaults.posStart);
+
+						if(defaults.lastText){
+							defaults.layer.add(defaults.lastText);
+				            defaults.layer.draw();
+				            defaults.stage.add(defaults.layer);
+
+				            defaults.lastSeAndTr = new Konva.Transformer();
+				            defaults.layer.add(defaults.lastSeAndTr);
+				            defaults.lastSeAndTr.attachTo(defaults.lastText);
+				            defaults.layer.draw();
+
+				            defaults.lastText.on('dblclick', () => {
+				                var textPosition = defaults.lastText.getAbsolutePosition();
+
+				                // then lets find position of stage container on the page:
+				                var stageBox = defaults.stage.container().getBoundingClientRect();
+
+				                // so position of textarea will be the sum of positions above:
+				                var areaPosition = {
+				                  x: stageBox.left + textPosition.x,
+				                  y: stageBox.top + textPosition.y
+				                };
+
+				                // create textarea and style it
+				                var textarea = document.createElement('textarea');
+				                document.body.appendChild(textarea);
+
+				                textarea.value = defaults.lastText.text();
+				                textarea.style.position = 'absolute';
+				                textarea.style.top = areaPosition.y + 'px';
+				                textarea.style.left = areaPosition.x + 'px';
+				                textarea.style.width = defaults.lastText.width();
+
+				                textarea.focus();
+
+				                textarea.addEventListener('keydown', function(e) {
+				                  // hide on enter
+				                  if (e.keyCode === 13) {
+				                    defaults.lastText.text(textarea.value);
+				                    defaults.layer.draw();
+				                    document.body.removeChild(textarea);
+				                  }
+				                });
+				            });
+						}
+
+					} else {
+						// if click on empty area - remove all transformers
+				        if (e.target === defaults.stage) {
+				          self.clSeAndTr();
+				          defaults.stage.find('Transformer').destroy();
+				          defaults.layer.draw();
+				          return;
+				        }
+
+					}
 
 		    	});
 
@@ -583,6 +656,8 @@ var Main = (function() {
 		    			shape.draw();
 		    		}
 		    		if(shape && defaults.isCurrentMode.select){
+		    			// console.log(defaults.lastShape)
+		    			// console.log(shape)
 		    			self.setSeAndTr(shape);
 		    		}
 		    		if(shape && defaults.isCurrentMode.remove){

@@ -128,11 +128,12 @@ ul.topMenu li.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1
 ul.topMenu li.dropdown:hover ul.dropdown-content {display: block;}*/
 
 
-aside#side {width:160px;height:1000px;overflow-y:auto;background:#fff;padding:5px;position:absolute;left:0;-webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4));-moz-box-shadow: 0 0 5px rgba(55,55,5,0.4));box-shadow: 0 0 5px rgba(55,55,5,0.4);}
+aside#side {width:160px;height:1000px;overflow-y:auto;background:#fff;padding:5px;position:absolute;left:0;-webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);-moz-box-shadow: 0 0 5px rgba(55,55,5,0.4));box-shadow: 0 0 5px rgba(55,55,5,0.4);}
 
 main#main {margin-left:160px;height:1000px;background:#eee;position: relative;padding:10px;}
 
 main#main canvas {border:1px solid #ccc !important;background:#fff !important;}
+#container {}
 
 
 .cate {clear: both;overflow: hidden;}
@@ -472,7 +473,7 @@ div.basicBox h6 {text-align: left;padding:5px;margin-bottom: 10px;background-col
 }
 
 
-#container {}
+
 
 
 

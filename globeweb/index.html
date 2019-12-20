@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>디자인을담다 테스트서버</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<?php
+// 이미지 파일이름 => 이미지 제목
+$img_arr = array(
+	'login'  => '로그인',
+	'pwd1'   => '비밀번호변경', 
+	'pwd2'   => '아이디/비밀번호 찾기', 
+	'join1'  => '회원가입1단계',
+	'join2'  => '회원가입2단계',
+	'join3'  => '회원가입3단계',
+	'join4'  => '회원가입4단계',
+	'join5'  => '회원가입완료',
+	'detail'  => '상세페이지',
+);
+
+// 파일이름 => 파일 제목
+$html_arr = array(
+	'main'  	=> '메인  - 로그인 전',
+	'main2'   	=> '메인  - 로그인 후', 
+	'sub'   	=> '서브  - 로그인 전', 
+	'sub2'  	=> '서브  - 로그인 후',
+	'login'  	=> '로그인',
+	'detail'  	=> '상세페이지',
+);
+
+?>
+
+<h1>시안</h1>
+<ol>
+	<?php foreach($img_arr as $key => $val):?>
+		<li><a href="design/test.html?fname=<?php echo $key?>"><?php echo $val?></a></li>
+	<?php endforeach;?>
+</ol>
+
+
+
+
+<h1>html</h1>
+<ol>
+	<?php foreach($html_arr as $key => $val):?>
+		<li><a target="_blank" href="html/<?php echo $key?>.html"><?php echo $val?></a></li>
+	<?php endforeach;?>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>디자인을담다 테스트서버</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+<meta name="Keywords" content="홈페이지제작">
+<link rel="stylesheet" href="design.css">
+</head>
+<? include "list.php" ?>
+<body>
+<div class="wrap">
+	<div class="text_wrap">
+		<p class="title">아래의 시안은 실제 홈페이지가 아닙니다. 홈페이지를 제작하기 전에 귀사에게 검수를 받기위해 그래픽디자인 작업을 한 것입니다.</p>
+		<p class="title2">1) 검수해주실 사항</p>
+		<p class="text">- 전체적인 디자인 컨셉<br />
+			- 디자인에 사용된 색상, 색감<br />
+			- 레이아웃 구도</p>
+		<p class="title2">2) 유동적인 사항</p>
+		<p class="text">- 슬로건 글귀, 내용, 이미지 사진, 제품사진 등은 홈페이지 제작 중에도 원하시는 글귀 및 사진으로 변경가능합니다.<br />
+		- 하단컨텐츠 영역의 내용은 홈페이지 제작 후반부에 홈페이지 내용에 맞게 재 디자인 됩니다.</p>
+	</div>
+	
+	<div>
+		<? for	($i=1; $i < sizeof($img); $i++)	{?>
+		<div class="design_sum"><a href="design.html?dcode=<?=$i?>"><img src="<?=$img[$i]?>_sum.jpg" width="400" height="300" /><br /><?=$title[$i]?></a></div>
+		<?}?>
+	</div>
+	
+	<div class="copy">&copy; 디자인을담다</div>
+</div>
+</body>
+</html>

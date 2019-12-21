@@ -1,0 +1,191 @@
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+.item-wrapper {
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.item-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+.item-wrapper {
+  background: #fff;
+}
+.item-wrapper .bx-pager,
+.item-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+/* LOADER */
+.item-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.item-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+.item-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.item-wrapper .bx-pager.bx-default-pager a:hover,
+.item-wrapper .bx-pager.bx-default-pager a.active,
+.item-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}
+.item-wrapper .bx-pager-item,
+.item-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.item-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.item-wrapper .bx-prev {
+  left: 0;
+}
+.item-wrapper .bx-prev:before {
+  content:"\f104";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top:50%;
+  left:50%;
+  color:#333;
+  width:15px;
+  height: 15px;
+  margin:-8px 0 0 -8px;
+}
+
+.item-wrapper .bx-next {
+  right: 0;
+}
+.item-wrapper .bx-next:before {
+  content:"\f105";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  top:50%;
+  left:50%;
+  color:#333;
+  width:15px;
+  height: 15px;
+  margin:-8px 0 0 -8px;
+}
+
+.item-wrapper .bx-controls-direction a {
+  text-align: center;
+  width: 25px;
+  height: 30px;
+  border: 1px solid #c9c9c9;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  background: #fff;
+  cursor: pointer;
+  opacity: 0.9;
+  color:transparent;
+}
+.item-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.item-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.item-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.item-wrapper .bx-controls-auto .bx-start:hover,
+.item-wrapper .bx-controls-auto .bx-start.active,
+.item-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.item-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.item-wrapper .bx-controls-auto .bx-stop:hover,
+.item-wrapper .bx-controls-auto .bx-stop.active,
+.item-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.item-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.item-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.item-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.item-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}

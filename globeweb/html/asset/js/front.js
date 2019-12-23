@@ -27,6 +27,62 @@
 		
 	};
 
+	$.fn.detail_scroll_menu = function(){
+
+		var descCon = $('.descCon').toArray();
+		if(descCon.length == 0) return;
+
+		var elm_offset_top_arr = [];
+		 $('.descCon').each(function (index, item) { 
+			elm_offset_top_arr.push( $(this).offset().top+100 );
+		});
+
+		 
+
+		$('#detail_nav_bar a').on('click',function(e){
+			e.preventDefault();
+
+			var this_href = $(this).attr('href');
+			if(this_href){
+                $('html, body').animate({scrollTop : $(this_href).offset().top}, 400);
+            }
+		}); 
+
+		
+
+		$(window).scroll(function() {
+			var win = $(window);
+			var winHeight = win.height();
+			var scTop = $(this).scrollTop();
+
+			if(scTop >  $(".detail_sc_chk").offset().top){
+				$("#detail_nav_bar").addClass("fixed");
+	        } else {
+	        	$("#detail_nav_bar").removeClass("fixed");
+	        }      
+
+	        if(scTop >= elm_offset_top_arr[0] && scTop <= elm_offset_top_arr[1]){
+                $('#detail_nav_bar li').removeClass("active");
+                $('#detail_nav_bar li:nth-child(1)').addClass("active");
+            } 
+            if(scTop >= elm_offset_top_arr[1] && scTop <= elm_offset_top_arr[2]){
+                $('#detail_nav_bar li').removeClass("active");
+                $('#detail_nav_bar li:nth-child(2)').addClass("active");
+            } 
+            if(scTop >= elm_offset_top_arr[2] && scTop <= elm_offset_top_arr[3]){
+                $('#detail_nav_bar li').removeClass("active");
+                $('#detail_nav_bar li:nth-child(3)').addClass("active");
+            } 
+            if(scTop >= elm_offset_top_arr[3]){
+               $('#detail_nav_bar li').removeClass("active");
+               $('#detail_nav_bar li:nth-child(4)').addClass("active");
+            }  
+
+
+		});
+
+	};
+
 	$.fn.bubbleEffect = function(){
 		$('#joinBubble').animate({ top: '+=5' }, 300) 
 				.animate({ top: '-=5' }, 300)
@@ -45,13 +101,7 @@
 		var winHeight = win.height();
 		var scTop = $(this).scrollTop();
 
-		// if(scTop > 0){
-		// 	$("header").addClass("m-fixed");
-  //           $(".header_wrap").addClass("active");
-  //       } else {
-  //       	$("header").removeClass("m-fixed");
-  //           $(".header_wrap").removeClass("active");
-  //       }      
+  
 
 
 	});
@@ -59,6 +109,7 @@
 })(jQuery);
 
 $(document).ready(function(){
+	// 상단메뉴 
 	$.fn.topMenu();
 
 	//회원가입 말풍선
@@ -112,13 +163,9 @@ $(document).ready(function(){
 	//서브화면 사이드바 드롭다운
 	$("li.sideToggle").hover(
 		function(){
-			// var $topNavSub = $(this).find('a.sideCate').siblings("ul.sub2");
-			// $topNavSub.stop().slideDown();
 			$(this).find('a.sideCate').addClass('active');
 		},
 		function(){
-			// var $topNavSub = $(this).find('a.sideCate').siblings("ul.sub2");
-			// $topNavSub.stop().slideUp();
 			$(this).find('a.sideCate').removeClass('active');
 		}
 	);
@@ -179,7 +226,64 @@ $(document).ready(function(){
 		pager:false,
 		controls: true
 	});
+	// 목록 썸네일 슬라이드 버튼
+	$('.item_list li.itemBox').each(function (index, item) { 
+		$(item).hover(
+			function(){
+				$(this).find('button').show();
+			},
+			function(){
+				$(this).find('button').hide();
+			}
+		);
+	});
 
+	// 상세페이지 바로가기 메뉴
+	$.fn.detail_scroll_menu();
+
+	// 상세페이지 가격표 
+	$('div.each_package:first-child div.pk_body').show();
+	$('div.each_package > a.pk_head').on('click', function(e) {
+		e.preventDefault();
+		if($(this).parent().hasClass('active')) return;
+
+		$('div.each_package').removeClass('active');
+		$('div.pk_body').slideUp();
+
+		$(this).parent().addClass('active');
+		$(this).siblings('div.pk_body').slideDown();
+	});
+
+	// 상세페이지 공유버튼 
+	$('.sub_share_btn_box').hover(
+		function(){
+			$(this).addClass('active');
+		},
+		function(){
+			$(this).removeClass('active');
+		}
+	);
+	// 상세페이지 찜하기 버튼 활성화 토글 
+	$('button.btn_detail_wish').on('click', function() {
+		$(this).toggleClass('active');
+
+	});
+
+	//상세페이지 가격정보 테이블 배경색
+	$('table.desc_tbl td').each(function (index, item) { 
+		$(item).hover(
+			function(){
+				var bg = $(this).attr('data-bg');
+				$('table.desc_tbl td.'+bg).addClass('bg_hover');
+			},
+			function(){
+				var bg = $(this).attr('data-bg');
+				$('table.desc_tbl td.'+bg).removeClass('bg_hover');
+			}
+		);
+	});
+
+	
 
 	$('button.btnItem').on('click', function() {
 		var id = $(this).attr('data-slide');

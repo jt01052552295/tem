@@ -116,7 +116,7 @@ ul.bxslider {
   margin:-8px 0 0 -8px;
 }
 
-.item-wrapper .bx-controls-direction a {
+.item-wrapper .bx-controls-direction button {
   text-align: center;
   width: 25px;
   height: 30px;
@@ -128,8 +128,9 @@ ul.bxslider {
   cursor: pointer;
   opacity: 0.9;
   color:transparent;
+  display: none
 }
-.item-wrapper .bx-controls-direction a.disabled {
+.item-wrapper .bx-controls-direction button.disabled {
   display: none;
 }
 /* AUTO CONTROLS (START / STOP) */

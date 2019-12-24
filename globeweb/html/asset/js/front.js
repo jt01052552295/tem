@@ -353,9 +353,8 @@ $(document).ready(function(){
 
 	
 
-	$('button.btnItem').on('click', function() {
+	$('button.portfolioArrow').on('click', function() {
 		var id = $(this).attr('data-slide');
-		var cycle = false, delta = (id === "prev")? -1 : 1;
 		var time = 600;
 
 		var now   = $(this).siblings("div.itemInner").children(":visible");
@@ -366,18 +365,18 @@ $(document).ready(function(){
 		prev = prev.index() == -1 ? last : prev;
 		next = next.index() == -1 ? first : next;
 
-		
+		console.log(id)
 
 		if(id==="prev"){
 		} else {
-			// next.addClass("next")
-		 //    now.addClass("left").delay(1).queue(function(){
-			//     next.addClass("left").dequeue();
-			// });
-			// now.one('transitionend', function(){
-			// 	next.removeClass("next left").addClass("active")
-			// 	now.removeClass("active left")
-			// })
+			next.addClass("next")
+		    now.addClass("left")
+			next.addClass("left")
+			
+			now.one('transitionend', function(){
+				next.removeClass("next left").addClass("active")
+				now.removeClass("active left")
+			})
 		}
 
 	});

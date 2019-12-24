@@ -284,8 +284,7 @@ div.itemWrap .rowc ul.grid5 > li a:hover div.thumb img {transform:scale(1.15);-w
 
 .bs {position:relative;width:100%;overflow:hidden;}
 .bs ul {margin:0;padding:0;list-style:none;clear:both;}
-.bs ul li {padding:0;margin:0;display: none}
-.bs ul li.active {display: block;}
+.bs ul li {padding:0;margin:0;}
 .bs ul li a {display: block;text-align: center;}
 .bs ul li a img {max-width: 100%;min-height:235px;}
 #bs-pager {position:absolute;padding:0;margin:0;bottom:25px;list-style-type:none;width:100%;z-index:555;padding:0 35px;}
@@ -319,9 +318,8 @@ h4.rankTit span {display: block;font-size: 1.8em;font-weight:400;color: #000000;
 .reviewInner {margin-bottom: 80px;}
 .reviewInner:after {clear: both;display: block;content: "";visibility: hidden;}
 .reviewInner div.col {width: 600px;min-height: 200px;float: left;margin:0;overflow: hidden;position: relative;}
-.reviewInner div.review h4 {font-size: 1.6em;font-weight:400;margin: 0 ;color: #343434;position: absolute;top:0;left:55%;}
-.reviewInner div.review ul li {display: none}
-.reviewInner div.review ul li.active {display: block}
+.reviewInner div.review h4 {font-size: 1.6em;font-weight:400;margin: 0 ;color: #343434;position: absolute;top:0;left:55%;z-index: 500;}
+.reviewInner div.review ul li {}
 .reviewInner div.review ul li a {position: relative;}
 .reviewInner div.review ul li a div.thumb {float:left;width:300px;margin-right:30px;border:1px solid #ededed;text-align: center;overflow: hidden;background:url(../img/btn_play.png) no-repeat center; }
 .reviewInner div.review ul li a div.thumb img {max-width:100%;z-index: -1;position: relative;-webkit-transition: all 1.0s;-moz-transition: all 1.0s;-o-transition: all 1.0s;transition: all 1.0s;}
@@ -340,18 +338,21 @@ h4.rankTit span {display: block;font-size: 1.8em;font-weight:400;color: #000000;
 
 .reviewInner div.service {padding-left: 80px}
 .reviewInner div.service h4 {font-size: 1.6em;font-weight:400;margin-bottom:20px;color: #343434;}
-.reviewInner div.service div.servBox {background: #f1f1f1;border-radius: 15px;padding:25px 45px;color:#939393;}
+.reviewInner div.service div.servBox {background: #f1f1f1;border-radius: 15px;padding:25px 45px;color:#939393;cursor:pointer;border:1px solid #f1f1f1;}
+.reviewInner div.service div.servBox:hover {border:1px solid #ffc835;}
 .reviewInner div.service div.servBox div.top {margin-bottom:20px;}
 .reviewInner div.service div.servBox div.top:after {display:block;visibility:hidden;clear:both;content:""}
 .reviewInner div.service div.servBox div.top div.nameCard {float: left;}
 .reviewInner div.service div.servBox div.top div.nameCard span.cate {display: inline-block;padding:3px 25px;border-radius: 15px;border:1px solid #939393;margin-right: 10px;}
 .reviewInner div.service div.servBox div.top div.nameCard em {font-style: normal;}
-.reviewInner div.service div.servBox div.top div.score {float: right;height:14px;color:#ffc835;}
-/*.reviewInner div.service div.servBox div.top div.score.star1 {width:15px;background:url(../img/bg_star.png) no-repeat;}
-.reviewInner div.service div.servBox div.top div.score.star2 {width:30px;background:url(../img/bg_star.png) no-repeat;}
-.reviewInner div.service div.servBox div.top div.score.star3 {width:45px;background:url(../img/bg_star.png) no-repeat;}
-.reviewInner div.service div.servBox div.top div.score.star4 {width:50px;background:url(../img/bg_star.png) no-repeat;}
-.reviewInner div.service div.servBox div.top div.score.star5 {width:75px;background:url(../img/bg_star.png) no-repeat center;}*/
+.reviewInner div.service div.servBox div.top div.scoreCard {float: right;height:14px;color:#ffc835;}
+.reviewInner div.service div.servBox div.top div.scoreCard div.d_star_box {position: relative;vertical-align: top;display: inline-block;overflow: hidden;white-space: nowrap;}
+.reviewInner div.service div.servBox div.top div.scoreCard div.d_star_box span.empty_stars {}
+.reviewInner div.service div.servBox div.top div.scoreCard div.d_star_box span.empty_stars span.star {color: #ccc;font-size: 12px;display: inline-block;text-align: center;cursor:pointer;}
+.reviewInner div.service div.servBox div.top div.scoreCard div.d_star_box span.filled_stars {position: absolute;left: 0;top: 0;margin: auto;white-space: nowrap;overflow: hidden;}
+.reviewInner div.service div.servBox div.top div.scoreCard div.d_star_box span.filled_stars span.star {color: #ffd400;font-size: 12px;display: inline-block;text-align: center;cursor:pointer;}
+
+
 .reviewInner div.service div.servBox p {overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap:break-word;width: 100%}
 
 
@@ -496,7 +497,7 @@ div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt 
 div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt span.chkItem_img {position: relative;display:inline-block;width: 16px;height: 16px;border: 1px solid #979797;border-radius: 50%;vertical-align: middle;}
 div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt span.chkItem_txt {position: relative;display:inline-block;font-size: 13px;color: #666;line-height:2.0;vertical-align: middle;}
 div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt input[type=radio]:checked + span.chkItem_img {border-color: #ffc835;}
-div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt input[type=radio]:checked + span.chkItem_img:before {content:'';position:absolute;width:13px;height:13px;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #ffc835;border-radius: 50%;}
+div.sub_filter_box div.filter_sort ul.sort_options li.options_item label.chkOpt input[type=radio]:checked + span.chkItem_img:before {content:'';position:absolute;width:12px;height:12px;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #ffc835;border-radius: 50%;}
 
 
 ul.sub_sopt {padding: 10px 0;margin-bottom:25px;}
@@ -538,6 +539,11 @@ div.item_list .rowc ul.grid4 > li a div.rating span.wish i {color:#999}
 div.item_list .rowc ul.grid4 > li a div.rating span.wish.active {background:#ffd400;}
 div.item_list .rowc ul.grid4 > li a div.rating span.wish.active i {color:#fff}
 
+
+
+
+
+
 div.item_pagination {text-align:center;margin-bottom:80px;}
 div.item_pagination ul.pagination {display: inline-block;margin: 20px 0;border-radius: 5px;}
 div.item_pagination ul.pagination li {    float: left;}
@@ -551,8 +557,13 @@ div.item_pagination ul.pagination li:last-child a {    border-bottom-right-radiu
 
 .detail_left {float: left;width: 600px;padding: 0;}
 
-div.overview {    margin-bottom: 60px;}
-div.overview div.d_slide {}
+div.overview {position: relative;margin-bottom: 60px;}
+div.overview.mgBottom170 {margin-bottom: 170px;}
+div.overview div.d_slide {width:100%;overflow: hidden;}
+div.overview div.d_slide #bigSlide {position: relative;}
+div.overview div.d_slide #bigSlide img {max-width: 100%;}
+div.overview div.d_slide div.d_carousel {position: relative;padding: 10px 10px;overflow: hidden;white-space: nowrap;width: auto;border:1px solid #e6e6e6 ;}
+
 div.overview div.d_score {margin-top: 30px;text-align: center;}
 div.overview div.d_score div.d_star_box {position: relative;vertical-align: middle;display: inline-block;overflow: hidden;white-space: nowrap;}
 div.overview div.d_score div.d_star_box span.empty_stars {}
@@ -562,7 +573,7 @@ div.overview div.d_score div.d_star_box span.filled_stars span.star {color: #ffd
 div.overview div.d_score h3 {font-size: 18px;font-weight: 700;line-height: 1.5;color: #3e3e3e;display: inline-block;margin-left: 10px;vertical-align: middle;}
 div.overview div.d_score h3 small {font-size: 14px;color: #c3c3c3;font-weight: 400;}
 
-ul.d_navBar {background-color: #fafafa;width: 600px;top: 0;z-index: 1;margin-bottom: 60px;}
+ul.d_navBar {background-color: #fafafa;width: 600px;top: 0;z-index: 1;margin-bottom: 50px;}
 ul.d_navBar.fixed {position: fixed;}
 ul.d_navBar:after {display:block;visibility:hidden;clear:both;content:""}
 ul.d_navBar li {width:25%;float:left;border-top: 1px solid #d0d0d0;border-right: 1px solid #d0d0d0;border-bottom: 1px solid #6e6e6e;border-left: 1px solid #d0d0d0;background-color: #f2f2f2;}
@@ -571,7 +582,7 @@ ul.d_navBar li a {display:block;position:relative;color: #9d9c9c;text-align: cen
 ul.d_navBar li.active {background-color: #6e6e6e;}
 ul.d_navBar li.active a {color:#fff;}
 
-div.descCon {padding: 100px 0 0; margin-bottom: 60px}
+div.descCon {margin-top:50px;margin-bottom: 50px}
 div.descCon h4 {font-size: 18px;color:#0d0d0d;font-weight: 400;margin-bottom: 10px;}
 div.descCon p {font-size: 14px;color:#626262;}
 div.descCon p strong {color:#000;}
@@ -602,6 +613,47 @@ div.descCon table.desc_tbl td label.chkOpt span.chkItem_txt {position: relative;
 div.descCon table.desc_tbl td label.chkOpt input[type=radio]:checked + span.chkItem_img {border-color: #ffc835;}
 div.descCon table.desc_tbl td label.chkOpt input[type=radio]:checked + span.chkItem_img:before {content:'';position:absolute;width:13px;height:13px;top: 50%;left: 50%;transform: translate(-50%,-50%);background: #ffc835;border-radius: 50%;}
 
+
+div.descCon div.d_score_box {margin-top: 30px;text-align: center;background: #f3f3f3;padding:35px 0;}
+div.descCon div.d_score_box div.d_star_box {position: relative;vertical-align: middle;display: inline-block;overflow: hidden;white-space: nowrap;}
+div.descCon div.d_score_box div.d_star_box span.empty_stars {}
+div.descCon div.d_score_box div.d_star_box span.empty_stars span.star {color: #ccc;font-size: 20px;display: inline-block;text-align: center;cursor:pointer;}
+div.descCon div.d_score_box div.d_star_box span.filled_stars {position: absolute;left: 0;top: 0;margin: auto;white-space: nowrap;overflow: hidden;}
+div.descCon div.d_score_box div.d_star_box span.filled_stars span.star {color: #ffd400;font-size: 20px;display: inline-block;text-align: center;cursor:pointer;}
+div.descCon div.d_score_box h3 {font-size: 43px;font-weight: 400;line-height: 1.5;color: #6e6e6e;display: inline-block;margin-right: 10px;vertical-align: middle;}
+div.descCon div.d_score_box div.d_star_box div.rv_cnt {font-size: 14px;color: #c3c3c3;font-weight: 400;}
+
+
+div.descCon div.d_review_list {margin-bottom: 20px}
+div.descCon div.d_review_list ul {margin:0;padding:0;}
+div.descCon div.d_review_list ul li {position:relative;padding:30px 0;border-bottom:1px dashed #d7d7d7}
+div.descCon div.d_review_list ul li:after {display:block;visibility:hidden;clear:both;content:""}
+
+div.descCon div.d_review_list ul li div.thumb {float: left;width:20%;margin: 0;}
+div.descCon div.d_review_list ul li div.thumb img {max-width: 80px;border-radius: 50%;}
+div.descCon div.d_review_list ul li div.rv {float: left;width: 70%;margin-bottom: 10px}
+div.descCon div.d_review_list ul li div.rv div.top {font-size: 13px;color:#bcbcbc;}
+div.descCon div.d_review_list ul li div.rv div.top span.date {}
+div.descCon div.d_review_list ul li div.rv div.top span.line {color:#b4b4b4}
+div.descCon div.d_review_list ul li div.rv div.top span.score {}
+span.score div.d_star_box {position: relative;vertical-align: top;display: inline-block;overflow: hidden;white-space: nowrap;}
+span.score div.d_star_box span.empty_stars {}
+span.score div.d_star_box span.empty_stars span.star {color: #ccc;font-size: 12px;display: inline-block;text-align: center;cursor:pointer;}
+span.score div.d_star_box span.filled_stars {position: absolute;left: 0;top: 0;margin: auto;white-space: nowrap;overflow: hidden;}
+span.score div.d_star_box span.filled_stars span.star {color: #ffd400;font-size: 12px;display: inline-block;text-align: center;cursor:pointer;}
+
+div.descCon div.d_review_list ul li div.rv div.middle {font-size: 14px;color: #7c7c7c;margin:15px 0;word-break: keep-all;}
+div.descCon div.d_review_list ul li div.rv div.bottom {font-size: 14px;color: #6e6e6e;}
+
+div.descCon div.d_review_list ul li div.reply {float: none;width:80%;margin: 0 0 0 20%;clear: both;background: #f3f3f3;padding:20px;}
+div.descCon div.d_review_list ul li div.reply div.top {font-size: 13px;color:#bcbcbc;}
+div.descCon div.d_review_list ul li div.reply div.top span.date {}
+div.descCon div.d_review_list ul li div.reply div.top span.line {color:#b4b4b4}
+div.descCon div.d_review_list ul li div.reply div.middle {font-size: 14px;color: #7c7c7c;margin:15px 0;word-break: keep-all;}
+
+div.descCon div.more_review_list {width: 100%;padding: 15px;margin-bottom: 70px;border:1px solid #e6e6e6;}
+div.descCon div.more_review_list a {display: block;text-align: center;}
+div.descCon div.more_review_list a span {color: #4d4d4d;font-size: 13px}
 
 
 

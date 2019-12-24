@@ -20,6 +20,11 @@
 <link href="./asset/fontawesome-5.11.2/css/all.css" rel="stylesheet">
 <script src="./asset/js/jquery-3.3.1.min.js?ver=1"></script>
 <script src="./asset/js/jquery-2.x-git.min.js"></script>
+
+<!-- 메인 슬라이드 적용 -->
+<script src="./asset/js/bxslider/dist/jquery.bxslider.js"></script>
+<link href="./asset/js/bxslider/dist/jquery.bxslider.main.css" rel="stylesheet">
+
 <script src="./asset/js/front.js"></script>
 <!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
@@ -470,16 +475,16 @@
 
                 </div>
                 <div class="col bs">
-                	<ul>
-						<li class="active"><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
-						<li class=""><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
-						<li class=""><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
+                	<ul class="mainSlide">
+						<li><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
+						<li><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
+						<li><a href="#none"><img src="./asset/img/banner_sm.jpg" alt="" /></a></li>
 					</ul>
 					<div id="bs-pager">
 						<ol>
-							<li><a href="#none" class="active"><span class="blind">1</span></a></li>
-							<li><a href="#none" class=""><span class="blind">2</span></a></li>
-							<li><a href="#none" class=""><span class="blind">3</span></a></li>
+							<li><a data-slide-index="0" href=""><span class="blind">1</span></a></li>
+							<li><a data-slide-index="1" href=""><span class="blind">2</span></a></li>
+							<li><a data-slide-index="2" href=""><span class="blind">3</span></a></li>
 						</ol>
 					</div>
                 </div>
@@ -594,8 +599,8 @@
 			<div class="reviewInner">
                 <div class="col review font_noto">
                 	<h4 class="">동영상후기</h4>
-					<ul>
-						<li class="active">
+					<ul class="mainSlide2">
+						<li>
 							<a href="#none" class="lt_a">
 								<div class="thumb"><img src="./asset/img/bbs_video.jpg" alt="" /></div>
 								<div class="con">
@@ -625,25 +630,97 @@
 					</ul>
 					<div id="review-pager"> 
 						<ol>
-							<li><a href="#none" class="active"><span class="blind">1</span></a></li>
-							<li><a href="#none" class=""><span class="blind">2</span></a></li>
-							<li><a href="#none" class=""><span class="blind">3</span></a></li>
+							<li><a data-slide-index="0" href=""><span class="blind">1</span></a></li>
+							<li><a data-slide-index="1" href=""><span class="blind">2</span></a></li>
+							<li><a data-slide-index="2" href=""><span class="blind">3</span></a></li>
 						</ol>
 					</div>
                 </div>
                 <div class="col service">
                 	<h4 class="font_noto">서비스평가</h4>
-                	<div class="servBox">
-                		<div class="top">
-                			<div class="nameCard"><span class="cate">디자인</span> <em>sldkjef**</em></div>
-                			<div class="score">
-                				<h5 class="blind">별점수</h5>
-                				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                				
-                			</div>
-                		</div>
-                		<p>최고에요~ ! 급하게 요청 드렸는데 퀄리티 높은 완성도까지 너무 마음에드네요. 감사합니다^^ 최고에요~ ! 급하게 요청 드렸는데 퀄리티 높은 완성도까지 너무 마음에드네요. 감사합니다^^ </p>
-                	</div>
+                	<ul class="mainSlide3">
+	                	<li>
+	                		<div class="servBox">
+		                		<div class="top">
+		                			<div class="nameCard"><span class="cate">디자인</span> <em>sldkjef**</em></div>
+		                			<div class="scoreCard">
+		                				<div class="d_star_box">
+				                            <span class="empty_stars">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							                <span class="filled_stars" style="width: 92%">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							            </div>
+		                				
+		                			</div>
+		                		</div>
+		                		<p>최고에요~ ! 급하게 요청 드렸는데 퀄리티 높은 완성도까지 너무 마음에드네요.... </p>
+		                	</div>
+		                </li>
+		                <li>
+	                		<div class="servBox">
+		                		<div class="top">
+		                			<div class="nameCard"><span class="cate">디자인</span> <em>sldkjef**</em></div>
+		                			<div class="scoreCard">
+		                				<div class="d_star_box">
+				                            <span class="empty_stars">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							                <span class="filled_stars" style="width: 92%">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							            </div>
+		                				
+		                			</div>
+		                		</div>
+		                		<p>최고에요~ ! 급하게 요청 드렸는데 퀄리티 높은 완성도까지 너무 마음에드네요.... </p>
+		                	</div>
+		                </li>
+		                <li>
+	                		<div class="servBox">
+		                		<div class="top">
+		                			<div class="nameCard"><span class="cate">디자인</span> <em>sldkjef**</em></div>
+		                			<div class="scoreCard">
+		                				<div class="d_star_box">
+				                            <span class="empty_stars">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							                <span class="filled_stars" style="width: 92%">
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                                <span class="star"><i class="fa fa-star"></i></span>
+				                            </span>
+							            </div>
+		                				
+		                			</div>
+		                		</div>
+		                		<p>최고에요~ ! 급하게 요청 드렸는데 퀄리티 높은 완성도까지 너무 마음에드네요.... </p>
+		                	</div>
+		                </li>
+	                </ul>
                 </div>
 
                 

@@ -32,19 +32,14 @@
 		var descCon = $('.descCon').toArray();
 		if(descCon.length == 0) return;
 
-		var elm_offset_top_arr = [];
-		 $('.descCon').each(function (index, item) { 
-			elm_offset_top_arr.push( $(this).offset().top+100 );
-		});
-
-		 
+		var nav_height = $("#detail_nav_bar").outerHeight(true);
 
 		$('#detail_nav_bar a').on('click',function(e){
 			e.preventDefault();
 
 			var this_href = $(this).attr('href');
 			if(this_href){
-                $('html, body').animate({scrollTop : $(this_href).offset().top}, 400);
+                $('html, body').animate({scrollTop : $(this_href).offset().top - nav_height +1}, 400);
             }
 		}); 
 
@@ -55,25 +50,34 @@
 			var winHeight = win.height();
 			var scTop = $(this).scrollTop();
 
-			if(scTop >  $(".detail_sc_chk").offset().top){
+			if(scTop >  $(".detail_sc_chk").offset().top - nav_height){
 				$("#detail_nav_bar").addClass("fixed");
+				$(".overview").addClass("mgBottom170");
 	        } else {
 	        	$("#detail_nav_bar").removeClass("fixed");
+	        	$(".overview").removeClass("mgBottom170");
 	        }      
+	        var desc1 = $("#desc01").offset().top - nav_height;
+	        var desc2 = $("#desc02").offset().top - nav_height;
+	        var desc3 = $("#desc03").offset().top - nav_height;
+	        var desc4 = $("#desc04").offset().top - nav_height;
 
-	        if(scTop >= elm_offset_top_arr[0] && scTop <= elm_offset_top_arr[1]){
+	
+
+
+	        if(scTop >= desc1 && scTop < desc2){
                 $('#detail_nav_bar li').removeClass("active");
                 $('#detail_nav_bar li:nth-child(1)').addClass("active");
             } 
-            if(scTop >= elm_offset_top_arr[1] && scTop <= elm_offset_top_arr[2]){
+            if(scTop >= desc2 && scTop < desc3){
                 $('#detail_nav_bar li').removeClass("active");
                 $('#detail_nav_bar li:nth-child(2)').addClass("active");
             } 
-            if(scTop >= elm_offset_top_arr[2] && scTop <= elm_offset_top_arr[3]){
+            if(scTop >= desc3 && scTop < desc4){
                 $('#detail_nav_bar li').removeClass("active");
                 $('#detail_nav_bar li:nth-child(3)').addClass("active");
             } 
-            if(scTop >= elm_offset_top_arr[3]){
+            if(scTop >= desc4){
                $('#detail_nav_bar li').removeClass("active");
                $('#detail_nav_bar li:nth-child(4)').addClass("active");
             }  
@@ -159,6 +163,45 @@ $(document).ready(function(){
 		}
 	}); 
 
+	// 메인 이미지 슬라이드
+	$('.mainSlide').bxSlider({
+		auto: false,
+		mode:'horizontal',
+		infiniteLoop: true,
+		wrapperClass: 'main-wrapper',
+		autoControls: false,
+		adaptiveHeight: true,
+		pager:true,
+		touchEnabled : (navigator.maxTouchPoints > 0),
+		controls: false,
+		pagerCustom: '#bs-pager',   
+	});
+	// 메인 동영상후기 슬라이드2
+	$('.mainSlide2').bxSlider({
+		auto: false,
+		mode:'fade',
+		infiniteLoop: true,
+		wrapperClass: 'main-wrapper',
+		autoControls: false,
+		adaptiveHeight: true,
+		pager:true,
+		touchEnabled : (navigator.maxTouchPoints > 0),
+		controls: false,
+		pagerCustom: '#review-pager',   
+	});
+	// 메인 동영상후기 슬라이드2
+	$('.mainSlide3').bxSlider({
+		auto: true,
+		mode:'vertical',
+		infiniteLoop: true,
+		wrapperClass: 'main-wrapper',
+		autoControls: false,
+		adaptiveHeight: true,
+		pager:false,
+		touchEnabled : (navigator.maxTouchPoints > 0),
+		controls: false
+	});
+
 
 	//서브화면 사이드바 드롭다운
 	$("li.sideToggle").hover(
@@ -216,7 +259,7 @@ $(document).ready(function(){
 	}); 
 
 	// 목록 썸네일 슬라이드
-	var mainSlider = $('.itemSlide').bxSlider({
+	$('.itemSlide').bxSlider({
 		auto: false,
 		mode:'horizontal',
 		infiniteLoop: true,
@@ -230,10 +273,12 @@ $(document).ready(function(){
 	$('.item_list li.itemBox').each(function (index, item) { 
 		$(item).hover(
 			function(){
-				$(this).find('button').show();
+				$(this).find('button.bx-prev').show();
+				$(this).find('button.bx-next').show();
 			},
 			function(){
-				$(this).find('button').hide();
+				$(this).find('button.bx-prev').hide();
+				$(this).find('button.bx-next').hide();
 			}
 		);
 	});
@@ -263,7 +308,7 @@ $(document).ready(function(){
 			$(this).removeClass('active');
 		}
 	);
-	// 상세페이지 찜하기 버튼 활성화 토글 
+	// 찜하기 버튼 활성화 토글 
 	$('button.btn_detail_wish').on('click', function() {
 		$(this).toggleClass('active');
 
@@ -281,6 +326,29 @@ $(document).ready(function(){
 				$('table.desc_tbl td.'+bg).removeClass('bg_hover');
 			}
 		);
+	});
+	// 상세페이지 슬라이드
+	$('.detailSlide').bxSlider({
+		auto: false,
+		infiniteLoop: true,
+		slideMargin:6,
+		minSlides:4,
+		maxSlides:4,
+		moveSlides:1,
+		slideWidth:145,
+		touchEnabled: false,
+		wrapperClass: 'detail-wrapper',
+		autoControls: false,
+		adaptiveHeight: false,
+		pager:false,
+		speed:500,
+		controls: true,
+	});
+	// 상세페이지 슬라이드 대표이미지 활성화
+	$('a.detailSm').on('click', function(e) {
+		e.preventDefault();
+		var imgSrc = $(this).find('img').attr('src');
+		$('#bigSlideActiveImg').attr('src', imgSrc)
 	});
 
 	

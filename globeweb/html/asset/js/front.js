@@ -353,34 +353,7 @@ $(document).ready(function(){
 
 	
 
-	$('button.portfolioArrow').on('click', function() {
-		var id = $(this).attr('data-slide');
-		var time = 600;
-
-		var now   = $(this).siblings("div.itemInner").children(":visible");
-		var first = $(this).siblings("div.itemInner").children(':first');
-		var last  = $(this).siblings("div.itemInner").children(":last");
-		var prev  = now.prev();
-		var next = now.next();
-		prev = prev.index() == -1 ? last : prev;
-		next = next.index() == -1 ? first : next;
-
-		console.log(id)
-
-		if(id==="prev"){
-		} else {
-			next.addClass("next")
-		    now.addClass("left")
-			next.addClass("left")
-			
-			now.one('transitionend', function(){
-				next.removeClass("next left").addClass("active")
-				now.removeClass("active left")
-			})
-		}
-
-	});
-
+	
 
 });
 

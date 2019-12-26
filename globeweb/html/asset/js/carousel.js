@@ -13,76 +13,47 @@
 	    }
 
 
-	    $.support.transition = (function () {
-
-		      var transitionEnd = (function () {
-
-		        var el = document.createElement('bootstrap')
-		          , transEndEventNames = {
-		               'WebkitTransition' : 'webkitTransitionEnd'
-		            ,  'MozTransition'    : 'transitionend'
-		            ,  'OTransition'      : 'oTransitionEnd otransitionend'
-		            ,  'transition'       : 'transitionend'
-		            }
-		          , name
-
-		        for (name in transEndEventNames){
-		          if (el.style[name] !== undefined) {
-		            return transEndEventNames[name]
-		          }
-		        }
-
-		      }())
-
-		      return transitionEnd && {
-		        end: transitionEnd
-		      }
-
-	    })()
-
-
-    			  // http://blog.alexmaccaw.com/css-transitions
-		  $.fn.emulateTransitionEnd = function (duration) {
-		    var called = false
-		    var $el = this
-		    $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () { called = true })
-		    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
-		    setTimeout(callback, duration)
-		    return this
-		  }
-
-
-
 		$('button.portfolioArrow').on('click', function() {
 			var direction = $(this).attr('data-slide');
 			var delta     = direction === 'prev' ? -1 : 1;
-			var _isSliding = false;
+			var _isSliding = true;
 			var duration = 600;
 
 			var activeElement   = $(this).siblings("div.itemInner").find(".active")[0];
 			var activeIndex = _getItemIndex(activeElement)
 			var itemIndex = (activeIndex + delta) % _items.length
-
 			var nextElement = _getItemByDirection(itemIndex)
 
-			if (nextElement && $(nextElement).hasClass('active')) {
-		        _isSliding = false
-		        return
-		      }
-
-		      _isSliding = true
+			if (nextElement && $(nextElement).hasClass('active')) { _isSliding = false; return; }
 
 			//_setActiveIndicatorElement(nextElement) 페이징
 			if(_isSliding){
-				$(nextElement).addClass("next")
-			  	$(activeElement).addClass("left")
-	   			$(nextElement).addClass("left")
 				
-				$(activeElement).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-					$(nextElement).removeClass("next left").addClass("active")
-					$(activeElement).removeClass("active left")
-					_isSliding = false
-				}).emulateTransitionEnd(duration)
+				$(nextElement).addClass("next")
+			 
+	   			setTimeout(function() {
+				   	$(activeElement).addClass("left")
+	   				$(nextElement).addClass("left")
+				}, 0);
+
+				
+				
+				
+				// $(activeElement).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				// 	console.log($(activeElement).find('img').attr('src'))
+				// 	console.log($(nextElement).find('img').attr('src'))
+
+				// 	$(nextElement).removeClass("next left").addClass("active")
+				// 	$(activeElement).removeClass("active left")
+					
+				// 	_isSliding = false
+				// })
+
+
+
+				// 트랜지션X
+				// $(activeElement).removeClass("active")
+	   // 			$(nextElement).addClass("active")
 			}
 
 

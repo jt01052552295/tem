@@ -32,16 +32,16 @@
       		const lastItemIndex   = _items.length - 1
       		const isGoingToWrap   = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex
 
-      		console.log(isGoingToWrap, activeIndex)
+      		//console.log(isGoingToWrap, activeIndex)
       		
 
 		    const delta     = direction === Direction.PREV ? -1 : 1
       		const itemIndex = (activeIndex + delta) % _items.length;
 
-      		if (isGoingToWrap) {
-		        return activeElement
-		    }
-
+      // 		if (isGoingToWrap) {
+		    //     return activeElement
+		    // }
+		    //console.log(itemIndex)
 	    	return itemIndex === -1 ? _items[_items.length - 1] : _items[itemIndex]
 	    }
 
@@ -55,7 +55,8 @@
 			var activeElement   = $(this).siblings("div.itemInner").find(".active")[0];
 			var nextElement = activeElement && _getItemByDirection(direction, activeElement)
 
-
+			// console.log('-------------------------------activeElement----------------------------------------')
+			// console.log(activeElement)
 			// console.log('-------------------------------nextElement----------------------------------------')
 			// console.log(nextElement)
 			// console.log('-------------------------------nextElement----------------------------------------')
@@ -79,29 +80,29 @@
 			if (!activeElement || !nextElement) { console.log('stop2'); return; }
 
 			_isSliding = true;
-
-			//_setActiveIndicatorElement(nextElement) 페이징
-			if(_isSliding){
+			
 				
-				$(nextElement).addClass(orderClassName)
-			 
-	   			setTimeout(function() {
-				   	$(activeElement).addClass(directionalClassName)
-	   				$(nextElement).addClass(directionalClassName)
-				}, 0);
-				
-				$(activeElement).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-					// setTimeout(function() {
-						$(nextElement).removeClass(directionalClassName+' '+orderClassName).addClass(ClassName.ACTIVE)
-						$(activeElement).removeClass(ClassName.ACTIVE+' '+orderClassName+' '+directionalClassName)					
-					// }, 0); 
-					_isSliding = false
-				})
+			$(nextElement).addClass(orderClassName)
+		 
+   			setTimeout(function() {
+			   	$(activeElement).addClass(directionalClassName)
+   				$(nextElement).addClass(directionalClassName)
+			}, 0);
+			$(activeElement).one('transitionend', function(){
+			// $(activeElement).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				// setTimeout(function() {
+					$(nextElement).removeClass(directionalClassName+' '+orderClassName).addClass(ClassName.ACTIVE)
+					$(activeElement).removeClass(ClassName.ACTIVE+' '+orderClassName+' '+directionalClassName)					
+				// }, 0); 
+				console.log(2)
+				_isSliding = false
+			})
 
 				// 트랜지션X
 				// $(activeElement).removeClass(ClassName.ACTIVE)
-	   // 			$(nextElement).addClass(ClassName.ACTIVE)
-			}
+				// $(nextElement).addClass(ClassName.ACTIVE)
+				// _isSliding = false;
+			
 
 
 

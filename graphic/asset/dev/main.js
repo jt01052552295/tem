@@ -505,7 +505,8 @@ var Main = (function() {
 		    },
 		    eraserCanvas: function(mode){
 		    	if(mode != 'move') return;
-		    	
+
+	    	
 		    	var curPt = defaults.stage.getPointerPosition();
 		    	var eraserShape = new Konva.Circle({
 		            x: curPt.x,
@@ -514,7 +515,7 @@ var Main = (function() {
 		            fill: 'yellow',
 		            stroke: 'black',
 		            strokeWidth: 0,
-		            globalCompositeOperation:'destination-out'
+		            globalCompositeOperation:'source-over'
 		        });
 
 		    	defaults.layer.add(eraserShape)
@@ -562,7 +563,7 @@ var Main = (function() {
 		    		if (!defaults.isPaint) {
 		    			return;
 		    		}
-
+		    		
 		    		defaults.posEnd = defaults.stage.getPointerPosition();
 		    		var rs;
 

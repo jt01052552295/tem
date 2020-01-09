@@ -123,13 +123,32 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
         </div>
 
 	</aside>
+	<aside id="layer">
+		<div class="layer_top">
+			<ul class="panel_head">
+				<li><a href="#panel1" class="on"><span>Layer</span></a></li>
+				<li><a href="#panel2"><span>etc</span></a></li>
+				<li><a href="#panel3"><span>etc</span></a></li>
+			</ul>
+		</div>
+		<div class="layer_bot">
+			<div class="panel_body on" id="panel1">
+				
+			</div>
+			<div class="panel_body" id="panel2">2</div>
+			<div class="panel_body" id="panel3">3</div>
+		</div>
+	</aside>
+
 
 	<main id="main">
 		<div id="container"></div>
 		<div id="output"></div>
+		
 
 	</main>
 
+	
 
 	<footer id="footer">푸터</footer>
 

@@ -390,7 +390,7 @@ var Main = (function() {
 		            y: posStart.y,
 		            width: 0,
 		            height: 0,
-		            fill: 'green',
+		            // fill: 'green',
 		            stroke: defaults.foreGroundColor,
 		            strokeWidth: 1,
 		          });
@@ -400,7 +400,7 @@ var Main = (function() {
 		            y: posStart.y,
 		            radiusX: 0,
 		            radiusY: 0,
-		            fill: 'yellow',
+		            // fill: 'yellow',
 		            stroke: defaults.foreGroundColor,
 		            strokeWidth: 1,
 		          });

@@ -133,7 +133,24 @@ aside#side {width:160px;height:1000px;overflow-y:auto;background:#fff;padding:5p
 main#main {margin-left:160px;height:1000px;background:#eee;position: relative;padding:10px;}
 
 main#main canvas {border:1px solid #ccc !important;background:#fff !important;}
-#container {}
+#container {overflow: scroll;width:100%;min-height:400px;}
+
+aside#layer {width:200px;height:1000px;overflow-y:auto;background:#ccc;padding:5px;position:absolute;right:0;-webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);-moz-box-shadow: 0 0 5px rgba(55,55,5,0.4));box-shadow: 0 0 5px rgba(55,55,5,0.4);z-index: 100;}
+
+.layer_top {}
+.layer_top ul {}
+.layer_top ul:after {content: '';clear: both;overflow: hidden;display: block;}
+.layer_top ul li {float:left;width:33.333%;}
+.layer_top ul li a {display: block;text-align: center;}
+.layer_top ul li a.on {background: #333;}
+.layer_top ul li a span {color:#fff;display: inline-block;padding:4px;}
+.layer_top ul li:last-child {}
+
+.layer_bot {background: #333;color:#fff;height: 30%}
+.layer_bot .panel_body {display: none;padding:5px 0;}
+.layer_bot .panel_body.on {display: block;}
+
+
 
 
 .cate {clear: both;overflow: hidden;}

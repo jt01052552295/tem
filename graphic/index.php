@@ -25,6 +25,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <script src="./asset/js//jquery-2.x-git.min.js" crossorigin="anonymous"></script>
 <script src="./asset/dev/konva.js" crossorigin="anonymous"></script>
 <script src="./asset/dev/error.js" crossorigin="anonymous"></script>
+
 <!--[if lt IE 9]><script src="./asset/js/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/respond.min.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="./asset/js/IE9.js"></script><![endif]-->
@@ -125,16 +126,14 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	</aside>
 	<aside id="layer">
 		<div class="layer_top">
-			<ul class="panel_head">
-				<li><a href="#panel1" class="on"><span>Layer</span></a></li>
-				<li><a href="#panel2"><span>etc</span></a></li>
-				<li><a href="#panel3"><span>etc</span></a></li>
+			<ul class="">
+				<li><a href="#panel1" class="panel_head on"><span>Layer</span></a></li>
+				<li><a href="#panel2" class="panel_head"><span>etc</span></a></li>
+				<li><a href="#panel3" class="panel_head"><span>etc</span></a></li>
 			</ul>
 		</div>
 		<div class="layer_bot">
-			<div class="panel_body on" id="panel1">
-				
-			</div>
+			<div class="panel_body on" id="panel1">11</div>
 			<div class="panel_body" id="panel2">2</div>
 			<div class="panel_body" id="panel3">3</div>
 		</div>
@@ -305,7 +304,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 
 </script>
-
+<script src="./asset/dev/tab.js" crossorigin="anonymous"></script>
 
 
 <!-- 

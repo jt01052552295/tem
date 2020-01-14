@@ -37,9 +37,58 @@ value : We need to add value argument to some commands.
 
 ex ) https://codepen.io/saigowthamr/pen/OZmWqW
 ex ) https://jsfiddle.net/eu81273/AmDfj/ 앵귤러 기반
+
+2020-01-13
+HTML 위지윅 심플 에디터 
+이걸로 HTML 마크업 생성해보자.
+
+자주 쓰는 속성
+
+header
+footer
+section
+article
+aside
+nav
+main
+
+div 
+span
+
+h1~h6
+strong
+small
+em
+p 
+pre
+
+ul ol li
+dl dt dd
+
+form
+label
+input
+textarea
+button
+select option
+
+a
+img
+
+table 
+theader
+tbody
+tfoot
+tr th td
+
  -->
 
 <style>
+  button:focus {
+    outline: 0;
+}
+
+
 
   *,::after,::before{box-sizing:border-box;padding:0;margin:0}html{font-size:1.1rem;font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif}.toolbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(20px,40px));background-color:#e7e7e7;color:#000;grid-gap:1rem;padding:1rem;justify-content:center;align-items:center}.tool-items{background-color:#1b1a1a;padding-top:.6rem;padding-bottom:.6rem;cursor:pointer;color:#ffff}.tool-items:hover{box-shadow:none;background-color:#6b5e5e}.center{display:flex;justify-content:center;flex-wrap:wrap}.editor{width:70vw;height:50vh;margin:2rem;padding:1rem;font-size:1.2rem;box-shadow:0 .1rem .4rem #000;border:1px solid #000;overflow-y:auto}.getcontent{white-space:pre;width:80vw;background-color:#fff;overflow:auto;padding:1rem;display:none;margin-top:1rem;box-shadow:.1rem .1rem .5rem #fff;border:1px solid #000}.btn{padding:.5rem;background-color:#7e1111;margin-right:1rem;color:#fffffc;letter-spacing:.1rem;font-size:1rem;border-radius:.2rem;cursor:pointer;outline:0;box-shadow:0 .4rem .4rem #000;transition:all .3s}.btn:hover{background-color:#7e1111d0;box-shadow:0 .1rem .1rem #000}img{width:60px;height:60px;margin-top:.4rem;border-radius:50rem}label{margin-left:.04rem;padding-left:.7rem}
 
@@ -87,14 +136,23 @@ ex ) https://jsfiddle.net/eu81273/AmDfj/ 앵귤러 기반
      <button class="tool-items fas fa-mouse-pointer" onclick="document.execCommand('selectAll',false,'')"></button>
      <button class="tool-items fa fa-clone" onclick="copy()"></button>
 
-    <!-- Jutify -->
+     <!-- Jutify -->
      <button class="tool-items fa fa-align-center" onclick="document.execCommand('justifyCenter',false,'')"></button>
      <button class="tool-items fa fa-align-left" onclick="document.execCommand('justifyLeft',false,'')"></button>
      <button class="tool-items fa fa-align-right" onclick="document.execCommand('justifyRight',false,'')"></button>
+
+
+     <!-- create TAG -->
+     <button class="tool-items" data-tag="div" onclick="createElmTag(this)">DIV</button>
+
+
  </div>
 
  <div class="center">
-     <div class="editor" contenteditable>
+     <div class="editor jtEditor" id="jtEditor11" contenteditable="true"  autocomplete="off" autocorrect="off" autocapiatlise="off" spellcheck="false">
+         <p>Hello World!</p>
+         <p>Hello World!</p>
+         <p>Hello World!</p>
          <p>Hello World!</p>
      </div>
  </div>
@@ -180,8 +238,47 @@ function fontEditor(fontName) {
 }
 
 function fontSize(fontSize){
-  document.execCommand("FontSize", false, fontSize);
+    document.execCommand("FontSize", false, fontSize);
 }
+
+// 에디터내 텍스트(속성) 이 선택 되어졌을 경우에만 실행 되도록 
+
+function createElmTag(tagName){ //jtEditor
+    
+    var myEditor = document.getElementById("jtEditor11");
+
+    var elmName = tagName.getAttribute("data-tag");
+    var selObj = window.getSelection();
+    var selectedText = selObj.toString();
+    var range = selObj.getRangeAt(0);
+
+    // var curElement = document.activeElement;   
+
+    console.log(range)
+    
+    
+
+    if(selectedText){
+      
+      var node = document.createElement(elmName);
+      node.id = "myId";
+      node.className = "myClass";
+      node.innerText = range;
+
+      range.deleteContents();
+      range.insertNode(node);
+    } else {
+      myEditor.focus();
+    }
+
+    // console.log(selObj)
+    // console.log(range)
+    // console.log(selectedText)
+
+    
+
+}
+
 
 
 function printMe() {

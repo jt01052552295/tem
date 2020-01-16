@@ -242,6 +242,7 @@ function fontSize(fontSize){
 }
 
 // 에디터내 텍스트(속성) 이 선택 되어졌을 경우에만 실행 되도록 
+// getSelection, range 관련해서 집중 파야겠다. 
 
 function createElmTag(tagName){ //jtEditor
     
@@ -249,26 +250,28 @@ function createElmTag(tagName){ //jtEditor
 
     var elmName = tagName.getAttribute("data-tag");
     var selObj = window.getSelection();
-    var selectedText = selObj.toString();
-    var range = selObj.getRangeAt(0);
-
+    var selectedText = selObj.toString();   
     // var curElement = document.activeElement;   
 
-    console.log(range)
+    myEditor.focus();
     
-    
+    if (selObj.baseNode && (selObj.baseNode === myEditor || selObj.baseNode.ownerDocument.activeElement === myEditor)) {
 
-    if(selectedText){
-      
-      var node = document.createElement(elmName);
-      node.id = "myId";
-      node.className = "myClass";
-      node.innerText = range;
+      var range = selObj.getRangeAt(0);
 
-      range.deleteContents();
-      range.insertNode(node);
-    } else {
-      myEditor.focus();
+      console.log(selObj)
+      console.log(range)
+
+
+      // if(selectedText){        
+      //   var node = document.createElement(elmName);
+      //   node.id = "myId";
+      //   node.className = "myClass";
+      //   node.innerText = range;
+      //   range.deleteContents();
+      //   range.insertNode(node);
+      // } 
+
     }
 
     // console.log(selObj)

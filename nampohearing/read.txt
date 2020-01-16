@@ -1,0 +1,16 @@
+// 2020-01-08
+
+mas
+- 마스터계정 관리자 게시글, 카테고리 관련
+
+extend
+- products.extend.php : 게시글 이미지 업로드, 썸네일 관련
+- products.extend.php : 게시글 카테고리 배열자료
+
+
+page
+- main.php : 메인페이지
+- 그외 기타 서브페이지
+
+theme/haiouk
+- 웹사이트 레이아웃

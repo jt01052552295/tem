@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+</head>
+<body>
+
+<?php
+// 파일이름 => 파일 제목
+$html_arr = array(
+	'start'  	=> '시작하기',
+);
+
+?>
+<h1>vue.js 스터디</h1>
+<a target="_blank" href="https://kr.vuejs.org/v2/guide/index.html">공식 가이드</a>
+<ol>
+	<?php foreach($html_arr as $key => $val):?>
+		<li><a target="_blank" href="./study/<?php echo $key?>.html"><?php echo $val?></a></li>
+	<?php endforeach;?>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 상용버전, 속도와 용량이 최적화됨. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+Vue는 사용자 지정 태그 이름에 대해 W3C 규칙을 적용하지 않습니다 (모두 소문자이어야 하고 하이픈을 포함해야합니다). 그러나 이 규칙을 따르는 것이 좋습니다.
+<br/><br/><br/><br/>
+        
+<div id="example">
+  <my-component></my-component>
+</div>
+
+<script>
+Vue.component('my-component', {
+  template: '<div>사용자 정의 컴포넌트 입니다!</div>'
+})
+var Child = {
+  template: '<div>사용자 정의 컴포넌트 입니다!222</div>'
+}
+new Vue({
+  el: '#example',
+  components: {
+    // <my-component> 는 상위 템플릿에서만 사용할 수 있습니다.
+    'my-component': Child
+  }
+})
+</script>
+
+
+
+<div id="example-2">
+  <simple-counter></simple-counter>
+  <simple-counter></simple-counter>
+  <simple-counter></simple-counter>
+</div>
+<script>
+var data = { counter: 0 }
+Vue.component('simple-counter', {
+  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+  // 데이터는 기술적으로 함수이므로 Vue는 따지지 않지만
+  // 각 컴포넌트 인스턴스에 대해 같은 객체 참조를 반환합니다.
+  data: function () {
+    return {
+	    counter: 0
+	  }
+  }
+})
+
+new Vue({
+  el: '#example-2',
+})
+</script>
+
+
+
+
+</body>
+</html>

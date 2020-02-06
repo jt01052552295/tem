@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 상용버전, 속도와 용량이 최적화됨. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+        
+<ul id="example-1">
+  <li v-for="item in items">
+    {{ item.message }}
+  </li>
+</ul>
+<script>
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+</script>
+
+
+<ul id="example-2">
+  <li v-for="(item, index) of items"> <!-- in 대신 of 사용 가능 -->
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  </li>
+</ul>
+<script>
+var example2 = new Vue({
+  el: '#example-2',
+  data: {
+    parentMessage: 'Parent',
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+</script>
+
+
+
+<ul id="v-for-object" class="demo">
+  <li v-for="value in object">
+    {{ value }}
+  </li>
+</ul>
+<script>
+new Vue({
+  el: '#v-for-object',
+  data: {
+    object: {
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
+    }
+  }
+})	
+</script>
+
+
+
+<ul id="v-for-object2" >
+  <li v-for="(value, name, index) in object">{{ index }}.  {{ name }} - {{ value }}</li>
+</ul>
+<script type="text/javascript">
+new Vue({
+  el: '#v-for-object2',
+  data: {
+    object: {
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
+    }
+  }
+})		
+</script>
+
+
+<ul id="v-for-object3" >
+  <li v-for="n in evenNumbers">{{ n }}</li>
+</ul>
+<script type="text/javascript">
+new Vue({
+  el: '#v-for-object3',
+  data: {
+    numbers: [ 1, 2, 3, 4, 5 ]
+  },
+  computed: {
+	  evenNumbers: function () {
+	    return this.numbers.filter(function (number) {
+	      return number % 2 === 0
+	    })
+	  }
+  }
+})		
+</script>
+
+<ul id="v-for-object4" >
+  <li v-for="n in even(numbers)">{{ n }}</li>
+</ul>
+<script type="text/javascript">
+new Vue({
+  el: '#v-for-object4',
+  data: {
+    numbers: [ 1, 2, 3, 4, 5, 6 ]
+  },
+  methods: {
+	  even: function (numbers) {
+	    return numbers.filter(function (number) {
+	      return number % 2 === 0
+	    })
+	  }
+  }
+})		
+</script>
+
+<div id="v-for-object5">
+  <span v-for="n in 10">{{ n }} </span>
+</div>
+<script type="text/javascript">
+new Vue({
+  el: '#v-for-object5'
+})		
+</script>
+
+</body>
+</html>

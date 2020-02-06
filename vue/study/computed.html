@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 상용버전, 속도와 용량이 최적화됨. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+        
+<div id="example">
+  <p>원본 메시지: "{{ message }}"</p>
+  <p>역순으로 표시한 메시지: "{{ reversedMessage }}"</p>
+</div>
+
+<script>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: '안녕하세요'
+  },
+  computed: {
+    // 계산된 getter
+    reversedMessage: function () {
+      // `this` 는 vm 인스턴스를 가리킵니다.
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+
+console.log(vm.reversedMessage) // => '요세하녕안'
+vm.message = 'Goodbye'
+console.log(vm.reversedMessage) // => 'eybdooG'
+</script>
+
+
+<div id="demo">{{ fullName }}</div>
+<script>
+// var vm = new Vue({
+//   el: '#demo',
+//   data: {
+//     firstName: 'Foo',
+//     lastName: 'Bar',
+//     fullName: 'Foo Bar'
+//   },
+//   watch: {
+//     firstName: function (val) {
+//       this.fullName = val + ' - ' + this.lastName
+//     },
+//     lastName: function (val) {
+//       this.fullName = this.firstName + ' - ' + val
+//     }
+//   }
+// })
+var vm = new Vue({
+  el: '#demo',
+  data: {
+    firstName: 'Foo1',
+    lastName: 'Bar1'
+  },
+  computed: {
+    fullName: function () {
+      return this.firstName + ' ' + this.lastName
+    }
+  }
+})
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

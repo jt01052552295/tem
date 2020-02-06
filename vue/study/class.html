@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 상용버전, 속도와 용량이 최적화됨. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+        
+<div
+  id="ex"
+  class="static"
+  v-bind:class="{ active: isActive, 'text-danger': hasError }"
+>1번</div>
+<script>
+var vm = new Vue({
+  el: '#ex',
+  data: {
+    isActive: true,
+    hasError: false
+  }
+})
+</script>
+
+
+<div
+  id="ex2"
+  v-bind:class="classObject"
+>2번</div>
+<script>
+var vm = new Vue({
+  el: '#ex2',
+  data: {
+    classObject:{
+      active: true,
+      'text-danger': false
+    }
+  }
+})
+</script>
+
+<div
+  id="ex3"
+  v-bind:class="classObject"
+>3번</div>
+<script>
+var vm = new Vue({
+  el: '#ex3',
+  data: {
+    isActive: true,
+    error: false,
+  },
+  computed: {
+    classObject: function () {
+      return {
+        active: this.isActive && !this.error,
+        'text-danger': this.error && this.error.type === 'fatal'
+      }
+    }
+  }
+})
+</script>
+
+
+
+
+<div
+  id="ex4"
+  v-bind:class="[activeClass, errorClass]"
+>4번</div>
+<script>
+var vm = new Vue({
+  el: '#ex4',
+  data: {
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  },
+  
+})
+</script>
+
+
+
+<div
+  id="ex5"
+  v-bind:class="[isActive ? activeClass : '', errorClass]"
+>5번</div>
+<script>
+var vm = new Vue({
+  el: '#ex5',
+  data: {
+    isActive: false,
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  },
+  
+})
+</script>
+
+
+<div
+  id="ex6"
+  v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"
+>6번</div>
+<script>
+var vm = new Vue({
+  el: '#ex6',
+  data: {
+    activeColor: 'red',
+    fontSize: 30
+  },
+  
+})
+</script>
+
+
+<div
+  id="ex7"
+  v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"
+
+>7번</div>
+<script>
+var vm = new Vue({
+  el: '#ex7',
+  data: {
+     styleObject: {
+      color: 'red',
+      fontSize: '13px'
+    }
+  },
+  
+})
+</script>
+
+
+</body>
+</html>

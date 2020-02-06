@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vue.js</title>
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 상용버전, 속도와 용량이 최적화됨. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+</head>
+<body>
+
+<div id="example-1"> 
+  <input v-model="message" placeholder="여기를 수정해보세요">
+  <p>메시지: {{ message }}</p>
+  <br><br>
+  <span>여러 줄을 가지는 메시지:</span>
+  <p style="white-space: pre-line">{{ message2 }}</p>
+  <br>
+  <textarea v-model="message2" placeholder="여러줄을 입력해보세요"></textarea>
+</div>
+<script>
+var example1 = new Vue({
+  el: '#example-1',
+  data:{
+    message : 'test',
+    message2 : '',
+  }
+})
+</script>
+
+<div id='example-3'>
+  <input type="checkbox" id="jack" value="Jack1" v-model="checkedNames">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John2" v-model="checkedNames">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike3" v-model="checkedNames">
+  <label for="mike">Mike</label>
+  <br>
+  <span>체크한 이름: {{ checkedNames }}</span>
+</div>
+<script>
+var example3 = new Vue({
+  el: '#example-3',
+  data:{
+    checkedNames: []
+  }
+})
+</script>
+
+<div id='example-4'>
+  <input type="radio" id="one" value="One" v-model="picked">
+  <label for="one">One</label>
+  <br>
+  <input type="radio" id="two" value="Two" v-model="picked">
+  <label for="two">Two</label>
+  <br>
+  <span>선택: {{ picked }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-4',
+  data:{
+    picked: null
+  }
+})
+</script>
+
+
+
+
+
+
+<div id='example-5'>
+
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span>선택함: {{ selected }}</span>
+
+
+</div>
+<script>
+new Vue({
+  el: '#example-5',
+  data:{
+    selected: null
+  }
+})
+</script>
+
+
+
+<div id='example-6'>
+  <select v-model="selected" multiple>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <br>
+  <span>Selected: {{ selected }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-6',
+  data:{
+    selected: []
+  }
+})
+</script>
+
+
+
+<div id='example-7'>
+  <select v-model="selected">
+    <option v-for="option in options" v-bind:value="option.value">
+      {{ option.text }}
+    </option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+<script>
+new Vue({
+  el: '#example-7',
+  data:{
+    selected: 'A',
+    options: [
+      { text: 'One', value: 'A' },
+      { text: 'Two', value: 'B' },
+      { text: 'Three', value: 'C' }
+    ]
+  }
+})
+</script>
+
+
+
+
+
+
+</body>
+</html>

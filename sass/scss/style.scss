@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+
+// https://sass-guidelin.es/ko/#section-51
+// scss/
+// |
+// |– base/ 아마도 자주 사용되는 HTML 요소에 대한 표준 스타일을 정의하는 스타일시트					
+// |   |– _reset.scss       # Reset/normalize
+// |   |– _typography.scss  # 타이포그래피 규칙
+// |   …                    # 기타.
+// |
+// |– components/  작은 컴퍼넌트들이 들어갑니다. layout/이 (전반적인 뼈대를 정의하는) 거시적인 폴더임에 반해, components/는 위젯에 초점을 둡니다
+// |   |– _buttons.scss     # 버튼
+// |   |– _carousel.scss    # 캐러셀
+// |   |– _cover.scss       # 커버
+// |   |– _dropdown.scss    # 드롭다운
+// |   …                    # 기타.
+// |
+// |– layout/  사이트나 어플리케이션의 레이아웃에 기여하는 모든 것
+// |   |– _navigation.scss  # 네비게이션
+// |   |– _grid.scss        # 그리드 시스템
+// |   |– _header.scss      # 헤더
+// |   |– _footer.scss      # 푸터
+// |   |– _sidebar.scss     # 사이드바
+// |   |– _forms.scss       # 폼
+// |   …                    # 기타.
+// |
+// |– pages/ 만약 페이지에 한정된 스타일이 있다면, 그것은 pages/ 폴더 속, 페이지 이름을 딴 파일에 넣는 것이 좋습니다. 
+// |   |– _home.scss        # 홈 한정 스타일
+// |   |– _contact.scss     # 연락처 한정 스타일
+// |   …                    # 기타.
+// |
+// |– themes/ 큰 사이트와 어플리케이션에서 여러 다른 테마들을 갖는 것은 흔히 있는 일입니다.
+// |   |– _theme.scss       # 디폴트 테마
+// |   |– _admin.scss       # 관리자 테마
+// |   …                    # 기타.
+// |
+// |– utils/  모든 전역 변수, 함수, 믹스인, 플레이스홀더는 여기로 들어가야 합니다.
+// |   |– _variables.scss   # Sass 변수
+// |   |– _functions.scss   # Sass 함수
+// |   |– _mixins.scss      # Sass 믹스인
+// |   |– _helpers.scss     # 클래스 & 플레이스홀더 헬퍼
+// |
+// |– vendors/  외부 라이브러리와 프레임워크에서 나오는 모든 CSS 파일
+// |   |– _bootstrap.scss   # Bootstrap
+// |   |– _jquery-ui.scss   # jQuery UI
+// |   …                    # 기타.
+// |
+// |
+// `– style.scss             # 파일 메인 파일은 전체 코드베이스에서 언더스코어로 시작하지 않는 유일한 Sass 파일이어야 합니다. 이 파일은 @import와 주석 외에는 아무 것도 포함하지 않아야 합니다.
+
+
+@import 'utils/mixins';
+@import 'utils/variables';
+
+@import 'base/typography';
+@import 'base/colors';
+@import 'base/reset';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/cover';
+@import 'components/dropdown';
+
+@import 'pages/home';
+@import 'pages/contact';
+
+@import 'themes/theme';
+@import 'themes/admin';

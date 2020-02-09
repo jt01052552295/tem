@@ -18,28 +18,29 @@
 <body>
         
 <div id="root">
-    <word-relay />
+    <word-relay start-word="start"></word-relay>
 </div>
 
 <script>
-   Vue.component('word-relay', {
+  Vue.component('wordRelay', {
     template: `
         <div>
-        <div>{{word}}</div>
-            <form @submit="onSubmitForm">
-                <input ref="answer" v-model="value">
-                <button>입력!</button>
-            </form>
-        <div>{{result}}</div>
+          <div>{{word}}</div>
+              <form @submit="onSubmitForm">
+                  <input ref="answer" v-model="value">
+                  <button>입력!</button>
+              </form>
+          <div>{{result}}</div>
         </div>
       `,
     data() {
       return {
-        word: '제로초',
+        word: this.startWord,
         result: '',
         value: '',
       };
     },
+    props: ['startWord'],
     methods: {
       onSubmitForm(e) {
         e.preventDefault();

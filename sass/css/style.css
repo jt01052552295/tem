@@ -1,7 +1,40 @@
-html, body, ul, ol { margin: 0; padding: 0; }
+/*
 
-body { font-family: Helvetica, sans-serif; font-size: 18px; color: blue; }
+@mixin jb( $margin, $color: blue ) {
+  margin: $margin;
+  color: $color;
+}
 
-.danger { color: red; font-size: 25px; font-weight: bold; border: 1px solid blue; background-color: green; }
+*/
+html, body, ul, ol {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: #000; }
+
+.danger, .danger2, .danger3 {
+  color: #dc3545;
+  font-size: 25px;
+  font-weight: bold; }
+
+.danger2 {
+  background-color: black; }
+
+.danger3 {
+  background-color: blue; }
+
+.test_function {
+  margin-left: 64px; }
+
+.triangle {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 50px;
+  border-top-color: black; }
 
 /*# sourceMappingURL=style.css.map */

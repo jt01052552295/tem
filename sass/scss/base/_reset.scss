@@ -6,11 +6,30 @@ html, body, ul, ol {
 body {
   font-family: Helvetica, sans-serif;
   font-size: 18px;
-  color: $myBlue;
+  color: $black;
 }
+
 
 
 .danger {
   @include important-text;
-  background-color: green;
+}
+
+.danger2  {
+  @extend .danger;
+  background-color: black;
+}
+
+.danger3  {
+  @extend .danger;
+  background-color: blue;
+}
+
+
+.test_function {
+  margin-left: pow(4, 3) * 1px;
+}
+
+.triangle {
+  @include triangle(100px, black, down);
 }

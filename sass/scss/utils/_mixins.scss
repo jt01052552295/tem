@@ -1,6 +1,41 @@
+/*
+
+@mixin jb( $margin, $color: blue ) {
+  margin: $margin;
+  color: $color;
+}
+
+*/
+
+
 @mixin important-text {
-  color: red;
-  font-size: 25px;
-  font-weight: bold;
-  border: 1px solid blue;
+	// @warn "The `border-radius()` mixin will be deprecated in version 2.0.";
+	// @error "Property #{$property} must be either left or right.";
+	color: $red;
+	font-size: 25px;
+	font-weight: bold;
+
+	@debug "debug test: #{$red}";
+}
+
+
+@mixin triangle($size, $color, $direction) {
+  height: 0;
+  width: 0;
+
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size / 2;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
 }

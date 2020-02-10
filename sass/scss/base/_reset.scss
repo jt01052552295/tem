@@ -33,3 +33,4 @@ body {
 .triangle {
   @include triangle(100px, black, down);
 }
+@include corner-icon("mail", top, left);

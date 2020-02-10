@@ -1,40 +1,44 @@
+@charset "UTF-8";
 /*
 
-@mixin jb( $margin, $color: blue ) {
-  margin: $margin;
-  color: $color;
+@mixin jb( $margin, $color: blue ) { margin: $margin; color: $color;
 }
 
 */
-html, body, ul, ol {
-  margin: 0;
-  padding: 0; }
+.icon-40px { font-size: 40px; height: 40px; width: 40px; }
 
-body {
-  font-family: Helvetica, sans-serif;
-  font-size: 18px;
-  color: #000; }
+.icon-50px { font-size: 50px; height: 50px; width: 50px; }
 
-.danger, .danger2, .danger3 {
-  color: #dc3545;
-  font-size: 25px;
-  font-weight: bold; }
+.icon-80px { font-size: 80px; height: 80px; width: 80px; }
 
-.danger2 {
-  background-color: black; }
+.icon-eye:before { display: inline-block; font-family: "Icon Font"; content: ""; }
 
-.danger3 {
-  background-color: blue; }
+.icon-start:before { display: inline-block; font-family: "Icon Font"; content: ""; }
 
-.test_function {
-  margin-left: 64px; }
+.icon-stop:before { display: inline-block; font-family: "Icon Font"; content: ""; }
 
-.triangle {
-  height: 0;
-  width: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 50px;
-  border-top-color: black; }
+ul:nth-child(3n + 1) { background-color: #004080; }
+
+ul:nth-child(3n + 2) { background-color: #004d99; }
+
+ul:nth-child(3n + 3) { background-color: #0059b3; }
+
+sup { font-size: 12.3609394314px; }
+
+html, body, ul, ol { margin: 0; padding: 0; }
+
+body { font-family: Helvetica, sans-serif; font-size: 18px; color: #000; }
+
+.danger, .danger2, .danger3 { color: #dc3545; font-size: 25px; font-weight: bold; }
+
+.danger2 { background-color: black; }
+
+.danger3 { background-color: blue; }
+
+.test_function { margin-left: 64px; }
+
+.triangle { height: 0; width: 0; border-color: transparent; border-style: solid; border-width: 50px; border-top-color: black; }
+
+.icon-mail { background-image: url("/icons/mail.svg"); position: absolute; top: 0; left: 0; }
 
 /*# sourceMappingURL=style.css.map */

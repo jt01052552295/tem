@@ -1,13 +1,38 @@
-html, body, ul, ol {
-  margin: 0;
-  padding: 0;
+@charset 'utf-8';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
-  font-family: Helvetica, sans-serif;
-  font-size: 18px;
-  color: $black;
+/*
+.test {
+  background:lightblue;
+  padding: 10px;
+  & ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    & li {
+      list-style: decimal;
+      margin-left: 20px;
+    }
+  }
+
+  &:before {
+    content: 'list';
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
 }
+
 
 
 
@@ -34,3 +59,4 @@ body {
   @include triangle(100px, black, down);
 }
 @include corner-icon("mail", top, left);
+*/

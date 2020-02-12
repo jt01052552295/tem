@@ -1,41 +1,85 @@
-$sizes: 40px, 50px, 80px;
+@charset 'utf-8';
 
-@each $size in $sizes {
-  .icon-#{$size} {
-    font-size: $size;
-    height: $size;
-    width: $size;
+
+
+
+@function funcDebug($list) {
+  // We open the bracket
+  $result: '[ ';
+
+  // For each item in list
+  @each $item in $list {
+    // We test its length
+    // If it’s more than one item long
+    @if length($item) > 1 {
+      // We deal with a nested list
+      $result: $result + $item;
+    }
+    // Else we append the item to $result
+    @else {
+      $result: $result + $item;
+    }
+
+    // If we are not dealing with the last item of the list
+    // We add a comma and a space
+    @if index($list, $item) != length($list) {
+      $result: $result + ', ';
+    }
+  }
+
+  // We close the bracket
+  // And return the string
+  $result: $result + ' ]';
+  @return quote($result);
+}
+
+
+@mixin showDebug($list) {
+  .debug:before {
+    content: funcDebug($list) !important;
+
   }
 }
 
-$icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
 
-@each $name, $glyph in $icons {
-  .icon-#{$name}:before {
-    display: inline-block;
-    font-family: "Icon Font";
-    content: $glyph;
-  }
-}
+// $sizes: 40px, 50px, 80px;
 
-$base-color: #036;
+// @each $size in $sizes {
+//   .icon-#{$size} {
+//     font-size: $size;
+//     height: $size;
+//     width: $size;
+//   }
+// }
 
-@for $i from 1 through 3 {
-  ul:nth-child(3n + #{$i}) {
-    background-color: lighten($base-color, $i * 5%);
-  }
-}
+// $icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
+
+// @each $name, $glyph in $icons {
+//   .icon-#{$name}:before {
+//     display: inline-block;
+//     font-family: "Icon Font";
+//     content: $glyph;
+//   }
+// }
+
+// $base-color: #036;
+
+// @for $i from 1 through 3 {
+//   ul:nth-child(3n + #{$i}) {
+//     background-color: lighten($base-color, $i * 5%);
+//   }
+// }
 
 
-/// Divides `$value` by `$ratio` until it's below `$base`.
-@function scale-below($value, $base, $ratio: 1.618) {
-  @while $value > $base {
-    $value: $value / $ratio;
-  }
-  @return $value;
-}
+// /// Divides `$value` by `$ratio` until it's below `$base`.
+// @function scale-below($value, $base, $ratio: 1.618) {
+//   @while $value > $base {
+//     $value: $value / $ratio;
+//   }
+//   @return $value;
+// }
 
-$normal-font-size: 16px;
-sup {
-  font-size: scale-below(20px, 16px);
-}
+// $normal-font-size: 16px;
+// sup {
+//   font-size: scale-below(20px, 16px);
+// }

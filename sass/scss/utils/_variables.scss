@@ -1,3 +1,4 @@
+@charset 'utf-8';
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -90,4 +91,14 @@ $theme-colors: map-merge(
   ),
   $theme-colors
 );
+// @debug "divider offset: #{$primary}";
 
+
+$list: 'a, b, c, d e f, g, h i, j';
+@include showDebug($theme-colors);
+
+
+// @each $item in $theme-colors {
+//   @debug "theme-colors row: #{$item}";
+//   // @error "theme-colors row: #{$item}";
+// }

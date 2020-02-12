@@ -1,44 +1,73 @@
-@charset "UTF-8";
 /*
 
-@mixin jb( $margin, $color: blue ) { margin: $margin; color: $color;
+@mixin jb( $margin, $color: blue ) {
+  margin: $margin;
+  color: $color;
 }
 
 */
-.icon-40px { font-size: 40px; height: 40px; width: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_helpers\.scss}line{font-family:\0000338}}
+.debug:before {
+  content: "[ primary #007bff, secondary #6c757d, success #28a745, info #17a2b8, warning #ffc107, danger #dc3545, light #f8f9fa, dark #343a40 ]" !important; }
 
-.icon-50px { font-size: 50px; height: 50px; width: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\000034}}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
 
-.icon-80px { font-size: 80px; height: 80px; width: 80px; }
+/*
+.test {
+  background:lightblue;
+  padding: 10px;
+  & ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    & li {
+      list-style: decimal;
+      margin-left: 20px;
+    }
+  }
 
-.icon-eye:before { display: inline-block; font-family: "Icon Font"; content: ""; }
+  &:before {
+    content: 'list';
+  }
 
-.icon-start:before { display: inline-block; font-family: "Icon Font"; content: ""; }
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
 
-.icon-stop:before { display: inline-block; font-family: "Icon Font"; content: ""; }
+}
 
-ul:nth-child(3n + 1) { background-color: #004080; }
 
-ul:nth-child(3n + 2) { background-color: #004d99; }
 
-ul:nth-child(3n + 3) { background-color: #0059b3; }
 
-sup { font-size: 12.3609394314px; }
+.danger {
+  @include important-text;
+}
 
-html, body, ul, ol { margin: 0; padding: 0; }
+.danger2  {
+  @extend .danger;
+  background-color: black;
+}
 
-body { font-family: Helvetica, sans-serif; font-size: 18px; color: #000; }
+.danger3  {
+  @extend .danger;
+  background-color: blue;
+}
 
-.danger, .danger2, .danger3 { color: #dc3545; font-size: 25px; font-weight: bold; }
 
-.danger2 { background-color: black; }
+.test_function {
+  margin-left: pow(4, 3) * 1px;
+}
 
-.danger3 { background-color: blue; }
-
-.test_function { margin-left: 64px; }
-
-.triangle { height: 0; width: 0; border-color: transparent; border-style: solid; border-width: 50px; border-top-color: black; }
-
-.icon-mail { background-image: url("/icons/mail.svg"); position: absolute; top: 0; left: 0; }
+.triangle {
+  @include triangle(100px, black, down);
+}
+@include corner-icon("mail", top, left);
+*/
 
 /*# sourceMappingURL=style.css.map */

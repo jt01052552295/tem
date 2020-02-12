@@ -47,16 +47,20 @@
 // |   …                    # 기타.
 // |
 // |
-// `– style.scss             # 파일 메인 파일은 전체 코드베이스에서 언더스코어로 시작하지 않는 유일한 Sass 파일이어야 합니다. 이 파일은 @import와 주석 외에는 아무 것도 포함하지 않아야 합니다.
+// `– style.scss  # 파일 메인 파일은 전체 코드베이스에서 언더스코어로 시작하지 않는 유일한 Sass 파일이어야 합니다. 이 파일은 @import와 주석 외에는 아무 것도 포함하지 않아야 합니다.
 
 
+// Configuration
+@import 'utils/helpers';
 @import 'utils/mixins';
 @import 'utils/functions';
 @import 'utils/variables';
-@import 'utils/helpers';
 
 @import 'base/typography';
 @import 'base/reset';
+
+@import 'themes/theme';
+@import 'themes/admin';
 
 @import 'layout/navigation';
 @import 'layout/grid';
@@ -73,5 +77,3 @@
 @import 'pages/home';
 @import 'pages/contact';
 
-@import 'themes/theme';
-@import 'themes/admin';

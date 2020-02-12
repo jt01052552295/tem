@@ -1,3 +1,4 @@
+@charset 'utf-8';
 /*
 
 @mixin jb( $margin, $color: blue ) {
@@ -9,6 +10,9 @@
 
 
 @mixin important-text {
+  //@extend, @include는 상단에 모아쓰고 그 뒤 빈 줄을 추가한다.
+
+
 	// @warn "The `border-radius()` mixin will be deprecated in version 2.0.";
 	// @error "Property #{$property} must be either left or right.";
 	color: $red;

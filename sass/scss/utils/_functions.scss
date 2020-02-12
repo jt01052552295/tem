@@ -1,3 +1,5 @@
+@charset 'utf-8';
+
 @function pow($base, $exponent) {
   $result: 1;
   @for $_ from 1 through $exponent {

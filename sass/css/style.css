@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans+KR");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 /*
 
 @mixin jb( $margin, $color: blue ) {
@@ -10,11 +13,327 @@
 .debug:before {
   content: "[ primary #007bff, secondary #6c757d, success #28a745, info #17a2b8, warning #ffc107, danger #dc3545, light #f8f9fa, dark #343a40 ]" !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\000035}}
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000313}}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000320}}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000324}}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Nanum Gothic", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  text-align: left;
+  background-color: white; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000337}}
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000341}}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000347}}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000352}}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000357}}
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+  text-decoration-skip-ink: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000366}}
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000372}}
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000379}}
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000386}}
+dt {
+  font-weight: 700; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000390}}
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000395}}
+blockquote {
+  margin: 0 0 1rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000399}}
+b,
+strong {
+  font-weight: bolder; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003104}}
+small {
+  font-size: 80%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003108}}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003116}}
+sub {
+  bottom: -.25em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003117}}
+sup {
+  top: -.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003120}}
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_mixins\.scss}line{font-family:\0000359}}
+  a:hover {
+    color: black;
+    text-decoration: underline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003136}}
+a:not([href]) {
+  color: inherit;
+  text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_mixins\.scss}line{font-family:\0000359}}
+  a:not([href]):hover {
+    color: inherit;
+    text-decoration: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003146}}
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003154}}
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003168}}
+figure {
+  margin: 0 0 1rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003178}}
+img {
+  vertical-align: middle;
+  border-style: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003183}}
+svg {
+  overflow: hidden;
+  vertical-align: middle; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003194}}
+table {
+  border-collapse: collapse; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003198}}
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: black;
+  text-align: left;
+  caption-side: bottom; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003206}}
+th {
+  text-align: inherit; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003218}}
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003227}}
+button {
+  border-radius: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003236}}
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003241}}
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003252}}
+button,
+input {
+  overflow: visible; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003257}}
+button,
+select {
+  text-transform: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003265}}
+select {
+  word-wrap: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003273}}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003286}}
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003293}}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003301}}
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003308}}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003320}}
+textarea {
+  overflow: auto;
+  resize: vertical; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003326}}
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003341}}
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal; }
+  @media (max-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003341}}
+    legend {
+      font-size: calc(1.275rem + 0.3vw) ; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003353}}
+progress {
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003358}}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003363}}
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003376}}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003385}}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003394}}
+output {
+  display: inline-block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003398}}
+summary {
+  display: list-item;
+  cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003403}}
+template {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003409}}
+[hidden] {
+  display: none !important; }
 
 /*
 .test {

@@ -4,6 +4,8 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
+
+
 // Color system
 
 $white:    #fff !default;
@@ -102,3 +104,43 @@ $list: 'a, b, c, d e f, g, h i, j';
 //   @debug "theme-colors row: #{$item}";
 //   // @error "theme-colors row: #{$item}";
 // }
+
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, 'Noto Sans KR', 'Nanum Gothic', Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+
+
+$headings-margin-bottom: 1rem / 2 !default;
+
+$paragraph-margin-bottom:   1rem !default;
+
+$dt-font-weight:              700 !default;
+
+// Links
+//
+// Style anchor elements.
+$link-color:                              $black !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   underline !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;
+
+
+// Tables
+
+$table-cell-padding:          .5rem !default;
+$table-cell-padding-sm:       .25rem !default;
+
+
+
+// Forms
+$label-margin-bottom:                   .5rem !default;
+

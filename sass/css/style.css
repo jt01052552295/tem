@@ -1,392 +1,163 @@
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans+KR");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-/*
-
-@mixin jb( $margin, $color: blue ) {
-  margin: $margin;
-  color: $color;
-}
-
-*/
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_helpers\.scss}line{font-family:\0000338}}
-.debug:before {
-  content: "[ primary #007bff, secondary #6c757d, success #28a745, info #17a2b8, warning #ffc107, danger #dc3545, light #f8f9fa, dark #343a40 ]" !important; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\000035}}
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000313}}
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000320}}
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000324}}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Nanum Gothic", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: black;
-  text-align: left;
-  background-color: white; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000337}}
-[tabindex="-1"]:focus:not(:focus-visible) {
-  outline: 0 !important; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000341}}
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000347}}
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000352}}
-p {
-  margin-top: 0;
-  margin-bottom: 1rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000357}}
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-  cursor: help;
-  border-bottom: 0;
-  text-decoration-skip-ink: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000366}}
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000372}}
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000379}}
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000386}}
-dt {
-  font-weight: 700; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000390}}
-dd {
-  margin-bottom: .5rem;
-  margin-left: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000395}}
-blockquote {
-  margin: 0 0 1rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\0000399}}
-b,
-strong {
-  font-weight: bolder; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003104}}
-small {
-  font-size: 80%; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003108}}
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003116}}
-sub {
-  bottom: -.25em; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003117}}
-sup {
-  top: -.5em; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003120}}
-a {
-  color: #000;
-  text-decoration: none;
-  background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_mixins\.scss}line{font-family:\0000359}}
-  a:hover {
-    color: black;
-    text-decoration: underline; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003136}}
-a:not([href]) {
-  color: inherit;
-  text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/utils\/_mixins\.scss}line{font-family:\0000359}}
-  a:not([href]):hover {
-    color: inherit;
-    text-decoration: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003146}}
-pre,
-code,
-kbd,
-samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1em; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003154}}
-pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003168}}
-figure {
-  margin: 0 0 1rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003178}}
-img {
-  vertical-align: middle;
-  border-style: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003183}}
-svg {
-  overflow: hidden;
-  vertical-align: middle; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003194}}
-table {
-  border-collapse: collapse; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003198}}
-caption {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  color: black;
-  text-align: left;
-  caption-side: bottom; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003206}}
-th {
-  text-align: inherit; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003218}}
-label {
-  display: inline-block;
-  margin-bottom: 0.5rem; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003227}}
-button {
-  border-radius: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003236}}
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003241}}
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003252}}
-button,
-input {
-  overflow: visible; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003257}}
-button,
-select {
-  text-transform: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003265}}
-select {
-  word-wrap: normal; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003273}}
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003286}}
-button:not(:disabled),
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled) {
-  cursor: pointer; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003293}}
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003301}}
-input[type="radio"],
-input[type="checkbox"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003308}}
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003320}}
-textarea {
-  overflow: auto;
-  resize: vertical; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003326}}
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003341}}
-legend {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin-bottom: .5rem;
-  font-size: 1.5rem;
-  line-height: inherit;
-  color: inherit;
-  white-space: normal; }
-  @media (max-width: 1200px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003341}}
-    legend {
-      font-size: calc(1.275rem + 0.3vw) ; } }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003353}}
-progress {
-  vertical-align: baseline; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003358}}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003363}}
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003376}}
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003385}}
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003394}}
-output {
-  display: inline-block; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003398}}
-summary {
-  display: list-item;
-  cursor: pointer; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003403}}
-template {
-  display: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/KIM-SITEDB\/tem\/sass\/scss\/base\/_reset\.scss}line{font-family:\00003409}}
-[hidden] {
-  display: none !important; }
-
-/*
-.test {
-  background:lightblue;
-  padding: 10px;
-  & ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    & li {
-      list-style: decimal;
-      margin-left: 20px;
-    }
-  }
-
-  &:before {
-    content: 'list';
-  }
-
-  &:after {
-    display: block;
-    clear: both;
-    content: "";
-  }
-
-}
-
-
-
-
-.danger {
-  @include important-text;
-}
-
-.danger2  {
-  @extend .danger;
-  background-color: black;
-}
-
-.danger3  {
-  @extend .danger;
-  background-color: blue;
-}
-
-
-.test_function {
-  margin-left: pow(4, 3) * 1px;
-}
-
-.triangle {
-  @include triangle(100px, black, down);
-}
-@include corner-icon("mail", top, left);
-*/
+:root { --blue: #007bff; --indigo: #6610f2; --purple: #6f42c1; --pink: #e83e8c; --red: #dc3545; --orange: #fd7e14; --yellow: #ffc107; --green: #28a745; --teal: #20c997; --cyan: #17a2b8; --white: #fff; --gray: #6c757d; --gray-dark: #343a40; --primary: #007bff; --secondary: #6c757d; --success: #28a745; --info: #17a2b8; --warning: #ffc107; --danger: #dc3545; --light: #f8f9fa; --dark: #343a40; --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Nanum Gothic", Roboto, "Helvetica Neue", Arial, sans-serif; --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+*, *::before, *::after { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html { font-family: sans-serif; line-height: 1.15; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display: block; }
+
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Nanum Gothic", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.5; color: black; text-align: left; background-color: white; }
+
+[tabindex="-1"]:focus:not(:focus-visible) { outline: 0 !important; }
+
+hr { -webkit-box-sizing: content-box; box-sizing: content-box; height: 0; overflow: visible; }
+
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; }
+
+p { margin-top: 0; margin-bottom: 1rem; }
+
+abbr[title], abbr[data-original-title] { text-decoration: underline; -webkit-text-decoration: underline dotted; text-decoration: underline dotted; cursor: help; border-bottom: 0; text-decoration-skip-ink: none; }
+
+address { margin-bottom: 1rem; font-style: normal; line-height: inherit; }
+
+ol, ul, dl { margin-top: 0; margin-bottom: 1rem; }
+
+ol ol, ul ul, ol ul, ul ol { margin-bottom: 0; }
+
+dt { font-weight: 700; }
+
+dd { margin-bottom: .5rem; margin-left: 0; }
+
+blockquote { margin: 0 0 1rem; }
+
+b, strong { font-weight: bolder; }
+
+small { font-size: 80%; }
+
+sub, sup { position: relative; font-size: 75%; line-height: 0; vertical-align: baseline; }
+
+sub { bottom: -.25em; }
+
+sup { top: -.5em; }
+
+a { color: #007bff; text-decoration: none; background-color: transparent; }
+a:hover { color: #0056b3; text-decoration: underline; }
+
+a:not([href]) { color: inherit; text-decoration: none; }
+a:not([href]):hover { color: inherit; text-decoration: none; }
+
+pre, code, kbd, samp { font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 1em; }
+
+pre { margin-top: 0; margin-bottom: 1rem; overflow: auto; }
+
+figure { margin: 0 0 1rem; }
+
+img { vertical-align: middle; border-style: none; }
+
+svg { overflow: hidden; vertical-align: middle; }
+
+table { border-collapse: collapse; }
+
+caption { padding-top: 0.5rem; padding-bottom: 0.5rem; color: black; text-align: left; caption-side: bottom; }
+
+th { text-align: inherit; }
+
+label { display: inline-block; margin-bottom: 0.5rem; }
+
+button { border-radius: 0; }
+
+button:focus { outline: 1px dotted; outline: 5px auto -webkit-focus-ring-color; }
+
+input, button, select, optgroup, textarea { margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; }
+
+button, input { overflow: visible; }
+
+button, select { text-transform: none; }
+
+select { word-wrap: normal; }
+
+button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
+
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) { cursor: pointer; }
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { padding: 0; border-style: none; }
+
+input[type="radio"], input[type="checkbox"] { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0; }
+
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] { -webkit-appearance: listbox; }
+
+textarea { overflow: auto; resize: vertical; }
+
+fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
+
+legend { display: block; width: 100%; max-width: 100%; padding: 0; margin-bottom: .5rem; font-size: 1.5rem; line-height: inherit; color: inherit; white-space: normal; }
+@media (max-width: 1200px) { legend { font-size: calc(1.275rem + 0.3vw) ; } }
+
+progress { vertical-align: baseline; }
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button { height: auto; }
+
+[type="search"] { outline-offset: -2px; -webkit-appearance: none; }
+
+[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+::-webkit-file-upload-button { font: inherit; -webkit-appearance: button; }
+
+output { display: inline-block; }
+
+summary { display: list-item; cursor: pointer; }
+
+template { display: none; }
+
+[hidden] { display: none !important; }
+
+h1, h2, h3, h4, h5, h6 { margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; }
+
+h1 { font-size: 2.5rem; }
+@media (max-width: 1200px) { h1 { font-size: calc(1.375rem + 1.5vw) ; } }
+
+h2 { font-size: 2rem; }
+@media (max-width: 1200px) { h2 { font-size: calc(1.325rem + 0.9vw) ; } }
+
+h3 { font-size: 1.75rem; }
+@media (max-width: 1200px) { h3 { font-size: calc(1.3rem + 0.6vw) ; } }
+
+h4 { font-size: 1.5rem; }
+@media (max-width: 1200px) { h4 { font-size: calc(1.275rem + 0.3vw) ; } }
+
+h5 { font-size: 1.25rem; }
+
+h6 { font-size: 1rem; }
+
+.lead { font-size: 1.25rem; font-weight: 300; }
+
+.display-1 { font-size: 6rem; font-weight: 300; line-height: 1.2; }
+@media (max-width: 1200px) { .display-1 { font-size: calc(1.725rem + 5.7vw) ; } }
+
+.display-2 { font-size: 5.5rem; font-weight: 300; line-height: 1.2; }
+@media (max-width: 1200px) { .display-2 { font-size: calc(1.675rem + 5.1vw) ; } }
+
+.display-3 { font-size: 4.5rem; font-weight: 300; line-height: 1.2; }
+@media (max-width: 1200px) { .display-3 { font-size: calc(1.575rem + 3.9vw) ; } }
+
+.display-4 { font-size: 3.5rem; font-weight: 300; line-height: 1.2; }
+@media (max-width: 1200px) { .display-4 { font-size: calc(1.475rem + 2.7vw) ; } }
+
+hr { margin-top: 1rem; margin-bottom: 1rem; border: 0; }
+
+small { font-size: 0.875em; font-weight: 400; }
+
+mark { padding: 0.2em; background-color: #fcf8e3; }
+
+.img-fluid { max-width: 100%; height: auto; }
+
+.figure { display: inline-block; }
+
+.figure-img { margin-bottom: 0.5rem; line-height: 1; }
+
+.debug:before { content: "[ 0 0, 1 0.25rem, 2 0.5rem, 3 1rem, 4 1.5rem, 5 3rem ]" !important; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,20 @@
 @charset 'utf-8';
 
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
 
+  @each $color, $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  // Use `inspect` for lists so that quoted items keep the quotes.
+  // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+  --font-family-sans-serif: #{inspect($font-family-sans-serif)};
+  --font-family-monospace: #{inspect($font-family-monospace)};
+}
 
 *,
 *::before,
@@ -409,58 +423,3 @@ template {
 [hidden] {
   display: none !important;
 }
-
-
-/*
-.test {
-  background:lightblue;
-  padding: 10px;
-  & ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    & li {
-      list-style: decimal;
-      margin-left: 20px;
-    }
-  }
-
-  &:before {
-    content: 'list';
-  }
-
-  &:after {
-    display: block;
-    clear: both;
-    content: "";
-  }
-
-}
-
-
-
-
-.danger {
-  @include important-text;
-}
-
-.danger2  {
-  @extend .danger;
-  background-color: black;
-}
-
-.danger3  {
-  @extend .danger;
-  background-color: blue;
-}
-
-
-.test_function {
-  margin-left: pow(4, 3) * 1px;
-}
-
-.triangle {
-  @include triangle(100px, black, down);
-}
-@include corner-icon("mail", top, left);
-*/

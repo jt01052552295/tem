@@ -1,7 +1,67 @@
-@charset 'utf-8';
 
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans+KR');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-// @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&subset=korean');
-// @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900');
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1 { @include font-size($h1-font-size); }
+h2 { @include font-size($h2-font-size); }
+h3 { @include font-size($h3-font-size); }
+h4 { @include font-size($h4-font-size); }
+h5 { @include font-size($h5-font-size); }
+h6 { @include font-size($h6-font-size); }
+
+.lead {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+}
+
+// Type display classes
+.display-1 {
+  @include font-size($display1-size);
+  font-weight: $display1-weight;
+  line-height: $display-line-height;
+}
+.display-2 {
+  @include font-size($display2-size);
+  font-weight: $display2-weight;
+  line-height: $display-line-height;
+}
+.display-3 {
+  @include font-size($display3-size);
+  font-weight: $display3-weight;
+  line-height: $display-line-height;
+}
+.display-4 {
+  @include font-size($display4-size);
+  font-weight: $display4-weight;
+  line-height: $display-line-height;
+}
+
+//
+// Horizontal rules
+//
+
+hr {
+  margin-top: $hr-margin-y;
+  margin-bottom: $hr-margin-y;
+  border: 0;
+}
+
+
+//
+// Emphasis
+//
+
+small {
+  @include font-size($small-font-size);
+  font-weight: $font-weight-normal;
+}
+
+mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}

@@ -36,13 +36,48 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 -->
 <div id="wrap">
 
+	<div class="editor">
+		<div class="tool-area">
+			<div class="row">
+				<div class="box">11</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="bold" title="Bold">
+		                  <i class="fa fa-bold"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="bold" title="Bold">
+		                  <i class="fa fa-bold"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="bold" title="Bold">
+		                  <i class="fa fa-bold"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="bold" title="Bold">
+		                  <i class="fa fa-bold"></i>
+		                </button>
+		            </div>
 
+				</div>
+				<div class="box">11</div>
+			</div>
+			<div class="row">
+				<div class="box">11</div>
+			</div>
+		</div>
 
+		<div class="content-area">
+			<div class="visuell-view" contenteditable>
+				hello world
+	        </div>
+	        <textarea class="html-view"></textarea>
+		</div>
 
-	<main id="main">
-		12121212
-	</main>
-
+	</div>
 	
 
 

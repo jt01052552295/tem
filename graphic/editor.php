@@ -32,14 +32,42 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <body>
 <!-- 
 	http://naver.github.io/smarteditor2/demo/
-
+	1. 버튼 레이아웃
+	2. 입력창 세로조절
+	3. 플러그인 기능
 -->
 <div id="wrap">
 
 	<div class="editor">
 		<div class="tool-area">
 			<div class="row">
-				<div class="box">11</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<select onchange="fontEditor(this[this.selectedIndex].value)" class="eSelect">
+			                <option value="Arial">Arial</option>
+			                <option value="Courier">Courier</option>
+			                <option value="Courier New">Courier New</option>
+			                <option value="Georgia">Georgia</option>
+			                <option value="Helvetica">Helvetica</option>
+			                <option value="Palatino">Palatino</option>
+			                <option value="Times New Roman">Times New Roman</option>
+			                <option value="Trebuchet MS">Trebuchet MS</option>
+			                <option value="Verdana">Verdana</option>
+			              </select>   
+		            </div>
+		            <div class="btn-wrap">
+		           		<select onchange="fontSize(this[this.selectedIndex].value)" class="eSelect">
+			                <option value="1">8pt</option>
+			                <option value="2">10pt</option>
+			                <option value="3">12pt</option>
+			                <option value="4">14pt</option>
+			                <option value="5">18pt</option>
+			                <option value="6">24pt</option>
+			                <option value="7">36pt</option>
+			              </select>     
+		            </div>
+
+				</div>
 				<div class="box">
 					<div class="btn-wrap">
 						<button class="eBtn" data-action="bold" title="Bold">
@@ -47,26 +75,76 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="bold" title="Bold">
-		                  <i class="fa fa-bold"></i>
+						<button class="eBtn" data-action="italic" title="italic">
+		                  <i class="fa fa-italic"></i>
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="bold" title="Bold">
-		                  <i class="fa fa-bold"></i>
+						<button class="eBtn" data-action="underline" title="underline">
+		                  <i class="fa fa-underline"></i>
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="bold" title="Bold">
-		                  <i class="fa fa-bold"></i>
+						<button class="eBtn" data-action="strikethrough" title="strikethrough">
+		                  <i class="fa fa-strikethrough"></i>
 		                </button>
 		            </div>
 
 				</div>
-				<div class="box">11</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="justifyLeft" title="justifyLeft">
+		                  <i class="fa fa-align-left"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="justifyCenter" title="justifyCenter">
+		                  <i class="fa fa-align-center"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="justifyRight" title="justifyRight">
+		                  <i class="fa fa-align-right"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="insertOrderedList" title="Insert ordered list">
+		                  <i class="fas fa-list-ol"></i>
+		                </button>
+		                <button class="eBtn" data-action="insertUnorderedList" title="Insert unordered list">
+		                  <i class="fas fa-list-ul"></i>
+		                </button>
+		                <button class="eBtn" data-action="outdent" title="outdent">
+		                  <i class="fas fa-outdent"></i>
+		                </button>
+		                <button class="eBtn" data-action="indent" title="indent">
+		                  <i class="fas fa-indent"></i>
+		                </button>
+		            </div>
+				</div>
 			</div>
 			<div class="row">
-				<div class="box">11</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="undo" title="Undo">
+		                  <i class="fa fa-undo"></i>
+		                </button>
+		                <button class="eBtn" data-action="redo" title="Redo">
+		                  <i class="fas fa-redo"></i>
+		                </button>
+		                <button class="eBtn" data-action="removeFormat" title="Remove format">
+		                  <i class="fas fa-eraser"></i>
+		                </button>
+		            </div>
+				</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="code" title="Show HTML-Code">
+		                  <i class="fas fa-code"></i>
+		                </button>
+		               
+		            </div>
+				</div>
 			</div>
 		</div>
 
@@ -87,8 +165,28 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <!-- script 모음 -->
 
 <script>
-	
+const editor = document.getElementsByClassName('editor')[0];
+const toolbar = editor.getElementsByClassName('tool-area')[0];	
+const buttons = toolbar.querySelectorAll('.eBtn:not(.has-submenu)');
 
+for(let i = 0; i < buttons.length; i++) {
+  let button = buttons[i];
+  
+  button.addEventListener('click', function(e) {
+    let action = this.dataset.action;
+    console.log(action)
+
+    
+    document.execCommand(action, false);
+  });
+}
+function fontEditor(fontName) {
+  document.execCommand("fontName", false, fontName);
+}
+
+function fontSize(fontSize){
+    document.execCommand("FontSize", false, fontSize);
+}
 
 
 </script>

@@ -35,6 +35,18 @@
 	display: flex;
 }
 
+.eSelect {
+      display: block;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.2s ease all;
+    padding:10px;
+    background: #fff;
+    outline: 0;
+    border: 0 none;
+}
+
 .eBtn {
     display: block;
     align-items: center;
@@ -46,7 +58,8 @@
     outline: 0;
     border: 0 none;
 }
-.eBtn:active {background: #eee}
+.eBtn:hover,
+.eBtn.active {background: #eee}
 
 
 .content-area {

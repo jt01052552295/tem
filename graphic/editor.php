@@ -32,9 +32,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <body>
 <!-- 
 	http://naver.github.io/smarteditor2/demo/
-	1. 버튼 레이아웃
-	2. 입력창 세로조절
-	3. 플러그인 기능
+	2. 입력창 용
+	3. 플러그인 기능 ( insertHtml 활용 )
 -->
 <div id="wrap">
 
@@ -43,28 +42,34 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 			<div class="row">
 				<div class="box">
 					<div class="btn-wrap">
-						<select onchange="fontEditor(this[this.selectedIndex].value)" class="eSelect">
-			                <option value="Arial">Arial</option>
-			                <option value="Courier">Courier</option>
-			                <option value="Courier New">Courier New</option>
-			                <option value="Georgia">Georgia</option>
-			                <option value="Helvetica">Helvetica</option>
-			                <option value="Palatino">Palatino</option>
-			                <option value="Times New Roman">Times New Roman</option>
-			                <option value="Trebuchet MS">Trebuchet MS</option>
-			                <option value="Verdana">Verdana</option>
-			              </select>   
+						<div class="dropdown">
+							<a href="#" class="dropbtn"><span>Font</span> <i class="fas fa-caret-down"></i></a>
+						 	<ul class="dropdown-content">
+							    <li><a href="#" data-fname="Arial">Arial</a></li>
+							    <li><a href="#" data-fname="Courier">Courier</a></li>
+							    <li><a href="#" data-fname="Courier New">Courier New</a></li>
+							    <li><a href="#" data-fname="Georgia">Georgia</a></li>
+							    <li><a href="#" data-fname="Helvetica">Helvetica</a></li>
+							    <li><a href="#" data-fname="Palatino">Palatino</a></li>
+							    <li><a href="#" data-fname="Times New Roman">Times New Roman</a></li>
+							    <li><a href="#" data-fname="Trebuchet MS">Trebuchet MS</a></li>
+							    <li><a href="#" data-fname="Verdana">Verdana</a></li>
+						    </ul>
+						</div>
 		            </div>
 		            <div class="btn-wrap">
-		           		<select onchange="fontSize(this[this.selectedIndex].value)" class="eSelect">
-			                <option value="1">8pt</option>
-			                <option value="2">10pt</option>
-			                <option value="3">12pt</option>
-			                <option value="4">14pt</option>
-			                <option value="5">18pt</option>
-			                <option value="6">24pt</option>
-			                <option value="7">36pt</option>
-			              </select>     
+		            	<div class="dropdown">
+							<a href="#" class="dropbtn"><span>Size</span> <i class="fas fa-caret-down"></i></a>
+						 	<ul class="dropdown-content">
+							    <li><a href="#" data-fsize="1">8pt</a></li>
+							    <li><a href="#" data-fsize="2">10pt</a></li>
+							    <li><a href="#" data-fsize="3">12pt</a></li>
+							    <li><a href="#" data-fsize="4">14pt</a></li>
+							    <li><a href="#" data-fsize="5">18pt</a></li>
+							    <li><a href="#" data-fsize="6">24pt</a></li>
+							    <li><a href="#" data-fsize="7">36pt</a></li>
+						    </ul>
+						</div>   
 		            </div>
 
 				</div>
@@ -87,6 +92,29 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		            <div class="btn-wrap">
 						<button class="eBtn" data-action="strikethrough" title="strikethrough">
 		                  <i class="fa fa-strikethrough"></i>
+		                </button>
+		            </div>
+
+				</div>
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="fcolor" title="font color">
+		                  <i class="fab fa-fonticons-fi"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="fcolorBg" title="font & background color">
+		                 <i class="fab fa-fonticons"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="sup" title="superscript">
+		                  <i class="fas fa-superscript"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="sub" title="subscript">
+		                  <i class="fas fa-subscript"></i>
 		                </button>
 		            </div>
 
@@ -126,6 +154,17 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 			<div class="row">
 				<div class="box">
 					<div class="btn-wrap">
+						<button class="eBtn" data-action="createLink" title="createLink">
+		                  <i class="fa fa-link"></i>
+		                </button>
+		                <button class="eBtn" data-action="foreColor" title="foreColor">
+		                  <i class="fa fa-tint"></i>
+		                </button>
+		   
+		            </div>
+		        </div>
+		        <div class="box">
+					<div class="btn-wrap">
 						<button class="eBtn" data-action="undo" title="Undo">
 		                  <i class="fa fa-undo"></i>
 		                </button>
@@ -133,7 +172,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		                  <i class="fas fa-redo"></i>
 		                </button>
 		                <button class="eBtn" data-action="removeFormat" title="Remove format">
-		                  <i class="fas fa-eraser"></i>
+		                  <i class="fas fa-remove-format"></i>
 		                </button>
 		            </div>
 				</div>
@@ -153,6 +192,12 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				hello world
 	        </div>
 	        <textarea class="html-view"></textarea>
+		</div>
+		<div class="etc-area">
+			<ul class="">
+				<li><button type="button" class="" title="입력창 크기 조절"><span>입력창 크기 조절</span></button></li>
+				<li><button type="button" class=""><span>Get TEXT</span></button></li>
+			</ul>
 		</div>
 
 	</div>

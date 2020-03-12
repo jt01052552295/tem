@@ -148,10 +148,22 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		                <button class="eBtn" data-action="indent" title="indent">
 		                  <i class="fas fa-indent"></i>
 		                </button>
+		                
 		            </div>
 				</div>
 			</div>
 			<div class="row">
+				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn" data-action="" title="Text height">
+		                  <i class="fas fa-text-height"></i>
+		                </button>
+		                <button class="eBtn" data-action="" title="Text width">
+		                  <i class="fas fa-text-width"></i>
+		                </button>
+		   
+		            </div>
+		        </div>
 				<div class="box">
 					<div class="btn-wrap">
 						<button class="eBtn" data-action="createLink" title="createLink">
@@ -181,7 +193,11 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 						<button class="eBtn" data-action="code" title="Show HTML-Code">
 		                  <i class="fas fa-code"></i>
 		                </button>
-		               
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn" data-action="text" title="Show Text Only">
+		                  <i class="fas fa-font"></i>
+		                </button>
 		            </div>
 				</div>
 			</div>

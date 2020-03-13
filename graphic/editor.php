@@ -204,16 +204,20 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		</div>
 
 		<div class="content-area">
-			<div class="visuell-view" contenteditable>
+			<div class="visuell-view" id="input_content" contenteditable>
 				hello world
 	        </div>
 	        <textarea class="html-view"></textarea>
 		</div>
-		<div class="etc-area">
-			<ul class="">
-				<li><button type="button" class="" title="입력창 크기 조절"><span>입력창 크기 조절</span></button></li>
-				<li><button type="button" class=""><span>Get TEXT</span></button></li>
-			</ul>
+		<div class="bottom-area">
+			<div class="box">
+				<div class="btn-wrap">
+					<button type="button" class="eBtn" id="" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
+	            </div>
+	            <div class="btn-wrap">
+					<button type="button" class="eBtn"><span>Get TEXT</span></button>
+	            </div>
+			</div>
 		</div>
 
 	</div>
@@ -248,6 +252,11 @@ function fontEditor(fontName) {
 function fontSize(fontSize){
     document.execCommand("FontSize", false, fontSize);
 }
+
+var elmnt = document.getElementById("input_content");
+
+// 드로잉기능 활용, mousedown, mousemove, mouseup
+console.log(elmnt.style.height, elmnt.scrollHeight)
 
 
 </script>

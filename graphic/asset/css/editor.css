@@ -132,3 +132,18 @@ div.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1f1;}
   border: none;
   resize: none;
 }
+
+
+.bottom-area {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-area .box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bottom-area .box .btn-wrap {
+  display: flex;
+}

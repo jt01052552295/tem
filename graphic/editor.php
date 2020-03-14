@@ -32,7 +32,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <body>
 <!-- 
 	http://naver.github.io/smarteditor2/demo/
-	2. 입력창 용
+	2. 입력창 용 https://javascript.info/article/mouse-drag-and-drop/ball4/
 	3. 플러그인 기능 ( insertHtml 활용 )
 -->
 <div id="wrap">
@@ -209,10 +209,10 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	        </div>
 	        <textarea class="html-view"></textarea>
 		</div>
-		<div class="bottom-area">
+		<div class="bottom-area" id="bottom_size">
 			<div class="box">
 				<div class="btn-wrap">
-					<button type="button" class="eBtn" id="" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
+					<button type="button" class="eBtn" id="input_content_size" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
 	            </div>
 	            <div class="btn-wrap">
 					<button type="button" class="eBtn"><span>Get TEXT</span></button>
@@ -253,10 +253,24 @@ function fontSize(fontSize){
     document.execCommand("FontSize", false, fontSize);
 }
 
-var elmnt = document.getElementById("input_content");
+var elmnt_div = document.getElementById("input_content");
+var elmnt_btn = document.getElementById("input_content_size");
+var elmnt_bot = document.getElementById("bottom_size");
 
-// 드로잉기능 활용, mousedown, mousemove, mouseup
-console.log(elmnt.style.height, elmnt.scrollHeight)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>

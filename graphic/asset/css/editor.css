@@ -103,7 +103,7 @@ div.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1f1;}
 
 
 .content-area {
-      padding: 15px 12px;
+      padding:0
 }
 
 .content-area ul,
@@ -121,6 +121,7 @@ div.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1f1;}
 .content-area .visuell-view {
   outline: none;
   height: 200px;
+  padding:10px;
   overflow-y: scroll;
 }
 

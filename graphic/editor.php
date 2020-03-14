@@ -209,10 +209,10 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	        </div>
 	        <textarea class="html-view"></textarea>
 		</div>
-		<div class="bottom-area" id="bottom_size">
+		<div class="bottom-area" id="bottom_div">
 			<div class="box">
 				<div class="btn-wrap">
-					<button type="button" class="eBtn" id="input_content_size" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
+					<button type="button" class="eBtn" id="input_content_size_btn" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
 	            </div>
 	            <div class="btn-wrap">
 					<button type="button" class="eBtn"><span>Get TEXT</span></button>
@@ -254,13 +254,70 @@ function fontSize(fontSize){
 }
 
 var elmnt_div = document.getElementById("input_content");
-var elmnt_btn = document.getElementById("input_content_size");
-var elmnt_bot = document.getElementById("bottom_size");
+var elmnt_btn = document.getElementById("input_content_size_btn");
+var elmnt_bot = document.getElementById("bottom_div");
 
 
+let currentDroppable = null;
+let num = 1;
+
+elmnt_btn.onmousedown = function(event) {
+  let direction = "";
+  let oldX = 0;
+  let oldY = 0;
+  let shiftX = event.clientX;
+  let shiftY = event.clientY;
 
 
+  moveAt(event.pageX, event.pageY);
 
+  function moveAt(pageX, pageY) {
+  	if (pageX > oldX && pageY == oldY) {
+  		direction="East";
+  	} else if (pageX == oldX && pageY > oldY) {
+  		direction="South";
+  		num++;
+  		elmnt_div.style.height = elmnt_div.offsetHeight + num + 'px';
+  	} else if (pageX == oldX && pageY < oldY) {
+  		direction="North";
+  		num--;
+  		elmnt_div.style.height = elmnt_div.offsetHeight - num + 'px';
+  	} else if (pageX < oldX && pageY == oldY) {
+  		direction="West";
+  	} else {
+  		direction="";
+  	}
+  	console.log(direction, elmnt_div.offsetHeight + num + 'px')
+  	oldX = pageX;
+    oldY = pageY;
+  }
+
+	function onMouseMove(event){
+		
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        if (!elemBelow) return;
+
+   		let droppableBelow = elemBelow.parentElement;
+        if(elmnt_btn == droppableBelow){
+        	moveAt(event.pageX, event.pageY);
+        } else {
+        	return;
+        }
+
+	}
+
+
+	document.addEventListener('mousemove', onMouseMove);
+
+	elmnt_btn.onmouseup = function() {
+	    document.removeEventListener('mousemove', onMouseMove);
+	    elmnt_btn.onmouseup = null;
+	};
+};
+
+elmnt_btn.ondragstart = function() {
+  return false;
+};
 
 
 

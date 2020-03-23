@@ -1,6 +1,6 @@
 #wrap {
   margin: 0;
-  height: 100vh;
+  /*height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;	
@@ -29,6 +29,9 @@
 .tool-area .row .box {
 	display: flex;
 	border-left: 1px solid #bbb;
+}
+.tool-area .row .box:first-child {
+  border-left: 0 none;
 }
 
 .tool-area .row .box .btn-wrap {
@@ -100,6 +103,25 @@ div.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1f1;}
 }
 .eBtn:hover,
 .eBtn.active {background: #eee}
+
+#input_content_size_btn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.2s ease all;
+    padding:10px;
+    background: #fff;
+    outline: 0;
+    border: 0 none;  
+    width:100%;
+    cursor: ns-resize;
+}
+#input_content_size_btn:hover,
+#input_content_size_btn.active {background: #eee}
+
+#input_content_size_btn:active,
+#input_content_size_btn:focus {background: #ccc}
 
 
 .content-area {

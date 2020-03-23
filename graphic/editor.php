@@ -33,6 +33,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 <!-- 
 	http://naver.github.io/smarteditor2/demo/
 	2. 입력창 용 https://javascript.info/article/mouse-drag-and-drop/ball4/
+	https://medium.com/the-z/making-a-resizable-div-in-js-is-not-easy-as-you-think-bda19a1bc53d
 	3. 플러그인 기능 ( insertHtml 활용 )
 -->
 <div id="wrap">
@@ -211,12 +212,8 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		</div>
 		<div class="bottom-area" id="bottom_div">
 			<div class="box">
-				<div class="btn-wrap">
-					<button type="button" class="eBtn" id="input_content_size_btn" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
-	            </div>
-	            <div class="btn-wrap">
-					<button type="button" class="eBtn"><span>Get TEXT</span></button>
-	            </div>
+				<button type="button" class="eBtn" id="input_content_size_btn" title="입력창 세로 사이즈 조절"><i class="fas fa-arrows-alt-v"></i><span>입력창</span></button>
+
 			</div>
 		</div>
 
@@ -259,75 +256,110 @@ var elmnt_bot = document.getElementById("bottom_div");
 
 
 let currentDroppable = null;
-let num = 1;
 
-elmnt_btn.onmousedown = function(event) {
-  let direction = "";
-  let oldX = 0;
-  let oldY = 0;
-  let shiftX = event.clientX;
-  let shiftY = event.clientY;
+$(document).ready(function(){
+    $('#input_content_size_btn').on('mousedown', function(e){
+        var $dragable = $('#input_content'),
+            startHeight = $dragable.height(),
+            pY = e.pageY;
+        
+        $(document).on('mouseup', function(e){
+            $(document).off('mouseup').off('mousemove');
+        });
+        $(document).on('mousemove', function(me){
+            // var mx = (me.pageX - pX);
+            var my = (me.pageY - pY);
+            
+            $dragable.css({
+                height: startHeight + my,
+            });
+        });
+                
+    });
+});
+
+// elmnt_btn.onmousedown = function(event) {
+//   let direction = "";
+//   let oldX = 0;
+//   let oldY = 0;
+//   let shiftX = event.clientX - elmnt_btn.getBoundingClientRect().left;
+//   let shiftY = event.clientY - elmnt_btn.getBoundingClientRect().top; 
 
 
-  moveAt(event.pageX, event.pageY);
+//   //moveAt(event.pageX, event.pageY);
 
-  function moveAt(pageX, pageY) {
-  	if (pageX > oldX && pageY == oldY) {
-  		direction="East";
-  	} else if (pageX == oldX && pageY > oldY) {
-  		direction="South";
-  		num++;
-  		elmnt_div.style.height = elmnt_div.offsetHeight + num + 'px';
-  	} else if (pageX == oldX && pageY < oldY) {
-  		direction="North";
-  		num--;
-  		elmnt_div.style.height = elmnt_div.offsetHeight - num + 'px';
-  	} else if (pageX < oldX && pageY == oldY) {
-  		direction="West";
-  	} else {
-  		direction="";
-  	}
-  	console.log(direction, elmnt_div.offsetHeight + num + 'px')
-  	oldX = pageX;
-    oldY = pageY;
-  }
+//   function moveAt(pageX, pageY) {
+//     var num = 0;
+//   	if (pageX > oldX && pageY == oldY) {
+//   		direction="East";
+//   	} else if (pageX == oldX && pageY > oldY) {
+//   		direction="South";
+//   		num = num + 5;
+//   		elmnt_div.style.height = elmnt_div.offsetHeight + num + 'px';
+//   	} else if (pageX == oldX && pageY < oldY) {
+//   		direction="North";
+//   		num = num - 5;
+//   		num = num * -1;
+//   		elmnt_div.style.height = elmnt_div.offsetHeight - num + 'px';
+//   	} else if (pageX < oldX && pageY == oldY) {
+//   		direction="West";
+//   	} else {
+//   		direction="";
+//   	}
 
-	function onMouseMove(event){
+//   	console.log(direction)
+//   	oldX = pageX;
+//     oldY = pageY;
+//   }
+
+// 	function onMouseMove(event){
 		
-        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-        if (!elemBelow) return;
+//         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+//         if (!elemBelow) return;
 
-   		let droppableBelow = elemBelow.parentElement;
-        if(elmnt_btn == droppableBelow){
-        	moveAt(event.pageX, event.pageY);
-        } else {
-        	return;
-        }
+//    		let droppableBelow = elemBelow;
 
-	}
+//    		//console.log(elmnt_btn, droppableBelow)
+
+//         if(elmnt_btn == droppableBelow){
+//         	moveAt(event.pageX, event.pageY);
+//         } else {
+//         	document.removeEventListener('mousemove', onMouseMove);
+//         	return;
+//         }
+
+// 	}
 
 
-	document.addEventListener('mousemove', onMouseMove);
+// 	document.addEventListener('mousemove', onMouseMove);
 
-	elmnt_btn.onmouseup = function() {
-	    document.removeEventListener('mousemove', onMouseMove);
-	    elmnt_btn.onmouseup = null;
-	};
-};
+// 	elmnt_btn.onmouseup = function() {
+// 		console.log('onmouseup')
+// 	    document.removeEventListener('mousemove', onMouseMove);
+// 	    elmnt_btn.onmouseup = null;
+// 	};
+// };
+
+// elmnt_btn.onmouseover = function(event) {
+// 	console.log('onmouseover')
+// };
+
+// elmnt_btn.onmouseout = function(event) {
+// 	console.log('onmouseout')
+// };
 
 elmnt_btn.ondragstart = function() {
   return false;
 };
 
+</script>
 
-
-
-
-
-
-
-
-
+<script src="./asset/dev/editor.js?t=<?php echo $ver_time?>"></script>
+<script>
+	var mode = 'dev';
+	var jk = jKeditor.getInstance(mode);
+	jk.init();
+	//$("#tempTrigger").trigger('click');
 
 
 </script>

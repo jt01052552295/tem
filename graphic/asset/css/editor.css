@@ -47,6 +47,12 @@ div.dropdown > a.dropbtn {
   justify-content: center;
   padding:10px;
 }
+div.dropdown > a.dropbtn span {
+  white-space: nowrap;
+  overflow: hidden;
+  width:30px;
+  display: inline-flex;
+}
 div.dropdown > a.dropbtn.on,
 div.dropdown > a.dropbtn:hover {
   background: #eee;
@@ -73,7 +79,8 @@ div.dropdown ul.dropdown-content li > a {
   text-align: left;
   color:#333;
 }
-div.dropdown ul.dropdown-content li > a:hover {background-color: #f1f1f1;}
+div.dropdown ul.dropdown-content li.on,
+div.dropdown ul.dropdown-content li:hover {background-color: #f1f1f1;}
 
 
 

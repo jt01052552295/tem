@@ -41,34 +41,34 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 	<div class="editor">
 		<div class="tool-area">
 			<div class="row">
-				<div class="box">
+				<div class="box font_size_box">
 					<div class="btn-wrap">
 						<div class="dropdown">
-							<a href="#" class="dropbtn"><span>Font</span> <i class="fas fa-caret-down"></i></a>
+							<a href="#" class="dropbtn"><span id="fn">Font</span> <i class="fas fa-caret-down"></i></a>
 						 	<ul class="dropdown-content">
-							    <li><a href="#" data-fname="Arial">Arial</a></li>
-							    <li><a href="#" data-fname="Courier">Courier</a></li>
-							    <li><a href="#" data-fname="Courier New">Courier New</a></li>
-							    <li><a href="#" data-fname="Georgia">Georgia</a></li>
-							    <li><a href="#" data-fname="Helvetica">Helvetica</a></li>
-							    <li><a href="#" data-fname="Palatino">Palatino</a></li>
-							    <li><a href="#" data-fname="Times New Roman">Times New Roman</a></li>
-							    <li><a href="#" data-fname="Trebuchet MS">Trebuchet MS</a></li>
-							    <li><a href="#" data-fname="Verdana">Verdana</a></li>
+							    <li><a href="#" data-fn="Arial">Arial</a></li>
+							    <li><a href="#" data-fn="Courier">Courier</a></li>
+							    <li><a href="#" data-fn="Courier New">Courier New</a></li>
+							    <li><a href="#" data-fn="Georgia">Georgia</a></li>
+							    <li><a href="#" data-fn="Helvetica">Helvetica</a></li>
+							    <li><a href="#" data-fn="Palatino">Palatino</a></li>
+							    <li><a href="#" data-fn="Times New Roman">Times New Roman</a></li>
+							    <li><a href="#" data-fn="Trebuchet MS">Trebuchet MS</a></li>
+							    <li><a href="#" data-fn="Verdana">Verdana</a></li>
 						    </ul>
 						</div>
 		            </div>
 		            <div class="btn-wrap">
 		            	<div class="dropdown">
-							<a href="#" class="dropbtn"><span>Size</span> <i class="fas fa-caret-down"></i></a>
+							<a href="#" class="dropbtn"><span id="fsn">Size</span> <i class="fas fa-caret-down"></i></a>
 						 	<ul class="dropdown-content">
-							    <li><a href="#" data-fsize="1">8pt</a></li>
-							    <li><a href="#" data-fsize="2">10pt</a></li>
-							    <li><a href="#" data-fsize="3">12pt</a></li>
-							    <li><a href="#" data-fsize="4">14pt</a></li>
-							    <li><a href="#" data-fsize="5">18pt</a></li>
-							    <li><a href="#" data-fsize="6">24pt</a></li>
-							    <li><a href="#" data-fsize="7">36pt</a></li>
+							    <li><a href="#" data-fs="1" data-fsn="8pt">8pt</a></li>
+							    <li><a href="#" data-fs="2" data-fsn="10pt">10pt</a></li>
+							    <li><a href="#" data-fs="3" data-fsn="12pt">12pt</a></li>
+							    <li><a href="#" data-fs="4" data-fsn="14pt">14pt</a></li>
+							    <li><a href="#" data-fs="5" data-fsn="18pt">18pt</a></li>
+							    <li><a href="#" data-fs="6" data-fsn="24pt">24pt</a></li>
+							    <li><a href="#" data-fs="7" data-fsn="36pt">36pt</a></li>
 						    </ul>
 						</div>   
 		            </div>
@@ -231,24 +231,17 @@ const editor = document.getElementsByClassName('editor')[0];
 const toolbar = editor.getElementsByClassName('tool-area')[0];	
 const buttons = toolbar.querySelectorAll('.eBtn:not(.has-submenu)');
 
-for(let i = 0; i < buttons.length; i++) {
-  let button = buttons[i];
+// for(let i = 0; i < buttons.length; i++) {
+//   let button = buttons[i];
   
-  button.addEventListener('click', function(e) {
-    let action = this.dataset.action;
-    console.log(action)
+//   button.addEventListener('click', function(e) {
+//     let action = this.dataset.action;
+//     console.log(action)
 
     
-    document.execCommand(action, false);
-  });
-}
-function fontEditor(fontName) {
-  document.execCommand("fontName", false, fontName);
-}
-
-function fontSize(fontSize){
-    document.execCommand("FontSize", false, fontSize);
-}
+//     document.execCommand(action, false);
+//   });
+// }
 
 var elmnt_div = document.getElementById("input_content");
 var elmnt_btn = document.getElementById("input_content_size_btn");

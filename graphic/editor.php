@@ -76,28 +76,38 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 				</div>
 				<div class="box">
 					<div class="btn-wrap">
-						<button class="eBtn" data-action="bold" title="Bold">
+						<button class="eBtn createElmBtn" data-action="bold" data-html="strong" title="Bold">
 		                  <i class="fa fa-bold"></i>
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="italic" title="italic">
+						<button class="eBtn createElmBtn" data-action="italic" data-html="em" title="italic">
 		                  <i class="fa fa-italic"></i>
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="underline" title="underline">
+						<button class="eBtn createElmBtn" data-action="underline" data-html="u" title="underline">
 		                  <i class="fa fa-underline"></i>
 		                </button>
 		            </div>
 		            <div class="btn-wrap">
-						<button class="eBtn" data-action="strikethrough" title="strikethrough">
+						<button class="eBtn createElmBtn" data-action="strikethrough" data-html="del" title="strikethrough">
 		                  <i class="fa fa-strikethrough"></i>
 		                </button>
 		            </div>
 
 				</div>
 				<div class="box">
+					<div class="btn-wrap">
+						<button class="eBtn createElmBtn" data-action="sup" data-html="sup" title="superscript">
+		                  <i class="fas fa-superscript"></i>
+		                </button>
+		            </div>
+		            <div class="btn-wrap">
+						<button class="eBtn createElmBtn" data-action="sub" data-html="sub" title="subscript">
+		                  <i class="fas fa-subscript"></i>
+		                </button>
+		            </div>
 					<div class="btn-wrap">
 						<button class="eBtn" data-action="fcolor" title="font color">
 		                  <i class="fab fa-fonticons-fi"></i>
@@ -108,16 +118,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 		                 <i class="fab fa-fonticons"></i>
 		                </button>
 		            </div>
-		            <div class="btn-wrap">
-						<button class="eBtn" data-action="sup" title="superscript">
-		                  <i class="fas fa-superscript"></i>
-		                </button>
-		            </div>
-		            <div class="btn-wrap">
-						<button class="eBtn" data-action="sub" title="subscript">
-		                  <i class="fas fa-subscript"></i>
-		                </button>
-		            </div>
+		            
 
 				</div>
 				<div class="box">
@@ -206,7 +207,7 @@ $ver_time = preg_replace("/[^0-9]*/s", "", $ver_time);
 
 		<div class="content-area">
 			<div class="visuell-view" id="input_content" contenteditable>
-				hello world
+				<p>hello world</p>
 	        </div>
 	        <textarea class="html-view"></textarea>
 		</div>

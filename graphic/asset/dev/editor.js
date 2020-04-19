@@ -16,12 +16,15 @@ var jKeditor = (function() {
 	      lastX : 0,
 	      lastY : 0,
 	      topMenuActivate: false,
+	      editModeActivate : false,
+	      contenteditDiv : document.getElementById('input_content'),
 	    };
 
 		return {
 			init:function(){
 				this.showMode();
 				this.topMenu();
+				this.editMode();
 				this.btnExec();
 				return this;
 			},
@@ -125,36 +128,56 @@ var jKeditor = (function() {
 				console.log(act, val)
 				return this;
 			},
+			editMode:function(){
+
+
+				$('html').click(function (event) {
+					if ($(event.target).is(".editor *") && defaults.contenteditDiv.hasChildNodes()) {
+						defaults.editModeActivate = true; 
+					} else {
+						defaults.editModeActivate = false; 
+					}
+					//console.log('editModeActivate', defaults.editModeActivate)
+				});
+
+			},
 			btnExec:function(){
 				var self = this;
 				var btn = 'button.eBtn';
-				var sel, range;
+				var sel, range, selectedText;
+
+				
+
 
 				$(btn).on("click", function(event){
+					var elm = $(this).attr("data-html");
 					var act = $(this).attr("data-action");
-
-	
 					var selObj = window.getSelection(); 
-				    var selRange = selObj.getRangeAt(0);
-				    var selectedText = selObj.toString();
-				    console.log(selectedText)
 
 
-					// if (window.getSelection && (sel = window.getSelection()).rangeCount) {
-				 //        range = sel.getRangeAt(0);
-				 //        range.collapse(true);
-				 //        var span = document.createElement("div");
-				 //        span.id = "myId";
-				 //        span.appendChild( document.createTextNode("hi") );
-				 //        range.insertNode(span);
+					if($(this).hasClass('createElmBtn') && elm) {
 
-				 //        // Move the caret immediately after the inserted span
-				 //        range.setStartAfter(span);
-				 //        range.collapse(true);
-				 //        sel.removeAllRanges();
-				 //        sel.addRange(range);
-				 //    }
-					
+						if(selObj && selObj.rangeCount) {
+						    range = selObj.getRangeAt(0);
+						    selectedText = selObj.toString();
+
+						    console.log(range)
+
+						    var createElm = document.createElement(elm);
+							range.surroundContents(createElm);
+
+		
+				         	// var createElm = document.createElement(elm);
+					        // createElm.appendChild( document.createTextNode(selectedText) );
+					        // range.deleteContents();
+					        // range.insertNode(createElm)
+						}
+
+					} else {
+
+
+					}
+
 				});
 
 

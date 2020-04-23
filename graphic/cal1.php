@@ -80,7 +80,7 @@
       <div class="row mt-3">
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueA1" class="form-control" onkeyup="javascript:cost_columnA();">
             <div class="input-group-append">
               <span class="input-group-text">에서</span>
             </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueA2" class="form-control" onkeyup="javascript:cost_columnA();">
             <div class="input-group-append">
               <span class="input-group-text">%는</span>
             </div>
@@ -96,7 +96,7 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueA3" class="form-control">
             <div class="input-group-append">
               <span class="input-group-text">이다.</span>
             </div>
@@ -107,7 +107,7 @@
       <div class="row mt-3">
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueB1" class="form-control" onkeyup="javascript:cost_columnB();">
             <div class="input-group-append">
               <span class="input-group-text">에서</span>
             </div>
@@ -115,7 +115,7 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueB2" class="form-control" onkeyup="javascript:cost_columnB();">
             <div class="input-group-append">
               <span class="input-group-text">(은)는</span>
             </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueB3" class="form-control">
             <div class="input-group-append">
               <span class="input-group-text">% 이다.</span>
             </div>
@@ -135,7 +135,7 @@
       <div class="row mt-3">
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueC1" class="form-control" onkeyup="javascript:cost_columnC();">
             <div class="input-group-append">
               <span class="input-group-text">에서</span>
             </div>
@@ -143,7 +143,7 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueC2" class="form-control" onkeyup="javascript:cost_columnC();">
             <div class="input-group-append">
               <span class="input-group-text">(은)는</span>
             </div>
@@ -151,9 +151,9 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueC3" class="form-control">
             <div class="input-group-append">
-              <span class="input-group-text">% 증가 or 감소다.</span>
+              <span class="input-group-text">%다.</span>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@
       <div class="row mt-3">
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueD1" class="form-control" onkeyup="javascript:cost_columnD();">
             <div class="input-group-append">
               <span class="input-group-text">에서</span>
             </div>
@@ -171,23 +171,138 @@
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueD2" class="form-control" onkeyup="javascript:cost_columnD();">
             <div class="input-group-append">
-              <span class="input-group-text">%는</span>
+              <span class="input-group-text">% 증가하면</span>
             </div>
           </div>
         </div>
         <div class="col-3">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            <input type="text" id="valueD3" class="form-control">
             <div class="input-group-append">
-              <span class="input-group-text">증가 or 감소다.</span>
+              <span class="input-group-text">이다.</span>
             </div>
           </div>
         </div>
       </div>
 
 
+      <div class="row mt-3">
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" id="valueE1" class="form-control" onkeyup="javascript:cost_columnE();">
+            <div class="input-group-append">
+              <span class="input-group-text">에서</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" id="valueE2" class="form-control" onkeyup="javascript:cost_columnE();">
+            <div class="input-group-append">
+              <span class="input-group-text">% 감소하면</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="input-group">
+            <input type="text" id="valueE3" class="form-control">
+            <div class="input-group-append">
+              <span class="input-group-text">이다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <script>
+          function comma(str) {
+            str = new String(str);
+            _val = str.split('.');  
+              _val[0].replace(/[^0-9]/gi,"");
+
+              var pattern = /(-?[0-9]+)([0-9]{3})/;
+              num = _val[0].replace(/,/g, ''); 
+              while(pattern.test(num)) {
+                num += '';
+                num = num.replace(pattern,"$1,$2");
+              }
+              if(_val.length>1) {
+                num = num+"."+_val[1];
+              }
+              
+            return num;
+          }
+
+          //천단위 콤마제거 
+          function unNumberFormat(num) 
+          {
+            return num.replace(/\,/g,""); 
+          }
+
+          
+          function is_num(num){
+
+            num = num.replace(/\s/gi, "");
+            num=num?num:0;
+            num = Math.round(num * 100) / 100;
+            return num;
+          }
+
+          function cost_columnA(){
+              var valueA1 =  is_num(unNumberFormat(document.getElementById('valueA1').value));
+              var valueA2 =  is_num(unNumberFormat(document.getElementById('valueA2').value));
+              var rs  = 0;
+              if(valueA1>0 && valueA2>0){
+                rs = valueA1 * valueA2 / 100;
+                document.getElementById('valueA3').value = comma(rs);
+              }
+          }
+
+          function cost_columnB(){
+              var value1 =  is_num(unNumberFormat(document.getElementById('valueB1').value));
+              var value2 =  is_num(unNumberFormat(document.getElementById('valueB2').value));
+              var rs  = 0;
+              if(value1>0 && value2>0){
+                rs = value2 * 100 / value1 ;
+                document.getElementById('valueB3').value = comma(rs);
+              }
+          }
+
+
+          function cost_columnC(){
+              var value1 =  is_num(unNumberFormat(document.getElementById('valueC1').value));
+              var value2 =  is_num(unNumberFormat(document.getElementById('valueC2').value));
+              var rs  = 0;
+              if(value1>0 && value2>0){
+                rs = (value2 - value1) / value1 * 100  ;
+                document.getElementById('valueC3').value = comma(rs);
+              }
+          }
+
+          function cost_columnD(){
+              var value1 =  is_num(unNumberFormat(document.getElementById('valueD1').value));
+              var value2 =  is_num(unNumberFormat(document.getElementById('valueD2').value));
+              var rs  = 0;
+              if(value1>0 && value2>0){
+                rs = value1 + ( value1 * value2 / 100 ) ;
+                document.getElementById('valueD3').value = comma(rs);
+              }
+          }
+
+
+          function cost_columnE(){
+              var value1 =  is_num(unNumberFormat(document.getElementById('valueE1').value));
+              var value2 =  is_num(unNumberFormat(document.getElementById('valueE2').value));
+              var rs  = 0;
+              if(value1>0 && value2>0){
+                rs = value1 - ( value1 * value2 / 100 ) ;
+                document.getElementById('valueE3').value = comma(rs);
+              }
+          }
+
+         
+        </script>
 
 
         

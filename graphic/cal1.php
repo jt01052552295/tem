@@ -14,6 +14,10 @@
 <meta name="google" content="notranslate">
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -194,40 +198,96 @@
 
         <blockquote class="blockquote text-center">
           <p class="mb-0">A : B = X : Y </p>
-          <footer class="blockquote-footer">숫자 입력 후 빈자리 값을 구함.</footer>
+          <footer class="blockquote-footer">A,B, X or Y 숫자 입력 후 x,y 둘중 하나 빈자리 값을 구함.</footer>
         </blockquote>
 
-        <form>
+        <form name="frm" id="frm" method="post" onSubmit="return frm_check(this);">
           <div class="form-group row text-center">
             <div class="col">
-              <button type="button" class="btn btn-light ">16:9 = ?:Y</button>
-              <button type="button" class="btn btn-light ">16:9 = X:?</button>
-              <button type="button" class="btn btn-light ">4:3 = ?:Y</button>
-              <button type="button" class="btn btn-light ">4:3 = X:?</button>
+              <button type="button" class="btn btn-light fillVal" data-a="16" data-b="9" data-x="" data-y="">16:9</button>
+              <button type="button" class="btn btn-light fillVal" data-a="4" data-b="3"  data-x="" data-y="">4:3</button>
             </div>
           </div>
           <div class="form-group row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="A">
+              <input type="text" name="inputA" id="inputA" class="form-control" placeholder="A">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="B">
+              <input type="text" name="inputB" id="inputB" class="form-control" placeholder="B">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="X">
+              <input type="text" name="inputX" id="inputX" class="form-control" placeholder="X">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="Y">
+              <input type="text" name="inputY" id="inputY" class="form-control" placeholder="Y">
             </div>
           </div>
           
           <div class="form-group row text-center">
             <div class="col ">
-              <button type="submit" class="btn btn-primary ">Submit</button>
+              <button type="submit" class="btn btn-primary">결과보기</button>
               <button type="reset" class="btn btn-outline-secondary ">Reset</button>
             </div>
           </div>
         </form>
+
+        <script>
+          $(document).ready(function(){
+              $(".fillVal").click(function () {
+                var a = $(this).attr('data-a')
+                var b = $(this).attr('data-b')
+                $("input[name=inputA]").val(a);
+                $("input[name=inputB]").val(b);
+                $("input[name=inputX]").val(null).focus();
+                $("input[name=inputY]").val(null)
+
+              }); 
+          })
+          
+          function is_num(num){
+
+            num = num.replace(/\s/gi, "");
+            num=num?num:0;
+            num = Math.round(num * 100) / 100;
+            return num;
+          }
+
+          function frm_check(f){
+
+            var a = is_num(f.inputA.value), 
+                b = is_num(f.inputB.value), 
+                x = is_num(f.inputX.value), 
+                y = is_num(f.inputY.value);
+
+
+            if(!a){alert("A값을 입력하세요.");f.inputA.focus();  return false;}
+            if(!b){alert("B값을 입력하세요.");f.inputB.focus();  return false;}
+            if(!x && !y){alert("X,Y 둘중 하나를 입력하세요.");f.inputX.focus();  return false;}
+
+
+            if(!x){
+              f.inputX.value = (a*y)/b; 
+            } else if(!y){
+              f.inputY.value = (b*x)/a; 
+            }
+              // var chk_radio = document.getElementsByName('ch_gender');
+              // var sel_type = null;
+              // for(var i=0;i<chk_radio.length;i++){
+              //   if(chk_radio[i].checked == true){ 
+              //     sel_type = chk_radio[i].value;
+              //   }
+              // }
+              // if(sel_type == null){
+              //   alert("참가자 성별을 선택하세요.");
+              //   return false;
+              // }
+
+              return false;
+          }
+
+         
+        </script>
+
 
 
         
@@ -239,9 +299,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

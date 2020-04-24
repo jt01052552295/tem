@@ -23,36 +23,49 @@
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col">
+<div class="container ">
+    <div class="row">
+      <div class="col">
 
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <a class="btn btn-secondary" href="?f=cal01">그리드</a>
-          <a class="btn btn-secondary" href="?f=cal02">백분율</a>
-          <a class="btn btn-secondary" href="?f=cal03">비율</a>
-        </div> 
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-secondary" href="?f=cal01">그리드</a>
+            <a class="btn btn-secondary" href="?f=cal02">백분율</a>
+            <a class="btn btn-secondary" href="?f=cal03">비율</a>
+          </div> 
 
+      </div>
     </div>
-  </div>
 
 <?php if($_GET['f']=='cal01'):?>
+
+      <div class="row">
+        <div class="col">
+
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">빈칸 숫자로 채우고, 원하는 결과가 나오는지 확인</p>
+            <footer class="blockquote-footer">빨간색이 안보이게끔</footer>
+          </blockquote>
+
+        </div>
+      </div>
+
+
       <div class="row mt-3">
         <div class="col-3">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">max-width</span>
             </div>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" id="max_width" value="1200" placeholder="max-width" aria-label="max-width" aria-describedby="basic-addon1" onkeyup="javascript:cost_columnA();">
           </div>
         </div>
 
         <div class="col-3">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon2">columns</span>
+              <span class="input-group-text" id="basic-addon2">Columns</span>
             </div>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
+            <input type="number" class="form-control" id="columns" placeholder="Columns" aria-label="Columns" aria-describedby="basic-addon2" onkeyup="javascript:cost_columnA();">
           </div>
         </div>
 
@@ -61,16 +74,92 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon3">Gutter</span>
             </div>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon3">
+            <input type="number" class="form-control" id="gutter" placeholder="Gutter" aria-label="Gutter" aria-describedby="basic-addon3" onkeyup="javascript:cost_columnA();">
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon4">Outer Gutter</span>
+            </div>
+            <input type="number" class="form-control" id="outer_gutter" placeholder="Outer Gutter" aria-label="Outer Gutter" aria-describedby="basic-addon4" onkeyup="javascript:cost_columnA();">
           </div>
         </div>
        
       </div>
 
+      <style>
+          #viewGrid {background-color: #dc3545;margin: 20px 0;text-align: center;min-height: 120px}
+          #viewGrid:after {content: '';display: block;overflow: hidden;clear: both;}
 
+          .outerMargin,
+          .colBox,
+          .colGutter {height: 120px;line-height: 120px;float: left;overflow: hidden;}
+
+          .outerMargin {background-color: #ffc107}
+          .colBox {background-color: #007bff}
+          .colGutter {background-color: #6c757d}
+
+      </style>
       <div class="row mt-3">
-        레이아웃  Column width: 228 Gutter width: 2
+        <div class="col text-center">
+          <h4 class="h4">Page width : <span id="pageWidth"></span></h4>
+        </div>
       </div>
+      <div id="viewGrid"></div>
+
+      <script>
+
+
+        function is_num(num){
+          num = num.replace(/\s/gi, "");
+          num=num?num:0;
+          num = Math.round(num * 100) / 100;
+          return num;
+        }
+
+        function cost_columnA(){
+              var maxWidth =  is_num(document.getElementById('max_width').value);
+              var columns =  is_num(document.getElementById('columns').value);
+              var gutter =  is_num(document.getElementById('gutter').value);
+              var outerGutter =  is_num(document.getElementById('outer_gutter').value);              
+              var colwidth = 0;
+              var pageWidth = 0;
+
+              if(maxWidth>0 && columns>0){
+
+                var blank1 = (columns - 1) * gutter;
+                var blank2 = outerGutter*2;
+
+                colwidth = Math.floor(  (maxWidth - ( blank1 + blank2 )) / columns  );
+
+                // console.log('colwidth', colwidth)
+                // console.log('gutter', gutter)
+                // console.log('outerGutter', outerGutter)
+                
+
+                pageWidth = blank1 + blank2 + (colwidth*columns);
+                document.getElementById("pageWidth").innerHTML = pageWidth+"px";
+
+
+                document.getElementById("viewGrid").style.width = maxWidth+"px";
+
+                  var tag = "";
+                  $("#viewGrid").html('');
+                  for(i=1; i<=columns; i++){
+                    if(outerGutter>0 && i==1) tag += "<div class='outerMargin' style='width:"+outerGutter+"px'>"+outerGutter+"</div>";
+                    tag += "<div class='colBox' style='width:"+colwidth+"px'>"+colwidth+"</div>";
+                    if(gutter && i<columns ) tag += "<div class='colGutter' style='width:"+gutter+"px'>"+gutter+"</div>";
+                    if(outerGutter>0 && i==columns) tag += "<div class='outerMargin' style='width:"+outerGutter+"px'>"+outerGutter+"</div>";
+                  }
+                  $("#viewGrid").append(tag);
+              }
+
+
+          }
+
+      </script>
 
 
 

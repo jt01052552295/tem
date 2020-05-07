@@ -163,8 +163,8 @@ var jKeditor = (function() {
 
 						    console.log(range)
 
-						    var createElm = document.createElement(elm);
-							range.surroundContents(createElm);
+						 //    var createElm = document.createElement(elm);
+							// range.surroundContents(createElm);
 
 		
 				         	// var createElm = document.createElement(elm);

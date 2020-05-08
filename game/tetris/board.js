@@ -19,6 +19,7 @@ class Board {
     this.ctx.canvas.width = COLS * BLOCK_SIZE;
     this.ctx.canvas.height = ROWS * BLOCK_SIZE;
     this.ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
+
   }
 
   initNext() {

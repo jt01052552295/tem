@@ -44,6 +44,11 @@ const KEY = {
 Object.freeze(KEY);
 
 
+const TIMER = {
+  COUNTDOWN: 60
+}
+Object.freeze(TIMER);
+
 const POINTS = {
   SINGLE: 100,
   DOUBLE: 300,

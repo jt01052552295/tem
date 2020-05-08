@@ -4,6 +4,7 @@ const canvasNext = document.getElementById('next');
 const ctxNext = canvasNext.getContext('2d');
 
 let accountValues = {
+  playTime: 0,
   score: 0,
   level: 0,
   lines: 0
@@ -26,6 +27,7 @@ let account = new Proxy(accountValues, {
 });
 
 let requestId; // 실행중인 게임이 있는지 체크;
+let requestTime;
 
 moves = {
   [KEY.LEFT]:   p => ({ ...p, x: p.x - 1 }),
@@ -76,7 +78,14 @@ function addEventListener() {
   });
 }
 
+// pad value with zero
+function pad(value) {
+  return ('0' + Math.floor(value)).slice(-2);
+}
+
+
 function resetGame() {
+  account.playTime = TIMER.COUNTDOWN;
   account.score = 0;
   account.lines = 0;
   account.level = 0;
@@ -89,15 +98,18 @@ function play() {
   addEventListener();
   resetGame();
   time.start = performance.now();
+  requestTime = TIMER.COUNTDOWN;
   // If we have an old game running a game then cancel the old
   if (requestId) {
     cancelAnimationFrame(requestId);
   }
-
   animate();
 }
 
+
+
 function animate(now = 0) {
+
   time.elapsed = now - time.start;
   if (time.elapsed > time.level) {
     time.start = now;
@@ -105,11 +117,16 @@ function animate(now = 0) {
       gameOver();
       return;
     }
+    if(requestTime>=0){
+      account.playTime = requestTime--;
+    } else {
+      gameOver();
+      return;
+    }
   }
 
   // Clear board before drawing new state.
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
   board.draw();
   requestId = requestAnimationFrame(animate);
 }

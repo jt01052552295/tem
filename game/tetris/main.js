@@ -28,10 +28,12 @@ let account = new Proxy(accountValues, {
 let requestId; // 실행중인 게임이 있는지 체크;
 
 moves = {
-  [KEY.LEFT]:  p => ({ ...p, x: p.x - 1 }),
-  [KEY.RIGHT]: p => ({ ...p, x: p.x + 1 }),
-  [KEY.DOWN]:  p => ({ ...p, y: p.y + 1 }),
-  [KEY.SPACE]: p => ({ ...p, y: p.y + 1 })
+  [KEY.LEFT]:   p => ({ ...p, x: p.x - 1 }),
+  [KEY.RIGHT]:  p => ({ ...p, x: p.x + 1 }),
+  [KEY.DOWN]:   p => ({ ...p, y: p.y + 1 }),
+  [KEY.SPACE]:  p => ({ ...p, y: p.y + 1 }),
+  [KEY.UP]: 	p => board.rotate(p, ROTATION.RIGHT),
+  [KEY.Q]: 		p => board.rotate(p, ROTATION.LEFT)
 };
 
 
@@ -47,7 +49,26 @@ function addEventListener() {
     } else if (event.keyCode === KEY.P) {
       pause();
     } else if (moves[event.keyCode]) {
-      console.log(moves[event.keyCode])
+      let p = moves[event.keyCode](board.piece);
+      
+      
+      if (event.keyCode === KEY.SPACE) {
+
+      	// Hard drop
+        while (board.valid(p)) {
+          account.score += POINTS.HARD_DROP;
+          board.piece.move(p);
+          p = moves[KEY.DOWN](board.piece);
+        }
+        board.piece.hardDrop();
+
+      } else if (board.valid(p)) {
+      	board.piece.move(p);
+        if (event.keyCode === KEY.DOWN) {
+          account.score += POINTS.SOFT_DROP;
+        }
+      }	
+
     } else {
 
     }
@@ -67,20 +88,54 @@ function resetGame() {
 function play() {
   addEventListener();
   resetGame();
-  // time.start = performance.now();
-  // // If we have an old game running a game then cancel the old
-  // if (requestId) {
-  //   cancelAnimationFrame(requestId);
-  // }
+  time.start = performance.now();
+  // If we have an old game running a game then cancel the old
+  if (requestId) {
+    cancelAnimationFrame(requestId);
+  }
 
-  // animate();
+  animate();
+}
+
+function animate(now = 0) {
+  time.elapsed = now - time.start;
+  if (time.elapsed > time.level) {
+    time.start = now;
+    if (!board.drop()) {
+      gameOver();
+      return;
+    }
+  }
+
+  // Clear board before drawing new state.
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+  board.draw();
+  requestId = requestAnimationFrame(animate);
 }
 
 function gameOver() {
-  console.log('gameOver')
+  cancelAnimationFrame(requestId);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(1, 3, 8, 1.2);
+  ctx.font = '1px Arial';
+  ctx.fillStyle = 'red';
+  ctx.fillText('GAME OVER', 1.8, 4);
 }
 
 function pause() {
-  console.log('pause')	
+  if (!requestId) {
+    animate();
+    return;
+  }
+
+  cancelAnimationFrame(requestId);
+  requestId = null;
+
+  ctx.fillStyle = 'black';
+  ctx.fillRect(1, 3, 8, 1.2);
+  ctx.font = '1px Arial';
+  ctx.fillStyle = 'yellow';
+  ctx.fillText('PAUSED', 3, 4);
 }
 

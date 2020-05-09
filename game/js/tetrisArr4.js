@@ -56,11 +56,11 @@ for (var y = 0; y < 20; y++) {
 //console.log(gamePanel)
 
 
-// var intervalHandler = setInterval( 
-//     function () { 
-//         playingTetris(); 
-//     }, 400 
-// ); 
+var intervalHandler = setInterval( 
+    function () { 
+        playingTetris(); 
+    }, 400 
+); 
 
 function playingTetris(){
     if ( intersects(sPos.y + 1, sPos.x)) {
@@ -74,15 +74,18 @@ function playingTetris(){
         curShape = getNextShape();        
         sPos = {x:0, y:0};
         if ( intersects(sPos.y, sPos.x)) {
-            //clearInterval(intervalHandler);
+            clearInterval(intervalHandler);
             alert("Game Over");
         }
         gamePanel = removeRow(); // 게임판의 y축 검사 
     } else {
         sPos.y++; // 현재위치를 다음위치로 바꾼 뒤 게임판을 다시 그림.
     }
+    
+
 
     draw();
+
 }
 
 function intersects(y, x) { // 다음 행(칸)에 값이 있는지 없는지 체크
@@ -177,19 +180,25 @@ function dropShape(){
 
 
 function rotateShape() {
-	var newPiece = [];
-	for (var y = 0; y < 4; y++) {
-		newPiece[y] = curShape[y].slice(); //원본배열 그대로, 얕은복사본 으로 새로운배열에 객체로 반환
-	}
-	var size = shapeSize[curShapeType];
-	for (var y = 0; y < size; y++) {
-        for (var x = 0; x < size ; x++) {
-        	//console.log(3-x, y)
-            newPiece[y][x] = curShape[(size-1)-x][y];
+
+
+    	var newPiece = [];
+    	for (var y = 0; y < 4; y++) {
+    		newPiece[y] = curShape[y].slice(); //원본배열 그대로, 얕은복사본 으로 새로운배열에 객체로 반환
+    	}
+    	var size = shapeSize[curShapeType];
+    	for (var y = 0; y < size; y++) {
+            for (var x = 0; x < size ; x++) {
+            	//console.log(3-x, y)
+                newPiece[y][x] = curShape[(size-1)-x][y];
+            }
         }
-    }
-    curShape = newPiece;
-    draw();
+        curShape = newPiece;
+
+   
+            draw();
+  
+
 
 }
 

@@ -3,7 +3,7 @@
 const COLS = 10;
 const ROWS = 20;
 const BLOCK_SIZE = 30;
-const LINES_PER_LEVEL = 10;
+const LINES_PER_LEVEL = 1;
 const COLORS = [
   'none',
   'cyan',
@@ -61,7 +61,7 @@ Object.freeze(POINTS);
 
 const LEVEL = {
   0: 800,
-  1: 720,
+  1: 30,
   2: 630,
   3: 550,
   4: 470,

@@ -115,8 +115,7 @@ class Board {
         let x = p.x + dx;
         let y = p.y + dy;
         return (
-          value === 0 ||
-          (this.insideWalls(x) && this.aboveFloor(y) && this.notOccupied(x, y))
+          value === 0 || (this.insideWalls(x) && this.aboveFloor(y) && this.notOccupied(x, y))
         );
       });
     });

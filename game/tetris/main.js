@@ -109,9 +109,11 @@ function play() {
 
 
 function animate(now = 0) {
-
+  // 지난 시간을 업데이트한다.
   time.elapsed = now - time.start;
+  // 지난 시간이 현재 레벨의 시간을 초과했는지 확인한다.
   if (time.elapsed > time.level) {
+  	// 현재 시간을 다시 측정한다.
     time.start = now;
     if (!board.drop()) {
       gameOver();
@@ -125,11 +127,12 @@ function animate(now = 0) {
     }
   }
 
-  // Clear board before drawing new state.
+  // 새로운 상태로 그리기 전에 보드를 지운다.
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   board.draw();
   requestId = requestAnimationFrame(animate);
 }
+
 
 function gameOver() {
   cancelAnimationFrame(requestId);

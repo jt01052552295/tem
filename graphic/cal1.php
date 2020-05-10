@@ -36,7 +36,7 @@
       </div>
     </div>
 
-<?php if($_GET['f']=='cal01'):?>
+<?php if($_GET['f']=='cal01' || $_GET['f']==''):?>
 
       <div class="row">
         <div class="col">

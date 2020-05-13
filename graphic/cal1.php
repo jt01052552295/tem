@@ -7,13 +7,15 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cal</title>
+<title>이것저것 해봄 vol.1</title>
 <meta name="apple-touch-fullscreen" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="google" content="notranslate">
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -28,9 +30,10 @@
       <div class="col">
 
           <div class="btn-group" role="group" aria-label="Basic example">
-            <a class="btn btn-secondary" href="?f=cal01">그리드</a>
-            <a class="btn btn-secondary" href="?f=cal02">백분율</a>
-            <a class="btn btn-secondary" href="?f=cal03">비율</a>
+            <a class="btn btn-secondary <?php echo ($_GET['f']=='cal01')?'active':'';?>" href="?f=cal01">그리드</a>
+            <a class="btn btn-secondary <?php echo ($_GET['f']=='cal02')?'active':'';?>" href="?f=cal02">백분율</a>
+            <a class="btn btn-secondary <?php echo ($_GET['f']=='cal03')?'active':'';?>" href="?f=cal03">비율</a>
+            <a class="btn btn-secondary <?php echo ($_GET['f']=='cal04')?'active':'';?>" href="?f=cal04">color picker</a>
           </div> 
 
       </div>
@@ -495,6 +498,91 @@
 
 
         
+    </div>
+  </div>
+<?php elseif($_GET['f']=='cal04'):?>
+  <link href="./asset/css/colorpicker.css" rel="stylesheet">
+  <script src="./asset/dev/w3color.js?t=<?php echo $ver_time?>"></script>
+  <script src="./asset/dev/colorPicker.js?t=<?php echo $ver_time?>"></script>
+  <div class="row">
+    <div class="col">
+
+
+      <div class="modalCon" id="getModalData-menu-colorPicker">
+        <!-- preview element -->
+        미리보기 : <div class="preview"></div>
+        <!-- colorpicker element -->
+        <div class="colorpicker">
+            <canvas id="picker" width="300" height="300"></canvas>
+            <div class="colorPaletteWrap">
+              <div class="colorPaletteControl"><i class="far fa-hand-point-left" id="colorPaletteControlHandler"></i></div>
+              <canvas id="colorPalette" width="30" height="300"></canvas>
+          </div>
+
+            <div class="controls">
+                <div><label>R</label> <input type="text" id="rVal" /></div>
+                <div><label>G</label> <input type="text" id="gVal" /></div>
+                <div><label>B</label> <input type="text" id="bVal" /></div>
+                <div><label>A</label> <input type="text" id="aVal" /></div>
+                <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
+                <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+                <div><label>HSL</label> <input type="text" id="hslVal" /></div>
+                <div><label>CMYK</label> <input type="text" id="cmykVal" /></div>
+            </div>
+
+            <div class="controls_panel">
+                <div class="cPanel">
+                  <label><span>R :</span><input type="number" id="r01" class="red01" value="255" /></label> 
+                  <div class="slide_panel"><input type="range" id="r01v" class="red01" min="0" max="255" step="1" value="255"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>G :</span><input type="number" id="g01" class="green01" value="255" /></label> 
+                  <div class="slide_panel"><input type="range" id="g01v" class="green01" min="0" max="255" step="1" value="255"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>B :</span><input type="number" id="b01" class="blue01" value="255" /></label> 
+                  <div class="slide_panel"><input type="range" id="b01v" class="blue01" min="0" max="255" step="1" value="255"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>H :</span><input type="number" id="h01" class="hue01" value="360" /></label> 
+                  <div class="slide_panel"><input type="range" id="h01v" class="hue01" min="0" max="360" step="1" value="360"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>S :</span><input type="number" id="s01" class="sat01" value="100" /></label> 
+                  <div class="slide_panel"><input type="range" id="s01v" class="sat01" min="0" max="100" step="1" value="100"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>L :</span><input type="number" id="l01" class="light01" value="50" /></label> 
+                  <div class="slide_panel"><input type="range" id="l01v" class="light01" min="0" max="100" step="1" value="100"></div> 
+                </div>        
+
+                <div class="cPanel">
+                  <label><span>C :</span><input type="number" id="c01" class="cyan01" value="100" /></label> 
+                  <div class="slide_panel"><input type="range" id="c01v" class="cyan01" min="0" max="100" step="1" value="100"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>M :</span><input type="number" id="m01" class="magenta01" value="100" /></label> 
+                  <div class="slide_panel"><input type="range" id="m01v" class="magenta01" min="0" max="100" step="1" value="100"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>Y :</span><input type="number" id="y01" class="yellow01" value="100" /></label> 
+                  <div class="slide_panel"><input type="range" id="y01v" class="yellow01" min="0" max="100" step="1" value="100"></div> 
+                </div>
+                <div class="cPanel">
+                  <label><span>K :</span><input type="number" id="k01" class="kkk01" value="100" /></label> 
+                  <div class="slide_panel"><input type="range" id="k01v" class="kkk01" min="0" max="100" step="1" value="100"></div> 
+                </div>
+            </div>
+        </div>
+
+
+
+      </div>   
+      <script>
+        var rs = colorPicker('rgb(0,0,0)');
+      </script>
+
+
     </div>
   </div>
 <?php endif;?>

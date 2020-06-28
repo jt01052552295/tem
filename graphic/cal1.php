@@ -15,8 +15,6 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -34,6 +32,7 @@
             <a class="btn btn-secondary <?php echo ($_GET['f']=='cal02')?'active':'';?>" href="?f=cal02">백분율</a>
             <a class="btn btn-secondary <?php echo ($_GET['f']=='cal03')?'active':'';?>" href="?f=cal03">비율</a>
             <a class="btn btn-secondary <?php echo ($_GET['f']=='cal04')?'active':'';?>" href="?f=cal04">color picker</a>
+            <a class="btn btn-secondary" href="https://videoclass.cafe24.com/api" target="_blank">rest api</a>
           </div> 
 
       </div>
@@ -504,7 +503,7 @@
   <link href="./asset/css/colorpicker.css" rel="stylesheet">
   <script src="./asset/dev/w3color.js?t=<?php echo $ver_time?>"></script>
   <script src="./asset/dev/colorPicker.js?t=<?php echo $ver_time?>"></script>
-  <div class="row">
+  <div class="row" id="scrollArea">
     <div class="col">
 
 
@@ -585,6 +584,8 @@
 
     </div>
   </div>
+
+ 
 <?php endif;?>
 
 </div>
